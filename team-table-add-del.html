@@ -612,7 +612,7 @@ async function loadnewitemstable() {
 
  // 🔹 DELETE (Remove Record)
   window.deleteteam = async function (id) {
-    await deleteDoc(doc(db, "teamcods", id));
+    await deleteDoc(doc(db, "teamcodes", id));
     alert("Team Code deleted");
     clearInputs();
     loadnewitemstable();
@@ -625,7 +625,7 @@ window.addteam = async function () {
   try {
 
     // 🔹 Use nbr as document ID
-     const docRef = doc(db, "teamcods", teamnbr.toString());
+     const docRef = doc(db, "teamcodes", teamnbr.toString());
     
 
     // 🔹 Check if document already exists
