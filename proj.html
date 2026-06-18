@@ -680,8 +680,29 @@ background-color: black; */
 .navbar .navbar-toggler-icon {
     font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
 }
-    
+@media (max-width: 768px) {    
+.div-hdr {
+ height: 4vh; 
+ border: 0vw solid red;
+ position relative;
+ display: flex;
+ justify-content: space-between; 
+ background-color: transparent;
+ width: 98%;
+ margin: 0 auto;
+}
+}
 
+.div-hdr {
+ height: 6vh; 
+ border: 0vw solid red;
+ position relative;
+ display: flex;
+ justify-content: space-between; 
+ background-color: transparent;
+ width: 98%;
+ margin: 0 auto;
+}
   </style>
 </head>
 
@@ -732,13 +753,13 @@ background-color: black; */
 
 <!-- Following are divs which are addition of Navigation Bar -->
 
-<div style = "height: 6vh;  border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
+<div class = "div-hdr">
 <div style="border: 0vw solid yellow; text-align: center; margin-center: 0vw;  height: 7vh; margin-top: 3vh; margin-left: 0.7vw; margin: 0 auto;  ">
 <Label id="comp-name1" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;"></Label>
 </div> 
 </div> 
 
-<div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
+<div class = "div-hdr">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
 <Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Projects and their Tasks</Label>
 </div>
@@ -824,17 +845,17 @@ background-color: black; */
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         
       </tr>
-    
-     
+         
      </tbody>
-     <tfoot>
-    <tr style="background-color: lightblue; height: 3vh;>
+     <tfoot >
+    <tr style="background-color: #c5effd; height: 3vh;>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+        
     </tr>
   </tfoot>
   </table>
