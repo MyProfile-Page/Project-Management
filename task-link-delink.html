@@ -447,8 +447,8 @@ border-radius: 12px;
 .add-btn {
   width: 15.75%; 
   text-align: center;
-  background-color: #fafafa; 
-  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  /* background-color: #fafafa; */
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 600; 
   border-radius: 12px; 
@@ -466,7 +466,7 @@ border-radius: 12px;
   width: 15.60%; 
   text-align: center;
   background-color: #fafafa; 
-  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 600; 
   border-radius: 12px;
@@ -476,23 +476,23 @@ border-radius: 12px;
   width: 25%; 
   text-align: center;
   /* background-color: LightGrey; */
-  background-color: #fafafa;
-  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  /* background-color: #fafafa;  */
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 12px;
+  border-radius: 4px;
  }
  }
 @media (max-width: 768px) {
 .upd-btn {
   width: 25%; 
-  te xt-align: center;
+  text-align: center;
   /* background-color: LightGrey; */
   background-color: #fafafa;
-  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 12px;
+  border-radius: 4px;
  }
 }
 @media (max-width: 768px) {
@@ -985,7 +985,7 @@ if (!isValidSelection("tasknbr", "tasks")) {
 };
   // 🔹 READ (Load Data into Table)
 async function loadtaskmaster() {
-  alert("in loadtaskmaster");
+  
   
   const table = document.getElementById("itemTable");
   
@@ -1320,7 +1320,7 @@ if (startdtInput !== "") {
 const enddtInput = document.getElementById("enddt").value.trim();
 if (enddtInput !== "") {
   if (!isValidDate(enddtInput)) {
-    alert("Please Enter a valid Enf Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    alert("Please Enter a valid End Date in YYYY-MM-DD format (e.g. 2026-03-31)");
     return; // Stop update if invalid
   }
 }
