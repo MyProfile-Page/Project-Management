@@ -331,22 +331,22 @@ background-color: #9bc7be;
 
 
 .edit-delt-btn  {
-  width: 70%;
+  width: 90%;
   height: 8.0vh;
   text-align: center; 
   font-weight: 400; 
-  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
-  border-radius: 12px;
+  font-size: clamp(0.7rem, 1.2vw, 1.3rem);
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
 .edit-delt-btn  {
-  width: 80%;
+  width: 90%;
   height: 5.0vh;
   text-align: center; 
   font-weight: 400; 
-  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
-  border-radius: 12px; 
+  font-size: clamp(0.7rem, 1.2vw, 1.3rem);
+  border-radius: 4px; 
   
 }
 }
@@ -363,7 +363,7 @@ background-color: #9bc7be;
 
 @media (max-width: 768px) {
 .add-btn {
-  width: 25%; 
+  width: 60%; 
   text-align: center;
   /* background-color: LightGrey; */
   background-color: #fafafa;
@@ -642,20 +642,20 @@ input {
     <thead>
      
       <tr style="height: 10vh;">
-        <th style="text-align: center; width: 8%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Team Number - Name</th>
+        <th style="text-align: center; width: 45%; font-size: clamp(0.7rem, 1.3vw, 1.4rem); font-weight: 500; ">Team Name</th>
              
-         <th style="text-align: center; width: 12%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Number - Name</th>
+         <th style="text-align: center; width: 45%; font-size: clamp(0.7rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Name</th>
            
       
-        <th class="no-print" style="padding: 0.0vw; text-align: center; width: 10%; font-size: clamp(0.9rem, 1.1vw, 1.2rem); font-weight: 500; ">Action</th>
+        <th class="no-print" style="padding: 0.0vw; text-align: center; width: 10%; font-size: clamp(0.7rem, 1.1vw, 1.2rem); font-weight: 500; ">Action</th>
       </tr>
     </thead>
     <tbody id="teamTable" class = "teamTableBody-Cls">
        <tr>
-        <td  style="text-align: left; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
-        <td  style="text-align: left; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
+        <td  style="text-align: left; font-size: clamp(0.7rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
+        <td  style="text-align: left; font-size: clamp(0.7rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
         
-        <td style="text-align: center; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
+        <td style="text-align: center; font-size: clamp(0.7rem, 1.1vw, 1.2rem); font-weight: 500; "></td>
       </tr>
           
      </tbody>
@@ -739,7 +739,7 @@ async function loadnewitemstable() {
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
-    teamdisplay = `${data.teamnbr} -  ${data.teamname}`;
+    teamdisplay = `${data.teamname}`;
      // Add a blank row when the value changes (except for the first row)
     if (prevteamdisplay && teamdisplay !== prevteamdisplay) {
 
@@ -757,9 +757,9 @@ async function loadnewitemstable() {
       
       <tr class="tr-main-row"  >
        
-<td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${teamdisplay !== prevteamdisplay ? teamdisplay : ""}</td>        
+<td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.7rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${teamdisplay !== prevteamdisplay ? teamdisplay : ""}</td>        
        
-<td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.emplnbr} - ${data.emplname}</td>
+<td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.7rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.emplname}</td>
               
  <td style="border: 0.05vw solid black; text-align: center;">
 
