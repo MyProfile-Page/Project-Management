@@ -827,6 +827,16 @@ background-color: black; */
     
      
      </tbody>
+     <tfoot>
+    <tr style="background-color: lightblue; height: 5vh;>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+    </tr>
+  </tfoot>
   </table>
  </div>
  </div>
@@ -946,14 +956,12 @@ async function loadtaskmaster() {
      
     `;
   prevprojname = data.projname;
+
   });
-
-    
-
- 
-
  
 }   // ✅ ONLY ONE closing bracket for function
+
+
 
 function clean(value) {
   return (value === null || 
@@ -969,7 +977,7 @@ function clean(value) {
 
   // Auto-load data when pnbr opens (like SQL SELECT * FROM table)
   
-  loadtaskmaster();
+//  loadtaskmaster();
 
 function manageproject() {  
           window.location = `./proj-codes-add-del.html?param1=${paramId}&param2=${paramnm}`; 
