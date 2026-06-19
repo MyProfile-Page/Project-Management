@@ -621,6 +621,7 @@ height: 5vh;
   border: 0.00vw solid black;
   border-radius: 0px;
   margin-right: -40vw;
+  color: white;
   
  }
 
@@ -692,11 +693,15 @@ height: 5vh;
 
   <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
  
-<div style=" margin-top: -4vh; border: 0.0vw solid white; ">  
-<button onclick="printInvoice()" type="button" class="prt-btn"; >
-<img src="print-icon.png" alt="Click Me"   >
+<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
+<button onclick="printInvoice()" type="button" class="prt-btn"; >Print
 </button> 
 </div>
+
+
+<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
+<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
+</div> 
     <!-- Toggler -->
     <button id = "menubtn" class="navbar-toggler" type="button" 
             data-bs-toggle="collapse"
@@ -729,11 +734,7 @@ height: 5vh;
 
 <!-- Following are divs which are addition of Navigation Bar -->
 
-<div style = "height: 6vh;  border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
-<div style="border: 0vw solid yellow; text-align: center; margin-center: 0vw;  height: 7vh; margin-top: 3vh; margin-left: 0.7vw; margin: 0 auto;  ">
-<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;"></Label>
-</div> 
-</div> 
+
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
