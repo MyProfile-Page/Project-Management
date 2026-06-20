@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+http://localhost/new-Team-Management/empl.html#<!DOCTYPE html>
 <html>
 <head>
 
@@ -447,8 +447,8 @@ border-radius: 12px;
 .add-btn {
   width: 15.75%; 
   text-align: center;
-  /* background-color: #fafafa; */
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  background-color: #fafafa; 
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 600; 
   border-radius: 12px; 
@@ -466,7 +466,7 @@ border-radius: 12px;
   width: 15.60%; 
   text-align: center;
   background-color: #fafafa; 
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 600; 
   border-radius: 12px;
@@ -476,23 +476,23 @@ border-radius: 12px;
   width: 25%; 
   text-align: center;
   /* background-color: LightGrey; */
-  /* background-color: #fafafa;  */
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  background-color: #fafafa;
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 4px;
+  border-radius: 12px;
  }
  }
 @media (max-width: 768px) {
 .upd-btn {
   width: 25%; 
-  text-align: center;
+  te xt-align: center;
   /* background-color: LightGrey; */
   background-color: #fafafa;
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 4px;
+  border-radius: 12px;
  }
 }
 @media (max-width: 768px) {
@@ -666,8 +666,8 @@ height: 5vh;
 @media (max-width: 768px) {
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
- height: 5vh;
-/* background-color: white; */
+ height: 4vh;
+/* background-color: black; */
 /* background-color: #f8f2ed; */
  font-weight: 500; 
  width: 100%;
@@ -698,7 +698,6 @@ height: 5vh;
 </button> 
 </div>
 
-
 <div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
 <Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
 </div> 
@@ -718,7 +717,7 @@ height: 5vh;
       <ul class="navbar-nav ms-auto">    
 
         <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="proj.html" >Back</a>   
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="empl.html" >Back</a>   
         </li>
        <li class="nav-item">
        <label></label>            
@@ -738,11 +737,14 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Tasks to Projects</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Register Start & End Dates of Employee Assignments</Label>
 </div>
 </div> 
 
 <!-- Above are divs which are addition of Navigation Bar -->
+
+
+
 
 <div class="gap3vh"></div>
 <div class="gap3vh"></div>
@@ -760,23 +762,44 @@ height: 5vh;
 <div class="gap1vh"></div>
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" placeholder="Select Project Code" >
-<datalist id="projs"></datalist>
+<input list="empls" class="input-field-col" title="Select Project" id="emplnbr" name="aempl" placeholder="Select Employee" >
+<datalist id="empls"></datalist>
 </div> 
 
 <div class="gap1vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
- <input list="tasks" class="input-field-col" title="Select Task" id="tasknbr" name="atask" placeholder="Select Task Code" >
- <datalist id="tasks"></datalist>
+ <input list="assgs" class="input-field-col" title="Select Task" id="assgnbr" name="aassg" placeholder="Select Assignment" >
+ <datalist id="assgs"></datalist>
 </div>
-<input type="hidden" id="docIdHolder">
+
+<div class="gap1vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+ <input list="stats" class="input-field-col" title="Select Task" id="stat" name="astat" placeholder="Select Assignment Status" >
+ <datalist id="stats">
+   <option value="" disabled selected >Select Task Status</option>
+   <option>Not Started</option>
+   <option>In Process</option>
+   <option>Delayed</option>
+   <option>Completed</option>
+ </datalist>
+</div>
+
 
 
 <div class="gap1vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <input type="text" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task Start Date (Optional)" id="startdt" placeholder="Task Start Date (opt)" onfocus="(this.type='date')" onblur="(this.type='text')">
+<div class="gap1vh">&thinsp;</div>  
+<input type="text" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt" placeholder="Task End Date (opt)"onfocus="(this.type='date')" onblur="(this.type='text')" >
+  <input type="hidden" id="docIdHolder">
+</div>
+
+<div class="gap1vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
-  <button id="btn-for-add" onclick="additem()" type="button" class="add-btn";>Attach</button>
+  <button id="btn-for-add" onclick="additem()" type="button" class="add-btn";>Update</button>
   
- 
+  <div>&nbsp</div>
+  <button id="btn-for-clr" onclick="clearInputs()" type="button" class="clr-btn";>Clear</button>
 </div>
 <div class="gap4vh"></div>
 </div>
@@ -784,6 +807,7 @@ height: 5vh;
 </div>
 
 <div class="gap2vh"></div>
+
 
 <Div class="items-add-upd" style= "border: 0.0vw solid yellow;  margin-top: -1.0vh; color: black; font-weight: 550;">
 
@@ -794,12 +818,14 @@ height: 5vh;
   <table class="custom-table">
     <thead>
      
-      <tr style="height: 10vh;">
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Project Title</th>
+      <tr>
+        <th style="text-align: center; width: 23%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee</th>
          
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Task Title</th>              
-        
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
+        <th style="text-align: center; width: 22%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Assignment Desc</th>              
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Date</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Date</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>
+        <th style="text-align: center; width: 10%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
         
         
       </tr>
@@ -810,18 +836,22 @@ height: 5vh;
         <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
-        
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
       </tr>
     
      
      </tbody>
-  <tfoot>
+   <tfoot>
     <tr style="background-color: #c5effd; height: 3vh;>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
         
     </tr>
   </tfoot>
@@ -872,12 +902,18 @@ const firebaseConfig = {
   const db = getFirestore(app);
 
   const params = new URLSearchParams(window.location.search);
+let startdtgbfl = " ";
+let enddtgbfl = " ";
+let statgbfl = " ";
+let startdtgbin = " ";
+let enddtgbin = " ";
+let statgbin = " ";
 let selectedStatus = "none";
-let projname = "none";
-let prevprojname = "none";
+let emplname = "none";
+let prevemplname = "none";
 let teamnamegb = "none";
-let tasknamegb = "none";
-let projnamegb = "none";
+let assgnamegb = "none";
+let emplnamegb = "none";
 let paramId = "none";
 let paramnm = "none";
 paramId = params.get("param1");
@@ -890,118 +926,138 @@ document.getElementById("comp-name").textContent = paramnm;
 
 // 🔹 CREATE (Insert Data)
 window.additem = async function () {
-  
-  const projnbr = document.getElementById("projnbr").value;
-  const tasknbr = document.getElementById("tasknbr").value;
+
+  const emplnbr = document.getElementById("emplnbr").value;
+  const assgnbr = document.getElementById("assgnbr").value;
+  statgbin = document.getElementById("stat").value;
+  startdtgbin = document.getElementById("startdt").value.trim();
+  enddtgbin = document.getElementById("enddt").value.trim();  
   const ownerId = paramId;
-   
-//  const ownerId = document.getElementById("name").value;
 
-
-
-if (!isValidSelection("projnbr", "projs")) {
-  alert("A valid Project not selected from the Projects list.");
+if (!isValidSelection("emplnbr", "empls")) {
+  alert("A valid Employee not selected from the Employees list.");
   return;
 }
 
-if (!isValidSelection("tasknbr", "tasks")) {
+if (!isValidSelection("assgnbr", "assgs")) {
   alert("A valid Task not selected from the Tak Codes list.");
   return;
 }
 
 
+// if (!isValidSelection("stat", "stats")) {
+//  alert("A valid Task status not selected from the Status list.");
+//  return;
+// }
 
-
-
-
-
-
+// const startdtInput = document.getElementById("startdt").value.trim();
+if (startdtgbin !== "") {
+  if (!isValidDate(startdtgbin)) {
+    alert("Please Enter a valid Task Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    return; // Stop update if invalid
+  }
+else {
+alert("start date inputed is valid");
+console.log(startdtgbin);
+}
+}
  
+// const exp = expiryInput === "" ? null : expiryInput;
 
-    const recordIdk = `${ownerId}_${tasknbr}`;
-    const docRef1 = doc(db, "taskcodes", recordIdk.toString());
+// const enddtInput = document.getElementById("enddt").value.trim();
+if (enddtgbin !== "") {
+  if (!isValidDate(enddtgbin)) {
+    alert("Please Enter a valid End Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    return; // Stop update if invalid
+   }
+else {
+
+
+}
+}  
+ 
+ const   recordIdmfc = `${ownerId}_${emplnbr}_${assgnbr}`;
+ //   const recordIdm = `${emplnbr}_${assgnbr}`;
+    const docRefmfc = doc(db, "assgmaster", recordIdmfc.toString());
+
     // 🔹 Check if document already exists
-    const existingDoc1 = await getDoc(docRef1);
-    if (existingDoc1.exists()) {
-      const data = existingDoc1.data();
-      tasknamegb = data.taskname;      
-    }
-    else { 
-      console.log(recordIdk);
-      console.log(tasknbr);
-      console.log(ownerId);
-      alert("Task Code does not exists!");
-      return;
-    }
+    const existingDocfc = await getDoc(docRefmfc);
 
-    const recordIdp = `${ownerId}_${projnbr}`;
-    const docRef2 = doc(db, "projcodes", recordIdp.toString());
-    // 🔹 Check if document already exists
-    const existingDoc2 = await getDoc(docRef2);
-    if (existingDoc2.exists()) {
-      const data = existingDoc2.data();
-      projnamegb = data.projname;      
-    }
-    else { 
-      console.log(recordIdp);
-      console.log(projnbr);
-      console.log(ownerId);
-      alert("Project Code does not exists!");
-      return;
-    }
+    if (existingDocfc.exists()) {
+      
 
-
-
-   
-  try {
+       const data = existingDocfc.data();
+      startdtgbfl = data.startdt; 
+      enddtgbfl = data.enddt;
+      statgbfl = data.status;
+      };
+ console.log(startdtgbfl);
+ console.log(enddtgbfl);
+ console.log(statgbfl);
 
     // 🔹 Use nbr as document ID
-    const recordIdm = `${ownerId}_${projnbr}_${tasknbr}`;
- //   const recordIdm = `${projnbr}_${tasknbr}`;
-    const docRefm = doc(db, "taskmaster", recordIdm.toString());
+  const   recordIdm = `${ownerId}_${emplnbr}_${assgnbr}`;
+ //   const recordIdm = `${emplnbr}_${assgnbr}`;
+    const docRefm = doc(db, "assgmaster", recordIdm.toString());
 
     // 🔹 Check if document already exists
     const existingDoc = await getDoc(docRefm);
 
     if (existingDoc.exists()) {
-      alert("Task already linked to the Project!");
-      return;
-    }
-    console.log(recordIdm);
-    // 🔹 Create document with nbr as ID
-    await setDoc(docRefm, {
-            
-      projnbr: projnbr,
-      tasknbr: tasknbr, 
-      startdt: "Unset",
-      enddt: "Unset",
-      ownerId: paramId,
-      taskname: tasknamegb,
-      projname: projnamegb,
-      delynbr:  0,
-      delyname:  "none",
-      status: "Unset",
-      createdAt: serverTimestamp()
-    
+     
+
+    try {
+   
+//    console.log(startdtgb);
+//    console.log(enddtgb);
+//    console.log(stat);
+
+console.log({
+  startdtgbin,
+  startdtgbfl: startdtgbfl?.value,
+  enddtgbin,
+  enddtgbfl: enddtgbfl?.value,
+  statgbin,
+  statgbfl: statgbfl?.value
+});
+    await updateDoc(doc(db, "assgmaster", recordIdm), {
+      //  name: userInput ? userInput : oldValue.value
+      //  name: userInput !== "" ? userInput : oldValue.value
+      //  startdt: startdtgbINP ? startdtgbINP : startdtgbREF.value
+      startdt: startdtgbin  ? startdtgbin : startdtgbfl,
+      enddt: enddtgbin  ? enddtgbin : enddtgbfl,
+      status: statgbin  ? statgbin : statgbfl,
+ //     enddt: enddtgb,
+ //     status: stat,
+      createdAt: serverTimestamp() 
+           
     });
 
-    alert("Task Attached to Project!");
-    clearInputs();
-    loadtaskmaster(); // refresh table
-
+    alert("Employee Assignment updated successfully!");
+    window.currentEditId = null;
+     clearInputs();
+    loadassgmaster();
   } catch (error) {
-    console.error("Error linking Task:", error);
-    alert("Error linking Task. Check console.");
+    console.error("Update error:", error);
   }
-};
+
+
+
+   //     updateitem();    
+     }
+    else {
+      alert("Assignment for Employee Not Found");
+     }
+     
+   };
   // 🔹 READ (Load Data into Table)
-async function loadtaskmaster() {
+async function loadassgmaster() {
   
   
   const table = document.getElementById("itemTable");
   
   table.innerHTML = "";
-  const collectionRef = collection(db, "taskmaster");
+  const collectionRef = collection(db, "assgmaster");
   const q = query(collectionRef, where("ownerId", "==", paramId));
 
   const querySnapshot = await getDocs(q);
@@ -1011,8 +1067,8 @@ async function loadtaskmaster() {
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
-  projname = `${data.projname}`;
-  if (prevprojname && projname !== prevprojname) {
+      emplname = `${data.emplname}`;
+    if (prevemplname && emplname !== prevemplname) {
 
         table.innerHTML += `
              <tr class="tr-main-row"  >
@@ -1020,33 +1076,37 @@ async function loadtaskmaster() {
          <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
          <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
          <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
             </tr>
          
         `;
-    }
-
-    
+    }    
     
     table.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.projname !== prevprojname ? data.projname : ""}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.taskname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.assgname}</td>
         
-        
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
 
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center;">
-          <button onclick="viewitem('${docId}', '${data.tasknbr}', '${data.taskname}', )" class = "edit-delt-btn";>Detach</button>
+          <button onclick="viewitem('${docId}', '${data.assgnbr}', '${data.teamnbr}', '${data.assgname}', '${data.teamname}', '${data.startdt}', '${data.enddt}', '${data.status}')" class = "edit-delt-btn";>Det</button>
           
         </td>                    
         
- <tr>
- </tr>       
+     <tr>
+      </tr>   
         
      
     `;
- prevprojname = data.projname; 
+
+ prevemplname = data.emplname;
   });
 
     
@@ -1096,8 +1156,7 @@ function contactalert() {
 window.contactalert = contactalert; // ⭐ IMPORTANT LINE
 
 function myalert() {
-  alert("I am in print11 function.");
-
+  
 }
 window.myalert = myalert; // ⭐ IMPORTANT LINE
 
@@ -1169,43 +1228,40 @@ function isValidSelection(inputId, datalistId) {
 
 
   // 🔹 DELETE (Remove Record)
+  window.deleteitem = async function () {
 
-async function deleteitem() {
-//  window.deleteitem = async function () {
-
-// document.getElementById("docIdHolder").value = id
-// window.currentEditId = id;
  const id = document.getElementById("docIdHolder").value;
 
     if (!id) {
-        alert("No Task selected for dellinking");
-        console.log("No Task selected for delinking");
+        alert("No item selected for Delete");
+        console.log("No document selected");
         return;
     }
 
-    await deleteDoc(doc(db, "taskmaster", id));
-    alert("Task Dellinked from Project");
+    await deleteDoc(doc(db, "assgmaster", id));
+    alert("item Deleted from Firestore");
     clearInputs();
-    loadtaskmaster();
+    loadassgmaster();
 //    console.log("Deleted:", id);
 };
   
-//    await deleteDoc(doc(db, "taskmaster", id));
+//    await deleteDoc(doc(db, "assgmaster", id));
 //    alert("item deleted from Firestore");
 //    clearInputs();
-//    loadtaskmaster();
+//    loadassgmaster();
 //  };
 
   // Clear input fields
 
 window.clearInputs = async function () {     
     
-    document.getElementById("tasknbr").value = "";
-    document.getElementById("projnbr").value = "";
-   
+    document.getElementById("assgnbr").value = "";
+    document.getElementById("emplnbr").value = "";
+    document.getElementById("stat").value = "";
     
 //    document.getElementById("delynbr").value = "";
-    
+    document.getElementById("startdt").value = "";
+    document.getElementById("enddt").value = ""; 
     
     document.getElementById("btn-for-add").disabled = false;
      
@@ -1270,90 +1326,52 @@ window.viewitem = function (id, name, nbr, uis, qty, prc, exp, ctg, sup, imp, co
   
   
   document.getElementById("docIdHolder").value = id;
+  document.getElementById("name").value = name;
+  document.getElementById("nbr").value = nbr;
+  
+  document.getElementById("qty").value = qty;
+  document.getElementById("prc").value = prc;
+  document.getElementById("exp").value = exp;
+  document.getElementById("fmd").value = fmd;
+  document.getElementById("rol").value = rol;
+  document.getElementById("mnl").value = mnl;
+  document.getElementById("uis").value = ""; 
+  document.getElementById("ctg").value = "";
+  document.getElementById("sup").value = "";
+  document.getElementById("imp").value = "";
+  document.getElementById("con").value = "";
+  document.getElementById("uis").placeholder = uis; 
+  document.getElementById("ctg").placeholder = ctg;
+  document.getElementById("sup").placeholder = sup;
+  document.getElementById("imp").placeholder = imp;
+  document.getElementById("con").placeholder = con; 
+  document.getElementById("btn-for-add").disabled = true;
  
  // Store document ID for update
   window.currentEditId = id;
-  deleteitem();
 };
 
 // Update record in Firestore
-window.updateitem = async function () {
-  if (!window.currentEditId) {
-    alert("Please select a record to view first.");
-    return;
-  }
-  if (document.getElementById("proj").value === "") {
-    document.getElementById("proj").value = document.getElementById("proj").placeholder;
-    }
-  if (document.getElementById("task").value === "") {
-    document.getElementById("task").value = document.getElementById("task").placeholder;
-    }
-   if (document.getElementById("team").value === "") {
-    document.getElementById("team").value = document.getElementById("team").placeholder;
-   }
-   
-   document.getElementById("proj").placeholder = "Project Codes";
-   document.getElementById("task").placeholder = "Task Codes";
-   document.getElementById("team").placeholder = "Team Codes";
-   
-
+async function updateitem() {
  
-  const name = document.getElementById("projname").value;
-  
-  const proj = document.getElementById("proj").value;
-  const task = document.getElementById("task").value;
-  const team = document.getElementById("team").value;
- 
-  
-
-  if (name === "" || nbr === "" || uis === "" || qty === "" || prc === "" || ctg === "" || sup === "" || imp === "" || con === ""){
-    alert("Please Enter all Manadatory data of the item");
-    return;
-  }
-
-const expiryInput = document.getElementById("exp").value.trim();
-if (expiryInput !== "") {
-  if (!isValidDate(expiryInput)) {
-    alert("Please Select a valid Expiry Date");
-    return; // Stop update if invalid
-  }
-}
- const startdtInput = document.getElementById("startdt").value.trim();
-if (startdtInput !== "") {
-  if (!isValidDate(startdtInput)) {
-    alert("Please Enter a valid Task Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
-    return; // Stop update if invalid
-  }
-}
- const startdt = startdtInput;
-// const exp = expiryInput === "" ? null : expiryInput;
-
-const enddtInput = document.getElementById("enddt").value.trim();
-if (enddtInput !== "") {
-  if (!isValidDate(enddtInput)) {
-    alert("Please Enter a valid End Date in YYYY-MM-DD format (e.g. 2026-03-31)");
-    return; // Stop update if invalid
-  }
-}
- const enddt = enddtInput;
-  try {
-    await updateDoc(doc(db, "taskmaster", window.currentEditId), {
-      projnbr: parseInt(projnbr),
-      tasknbr: parseInt(tasknbr),
+// window.updateitem = async function () {
+   try {
+    window.currentEditId = recordIdm;
+    await updateDoc(doc(db, "assgmaster", recordIdm), {
+      emplnbr: parseInt(emplnbr),
+      assgnbr: parseInt(assgnbr),
       teamnbr: parseInt(teamnbr),
-      projname: projname,
-      taskname: taskname,
-      teamname: teamname,
       startdt: startdt,
       enddt: enddt,
+      stat: stat,
       createdAt: serverTimestamp() 
            
     });
 
-    alert("item updated successfully!");
+    alert("Task updated successfully!");
     window.currentEditId = null;
      clearInputs();
-    loadtaskmaster();
+    loadassgmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1362,7 +1380,7 @@ if (enddtInput !== "") {
 
   // Auto-load data when pnbr opens (like SQL SELECT * FROM table)
   
-  loadtaskmaster();
+  loadassgmaster();
 
 
 
@@ -1372,20 +1390,20 @@ async function loadcodestables() {
 
      
  try {
-    const tasklist = document.getElementById("tasks");
+    const assglist = document.getElementById("assgs");
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "taskcodes")); 
+    const snapshot = await getDocs(collection(db, "assgcodes")); 
 
     snapshot.forEach((doc) => {
       const data = doc.data();
 
       const option = document.createElement("option");
-      option.value = data.tasknbr; // This is what gets inserted into the input
-      option.textContent = `${data.tasknbr} - ${data.taskname}`;
+      option.value = data.assgnbr; // This is what gets inserted into the input
+      option.textContent = `${data.assgnbr} - ${data.assgname}`;
 
       
-      tasklist.appendChild(option);
+      assglist.appendChild(option);
     });
 
   }
@@ -1395,19 +1413,19 @@ async function loadcodestables() {
   }
 
 try {
-    const projlist = document.getElementById("projs");
+    const empllist = document.getElementById("empls");
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "projcodes")); 
+    const snapshot = await getDocs(collection(db, "emplcodes")); 
 
     snapshot.forEach((doc) => {
       const data = doc.data();
 
       const option = document.createElement("option");
-      option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;
+      option.value = data.emplnbr; // This is what gets inserted into the input
+      option.textContent = `${data.emplnbr} - ${data.emplname}`;
 
       
-      projlist.appendChild(option);
+      empllist.appendChild(option);
     });
 
   }
@@ -1467,12 +1485,11 @@ function printInvoice() {
            td:nth-child(6) {
             text-align: center;
           }
-           td:nth-child(2),        
-            td:nth-child(3) {       
+           td:nth-child(5),        
+            td:nth-child(6) {       
             colspan="2";           
           }  
-          
-            td:nth-child(3) {
+            td:nth-child(5) {
            border-right: 1px solid black !important;
           } 
             button {
@@ -1543,7 +1560,7 @@ function printInvoice() {
         <div style="text-align: left;">
           <!-- Your existing header -->
           
-          <h4>Projects & Their Tasks List</h4>
+          <h4>Items List</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>

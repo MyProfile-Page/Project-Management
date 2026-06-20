@@ -447,8 +447,8 @@ border-radius: 12px;
 .add-btn {
   width: 15.75%; 
   text-align: center;
-  /* background-color: #fafafa; */
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  background-color: #fafafa; 
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 600; 
   border-radius: 12px; 
@@ -466,7 +466,7 @@ border-radius: 12px;
   width: 15.60%; 
   text-align: center;
   background-color: #fafafa; 
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 600; 
   border-radius: 12px;
@@ -476,23 +476,23 @@ border-radius: 12px;
   width: 25%; 
   text-align: center;
   /* background-color: LightGrey; */
-  /* background-color: #fafafa;  */
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  background-color: #fafafa;
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 4px;
+  border-radius: 12px;
  }
  }
 @media (max-width: 768px) {
 .upd-btn {
   width: 25%; 
-  text-align: center;
+  te xt-align: center;
   /* background-color: LightGrey; */
   background-color: #fafafa;
-  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 4px;
+  border-radius: 12px;
  }
 }
 @media (max-width: 768px) {
@@ -667,28 +667,49 @@ height: 5vh;
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
  height: 5vh;
-/* background-color: white; */
+background-color: black; */
 /* background-color: #f8f2ed; */
  font-weight: 500; 
  width: 100%;
 }
 }
 
- .navbar-toggler-icon {
+.navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar .navbar-toggler-icon {
     font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
 }
+@media (max-width: 768px) {    
+.div-hdr {
+ height: 4vh; 
+ border: 0vw solid red;
+ position relative;
+ display: flex;
+ justify-content: space-between; 
+ background-color: transparent;
+ width: 98%;
+ margin: 0 auto;
+}
+}
 
+.div-hdr {
+ height: 6vh; 
+ border: 0vw solid red;
+ position relative;
+ display: flex;
+ justify-content: space-between; 
+ background-color: transparent;
+ width: 98%;
+ margin: 0 auto;
+}
   </style>
 </head>
 
 <body  class="body_cls">
 
-
-  <!-- 🌍 Navigation Bar Start -->
+ <!-- 🌍 Navigation Bar Start -->
 <nav class="navbar " >
 
   <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
@@ -698,9 +719,8 @@ height: 5vh;
 </button> 
 </div>
 
-
 <div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
-<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
+<Label id="comp-name1" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
 </div> 
     <!-- Toggler -->
     <button id = "menubtn" class="navbar-toggler" type="button" 
@@ -717,12 +737,17 @@ height: 5vh;
     <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
       <ul class="navbar-nav ms-auto">    
 
-        <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="proj.html" >Back</a>   
+        <li class="nav-item">        
+<a class="nav-link " href="#" onclick="manageemplee()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Add/Remove Company Employees</a>
+<a class="nav-link " href="#" onclick="manageassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" >Add/Remove Assignment codes</a>
+<a class="nav-link " href="#" onclick="assignassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;"> Assign Assignmentd To Employees </a>
+<a class="nav-link " href="#" onclick="updateassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Submit Start/End Dates to Tasks</a>   
+<a class="nav-link " href="#" onclick="manageteam()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Create/Delete Teams of Employees</a>         
+<a class="nav-link " href="#" onclick="linkteam()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Link/Delink Employees to Teams</a>               
         </li>
-       <li class="nav-item">
+ <li class="nav-item">
        <label></label>            
-        </li>
+ </li>
 
       </ul>
     </div>
@@ -735,55 +760,60 @@ height: 5vh;
 <!-- Following are divs which are addition of Navigation Bar -->
 
 
-
-<div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
+<div class = "div-hdr">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Tasks to Projects</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Employees and their Assignments</Label>
 </div>
 </div> 
 
 <!-- Above are divs which are addition of Navigation Bar -->
 
+
 <div class="gap3vh"></div>
-<div class="gap3vh"></div>
-<div style="display: flex; width: 98%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
+
+<!-- Following is div For UserId & Pasword entries -->
+
+<div id = "logindiv" style="width: 60%; border: 0.0vw dashed black; margin: 0 auto; background-color: Transparent; margin-top: 0vh;" >
+
 
  <!-- Input Form -->
 <div class="gap3vh"></div>
 <div class="gap3vh"></div>
 
 
-<div class = "items-add-upd" style="color:white; border: 0.0vw solid red;" > 
-
-<div class="gap3vh"></div>
-<div class="gap3vh"></div>
-<div class="gap1vh"></div>
-
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" placeholder="Select Project Code" >
-<datalist id="projs"></datalist>
-</div> 
-
-<div class="gap1vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
- <input list="tasks" class="input-field-col" title="Select Task" id="tasknbr" name="atask" placeholder="Select Task Code" >
- <datalist id="tasks"></datalist>
-</div>
-<input type="hidden" id="docIdHolder">
-
-
-<div class="gap1vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
-  <button id="btn-for-add" onclick="additem()" type="button" class="add-btn";>Attach</button>
-  
  
-</div>
-<div class="gap4vh"></div>
+
+
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <input type="text" class="input-field" id="userId" placeholder="User Id"  >
 </div>
 
+<div class="gap1vh"></div> 
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <input type="password" class="input-field" id="usrpassword" placeholder="User Password"  >
 </div>
 
-<div class="gap2vh"></div>
+<div class="gap1vh"></div> 
+
+
+<div style="display: flex; justify-content: center; width: 97%; border: 0px solid black; margin: 0 auto; margin-top: 3vh;">
+   <button onclick="loginrtn()" type="button" class="add-btn"; style="clamp(0.8rem, 1.2vw, 1.4rem); font-weight: 500;">Sign In</button>
+</div>
+<div class="gap3vh"></div>
+</div>
+
+<!-- Above is div For UserId & Pasword entries -->
+
+<div class="gap3vh"></div>
+<div class="gap4vh"></div> 
+<div class="gap3vh"></div> 
+
+
+<!-- Following is div For Grid Display of Projects and their asks -->
+ 
+<div  id="projectdisplaydiv" style="display: none; margin-top: -5vh;"  >
+
+<div style="display: flex; width: 98%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
 
 <Div class="items-add-upd" style= "border: 0.0vw solid yellow;  margin-top: -1.0vh; color: black; font-weight: 550;">
 
@@ -794,12 +824,14 @@ height: 5vh;
   <table class="custom-table">
     <thead>
      
-      <tr style="height: 10vh;">
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Project Title</th>
+      <tr>
+        <th style="text-align: center; width: 23%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Name</th>
          
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Task Title</th>              
+        <th style="text-align: center; width: 22%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Assignment Desc</th>              
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Date</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Date</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>
         
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
         
         
       </tr>
@@ -810,17 +842,20 @@ height: 5vh;
         <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         
       </tr>
-    
-     
+         
      </tbody>
-  <tfoot>
+     <tfoot >
     <tr style="background-color: #c5effd; height: 3vh;>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      
         
     </tr>
@@ -829,6 +864,7 @@ height: 5vh;
  </div>
  </div>
 
+ </div>
 <!-- Bootstrap JS -->
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -873,135 +909,30 @@ const firebaseConfig = {
 
   const params = new URLSearchParams(window.location.search);
 let selectedStatus = "none";
-let projname = "none";
-let prevprojname = "none";
+let emplname = "none";
+let prevemplname = "";
 let teamnamegb = "none";
-let tasknamegb = "none";
-let projnamegb = "none";
+let assgnamegb = "none";
+let emplnamegb = "none";
 let paramId = "none";
 let paramnm = "none";
 paramId = params.get("param1");
 paramnm = params.get("param2");
+// paramId = "ownernbr1";
 
-
-document.getElementById("comp-name").textContent = paramnm;
-
-
-
-// 🔹 CREATE (Insert Data)
-window.additem = async function () {
-  
-  const projnbr = document.getElementById("projnbr").value;
-  const tasknbr = document.getElementById("tasknbr").value;
-  const ownerId = paramId;
-   
-//  const ownerId = document.getElementById("name").value;
-
-
-
-if (!isValidSelection("projnbr", "projs")) {
-  alert("A valid Project not selected from the Projects list.");
-  return;
-}
-
-if (!isValidSelection("tasknbr", "tasks")) {
-  alert("A valid Task not selected from the Tak Codes list.");
-  return;
-}
+document.getElementById("menubtn").disabled = true;
+document.getElementById("comp-name1").textContent = "My Company";
 
 
 
 
-
-
-
-
- 
-
-    const recordIdk = `${ownerId}_${tasknbr}`;
-    const docRef1 = doc(db, "taskcodes", recordIdk.toString());
-    // 🔹 Check if document already exists
-    const existingDoc1 = await getDoc(docRef1);
-    if (existingDoc1.exists()) {
-      const data = existingDoc1.data();
-      tasknamegb = data.taskname;      
-    }
-    else { 
-      console.log(recordIdk);
-      console.log(tasknbr);
-      console.log(ownerId);
-      alert("Task Code does not exists!");
-      return;
-    }
-
-    const recordIdp = `${ownerId}_${projnbr}`;
-    const docRef2 = doc(db, "projcodes", recordIdp.toString());
-    // 🔹 Check if document already exists
-    const existingDoc2 = await getDoc(docRef2);
-    if (existingDoc2.exists()) {
-      const data = existingDoc2.data();
-      projnamegb = data.projname;      
-    }
-    else { 
-      console.log(recordIdp);
-      console.log(projnbr);
-      console.log(ownerId);
-      alert("Project Code does not exists!");
-      return;
-    }
-
-
-
-   
-  try {
-
-    // 🔹 Use nbr as document ID
-    const recordIdm = `${ownerId}_${projnbr}_${tasknbr}`;
- //   const recordIdm = `${projnbr}_${tasknbr}`;
-    const docRefm = doc(db, "taskmaster", recordIdm.toString());
-
-    // 🔹 Check if document already exists
-    const existingDoc = await getDoc(docRefm);
-
-    if (existingDoc.exists()) {
-      alert("Task already linked to the Project!");
-      return;
-    }
-    console.log(recordIdm);
-    // 🔹 Create document with nbr as ID
-    await setDoc(docRefm, {
-            
-      projnbr: projnbr,
-      tasknbr: tasknbr, 
-      startdt: "Unset",
-      enddt: "Unset",
-      ownerId: paramId,
-      taskname: tasknamegb,
-      projname: projnamegb,
-      delynbr:  0,
-      delyname:  "none",
-      status: "Unset",
-      createdAt: serverTimestamp()
-    
-    });
-
-    alert("Task Attached to Project!");
-    clearInputs();
-    loadtaskmaster(); // refresh table
-
-  } catch (error) {
-    console.error("Error linking Task:", error);
-    alert("Error linking Task. Check console.");
-  }
-};
   // 🔹 READ (Load Data into Table)
-async function loadtaskmaster() {
-  
-  
+async function loadassgmaster() {
+ 
   const table = document.getElementById("itemTable");
   
   table.innerHTML = "";
-  const collectionRef = collection(db, "taskmaster");
+  const collectionRef = collection(db, "assgmaster");
   const q = query(collectionRef, where("ownerId", "==", paramId));
 
   const querySnapshot = await getDocs(q);
@@ -1011,123 +942,60 @@ async function loadtaskmaster() {
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
-  projname = `${data.projname}`;
-  if (prevprojname && projname !== prevprojname) {
+
+     emplname = `${data.emplname}`;    
+    
+
+  if (prevemplname && emplname !== prevemplname) {
 
         table.innerHTML += `
-             <tr class="tr-main-row"  >
+            <tr class="tr-main-row"  >
                 
+        <td style="text-wrap: pretty; text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+        <td style="text-wrap: pretty; text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
          <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+       <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+         <td style="text-wrap: pretty; text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
+       
+       
+      
             </tr>
          
         `;
     }
 
     
-    
     table.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.projname !== prevprojname ? data.projname : ""}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left; ">${data.emplname !== prevemplname ? data.emplname : ""}</td>
+    
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.taskname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black;  ">${data.assgname}</td>
         
-        
-
-        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center;">
-          <button onclick="viewitem('${docId}', '${data.tasknbr}', '${data.taskname}', )" class = "edit-delt-btn";>Detach</button>
-          
-        </td>                    
-        
- <tr>
- </tr>       
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
+      </tr>
+                 
+  
+     <tr>
+     </tr>   
         
      
     `;
- prevprojname = data.projname; 
-  });
 
-    
 
  
 
+
+  prevemplname = data.emplname;
+
+  });
  
 }   // ✅ ONLY ONE closing bracket for function
 
-// 🔹 Guidefunction
 
-function guidealert() {
-  alert('The system welcome screen directs user to proceed to items data  ' +            
-        'base or system Guide through menu icon at top right of welcome screen.\n ' +
-        'Following functions can be done at Items DataBase screen\n ' +
-        '1. Add a new item,\n ' + 
-        
-        '   Type new item details in the Items Add/Update Input form ' +
-        '   and then click the Add Item button in the form\n ' +
-        '\n ' +
-        '2. Change details of any item,\n ' +
-        
-        '   click the update tab in the row of your items table where your ' + 
-        '   item is being displayed. It will bring all details of your' +  
-        '   selected item at Items Add/Update input form,' + 
-        '   type needed changes and then click Update Item button which is' + 
-        '   also in the form\n ' +
-        '\n ' +        
-        '3. Delete an unwanted item,\n ' +
-         
-        '   select in items Display Grid the row of your item to be deleted' + 
-        '   then click Delete button of the row.\n ' + 
-        '\n ' +
-        '4. Print invoice,\n ' +
-        
-        '   click Print Invoice link which is at the topright corner of ' + 
-        '   Items DataBase screen.');
-
-
-}
-window.guidealert = guidealert; // ⭐ IMPORTANT LINE
-
-function contactalert() {
-  alert("Email: ali_albader_alsalem@yahoo.com");
-
-}
-window.contactalert = contactalert; // ⭐ IMPORTANT LINE
-
-function myalert() {
-  alert("I am in print11 function.");
-
-}
-window.myalert = myalert; // ⭐ IMPORTANT LINE
-
-function formatCentsToDollars(cents) {
-  return (cents / 100).toFixed(2);
-}
-
-// 🔹 Itenm Value calculate func
-
-
-
-
-
-
-function isValidDate(expiry) {
-  // Check format using Regular Expression (YYYY-MM-DD)
-//  const regex = /^\d{4}-(0[1-9]|1[0-2])$/;
-   const regex = /^\d{4}-\d{2}-\d{2}$/;
-  if (!regex.test(expiry)) {
-    return false; // Invalid format
-  }
-
-  // Optional: check if it is a real calendar date
-  const [year, month] = expiry.split("-").map(Number);
-
-  const date = new Date(year, month - 1); // month is 0-based in JS
-
-  // Ensure parsed values match input
-  return date.getFullYear() === year && date.getMonth() === month - 1;
-}
 
 function clean(value) {
   return (value === null || 
@@ -1141,285 +1009,88 @@ function clean(value) {
 }
 
 
-function cleanrol(valuerol, valueqty) {
-  return (valuerol === null || 
-          valuerol === "null" || 
-          valuerol === "NaN" ||
-          valuerol === "undefined" || 
-          valuerol === "NaN" ||
-          (typeof valuerol === "number" && isNaN(valuerol)))
-         ? "" 
-         : valuerol;
-
-  if (valueqty < valuerol) {
-    return "<span style='color:red;'>" + cleanrol + "</span>";
-  }
-
-  return cleanrol;
-}
-
-function isValidSelection(inputId, datalistId) {
-  const input = document.getElementById(inputId).value;
-  const options = document.querySelectorAll(`#${datalistId} option`);
-
-  const validValues = Array.from(options).map(opt => opt.value);
-
-  return validValues.includes(input);
-}
-
-
-  // 🔹 DELETE (Remove Record)
-
-async function deleteitem() {
-//  window.deleteitem = async function () {
-
-// document.getElementById("docIdHolder").value = id
-// window.currentEditId = id;
- const id = document.getElementById("docIdHolder").value;
-
-    if (!id) {
-        alert("No Task selected for dellinking");
-        console.log("No Task selected for delinking");
-        return;
-    }
-
-    await deleteDoc(doc(db, "taskmaster", id));
-    alert("Task Dellinked from Project");
-    clearInputs();
-    loadtaskmaster();
-//    console.log("Deleted:", id);
-};
-  
-//    await deleteDoc(doc(db, "taskmaster", id));
-//    alert("item deleted from Firestore");
-//    clearInputs();
-//    loadtaskmaster();
-//  };
-
-  // Clear input fields
-
-window.clearInputs = async function () {     
-    
-    document.getElementById("tasknbr").value = "";
-    document.getElementById("projnbr").value = "";
-   
-    
-//    document.getElementById("delynbr").value = "";
-    
-    
-    document.getElementById("btn-for-add").disabled = false;
-     
-
-  }
-
-window.Clearinputdata = async function () {
-    document.getElementById("name").value = "";
-    document.getElementById("nbr").value = "";
-    document.getElementById("qty").value = "";
-    document.getElementById("prc").value = "";
-    document.getElementById("exp").value = "";
-    document.getElementById("uis").value = "";
-    document.getElementById("ctg").value = "";
-    document.getElementById("sup").value = "";
-    document.getElementById("imp").value = "";
-    document.getElementById("con").value = "";
-    document.getElementById("rol").value = "";
-    document.getElementById("mnl").value = "";
-    document.getElementById("fmd").value = ""; 
-  document.getElementById("name").disabled = false;
-  document.getElementById("nbr").disabled = false; 
-  document.getElementById("uis").disabled = false;  
-  document.getElementById("qty").disabled = false;
-  document.getElementById("prc").disabled = false;
-  document.getElementById("exp").disabled = false;
-  document.getElementById("ctg").disabled = false;
-  document.getElementById("sup").disabled = false;
-  document.getElementById("imp").disabled = false;
-  document.getElementById("con").disabled = false;
-  document.getElementById("rol").disabled = false; 
-  document.getElementById("mnl").disabled = false;
-  document.getElementById("fmd").disabled = false;
-  
-  document.getElementById("btn-for-add").disabled = false;
-  
-
-  }
-
-// Fill inputs when Edit button is clicked
-window.edititem = function (id, name, nbr, uis, qty, prc, exp, ctg, sup, imp, con, rol, mnl, fmd) {
-  document.getElementById("name").value = name;
-  document.getElementById("nbr").value = nbr;
-  document.getElementById("uis").value = uis;
-  document.getElementById("qty").value = qty;
-  document.getElementById("prc").value = prc;
-  document.getElementById("exp").value = exp;
-
-  document.getElementById("ctg").value = ctg;
-  document.getElementById("sup").value = sup;
-  document.getElementById("imp").value = imp;
-  document.getElementById("con").value = con;
-  document.getElementById("rol").value = rol;
-  document.getElementById("mnl").value = mnl;
-  document.getElementById("fmd").value = fmd; 
- // Store document ID for update
-  window.currentEditId = id;
-};
-
-// Fill inputs when Detail button is clicked
-window.viewitem = function (id, name, nbr, uis, qty, prc, exp, ctg, sup, imp, con, rol, mnl, fmd) {
-  
-  
-  document.getElementById("docIdHolder").value = id;
- 
- // Store document ID for update
-  window.currentEditId = id;
-  deleteitem();
-};
-
-// Update record in Firestore
-window.updateitem = async function () {
-  if (!window.currentEditId) {
-    alert("Please select a record to view first.");
-    return;
-  }
-  if (document.getElementById("proj").value === "") {
-    document.getElementById("proj").value = document.getElementById("proj").placeholder;
-    }
-  if (document.getElementById("task").value === "") {
-    document.getElementById("task").value = document.getElementById("task").placeholder;
-    }
-   if (document.getElementById("team").value === "") {
-    document.getElementById("team").value = document.getElementById("team").placeholder;
-   }
-   
-   document.getElementById("proj").placeholder = "Project Codes";
-   document.getElementById("task").placeholder = "Task Codes";
-   document.getElementById("team").placeholder = "Team Codes";
-   
-
- 
-  const name = document.getElementById("projname").value;
-  
-  const proj = document.getElementById("proj").value;
-  const task = document.getElementById("task").value;
-  const team = document.getElementById("team").value;
- 
-  
-
-  if (name === "" || nbr === "" || uis === "" || qty === "" || prc === "" || ctg === "" || sup === "" || imp === "" || con === ""){
-    alert("Please Enter all Manadatory data of the item");
-    return;
-  }
-
-const expiryInput = document.getElementById("exp").value.trim();
-if (expiryInput !== "") {
-  if (!isValidDate(expiryInput)) {
-    alert("Please Select a valid Expiry Date");
-    return; // Stop update if invalid
-  }
-}
- const startdtInput = document.getElementById("startdt").value.trim();
-if (startdtInput !== "") {
-  if (!isValidDate(startdtInput)) {
-    alert("Please Enter a valid Task Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
-    return; // Stop update if invalid
-  }
-}
- const startdt = startdtInput;
-// const exp = expiryInput === "" ? null : expiryInput;
-
-const enddtInput = document.getElementById("enddt").value.trim();
-if (enddtInput !== "") {
-  if (!isValidDate(enddtInput)) {
-    alert("Please Enter a valid End Date in YYYY-MM-DD format (e.g. 2026-03-31)");
-    return; // Stop update if invalid
-  }
-}
- const enddt = enddtInput;
-  try {
-    await updateDoc(doc(db, "taskmaster", window.currentEditId), {
-      projnbr: parseInt(projnbr),
-      tasknbr: parseInt(tasknbr),
-      teamnbr: parseInt(teamnbr),
-      projname: projname,
-      taskname: taskname,
-      teamname: teamname,
-      startdt: startdt,
-      enddt: enddt,
-      createdAt: serverTimestamp() 
-           
-    });
-
-    alert("item updated successfully!");
-    window.currentEditId = null;
-     clearInputs();
-    loadtaskmaster();
-  } catch (error) {
-    console.error("Update error:", error);
-  }
-};
-
-
   // Auto-load data when pnbr opens (like SQL SELECT * FROM table)
   
-  loadtaskmaster();
+//  loadassgmaster();
 
-
-
-
-//  Load Firestore data into <datalists>
-async function loadcodestables() {
-
-     
- try {
-    const tasklist = document.getElementById("tasks");
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "taskcodes")); 
-
-    snapshot.forEach((doc) => {
-      const data = doc.data();
-
-      const option = document.createElement("option");
-      option.value = data.tasknbr; // This is what gets inserted into the input
-      option.textContent = `${data.tasknbr} - ${data.taskname}`;
-
-      
-      tasklist.appendChild(option);
-    });
-
+function manageemplee() {  
+          window.location = `./empl-add-del.html?param1=${paramId}&param2=${paramnm}`; 
   }
+window.manageemplee = manageemplee; // ⭐ IMPORTANT LINE
 
-    catch (error) {
-    console.error("Error loading Task Codes:", error);
+function manageassg() {        
+         window.location = `./assg-add-del.html?param1=${paramId}&param2=${paramnm}`;
+ }
+window.manageassg = manageassg; // ⭐ IMPORTANT LINE
+
+function assignassg() {  
+         window.location = `./assg-link-delink.html?param1=${paramId}&param2=${paramnm}`; 
   }
+window.assignassg = assignassg; // ⭐ IMPORTANT LINE
 
-try {
-    const projlist = document.getElementById("projs");
-    const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "projcodes")); 
-
-    snapshot.forEach((doc) => {
-      const data = doc.data();
-
-      const option = document.createElement("option");
-      option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;
-
-      
-      projlist.appendChild(option);
-    });
-
+function updateassg() {  
+         window.location = `./update-assgs.html?param1=${paramId}&param2=${paramnm}`; 
   }
+window.updateassg = updateassg; // ⭐ IMPORTANT LINE
 
-    catch (error) {
-    console.error("Error loading Task Codes:", error);
+function manageteam() {  
+         window.location = `./team-add-del.html?param1=${paramId}&param2=${paramnm}`; 
   }
+window.manageteam = manageteam; // ⭐ IMPORTANT LINE
 
 
-}
+function linkteam() {  
+         window.location = `./empl-link-delink.html?param1=${paramId}&param2=${paramnm}`; 
+  }
+window.linkteam = linkteam; // ⭐ IMPORTANT LINE
 
-loadcodestables();
+
+
+// 🔹 user Login
+window.loginrtn = async function () {
+  
+  const userId = document.getElementById("userId").value;
+//  const usrpassword = document.getElementById("usrpassword").value;
+
+  const usrpassword = "usrno2pw";
+  
+if (userId === "" || usrpassword === "" ){
+    alert("Please Enter all Manadatory datas of the User");
+    return;
+  } 
+ 
+    const docRef = doc(db, "usertable", userId);    
+    const existingDoc = await getDoc(docRef);
+     if (!existingDoc.exists()) {
+      alert("User Not Found!");
+      return;
+    }
+    const data = existingDoc.data();
+        if (data.password !== usrpassword) {
+       alert("Invalid Password!");
+      return;
+    }
+         
+       paramId = data.ownerId;
+       paramnm = data.ownernm;
+    //   document.getElementById("comp-name").textContent = paramnm;
+       document.getElementById("comp-name1").textContent = paramnm;
+    //   const paramId = "user1";
+    //   const paramnm = "Asad";
+       console.log(paramId);
+       console.log(paramnm);
+// window.location.href = `./Index-team.html?param1=${paramId}&param2=${paramnm}`; 
+    logindiv.style.display = "none";
+    loadassgmaster();
+    projectdisplaydiv.style.display = "block";
+    menubtn.style.display = "block";
+    document.getElementById("menubtn").disabled = false;  
+ 
+  
+};
+
+
+  
 
 
 
@@ -1445,6 +1116,7 @@ function printInvoice() {
             padding: 5vw;
             background: #a3c2c2;
             background: #b3ffb3; 
+            
           }
           h4 {
             text-align: center;
@@ -1457,7 +1129,8 @@ function printInvoice() {
           }                    
        @media print {
           td {
-            border: 0.2vw solid black; 
+        /*    border: 0.2vw solid black;  */ 
+            border: 0.2vw solid black;
             padding: 9px;         
          }
             td:nth-child(1),
@@ -1467,12 +1140,11 @@ function printInvoice() {
            td:nth-child(6) {
             text-align: center;
           }
-           td:nth-child(2),        
-            td:nth-child(3) {       
+           td:nth-child(5),        
+            td:nth-child(6) {       
             colspan="2";           
           }  
-          
-            td:nth-child(3) {
+            td:nth-child(5) {
            border-right: 1px solid black !important;
           } 
             button {
@@ -1486,7 +1158,8 @@ function printInvoice() {
             font-weight: 600;
             font-size: 50px;
             color: #3b021c;
-            border: 0.2vw solid black;
+        /*    border: 0.2vw solid black;   */
+                 border: 0.2vw solid black;   
             padding: 12px;                                  
             }            
          }    
@@ -1510,11 +1183,13 @@ function printInvoice() {
   }
 
 .invoice-wrapper {
-  max-width: 800px;
-  margin: 20px auto; /* Centers the invoice */
-  padding: 30px;
+ 
+/*  max-width: 800px;  */
+/*  margin: 20px auto;  */  /* Centers the invoice */
+/*  padding: 30px;  */
   background-color: #ffffff;
   background-color: #ccddff;
+ 
   border: 0px solid #eee;
   border-radius: 8px; /* Slightly rounded corners */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -1527,12 +1202,16 @@ function printInvoice() {
     background-color: transparent;
   }
   .invoice-wrapper {
+    max-width: 1000px;
     box-shadow: none;
     border: none;
-    margin: 0;
-    padding: 0;
+  /*  margin: 0;  */
+  /*  padding: 0;  */
+  margin: 5px auto; /* Centers the invoice */
+  padding: 3px;
   }
 }
+
   </style>
  </head>
 <body>
@@ -1543,7 +1222,7 @@ function printInvoice() {
         <div style="text-align: left;">
           <!-- Your existing header -->
           
-          <h4>Projects & Their Tasks List</h4>
+          <h4>Projects Listasad</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>

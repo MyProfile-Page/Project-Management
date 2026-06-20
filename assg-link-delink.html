@@ -718,7 +718,7 @@ height: 5vh;
       <ul class="navbar-nav ms-auto">    
 
         <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="proj.html" >Back</a>   
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="empl.html" >Back</a>   
         </li>
        <li class="nav-item">
        <label></label>            
@@ -738,7 +738,7 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Tasks to Projects</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Employees Assignments</Label>
 </div>
 </div> 
 
@@ -760,14 +760,14 @@ height: 5vh;
 <div class="gap1vh"></div>
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" placeholder="Select Project Code" >
-<datalist id="projs"></datalist>
+<input list="empls" class="input-field-col" title="Select Employee" id="emplnbr" name="aempl" placeholder="Select Employee" >
+<datalist id="empls"></datalist>
 </div> 
 
 <div class="gap1vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
- <input list="tasks" class="input-field-col" title="Select Task" id="tasknbr" name="atask" placeholder="Select Task Code" >
- <datalist id="tasks"></datalist>
+ <input list="assgs" class="input-field-col" title="Select Assignment" id="assgnbr" name="aassg" placeholder="Select assignment Code" >
+ <datalist id="assgs"></datalist>
 </div>
 <input type="hidden" id="docIdHolder">
 
@@ -795,9 +795,9 @@ height: 5vh;
     <thead>
      
       <tr style="height: 10vh;">
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Project Title</th>
+        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Name</th>
          
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Task Title</th>              
+        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Assignment Description</th>              
         
         <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
         
@@ -873,11 +873,11 @@ const firebaseConfig = {
 
   const params = new URLSearchParams(window.location.search);
 let selectedStatus = "none";
-let projname = "none";
-let prevprojname = "none";
+let emplname = "none";
+let prevemplname = "none";
 let teamnamegb = "none";
-let tasknamegb = "none";
-let projnamegb = "none";
+let assgnamegb = "none";
+let emplnamegb = "none";
 let paramId = "none";
 let paramnm = "none";
 paramId = params.get("param1");
@@ -891,21 +891,21 @@ document.getElementById("comp-name").textContent = paramnm;
 // 🔹 CREATE (Insert Data)
 window.additem = async function () {
   
-  const projnbr = document.getElementById("projnbr").value;
-  const tasknbr = document.getElementById("tasknbr").value;
+  const emplnbr = document.getElementById("emplnbr").value;
+  const assgnbr = document.getElementById("assgnbr").value;
   const ownerId = paramId;
    
 //  const ownerId = document.getElementById("name").value;
 
 
 
-if (!isValidSelection("projnbr", "projs")) {
-  alert("A valid Project not selected from the Projects list.");
+if (!isValidSelection("emplnbr", "empls")) {
+  alert("A valid Employee not selected from the Employees list.");
   return;
 }
 
-if (!isValidSelection("tasknbr", "tasks")) {
-  alert("A valid Task not selected from the Tak Codes list.");
+if (!isValidSelection("assgnbr", "assgs")) {
+  alert("A valid Assignment not selected from the Tak Codes list.");
   return;
 }
 
@@ -918,35 +918,35 @@ if (!isValidSelection("tasknbr", "tasks")) {
 
  
 
-    const recordIdk = `${ownerId}_${tasknbr}`;
-    const docRef1 = doc(db, "taskcodes", recordIdk.toString());
+    const recordIdk = `${ownerId}_${assgnbr}`;
+    const docRef1 = doc(db, "assgcodes", recordIdk.toString());
     // 🔹 Check if document already exists
     const existingDoc1 = await getDoc(docRef1);
     if (existingDoc1.exists()) {
       const data = existingDoc1.data();
-      tasknamegb = data.taskname;      
+      assgnamegb = data.assgname;      
     }
     else { 
       console.log(recordIdk);
-      console.log(tasknbr);
+      console.log(assgnbr);
       console.log(ownerId);
-      alert("Task Code does not exists!");
+      alert("Assignment Code does not exists!");
       return;
     }
 
-    const recordIdp = `${ownerId}_${projnbr}`;
-    const docRef2 = doc(db, "projcodes", recordIdp.toString());
+    const recordIdp = `${ownerId}_${emplnbr}`;
+    const docRef2 = doc(db, "emplcodes", recordIdp.toString());
     // 🔹 Check if document already exists
     const existingDoc2 = await getDoc(docRef2);
     if (existingDoc2.exists()) {
       const data = existingDoc2.data();
-      projnamegb = data.projname;      
+      emplnamegb = data.emplname;      
     }
     else { 
       console.log(recordIdp);
-      console.log(projnbr);
+      console.log(emplnbr);
       console.log(ownerId);
-      alert("Project Code does not exists!");
+      alert("Employee Code does not exists!");
       return;
     }
 
@@ -956,28 +956,28 @@ if (!isValidSelection("tasknbr", "tasks")) {
   try {
 
     // 🔹 Use nbr as document ID
-    const recordIdm = `${ownerId}_${projnbr}_${tasknbr}`;
- //   const recordIdm = `${projnbr}_${tasknbr}`;
-    const docRefm = doc(db, "taskmaster", recordIdm.toString());
+    const recordIdm = `${ownerId}_${emplnbr}_${assgnbr}`;
+ //   const recordIdm = `${emplnbr}_${assgnbr}`;
+    const docRefm = doc(db, "assgmaster", recordIdm.toString());
 
     // 🔹 Check if document already exists
     const existingDoc = await getDoc(docRefm);
 
     if (existingDoc.exists()) {
-      alert("Task already linked to the Project!");
+      alert("Assignment already linked to the Employee!");
       return;
     }
     console.log(recordIdm);
     // 🔹 Create document with nbr as ID
     await setDoc(docRefm, {
             
-      projnbr: projnbr,
-      tasknbr: tasknbr, 
+      emplnbr: emplnbr,
+      assgnbr: assgnbr, 
       startdt: "Unset",
       enddt: "Unset",
       ownerId: paramId,
-      taskname: tasknamegb,
-      projname: projnamegb,
+      assgname: assgnamegb,
+      emplname: emplnamegb,
       delynbr:  0,
       delyname:  "none",
       status: "Unset",
@@ -985,23 +985,23 @@ if (!isValidSelection("tasknbr", "tasks")) {
     
     });
 
-    alert("Task Attached to Project!");
+    alert("Assignment Attached to Employee!");
     clearInputs();
-    loadtaskmaster(); // refresh table
+    loadassgmaster(); // refresh table
 
   } catch (error) {
-    console.error("Error linking Task:", error);
-    alert("Error linking Task. Check console.");
+    console.error("Error linking Assign:", error);
+    alert("Error linking Assignment. Check console.");
   }
 };
   // 🔹 READ (Load Data into Table)
-async function loadtaskmaster() {
+async function loadassgmaster() {
   
   
   const table = document.getElementById("itemTable");
   
   table.innerHTML = "";
-  const collectionRef = collection(db, "taskmaster");
+  const collectionRef = collection(db, "assgmaster");
   const q = query(collectionRef, where("ownerId", "==", paramId));
 
   const querySnapshot = await getDocs(q);
@@ -1011,8 +1011,8 @@ async function loadtaskmaster() {
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
-  projname = `${data.projname}`;
-  if (prevprojname && projname !== prevprojname) {
+  emplname = `${data.emplname}`;
+  if (prevemplname && emplname !== prevemplname) {
 
         table.innerHTML += `
              <tr class="tr-main-row"  >
@@ -1030,14 +1030,14 @@ async function loadtaskmaster() {
     table.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.projname !== prevprojname ? data.projname : ""}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.taskname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.assgname}</td>
         
         
 
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center;">
-          <button onclick="viewitem('${docId}', '${data.tasknbr}', '${data.taskname}', )" class = "edit-delt-btn";>Detach</button>
+          <button onclick="viewitem('${docId}', '${data.assgnbr}', '${data.assgname}', )" class = "edit-delt-btn";>Detach</button>
           
         </td>                    
         
@@ -1046,7 +1046,7 @@ async function loadtaskmaster() {
         
      
     `;
- prevprojname = data.projname; 
+ prevemplname = data.emplname; 
   });
 
     
@@ -1178,30 +1178,30 @@ async function deleteitem() {
  const id = document.getElementById("docIdHolder").value;
 
     if (!id) {
-        alert("No Task selected for dellinking");
-        console.log("No Task selected for delinking");
+        alert("No Assignment selected for dellinking");
+        console.log("No Assignment selected for delinking");
         return;
     }
 
-    await deleteDoc(doc(db, "taskmaster", id));
-    alert("Task Dellinked from Project");
+    await deleteDoc(doc(db, "assgmaster", id));
+    alert("Assignment Dellinked from Employee");
     clearInputs();
-    loadtaskmaster();
+    loadassgmaster();
 //    console.log("Deleted:", id);
 };
   
-//    await deleteDoc(doc(db, "taskmaster", id));
+//    await deleteDoc(doc(db, "assgmaster", id));
 //    alert("item deleted from Firestore");
 //    clearInputs();
-//    loadtaskmaster();
+//    loadassgmaster();
 //  };
 
   // Clear input fields
 
 window.clearInputs = async function () {     
     
-    document.getElementById("tasknbr").value = "";
-    document.getElementById("projnbr").value = "";
+    document.getElementById("assgnbr").value = "";
+    document.getElementById("emplnbr").value = "";
    
     
 //    document.getElementById("delynbr").value = "";
@@ -1282,26 +1282,26 @@ window.updateitem = async function () {
     alert("Please select a record to view first.");
     return;
   }
-  if (document.getElementById("proj").value === "") {
-    document.getElementById("proj").value = document.getElementById("proj").placeholder;
+  if (document.getElementById("empl").value === "") {
+    document.getElementById("empl").value = document.getElementById("empl").placeholder;
     }
-  if (document.getElementById("task").value === "") {
-    document.getElementById("task").value = document.getElementById("task").placeholder;
+  if (document.getElementById("assg").value === "") {
+    document.getElementById("assg").value = document.getElementById("assg").placeholder;
     }
    if (document.getElementById("team").value === "") {
     document.getElementById("team").value = document.getElementById("team").placeholder;
    }
    
-   document.getElementById("proj").placeholder = "Project Codes";
-   document.getElementById("task").placeholder = "Task Codes";
+   document.getElementById("empl").placeholder = "Employee Codes";
+   document.getElementById("assg").placeholder = "Assignment Codes";
    document.getElementById("team").placeholder = "Team Codes";
    
 
  
-  const name = document.getElementById("projname").value;
+  const name = document.getElementById("emplname").value;
   
-  const proj = document.getElementById("proj").value;
-  const task = document.getElementById("task").value;
+  const empl = document.getElementById("empl").value;
+  const assg = document.getElementById("assg").value;
   const team = document.getElementById("team").value;
  
   
@@ -1321,7 +1321,7 @@ if (expiryInput !== "") {
  const startdtInput = document.getElementById("startdt").value.trim();
 if (startdtInput !== "") {
   if (!isValidDate(startdtInput)) {
-    alert("Please Enter a valid Task Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    alert("Please Enter a valid Assignment Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
     return; // Stop update if invalid
   }
 }
@@ -1337,12 +1337,12 @@ if (enddtInput !== "") {
 }
  const enddt = enddtInput;
   try {
-    await updateDoc(doc(db, "taskmaster", window.currentEditId), {
-      projnbr: parseInt(projnbr),
-      tasknbr: parseInt(tasknbr),
+    await updateDoc(doc(db, "assgmaster", window.currentEditId), {
+      emplnbr: parseInt(emplnbr),
+      assgnbr: parseInt(assgnbr),
       teamnbr: parseInt(teamnbr),
-      projname: projname,
-      taskname: taskname,
+      emplname: emplname,
+      assgname: assgname,
       teamname: teamname,
       startdt: startdt,
       enddt: enddt,
@@ -1353,7 +1353,7 @@ if (enddtInput !== "") {
     alert("item updated successfully!");
     window.currentEditId = null;
      clearInputs();
-    loadtaskmaster();
+    loadassgmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1362,7 +1362,7 @@ if (enddtInput !== "") {
 
   // Auto-load data when pnbr opens (like SQL SELECT * FROM table)
   
-  loadtaskmaster();
+  loadassgmaster();
 
 
 
@@ -1372,48 +1372,48 @@ async function loadcodestables() {
 
      
  try {
-    const tasklist = document.getElementById("tasks");
+    const assglist = document.getElementById("assgs");
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "taskcodes")); 
+    const snapshot = await getDocs(collection(db, "assgcodes")); 
 
     snapshot.forEach((doc) => {
       const data = doc.data();
 
       const option = document.createElement("option");
-      option.value = data.tasknbr; // This is what gets inserted into the input
-      option.textContent = `${data.tasknbr} - ${data.taskname}`;
+      option.value = data.assgnbr; // This is what gets inserted into the input
+      option.textContent = `${data.assgnbr} - ${data.assgname}`;
 
       
-      tasklist.appendChild(option);
+      assglist.appendChild(option);
     });
 
   }
 
     catch (error) {
-    console.error("Error loading Task Codes:", error);
+    console.error("Error loading Assignment Codes:", error);
   }
 
 try {
-    const projlist = document.getElementById("projs");
+    const empllist = document.getElementById("empls");
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "projcodes")); 
+    const snapshot = await getDocs(collection(db, "emplcodes")); 
 
     snapshot.forEach((doc) => {
       const data = doc.data();
 
       const option = document.createElement("option");
-      option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;
+      option.value = data.emplnbr; // This is what gets inserted into the input
+      option.textContent = `${data.emplnbr} - ${data.emplname}`;
 
       
-      projlist.appendChild(option);
+      empllist.appendChild(option);
     });
 
   }
 
     catch (error) {
-    console.error("Error loading Task Codes:", error);
+    console.error("Error loading Assignment Codes:", error);
   }
 
 
@@ -1543,7 +1543,7 @@ function printInvoice() {
         <div style="text-align: left;">
           <!-- Your existing header -->
           
-          <h4>Projects & Their Tasks List</h4>
+          <h4>Employees & Their assgs List</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>
