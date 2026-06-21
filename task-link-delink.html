@@ -718,7 +718,7 @@ height: 5vh;
       <ul class="navbar-nav ms-auto">    
 
         <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="proj.html" >Back</a>   
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
         </li>
        <li class="nav-item">
        <label></label>            
@@ -738,7 +738,7 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Tasks to Projects</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add Tasks</Label>
 </div>
 </div> 
 
@@ -874,7 +874,7 @@ const firebaseConfig = {
   const params = new URLSearchParams(window.location.search);
 let selectedStatus = "none";
 let projname = "none";
-let prevprojname = "none";
+let prevprojname = "";
 let teamnamegb = "none";
 let tasknamegb = "none";
 let projnamegb = "none";
@@ -987,6 +987,8 @@ if (!isValidSelection("tasknbr", "tasks")) {
 
     alert("Task Attached to Project!");
     clearInputs();
+    projname = "none";
+    prevprojname = "";
     loadtaskmaster(); // refresh table
 
   } catch (error) {
@@ -1186,6 +1188,8 @@ async function deleteitem() {
     await deleteDoc(doc(db, "taskmaster", id));
     alert("Task Dellinked from Project");
     clearInputs();
+    projname = "none";
+    prevprojname = "";
     loadtaskmaster();
 //    console.log("Deleted:", id);
 };
@@ -1353,6 +1357,8 @@ if (enddtInput !== "") {
     alert("item updated successfully!");
     window.currentEditId = null;
      clearInputs();
+    projname = "none";
+    prevprojname = "";
     loadtaskmaster();
   } catch (error) {
     console.error("Update error:", error);
@@ -1421,7 +1427,10 @@ try {
 
 loadcodestables();
 
-
+function mainappl() {  
+         window.location.href = `./proj.html?param1=${paramId}&param2=${paramnm}`; 
+  }
+window.mainappl = mainappl; // ⭐ IMPORTANT LINE
 
 
 

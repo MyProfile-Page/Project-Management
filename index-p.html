@@ -16,6 +16,11 @@
           background: #f7f568;
           background: #f7f681;
           background: LightCyan;
+          
+           background-image: url("cloud-image1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* Ensures the image covers the entire screen */
          
       /*    background:  */
           line-height: 0.8;         
@@ -38,7 +43,7 @@
  } 
  }
  
-.proj-table-container {
+.custom-table-container {
     height: 76vh;        /* Fixed height */
    
      overflow-y: auto;     /* vertical scrollbar */
@@ -47,7 +52,7 @@
 }
 
 @media (max-width: 768px) {
-.proj-table-container {
+.custom-table-container {
   height: 76vh;        /* Fixed height */
     
      overflow-x: auto;     /* horizontal scrollbar */
@@ -57,7 +62,7 @@
 }
 
 
- .proj-table {
+ .custom-table {
     border-collapse: collapse;
     table-layout: fixed; /* VERY IMPORTANT for percentage widths */
     width: 99%;
@@ -69,21 +74,21 @@
     
 }   
 
- /*  .proj-table tr:nth-child(even) {   */
+ /*  .custom-table tr:nth-child(even) {   */
  /*    background-color: #D6EEEE;         */ 
  /*    background-color: rgba(150, 212, 212, 0.4);   */
  /* }   */
- .proj-table td:nth-child(2)  {
+ .custom-table td:nth-child(2)  {
      text-align: left;    
  }
 
-.proj-table td:nth-child(3),
-.proj-table td:nth-child(8)   {
+.custom-table td:nth-child(3),
+.custom-table td:nth-child(8)   {
      text-align: left;    
  }
 
   
-  .proj-table th {
+  .custom-table th {
     background-color: #f2f2f2; /* Light gray background for header */
    /* color: #333;  */
     color:black;
@@ -95,7 +100,7 @@
 
  
 
-  .proj-table td {
+  .custom-table td {
     /* background-color: #f2f2f2;  */ /* Light gray background for header */
     /* color: #333;  */
     
@@ -106,17 +111,17 @@
   }
   
   
- .proj-table tr:hover { background-color: #e6f2ff;
+ .custom-table tr:hover { background-color: #e6f2ff;
   }
   
   
 
- .proj-table td:nth-child(5),
- .proj-table td:nth-child(6) {
+ .custom-table td:nth-child(5),
+ .custom-table td:nth-child(6) {
   text-align: center;
   }
 
-.proj-table tr:last-child {
+.custom-table tr:last-child {
   font-size: 1.1rem;
   font-weight: bold;
   background-color: #e6f2ff;
@@ -127,7 +132,7 @@
 
  .grid-container {
             display: grid;
-            grid-tprojate-columns: repeat(2, 1fr); /* 2 equal columns */
+            grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
             gap: 2vw;
             padding: 0.4vw;
             grid-auto-rows: auto;
@@ -149,7 +154,7 @@
 @media (max-width: 768px) {
 .grid-container {
   display: grid;
- grid-tprojate-columns: 1fr; /* Stack vertically */
+ grid-template-columns: 1fr; /* Stack vertically */
 grid-auto-flow: row;
 /* height: 90vh; */
 /* gap: 0.5vw; */
@@ -199,7 +204,7 @@ grid-auto-flow: row;
 }
 
 @media (max-width: 768px) {
- .projTableBody-Cls {
+ .usertableBody-Cls {
 white-space: normal; 
 overflow-wrap: break-word;
 word-wrap: break-word; 
@@ -209,16 +214,57 @@ hyphens: auto;
 }
 }
 
-
-
-
-
-::placeholder {
-  font-size: clamp(0.9rem, 1.0vw, 1.1rem); 
-  font-weight: 600;
-  color: black; 
-  
+.Menubar-header {
+font-family: calibri;
+ font-size: clamp(1.0rem, 1.1vw, 1.2rem); 
+font-weight: 500;
+color: black; 
+font-style: italic;
+font-weight: 550;
 }
+
+#apl-hdr {
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);  
+  font-weight:  700;
+  color: lightblue; 
+  text-decoration: none; 
+  text-align: center;
+}
+
+#menu-word-prp {
+ font-size: clamp(1.0rem, 1.2vw, 1.3rem);  
+  font-weight:  400;
+  color: lightblue; 
+  text-decoration: none; 
+  text-align: center;
+}
+
+.menu-bar-prp {
+ font-size: clamp(1.0rem, 1.2vw, 1.3rem);  
+  font-weight:  200;
+  color: yellow; 
+  text-decoration: none; 
+  text-align: center;
+  border: none;
+}
+
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px; /* Adjust size as needed */
+    font-weight: 500;
+    color: black; 
+  }
+
+@media (max-width: 767px) {
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px; /* Adjust size as needed */
+    font-weight: 500;
+    color: black; 
+  }
+}
+
 
 .pr-bk-links {
     border: 0.0vw solid black; 
@@ -239,7 +285,13 @@ background-color: #9bc7be;
 
 }
 
-
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 5vh; 
+}
 
 .tr-btn-row {
 height: 6vh;
@@ -249,7 +301,7 @@ background-color: #9bc7be;
 
 @media (max-width: 768px) {
 .tr-main-row {
-height: 3vh;
+height: 4vh;
 background-color: #9bc7be;
 }
 }
@@ -261,7 +313,15 @@ background-color: #9bc7be;
 }
 }
 
-
+@media (max-width: 768px) {
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 3vh; 
+}
+}
 @media (max-width: 768px) {
 .tr-btn-row {
 height: 2vh;
@@ -279,9 +339,24 @@ background-color: #9bc7be;
 
 }
 
+.item-db {
+    border: 0.0vw solid black; 
+    text-align: center;
+    margin-top: 3vh;
+   
+}
 
+@media (max-width: 768px) {
+.item-db {
+    border: 0.0vw solid black; 
+    text-align: center;
+    margin-top: 2vh;
+    
+}
 
-.projs-add-upd  {
+}
+
+.items-add-upd  {
  font-size: clamp(0.7rem, 1.5vw, 1.6rem);
  font-weight: 650;
  width: 98%; 
@@ -293,7 +368,7 @@ background-color: #9bc7be;
 }
 
 @media (max-width: 768px) {
-.projs-add-upd  {
+.items-add-upd  {
  font-size: clamp(1.3rem, 1.9vw, 2.1rem);
  font-weight: 450;
  width: 98%; 
@@ -307,26 +382,45 @@ background-color: #9bc7be;
 }
 
 .input-field {
- font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+ font-size: 12px;
+ font-weight: 500;
  height: 8vh;
- font-weight: 450; 
- border: 0.1vw solid black; 
+  border: 2px solid black; 
  text-align: center;
  width: 70%;
 }
 
 @media (max-width: 768px) {
 .input-field {
- font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+ font-size: 12px;
+ font-weight: 500;
  height: 5vh;
- font-weight: 600; 
  width: 100%;
  text-align: center;
+ border: 2px solid black; 
 }
 }
 
 
+.input-field-col {
+ font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+ height: 8vh;
+ background-color: #51DEED; 
+ background-color: LightYellow;  
+ background-color: #f8f2ed;
+ font-weight: 450; 
+ border: 0.1vw solid black; 
+}
 
+@media (max-width: 768px) {
+.input-field-col {
+ font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+ height: 5vh;
+ background-color: #51DEED; 
+ background-color: #f8f2ed; 
+ font-weight: 600; 
+}
+}
 
 
 
@@ -334,8 +428,8 @@ background-color: #9bc7be;
   width: 50%;
   height: 8.0vh;
   text-align: center; 
-  font-weight: 400; 
-  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  font-weight: 500; 
+  font-size: clamp(0.7rem, 1.0vw, 1.1rem);
   border-radius: 12px;
 }
 
@@ -344,48 +438,75 @@ background-color: #9bc7be;
   width: 80%;
   height: 5.0vh;
   text-align: center; 
-  font-weight: 400; 
+  font-weight: 500; 
   font-size: clamp(0.9rem, 1.2vw, 1.3rem);
-  border-radius: 12px; 
-  
+  border-radius: 12px;
 }
 }
 .add-btn {
   width: 24%; 
   text-align: center;
   background-color: #fafafa; 
-  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+  font-size: 12px;
   height: 8vh;
-  font-weight: 550; 
-  border-radius: 12px;
+  font-weight: 500; 
+  border-radius: 2px;
+  border: 2px solid black;
  }
-
-
+.upd-btn {
+  width: 9%; 
+  text-align: center;
+  background-color: #fafafa; 
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 6vh;
+  font-weight: 600; 
+  border: 0.01vw solid black;
+ }
+.clr-btn {
+  width: 7%; 
+  text-align: center;
+  background-color: #fafafa; 
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 8vh;
+  font-weight: 600; 
+  border: 0.01vw solid black;
+ }
 @media (max-width: 768px) {
 .add-btn {
-  width: 25%; 
+  width: 100%; 
   text-align: center;
   /* background-color: LightGrey; */
   background-color: #fafafa;
-  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+  height: 6vh;
+  border-radius: 2px; 
+  font-size: 12px;
+  border: 2px solid black;
+ }
+ }
+@media (max-width: 768px) {
+.upd-btn {
+  width: 11%; 
+  text-align: center;
+  /* background-color: LightGrey; */
+  background-color: #fafafa;
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 4vh;
+  font-weight: 600; 
+   border: 0.02vw solid black;
+ }
+}
+@media (max-width: 768px) {
+.clr-btn {
+  width: 8%; 
+  text-align: center;
+  /* background-color: LightGrey; */
+  background-color: #fafafa;
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
-  border-radius: 12px;
+   border: 0.02vw solid black;
  }
- }
-.prt-btn {
-  width: 0%; 
-  text-align: right;
-  background-color: transparent;
-  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
-  height: 0vh;
-  font-weight: 480; 
-  border: 0.0vw solid black;
-  border-radius: 0px;
-  margin-right: -22vw;
-  color: white;
-  
- }
+}
 
 .ext-btn {
   width: 20%; 
@@ -414,33 +535,79 @@ background-color: #9bc7be;
   margin-top: 3vh:
  }
 }
+.prt-btn {
+  width: 0%; 
+  text-align: right;
+  background-color: transparent;
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+  height: 0vh;
+  font-weight: 480; 
+  border: 0.0vw solid black;
+  border-radius: 0px;
+  margin-right: -22vw;
+  
+ }
 
- .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.option[disabled][selected] {
+    font-size: clamp(1.1rem, 2.3vw, 2.4rem);
+    color: grey; 
 }
 
-.navbar .navbar-toggler-icon {
-    font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
+  .box11 {  
+  width: 75%;
+  margin: 0 auto; 
+  margin-top: 10vh; 
+  border: 0.0vw solid Black;
+ }
+@media (max-width: 768px) {
+.box11 {  
+  width: 75%;
+  margin: 0 auto; 
+  margin-top: 5vh;
+  margin-top: 5vh;  
+ }
 }
+
+.top-div {  
+ border: 1px solid black;
+ margin: 0 auto; display: flex;
+ justify-content: space-between;
+ background-color: #666666;
+ color: white;
+ margin-top: 0vh; 
+ width: 100%;
+ height: 11vh;
+ }
+
+@media (max-width: 768px) {
+.top-div {  
+ border: 1px solid black;
+ margin: 0 auto; display: flex;
+ justify-content: space-between;
+ background-color: white;
+ color: black;
+ margin-top: 0.35vh; 
+ width: 99%;
+ height: 6.5vh;
+ }
+ }
+
 
   </style>
 </head>
 
 <body  class="body_cls">
 
-
-  <!-- 🌍 Navigation Bar Start -->
+ <!-- 🌍 Navigation Bar Start -->
 <nav class="navbar " >
 
-  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
+  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black;  ">
  
-<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
-<button onclick="printInvoice()" type="button" class="prt-btn"; >Print
-</button> 
-</div>
 
-<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
-<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
+
+<div style="border: 0vw solid yellow;  margin: 0 auto;">
+<Label id="comp-name" style="margin-left: 8vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: white;">
+</Label>
 </div> 
     <!-- Toggler -->
     <button id = "menubtn" class="navbar-toggler" type="button" 
@@ -455,14 +622,9 @@ background-color: #9bc7be;
 
     <!-- Collapsible menu -->
     <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
-      <ul class="navbar-nav ms-auto">    
+      <ul class="navbar-nav ms-auto">  
 
-        <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
-        </li>
-       <li class="nav-item">
-       <label></label>            
-        </li>
+      
 
       </ul>
     </div>
@@ -470,93 +632,49 @@ background-color: #9bc7be;
   </div>
 </nav>
   <!-- 🌍 Navigation Bar End --> 
-<div class="gap1vh"></div>
-
-<!-- Following are divs which are addition of Navigation Bar -->
 
 
 
-<div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
-<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Projects</Label>
-</div>
-</div> 
+ <div class="gap3vh"></div>
 
-<!-- Above are divs which are addition of Navigation Bar -->
+<div style="display: flex; width: 60%; border: 0.0vw dashed black; margin: 0 auto; background-color: Transparent; margin-top: 0vh;">
 
-<div class="gap3vh"></div>
-<div class="gap4vh"></div>
-<div style="display: flex; width: 98%; border: 0.2vw dashed black; margin: 0 auto; background-color: #9bc7be;">
 
  <!-- Input Form -->
 <div class="gap3vh"></div>
 <div class="gap3vh"></div>
-<div class = "projs-add-upd" > 
-<div class="gap3vh"></div>
-<div class="gap3vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="number" class="input-field" id="projnbr" min="1" max="99999999"
-  placeholder="    Project Number"  > 
-</div>
-<div class="gap1vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="text" class="input-field" id="projname" placeholder="Project Name"  >
- 
-</div>
+<div class = "items-add-upd" > 
+<div class="gap4vh"></div>
+<div class="gap4vh"></div>
 
 
 
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
-  
-  <button onclick="addproj()" type="button" class="add-btn";>Add</button>
-  
+
+<div style="justify-content: center; display: flex;  border: 0.0vw solid black; margin: 0 auto; ">
+  <input type="text" class="input-field" id="userId" placeholder="User Id"    >
+</div>
+<div class="gap1vh"></div> 
+<div style="justify-content: center; display: flex; justify-content: center;  border: 0.0vw solid black; margin: 0 auto;">
+  <input type="text" class="input-field" id="password" placeholder="User Password"   >
+</div>
+<div class="gap1vh"></div> 
+
+
+<div style="display: flex; justify-content: center; width: 97%; border: 0px solid black; margin: 0 auto; margin-top: 3vh;">
+   <button onclick="additem()" type="button" class="add-btn"; style="clamp(0.8rem, 1.2vw, 1.4rem); font-weight: 500;">Sign In</button>
 </div>
 <div class="gap3vh"></div>
-<div class="gap3vh"></div>
 </div>
+
+<div class="gap3vh"></div>
+
 
 <div class="gap4vh"></div>
 
 
 </div> 
- <div class="gap3vh"></div>  <div class="projs-add-upd" style= "margin-top: -0.3vh;" >
+ <div class="gap3vh"></div> 
 
-<div class="gap2vh"></div>
-  <!-- HTML Table For showing all records of database-->
-<div id = "wholeprojTable" class="proj-table-container">
-  <table class="proj-table">
-    <thead>
-     
-      <tr>
-        <th style="text-align: center; width: 6%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Project Nbr</th>
-        <th style="text-align: center; width: 19%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Project Name</th>      
-        
-      
-        <th class="no-print" style="padding: 0.0vw; text-align: center; width: 13%; font-size: clamp(0.9rem, 1.1vw, 1.2rem); font-weight: 500; ">Action</th>
-      </tr>
-    </thead>
-    <tbody id="projTable" class = "projTableBody-Cls">
-       <tr>
-        <td  style="text-align: center; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
-        <td  style="text-align: center; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
-        <td style="text-align: center; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
-      </tr>
-     
-     
-     </tbody>
-  <tfoot>
-    <tr style="background-color: #c5effd; height: 3vh;>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     
-        
-    </tr>
-  </tfoot>
-  </table>
- </div>
-</div>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module">
@@ -578,6 +696,7 @@ import {
 
 
 
+const savedid = 0;
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCSZAx4aG_HY3_B-ZvRfS-Pyp3m5GgKDGs",
@@ -593,22 +712,70 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app); 
-  const params = new URLSearchParams(window.location.search);
-let paramId = "none";
-let paramnm = "none";
-paramId = params.get("param1");
-paramnm = params.get("param2");
+ 
+document.getElementById("comp-name").textContent = "Projects Task Management";
+// document.getElementById("comp-name").textContent = "Projects Tasks Management";
 
 
-document.getElementById("comp-name").textContent = paramnm;
+// 🔹 CREATE (Insert Data)
+window.additem = async function () {
+
+  
+  const userId = document.getElementById("userId").value;
+  const password = document.getElementById("password").value;
+  
+if (userId === "" || password === "" ){
+    alert("Please Enter all Manadatory datas of the User");
+    return;
+  }
+     
+ 
+
+    const docRef = doc(db, "usertable", userId);    
+    const existingDoc = await getDoc(docRef);
+     if (!existingDoc.exists()) {
+      alert("User Not Found!");
+      return;
+    }
+    const data = existingDoc.data();
+        if (data.password !== password) {
+       alert("Invalid Password!");
+      return;
+    }
+    
+       
+       const paramId = data.ownerId;
+       const paramnm = data.ownernm;
+    //   const paramId = "user1";
+    //   const paramnm = "Asad";
+       console.log(paramId);
+       console.log(paramnm);
+ window.location.href = `./proj.html?param1=${paramId}&param2=${paramnm}`; 
+
+     
+     
+  
+     
+
+
+
+     
+};
+
+
+  
+  
+
+
+
   // 🔹 READ (Load Data into Table)
-async function loadnewitemstable() {
+async function loadusertable() {
 
-  const table = document.getElementById("projTable");
+  const table = document.getElementById("usertable");
   
   table.innerHTML = "";
-  const collectionRef = collection(db, "projcodes");
-  const q = query(collectionRef, orderBy("projnbr", "asc"));
+  const collectionRef = collection(db, "usertable");
+  const q = query(collectionRef, orderBy("ownerId", "asc"));
   
   const querySnapshot = await getDocs(q);
 
@@ -624,11 +791,14 @@ async function loadnewitemstable() {
       <tr class="tr-main-row"  >
        
         
-        <td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.projnbr}</td>
-<td style="text-wrap: pretty; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.projname}</td>
-                <td style="border: 0.05vw solid black; text-align: center;">
+        <td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.ownerId}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.ownernm}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.userId}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.password}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.name}</td>
 
-           <button onclick="deleteproj('${docId}')" class="edit-delt-btn">Delete</button>
+                <td style="border: 0.05vw solid black; text-align: center;">
+           <button onclick="deleteitem('${docId}')" class="edit-delt-btn">Delete</button>
         </td>  
           
         </td>          
@@ -651,9 +821,11 @@ async function loadnewitemstable() {
   window.clearInputs = async function () {
   
     
-    document.getElementById("projnbr").value = "";
-    document.getElementById("projname").value = "";
-   
+    document.getElementById("ownernm").value = "";
+    document.getElementById("name").value = "";
+   document.getElementById("ownerId").value = "";
+   document.getElementById("userId").value = "";
+   document.getElementById("password").value = "";
 
   }
 
@@ -665,63 +837,33 @@ async function loadnewitemstable() {
 
 
 
+// Fill inputs when Edit button is clicked
+window.edititem = function (id, name) {
+  
+  document.getElementById("name").value = name;
+  
+  
+ 
+  
 
 
- // 🔹 DELETE (Remove Record)
-  window.deleteproj = async function (id) {
-    await deleteDoc(doc(db, "projcodes", id));
-    alert("Project deleted");
-    clearInputs();
-    loadnewitemstable();
-  };
-
-// 🔹 CREATE (Insert Data)
-window.addproj = async function () {
-  const projnbr = document.getElementById("projnbr").value;
-  const projname = document.getElementById("projname").value; 
-  const recordId = `${paramId}_${projnbr}`;  
-  try {
-
-    // 🔹 Use nbr as document ID
-     const docRef = doc(db, "projcodes", recordId.toString());
-    
-
-    // 🔹 Check if document already exists
- //   const existingDoc = await getDoc(docRef);
-
-   
-
-    // 🔹 Create document with nbr as ID
-    await setDoc(docRef, {
-      projnbr: parseInt(projnbr, 10),
-      projname: projname,
-      ownerId: paramId,     
-      createdAt: serverTimestamp()
-      // createdAt: new Date()
-    });
-
-    alert("New Project added");
-    
-    loadnewitemstable(); // refresh table
-
-  } catch (error) {
-    console.error("Error adding proj Code:", error);
-    alert("Error adding. Check console.");
-  }
+  // Store document ID for update
+  window.currentEditId = id;
 };
 
-  
-  loadnewitemstable();
+ // 🔹 DELETE (Remove Record)
+  window.deleteitem = async function (id) {
+    await deleteDoc(doc(db, "usertable", id));
+    alert("user deleted");
+    clearInputs();
+    loadusertable();
+  };
 
-function mainappl() {  
-         window.location.href = `./proj.html?param1=${paramId}&param2=${paramnm}`; 
-  }
-window.mainappl = mainappl; // ⭐ IMPORTANT LINE
 
 //  PRINT FUNCTION START
 
 function printInvoice() {  
-  const table = document.getElementById("wholeprojTable").outerHTML;
+  const table = document.getElementById("wholeitemTable").outerHTML;
   const printWindow = window.open('', '', '');
 //  const printWindow = window.open('', '', 'width=900,height=700');
 
@@ -801,9 +943,9 @@ function printInvoice() {
     <tr>
       <td>
         <div style="text-align: left;">
-          <!-- Your existing header -->        
-          <h4>projects List</h4>
-          <p>${paramnm}. All rights reserved.</p>
+          <!-- Your existing header -->
+          <h5>Users</h5>
+          <p style="font-size: 13px;">Maya Enterprise
           <br>
           North York Toronto - Phone: 647-999-9999<br>
           email: ali_albader_alsalem@yahoo.com
@@ -821,7 +963,7 @@ function printInvoice() {
            <table>
           ${table}
         </table>
-              
+            
         </div>
       </td>
     </tr>
@@ -837,6 +979,10 @@ function printInvoice() {
 }
 window.printInvoice = printInvoice; // ⭐ IMPORTANT LINE
 //  PRINT FUNCTION END
+
+
+
+
 
 
 
