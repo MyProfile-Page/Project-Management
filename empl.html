@@ -737,16 +737,24 @@ background-color: black; */
     <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
       <ul class="navbar-nav ms-auto">    
 
-        <li class="nav-item">        
-<a class="nav-link " href="#" onclick="manageemplee()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Add/Remove Company Employees</a>
-<a class="nav-link " href="#" onclick="manageassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" >Add/Remove Assignment codes</a>
-<a class="nav-link " href="#" onclick="assignassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;"> Assign Assignmentd To Employees </a>
-<a class="nav-link " href="#" onclick="updateassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Submit Start/End Dates to Tasks</a>   
+        <li class="nav-item">  
+<a class="nav-link " href="#" onclick="assignassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;"> Assign Tasks </a>
+<a class="nav-link " href="#" onclick="updateassg()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Assign Dates</a>         
+<a class="nav-link " href="#" onclick="manageemplee()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;">Add Employees</a>
+<a class="nav-link " href="#" onclick="manageassg()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" >Add Task Codes</a>
+<!--
 <a class="nav-link " href="#" onclick="manageteam()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Create/Delete Teams of Employees</a>         
 <a class="nav-link " href="#" onclick="linkteam()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Link/Delink Employees to Teams</a>               
+ -->
+<li class="nav-item">
+       <label>&nbsp</label>            
+ </li>
         </li>
  <li class="nav-item">
-       <label></label>            
+          <a  style="color: white; font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" href="index-t.html" >Back</a>   
+        </li>
+ <li class="nav-item">
+       <label>&nbsp</label>            
  </li>
 
       </ul>
@@ -762,7 +770,7 @@ background-color: black; */
 
 <div class = "div-hdr">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Employees and their Assignments</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Employees Roster</Label>
 </div>
 </div> 
 
@@ -771,38 +779,6 @@ background-color: black; */
 
 <div class="gap3vh"></div>
 
-<!-- Following is div For UserId & Pasword entries -->
-
-<div id = "logindiv" style="width: 60%; border: 0.0vw dashed black; margin: 0 auto; background-color: Transparent; margin-top: 0vh;" >
-
-
- <!-- Input Form -->
-<div class="gap3vh"></div>
-<div class="gap3vh"></div>
-
-
- 
-
-
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="text" class="input-field" id="userId" placeholder="User Id"  >
-</div>
-
-<div class="gap1vh"></div> 
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="password" class="input-field" id="usrpassword" placeholder="User Password"  >
-</div>
-
-<div class="gap1vh"></div> 
-
-
-<div style="display: flex; justify-content: center; width: 97%; border: 0px solid black; margin: 0 auto; margin-top: 3vh;">
-   <button onclick="loginrtn()" type="button" class="add-btn"; style="clamp(0.8rem, 1.2vw, 1.4rem); font-weight: 500;">Sign In</button>
-</div>
-<div class="gap3vh"></div>
-</div>
-
-<!-- Above is div For UserId & Pasword entries -->
 
 <div class="gap3vh"></div>
 <div class="gap4vh"></div> 
@@ -811,7 +787,7 @@ background-color: black; */
 
 <!-- Following is div For Grid Display of Projects and their asks -->
  
-<div  id="projectdisplaydiv" style="display: none; margin-top: -5vh;"  >
+<div  id="projectdisplaydiv" style="margin-top: -5vh;"  >
 
 <div style="display: flex; width: 98%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
 
@@ -827,7 +803,7 @@ background-color: black; */
       <tr>
         <th style="text-align: center; width: 23%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Name</th>
          
-        <th style="text-align: center; width: 22%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Assignment Desc</th>              
+        <th style="text-align: center; width: 22%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Task Desc</th>              
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Date</th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Date</th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>
@@ -856,8 +832,7 @@ background-color: black; */
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     
-        
+           
     </tr>
   </tfoot>
   </table>
@@ -920,11 +895,11 @@ paramId = params.get("param1");
 paramnm = params.get("param2");
 // paramId = "ownernbr1";
 
-document.getElementById("menubtn").disabled = true;
-document.getElementById("comp-name1").textContent = "My Company";
+
+document.getElementById("comp-name1").textContent = paramnm;
 
 
-
+loadassgmaster();
 
   // 🔹 READ (Load Data into Table)
 async function loadassgmaster() {

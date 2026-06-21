@@ -718,7 +718,7 @@ height: 5vh;
       <ul class="navbar-nav ms-auto">    
 
         <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="empl.html" >Back</a>   
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
         </li>
        <li class="nav-item">
        <label></label>            
@@ -738,7 +738,7 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Employees Assignments</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Assign Tasks</Label>
 </div>
 </div> 
 
@@ -874,7 +874,7 @@ const firebaseConfig = {
   const params = new URLSearchParams(window.location.search);
 let selectedStatus = "none";
 let emplname = "none";
-let prevemplname = "none";
+let prevemplname = "";
 let teamnamegb = "none";
 let assgnamegb = "none";
 let emplnamegb = "none";
@@ -987,6 +987,8 @@ if (!isValidSelection("assgnbr", "assgs")) {
 
     alert("Assignment Attached to Employee!");
     clearInputs();
+    prevemplname = "";
+    emplname = "none";
     loadassgmaster(); // refresh table
 
   } catch (error) {
@@ -1032,14 +1034,14 @@ async function loadassgmaster() {
       <tr class="tr-main-row"  >
         <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.assgname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.assgname}</td>
         
         
 
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center;">
           <button onclick="viewitem('${docId}', '${data.assgnbr}', '${data.assgname}', )" class = "edit-delt-btn";>Detach</button>
-          
-        </td>                    
+        </td> 
+     </tr>                  
         
  <tr>
  </tr>       
@@ -1186,6 +1188,8 @@ async function deleteitem() {
     await deleteDoc(doc(db, "assgmaster", id));
     alert("Assignment Dellinked from Employee");
     clearInputs();
+     prevemplname = "";
+    emplname = "none";
     loadassgmaster();
 //    console.log("Deleted:", id);
 };
@@ -1422,7 +1426,10 @@ try {
 loadcodestables();
 
 
-
+function mainappl() {  
+         window.location.href = `./empl.html?param1=${paramId}&param2=${paramnm}`; 
+  }
+window.mainappl = mainappl; // ⭐ IMPORTANT LINE
 
 
 

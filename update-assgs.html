@@ -1,4 +1,4 @@
-http://localhost/new-Team-Management/empl.html#<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -717,7 +717,7 @@ height: 5vh;
       <ul class="navbar-nav ms-auto">    
 
         <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="empl.html" >Back</a>   
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
         </li>
        <li class="nav-item">
        <label></label>            
@@ -737,7 +737,7 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Register Start & End Dates of Employee Assignments</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Assign Dates</Label>
 </div>
 </div> 
 
@@ -910,7 +910,7 @@ let enddtgbin = " ";
 let statgbin = " ";
 let selectedStatus = "none";
 let emplname = "none";
-let prevemplname = "none";
+let prevemplname = "";
 let teamnamegb = "none";
 let assgnamegb = "none";
 let emplnamegb = "none";
@@ -1036,6 +1036,8 @@ console.log({
     alert("Employee Assignment updated successfully!");
     window.currentEditId = null;
      clearInputs();
+    emplname = "none";
+    prevemplname = "";
     loadassgmaster();
   } catch (error) {
     console.error("Update error:", error);
@@ -1241,6 +1243,8 @@ function isValidSelection(inputId, datalistId) {
     await deleteDoc(doc(db, "assgmaster", id));
     alert("item Deleted from Firestore");
     clearInputs();
+    emplname = "none";
+    prevemplname = "";
     loadassgmaster();
 //    console.log("Deleted:", id);
 };
@@ -1371,6 +1375,8 @@ async function updateitem() {
     alert("Task updated successfully!");
     window.currentEditId = null;
      clearInputs();
+    emplname = "none";
+    prevemplname = "";
     loadassgmaster();
   } catch (error) {
     console.error("Update error:", error);
@@ -1440,7 +1446,10 @@ try {
 loadcodestables();
 
 
-
+function mainappl() {  
+         window.location.href = `./empl.html?param1=${paramId}&param2=${paramnm}`; 
+  }
+window.mainappl = mainappl; // ⭐ IMPORTANT LINE
 
 
 

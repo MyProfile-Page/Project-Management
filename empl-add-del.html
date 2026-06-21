@@ -480,7 +480,7 @@ background-color: #9bc7be;
       <ul class="navbar-nav ms-auto">    
 
         <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="empl.html" >Back</a>   
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
         </li>
        <li class="nav-item">
        <label></label>            
@@ -500,7 +500,7 @@ background-color: #9bc7be;
 
 <div class = "hdr-div">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Company Employees</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add Employees</Label>
 </div>
 </div> 
 
@@ -732,6 +732,10 @@ window.addempl = async function () {
   
   loadnewitemstable();
 
+function mainappl() {  
+         window.location.href = `./empl.html?param1=${paramId}&param2=${paramnm}`; 
+  }
+window.mainappl = mainappl; // ⭐ IMPORTANT LINE
 
 //  PRINT FUNCTION START
 
