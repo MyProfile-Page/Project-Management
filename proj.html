@@ -73,7 +73,7 @@
  .custom-table {
     border-collapse: collapse;
     table-layout: fixed; /* VERY IMPORTANT for percentage widths */
-    width: 99%;
+    width: 98%;
     font-family: Arial, sans-serif;
     margin-top: 3vh; 
     margin-left: 0.2vw; 
@@ -362,7 +362,7 @@ background-color: #9bc7be;
 .items-add-upd  {
  font-size: clamp(0.7rem, 1.5vw, 1.6rem);
  font-weight: 650;
- width: 98%; 
+ width: 98.0%; 
  border: 0.0vw solid black;
  margin: 0 auto; 
  justify-content: center;
@@ -739,8 +739,8 @@ background-color: black; */
 
         <li class="nav-item">        
 
-<a class="nav-link " href="#" onclick="assigntask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;"> Add Tasks</a>
-<a class="nav-link " href="#" onclick="updatetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Assign Dates</a>         
+<a class="nav-link " href="#" onclick="assigntask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;"> Assign Tasks To Projects</a>
+<a class="nav-link " href="#" onclick="updatetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;">Assign Dates To Tasks</a>         
 <a class="nav-link " href="#" onclick="manageproject()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;">Add Projects</a>
 <a class="nav-link " href="#" onclick="managetask()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" >Add Task codes</a> 
        </li>
@@ -768,7 +768,7 @@ background-color: black; */
 
 <div class = "div-hdr">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Projects Roster</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Projects Tasks</Label>
 </div>
 </div> 
 
@@ -787,7 +787,7 @@ background-color: black; */
  
 <div  id="projectdisplaydiv" style="margin-top: -5vh;"  >
 
-<div style="display: flex; width: 98%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
+<div style="display: flex; width: 99.0%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
 
 <Div class="items-add-upd" style= "border: 0.0vw solid yellow;  margin-top: -1.0vh; color: black; font-weight: 550;">
 
@@ -813,8 +813,8 @@ background-color: black; */
     <tbody id="itemTable" class = "itemTableBody-Cls">
        <tr>
        
-        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
@@ -824,12 +824,12 @@ background-color: black; */
      </tbody>
      <tfoot >
     <tr style="background-color: #c5effd; height: 3vh;>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      
         
     </tr>
