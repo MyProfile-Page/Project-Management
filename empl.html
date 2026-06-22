@@ -920,7 +920,7 @@ async function loadassgmaster() {
     const docId = document.id;
 
      emplname = `${data.emplname}`;    
-    
+     const color = `${data.status}` === "Delayed" ? "red" : "black";
 
   if (prevemplname && emplname !== prevemplname) {
 
@@ -951,7 +951,8 @@ async function loadassgmaster() {
         
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
+    
+        <td style="color:${color}; text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
       </tr>
                  
   

@@ -73,7 +73,7 @@
  .custom-table {
     border-collapse: collapse;
     table-layout: fixed; /* VERY IMPORTANT for percentage widths */
-    width: 98%;
+    width: 99%;
     font-family: Arial, sans-serif;
     margin-top: 3vh; 
     margin-left: 0.2vw; 
@@ -918,7 +918,7 @@ async function loadtaskmaster() {
     const docId = document.id;
 
      projname = `${data.projname}`;    
-    
+     const color = `${data.status}` === "Delayed" ? "red" : "black";     
 
   if (prevprojname && projname !== prevprojname) {
 
@@ -949,7 +949,7 @@ async function loadtaskmaster() {
         
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
+        <td style="color:${color}; text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
       </tr>
                  
   
