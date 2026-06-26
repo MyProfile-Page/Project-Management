@@ -102,6 +102,10 @@
     border: 0.00vw solid lightgrey; /* Light grey borders */
     padding: 0.0vw; /* Spacing inside cells */
     text-align: center;
+     /* Adjusts the space above and below the text */
+   padding: 3px 3px; 
+    line-height: 8px;
+
 
   }
   
@@ -500,7 +504,7 @@ background-color: #9bc7be;
 
 <div class = "hdr-div">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add Employees</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Del Teammembers</Label>
 </div>
 </div> 
 
@@ -518,11 +522,11 @@ background-color: #9bc7be;
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
   <input type="number" class="input-field" id="emplnbr" min="1" max="99999999"
-  placeholder="    Employee Number"  > 
+  placeholder="    Teammember Number"  > 
 </div>
 <div class="gap1vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="text" class="input-field" id="emplname" placeholder="Employee Name"  >
+  <input type="text" class="input-field" id="emplname" placeholder="Teammember Name"  >
  
 </div>
 
@@ -551,8 +555,8 @@ background-color: #9bc7be;
     <thead>
      
       <tr>
-        <th style="text-align: center; width: 6%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Nbr</th>
-        <th style="text-align: center; width: 19%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Name</th>      
+        <th style="text-align: center; width: 6%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Teammember No.</th>
+        <th style="text-align: center; width: 19%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; ">Teammember Name</th>      
         
       
         <th class="no-print" style="padding: 0.0vw; text-align: center; width: 13%; font-size: clamp(0.9rem, 1.1vw, 1.2rem); font-weight: 500; ">Action</th>
@@ -594,6 +598,7 @@ import {
   deleteDoc, 
   doc,
   updateDoc,
+  where,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -627,7 +632,8 @@ async function loadnewitemstable() {
   
   table.innerHTML = "";
   const collectionRef = collection(db, "emplcodes");
-  const q = query(collectionRef, orderBy("emplnbr", "asc"));
+  const q = query(collectionRef, where("ownerId", "==", paramId));
+//  const q = query(collectionRef, orderBy("emplnbr", "asc"));
   
   const querySnapshot = await getDocs(q);
 
@@ -689,7 +695,7 @@ async function loadnewitemstable() {
  // 🔹 DELETE (Remove Record)
   window.deleteempl = async function (id) {
     await deleteDoc(doc(db, "emplcodes", id));
-    alert("Employee deleted");
+    alert("Teammember deleted");
     clearInputs();
     loadnewitemstable();
   };
@@ -698,7 +704,8 @@ async function loadnewitemstable() {
 window.addempl = async function () {
   const emplnbr = document.getElementById("emplnbr").value;
   const emplname = document.getElementById("emplname").value; 
-  const recordId = `${paramId}_${emplnbr}`;  
+ // const recordId = `${paramId}_${emplnbr}`;  
+   const recordId = `${paramId}_${emplnbr.toString().padStart(4, '0')}`;
   try {
 
     // 🔹 Use nbr as document ID
@@ -719,7 +726,7 @@ window.addempl = async function () {
       // createdAt: new Date()
     });
 
-    alert("New Employee added");
+    alert("New Teammember added");
     
     loadnewitemstable(); // refresh table
 
@@ -821,7 +828,7 @@ function printInvoice() {
       <td>
         <div style="text-align: left;">
           <!-- Your existing header -->        
-          <h4>Employees List</h4>
+          <h4>Teammembers List</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>

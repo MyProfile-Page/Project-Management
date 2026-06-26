@@ -102,6 +102,10 @@
     border: 0.00vw solid lightgrey; /* Light grey borders */
     padding: 0.0vw; /* Spacing inside cells */
     text-align: center;
+      /* Adjusts the space above and below the text */
+    padding: 3px 3px; 
+    line-height: 8px;
+
 
   }
   
@@ -477,7 +481,7 @@ background-color: #9bc7be;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add/Delete Tasks</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Project Task Descps</Label>
 </div>
 </div> 
 
@@ -572,6 +576,7 @@ import {
   deleteDoc, 
   doc,
   updateDoc,
+  where,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -605,7 +610,8 @@ async function loadnewitemstable() {
   
   table.innerHTML = "";
   const collectionRef = collection(db, "taskcodes");
-  const q = query(collectionRef, orderBy("tasknbr", "asc"));
+//  const q = query(collectionRef, orderBy("tasknbr", "asc"));
+  const q = query(collectionRef, where("ownerId", "==", paramId));
   
   const querySnapshot = await getDocs(q);
 
@@ -676,12 +682,13 @@ async function loadnewitemstable() {
 window.addproj = async function () {
   const tasknbr = document.getElementById("tasknbr").value;
   const taskname = document.getElementById("taskname").value; 
-  const recordId = `${paramId}_${tasknbr}`;    
+//  const recordId = `${paramId}_${tasknbr}`;   
+  const recordId = `${paramId}_${tasknbr.toString().padStart(4, '0')}`; 
   try {
 
     // 🔹 Use nbr as document ID
      const docRef = doc(db, "taskcodes", recordId.toString());
-    
+     
 
     // 🔹 Check if document already exists
  //   const existingDoc = await getDoc(docRef);

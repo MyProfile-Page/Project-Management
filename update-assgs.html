@@ -116,6 +116,11 @@
     border: 0.05vw solid Black; /* Light grey borders */
     padding: 0.0vw; /* Spacing inside cells */
     text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    /* Adjusts the space above and below the text */
+    padding: 7px 7px; 
+    line-height: 12px;
 
   }
   
@@ -682,6 +687,16 @@ height: 5vh;
     font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
 }
 
+.table-height {
+ height: 8vh;
+}
+
+@media (max-width: 768px) {
+.table-height {
+ height: 6vh;
+}
+}
+
   </style>
 </head>
 
@@ -762,7 +777,7 @@ height: 5vh;
 <div class="gap1vh"></div>
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="empls" class="input-field-col" title="Select Project" id="emplnbr" name="aempl" placeholder="Select Employee" >
+<input list="empls" class="input-field-col" title="Select Project" id="emplnbr" name="aempl" placeholder="Select Teammember" >
 <datalist id="empls"></datalist>
 </div> 
 
@@ -818,14 +833,13 @@ height: 5vh;
   <table class="custom-table">
     <thead>
      
-      <tr>
-        <th style="text-align: center; width: 23%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee</th>
-         
+      <tr class="table-height">
+        <th style="text-align: center; width: 23%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Teammember</th>
         <th style="text-align: center; width: 22%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Assignment Desc</th>              
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Date</th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Date</th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>
-        <th style="text-align: center; width: 10%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
+       
         
         
       </tr>
@@ -838,7 +852,7 @@ height: 5vh;
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        
       </tr>
     
      
@@ -851,7 +865,7 @@ height: 5vh;
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     
         
     </tr>
   </tfoot>
@@ -935,7 +949,7 @@ window.additem = async function () {
   const ownerId = paramId;
 
 if (!isValidSelection("emplnbr", "empls")) {
-  alert("A valid Employee not selected from the Employees list.");
+  alert("A valid Teammember not selected from the Teammembers list.");
   return;
 }
 
@@ -976,7 +990,8 @@ else {
 }
 }  
  
- const   recordIdmfc = `${ownerId}_${emplnbr}_${assgnbr}`;
+// const   recordIdmfc = `${ownerId}_${emplnbr}_${assgnbr}`;
+ const recordIdmfc = `${ownerId}_${emplnbr.toString().padStart(4, '0')}_${assgnbr.toString().padStart(4, '0')}`;
  //   const recordIdm = `${emplnbr}_${assgnbr}`;
     const docRefmfc = doc(db, "assgmaster", recordIdmfc.toString());
 
@@ -996,7 +1011,8 @@ else {
  console.log(statgbfl);
 
     // 🔹 Use nbr as document ID
-  const   recordIdm = `${ownerId}_${emplnbr}_${assgnbr}`;
+//  const   recordIdm = `${ownerId}_${emplnbr}_${assgnbr}`;
+const recordIdm = `${ownerId}_${emplnbr.toString().padStart(4, '0')}_${assgnbr.toString().padStart(4, '0')}`;
  //   const recordIdm = `${emplnbr}_${assgnbr}`;
     const docRefm = doc(db, "assgmaster", recordIdm.toString());
 
@@ -1033,7 +1049,7 @@ console.log({
            
     });
 
-    alert("Employee Assignment updated successfully!");
+    alert("Teammember Assignment updated successfully!");
     window.currentEditId = null;
      clearInputs();
     emplname = "none";
@@ -1048,7 +1064,7 @@ console.log({
    //     updateitem();    
      }
     else {
-      alert("Assignment for Employee Not Found");
+      alert("Assignment for Teammember Not Found");
      }
      
    };
@@ -1069,38 +1085,21 @@ async function loadassgmaster() {
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
+    const color = `${data.status}` === "Delayed" ? "red" : "black";
       emplname = `${data.emplname}`;
-    if (prevemplname && emplname !== prevemplname) {
-
-        table.innerHTML += `
-             <tr class="tr-main-row"  >
-                
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-            </tr>
-         
-        `;
-    }    
     
     table.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.assgname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.assgname}</td>
         
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td> 
+        <td style="color:${color}; text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; padding-left: 0.3vw; text-align: left;  ">${data.status}</td> 
 
-        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center;">
-          <button onclick="viewitem('${docId}', '${data.assgnbr}', '${data.teamnbr}', '${data.assgname}', '${data.teamname}', '${data.startdt}', '${data.enddt}', '${data.status}')" class = "edit-delt-btn";>Det</button>
-          
-        </td>                    
+                 
         
      <tr>
       </tr>   
@@ -1399,7 +1398,13 @@ async function loadcodestables() {
     const assglist = document.getElementById("assgs");
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "assgcodes")); 
+
+    const collectionRefA = collection(db, "assgcodes");
+    const q = query(collectionRefA, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
+
+
+    
 
     snapshot.forEach((doc) => {
       const data = doc.data();
@@ -1421,7 +1426,10 @@ async function loadcodestables() {
 try {
     const empllist = document.getElementById("empls");
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "emplcodes")); 
+    
+    const collectionRefE = collection(db, "emplcodes");
+    const q = query(collectionRefE, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
 
     snapshot.forEach((doc) => {
       const data = doc.data();

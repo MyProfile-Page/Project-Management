@@ -116,6 +116,10 @@
     border: 0.05vw solid Black; /* Light grey borders */
     padding: 0.0vw; /* Spacing inside cells */
     text-align: center;
+     /* Adjusts the space above and below the text */
+   padding: 3px 3px; 
+    line-height: 8px;
+
 
   }
   
@@ -682,6 +686,16 @@ height: 5vh;
     font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
 }
 
+.table-height {
+ height: 8vh;
+}
+
+@media (max-width: 768px) {
+.table-height {
+ height: 6vh;
+}
+}
+
   </style>
 </head>
 
@@ -738,7 +752,7 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Assign Tasks</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Assign Task To Teammembers</Label>
 </div>
 </div> 
 
@@ -760,7 +774,7 @@ height: 5vh;
 <div class="gap1vh"></div>
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="empls" class="input-field-col" title="Select Employee" id="emplnbr" name="aempl" placeholder="Select Employee" >
+<input list="empls" class="input-field-col" title="Select Employee" id="emplnbr" name="aempl" placeholder="Select Teammember" >
 <datalist id="empls"></datalist>
 </div> 
 
@@ -794,8 +808,8 @@ height: 5vh;
   <table class="custom-table">
     <thead>
      
-      <tr style="height: 10vh;">
-        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Employee Name</th>
+      <tr class="table-height">
+        <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Teammember Name</th>
          
         <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Assignment Description</th>              
         
@@ -900,7 +914,7 @@ window.additem = async function () {
 
 
 if (!isValidSelection("emplnbr", "empls")) {
-  alert("A valid Employee not selected from the Employees list.");
+  alert("A valid Teammember not selected from the Teammembers list.");
   return;
 }
 
@@ -918,7 +932,8 @@ if (!isValidSelection("assgnbr", "assgs")) {
 
  
 
-    const recordIdk = `${ownerId}_${assgnbr}`;
+ //   const recordIdk = `${ownerId}_${assgnbr}`;
+    const recordIdk = `${paramId}_${assgnbr.toString().padStart(4, '0')}`; 
     const docRef1 = doc(db, "assgcodes", recordIdk.toString());
     // 🔹 Check if document already exists
     const existingDoc1 = await getDoc(docRef1);
@@ -934,7 +949,8 @@ if (!isValidSelection("assgnbr", "assgs")) {
       return;
     }
 
-    const recordIdp = `${ownerId}_${emplnbr}`;
+ //   const recordIdp = `${ownerId}_${emplnbr}`;
+    const recordIdp = `${paramId}_${emplnbr.toString().padStart(4, '0')}`; 
     const docRef2 = doc(db, "emplcodes", recordIdp.toString());
     // 🔹 Check if document already exists
     const existingDoc2 = await getDoc(docRef2);
@@ -946,7 +962,7 @@ if (!isValidSelection("assgnbr", "assgs")) {
       console.log(recordIdp);
       console.log(emplnbr);
       console.log(ownerId);
-      alert("Employee Code does not exists!");
+      alert("Teammember Number does not exists!");
       return;
     }
 
@@ -956,7 +972,8 @@ if (!isValidSelection("assgnbr", "assgs")) {
   try {
 
     // 🔹 Use nbr as document ID
-    const recordIdm = `${ownerId}_${emplnbr}_${assgnbr}`;
+//    const recordIdm = `${ownerId}_${emplnbr}_${assgnbr}`;
+     const recordIdm = `${paramId}_${emplnbr.toString().padStart(4, '0')}_${assgnbr.toString().padStart(4, '0')}`; 
  //   const recordIdm = `${emplnbr}_${assgnbr}`;
     const docRefm = doc(db, "assgmaster", recordIdm.toString());
 
@@ -964,7 +981,7 @@ if (!isValidSelection("assgnbr", "assgs")) {
     const existingDoc = await getDoc(docRefm);
 
     if (existingDoc.exists()) {
-      alert("Assignment already linked to the Employee!");
+      alert("Assignment already linked to the Teammember!");
       return;
     }
     console.log(recordIdm);
@@ -985,7 +1002,7 @@ if (!isValidSelection("assgnbr", "assgs")) {
     
     });
 
-    alert("Assignment Attached to Employee!");
+    alert("Assignment Attached to Teammember!");
     clearInputs();
     prevemplname = "";
     emplname = "none";
@@ -1013,28 +1030,18 @@ async function loadassgmaster() {
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
+    
   emplname = `${data.emplname}`;
-  if (prevemplname && emplname !== prevemplname) {
-
-        table.innerHTML += `
-             <tr class="tr-main-row"  >
-                
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-            </tr>
-         
-        `;
-    }
+  
 
     
     
     table.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.emplname !== prevemplname ? data.emplname : ""}</td>
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.assgname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.assgname}</td>
         
         
 
@@ -1186,7 +1193,7 @@ async function deleteitem() {
     }
 
     await deleteDoc(doc(db, "assgmaster", id));
-    alert("Assignment Dellinked from Employee");
+    alert("Assignment Dellinked from Teammember");
     clearInputs();
      prevemplname = "";
     emplname = "none";
@@ -1296,7 +1303,7 @@ window.updateitem = async function () {
     document.getElementById("team").value = document.getElementById("team").placeholder;
    }
    
-   document.getElementById("empl").placeholder = "Employee Codes";
+   document.getElementById("empl").placeholder = "Teammember Codes";
    document.getElementById("assg").placeholder = "Assignment Codes";
    document.getElementById("team").placeholder = "Team Codes";
    
@@ -1379,7 +1386,10 @@ async function loadcodestables() {
     const assglist = document.getElementById("assgs");
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "assgcodes")); 
+    const collectionRefA = collection(db, "assgcodes");
+    const q = query(collectionRefA, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
+    
 
     snapshot.forEach((doc) => {
       const data = doc.data();
@@ -1401,7 +1411,9 @@ async function loadcodestables() {
 try {
     const empllist = document.getElementById("empls");
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "emplcodes")); 
+    const collectionRefE = collection(db, "emplcodes");
+    const q = query(collectionRefE, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
 
     snapshot.forEach((doc) => {
       const data = doc.data();
@@ -1550,7 +1562,7 @@ function printInvoice() {
         <div style="text-align: left;">
           <!-- Your existing header -->
           
-          <h4>Employees & Their assgs List</h4>
+          <h4>Teammembers & Their assgignments List</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>

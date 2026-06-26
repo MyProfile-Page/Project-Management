@@ -116,6 +116,10 @@
     border: 0.05vw solid Black; /* Light grey borders */
     padding: 0.0vw; /* Spacing inside cells */
     text-align: center;
+     /* Adjusts the space above and below the text */
+    padding: 3px 3px; 
+    line-height: 8px;
+
 
   }
   
@@ -125,8 +129,8 @@
   
  
 
- .custom-table td:nth-child(5),
- .custom-table td:nth-child(6) {
+ 
+ .custom-table td:nth-child(5) {
   text-align: center;
   }
 
@@ -682,6 +686,16 @@ height: 5vh;
     font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
 }
 
+.table-height {
+ height: 8vh;
+}
+
+@media (max-width: 768px) {
+.table-height {
+ height: 6vh;
+}
+}
+
   </style>
 </head>
 
@@ -738,7 +752,7 @@ height: 5vh;
 
 <div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Add Tasks</Label>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Assign Tasks To Projects</Label>
 </div>
 </div> 
 
@@ -794,7 +808,7 @@ height: 5vh;
   <table class="custom-table">
     <thead>
      
-      <tr style="height: 10vh;">
+      <tr class="table-height">
         <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Project Title</th>
          
         <th style="text-align: center; width: 40%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Task Title</th>              
@@ -909,15 +923,6 @@ if (!isValidSelection("tasknbr", "tasks")) {
   return;
 }
 
-
-
-
-
-
-
-
- 
-
     const recordIdk = `${ownerId}_${tasknbr}`;
     const docRef1 = doc(db, "taskcodes", recordIdk.toString());
     // 🔹 Check if document already exists
@@ -956,8 +961,9 @@ if (!isValidSelection("tasknbr", "tasks")) {
   try {
 
     // 🔹 Use nbr as document ID
-    const recordIdm = `${ownerId}_${projnbr}_${tasknbr}`;
- //   const recordIdm = `${projnbr}_${tasknbr}`;
+//    const recordIdm = `${ownerId}_${projnbr}_${tasknbr}`;
+    const recordIdm = `${ownerId}_${projnbr.toString().padStart(4, '0')}_${tasknbr.toString().padStart(4, '0')}`;
+
     const docRefm = doc(db, "taskmaster", recordIdm.toString());
 
     // 🔹 Check if document already exists
@@ -1005,36 +1011,21 @@ async function loadtaskmaster() {
   table.innerHTML = "";
   const collectionRef = collection(db, "taskmaster");
   const q = query(collectionRef, where("ownerId", "==", paramId));
-
   const querySnapshot = await getDocs(q);
-
- 
-
   querySnapshot.forEach((document) => {
     const data = document.data();
     const docId = document.id;
+ 
   projname = `${data.projname}`;
-  if (prevprojname && projname !== prevprojname) {
-
-        table.innerHTML += `
-             <tr class="tr-main-row"  >
-                
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-         <td style="text-align: left; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">&nbsp;</td>
-            </tr>
-         
-        `;
-    }
-
+ 
     
     
     table.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.projname !== prevprojname ? data.projname : ""}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;">${data.projname !== prevprojname ? data.projname : ""}</td>
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.2vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center;  ">${data.taskname}</td>
+        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.taskname}</td>
         
         
 
@@ -1270,7 +1261,7 @@ window.edititem = function (id, name, nbr, uis, qty, prc, exp, ctg, sup, imp, co
 };
 
 // Fill inputs when Detail button is clicked
-window.viewitem = function (id, name, nbr, uis, qty, prc, exp, ctg, sup, imp, con, rol, mnl, fmd) {
+window.viewitem = function (id) {
   
   
   document.getElementById("docIdHolder").value = id;
@@ -1381,7 +1372,10 @@ async function loadcodestables() {
     const tasklist = document.getElementById("tasks");
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "taskcodes")); 
+    console.log(paramId);  
+    const collectionRefT = collection(db, "taskcodes");
+    const q = query(collectionRefT, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
 
     snapshot.forEach((doc) => {
       const data = doc.data();
@@ -1403,7 +1397,10 @@ async function loadcodestables() {
 try {
     const projlist = document.getElementById("projs");
     const db = getFirestore();
-    const snapshot = await getDocs(collection(db, "projcodes")); 
+    const collectionRefP = collection(db, "projcodes");
+    const q = query(collectionRefP, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
+ //   const snapshot = await getDocs(collection(db, "projcodes")); 
 
     snapshot.forEach((doc) => {
       const data = doc.data();

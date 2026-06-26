@@ -102,6 +102,9 @@
     border: 0.00vw solid lightgrey; /* Light grey borders */
     padding: 0.0vw; /* Spacing inside cells */
     text-align: center;
+     /* Adjusts the space above and below the text */
+     padding: 3px 3px; 
+    line-height: 8px;
 
   }
   
@@ -573,6 +576,7 @@ import {
   deleteDoc, 
   doc,
   updateDoc,
+  where,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -608,8 +612,8 @@ async function loadnewitemstable() {
   
   table.innerHTML = "";
   const collectionRef = collection(db, "projcodes");
-  const q = query(collectionRef, orderBy("projnbr", "asc"));
-  
+//  const q = query(collectionRef, orderBy("projnbr", "asc"));
+  const q = query(collectionRef, where("ownerId", "==", paramId));
   const querySnapshot = await getDocs(q);
 
   let grandTotalCents = 0; // ✅ accumulator for grand total
@@ -679,7 +683,8 @@ async function loadnewitemstable() {
 window.addproj = async function () {
   const projnbr = document.getElementById("projnbr").value;
   const projname = document.getElementById("projname").value; 
-  const recordId = `${paramId}_${projnbr}`;  
+//  const recordId = `${paramId}_${projnbr}`;  
+  const recordId = `${paramId}_${projnbr.toString().padStart(4, '0')}`;
   try {
 
     // 🔹 Use nbr as document ID
