@@ -121,6 +121,9 @@
      /* Adjusts the space above and below the text */
     padding: 7px 7px; 
     line-height: 12px;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
 
   }
   
@@ -939,10 +942,10 @@ async function loadtaskmaster() {
     wholeitemTable.innerHTML += `
       
       <tr class="tr-main-row"  >
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left; ">${data.projname !== prevprojname ? data.projname : ""}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left; ">${data.projname !== prevprojname ? data.projname : ""}</td>
     
        
-        <td style="text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black;  ">${data.taskname}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black;  ">${data.taskname}</td>
         
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
