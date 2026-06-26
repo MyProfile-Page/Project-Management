@@ -105,6 +105,9 @@
      /* Adjusts the space above and below the text */
      padding: 3px 3px; 
     line-height: 8px;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
 
   }
   
@@ -629,7 +632,7 @@ async function loadnewitemstable() {
        
         
         <td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.projnbr}</td>
-<td style="text-wrap: pretty; border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.projname}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw;">${data.projname}</td>
                 <td style="border: 0.05vw solid black; text-align: center;">
 
            <button onclick="deleteproj('${docId}')" class="edit-delt-btn">Delete</button>
