@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Firestore Table (IIS + Localhost)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+  .body_cls {
+          background-color: red;
+          background: linear-gradient(to right, #007bff, #00c6ff);
+          background: white;
+          background: #f7f568;
+          background: #f7f681;
+          background: LightCyan;
+          
+           background-image: url("cloud-image1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /* Ensures the image covers the entire screen */
+         
+      /*    background:  */
+          line-height: 0.8;         
+            }
+ .lkbg { 
+    color: #cce6ff;
+    background-color: Black; 
+    padding: 2.5vh 4vh; /* Adds space around the text */
+    display: inline-block; /* Ensures padding and background apply correctly */
+    border-radius: 3vh;
+ } 
+
+.liheight {
+   line-height: 2.5dvh;
+  } 
+
+ @media (max-width: 768px) {
+ .liheight {
+   line-height: 1.0dvh;
+ } 
+ }
+ 
+.custom-table-container {
+    height: 76vh;        /* Fixed height */
+   
+     overflow-y: auto;     /* vertical scrollbar */
+    border: 0.0vw solid black;
+    
+}
+
+@media (max-width: 768px) {
+.custom-table-container {
+  height: 76vh;        /* Fixed height */
+    
+     overflow-x: auto;     /* horizontal scrollbar */
+    border: 0.0vw solid #ccc;
+ 
+}
+}
+
+
+ .custom-table {
+    border-collapse: collapse;
+    table-layout: fixed; /* VERY IMPORTANT for percentage widths */
+    width: 99%;
+    font-family: Arial, sans-serif;
+    margin-top: 3vh; 
+    margin-left: 0.2vw; 
+    margin-right: 0.0vw; 
+    border: 0.0vw solid grey; /* Light grey borders */
+    
+}   
+
+ /*  .custom-table tr:nth-child(even) {   */
+ /*    background-color: #D6EEEE;         */ 
+ /*    background-color: rgba(150, 212, 212, 0.4);   */
+ /* }   */
+ .custom-table td:nth-child(2)  {
+     text-align: left;    
+ }
+
+.custom-table td:nth-child(3),
+.custom-table td:nth-child(8)   {
+     text-align: left;    
+ }
+
+  
+  .custom-table th {
+    background-color: #f2f2f2; /* Light gray background for header */
+   /* color: #333;  */
+    color:black;
+    background-color: #c5effd;  
+    height: 6vh;      
+    border: 0.2vw solid grey;
+
+  }
+
+ 
+
+  .custom-table td {
+    /* background-color: #f2f2f2;  */ /* Light gray background for header */
+    /* color: #333;  */
+    
+    border: 0.00vw solid lightgrey; /* Light grey borders */
+    padding: 0.0vw; /* Spacing inside cells */
+    text-align: center;
+
+  }
+  
+  
+ .custom-table tr:hover { background-color: #e6f2ff;
+  }
+  
+  
+
+ .custom-table td:nth-child(5),
+ .custom-table td:nth-child(6) {
+  text-align: center;
+  }
+
+.custom-table tr:last-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #e6f2ff;
+  background-color: #f0f0f0;
+  border-top: 0.4vh solid #000;
+}
+
+
+ .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+            gap: 2vw;
+            padding: 0.4vw;
+            grid-auto-rows: auto;
+        }
+
+ .grid-container > div {
+  border: 0.00vw solid red;
+  padding: 0.25vw;
+}
+
+.box {
+            background-color: #c5effd;
+            padding: 10vw;
+            text-align: center;
+            font-size: 20px;
+            border: 0.4vw solid steelblue;
+        }
+
+@media (max-width: 768px) {
+.grid-container {
+  display: grid;
+ grid-template-columns: 1fr; /* Stack vertically */
+grid-auto-flow: row;
+/* height: 90vh; */
+/* gap: 0.5vw; */
+ 
+}
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+ }
+
+.gap1vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap1vh {
+  height: 0.5vh;  /* or any size you want; mobile = desktop */
+}
+}
+
+.gap2vh {
+  height: 2.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap2vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+}
+
+.gap3vh {
+  height: 3.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap3vh {
+  height: 1.5vh;  /* or any size you want; mobile = desktop */
+}
+}
+.gap4vh {
+  height: 4.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap4vh {
+  height: 2.0vh;  /* or any size you want; mobile = desktop */
+}
+}
+
+@media (max-width: 768px) {
+ .usertableBody-Cls {
+white-space: normal; 
+overflow-wrap: break-word;
+word-wrap: break-word; 
+word-break: break-all;
+text-wrap: balance;
+hyphens: auto;
+}
+}
+
+.Menubar-header {
+font-family: calibri;
+ font-size: clamp(1.0rem, 1.1vw, 1.2rem); 
+font-weight: 500;
+color: black; 
+font-style: italic;
+font-weight: 550;
+}
+
+#apl-hdr {
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);  
+  font-weight:  700;
+  color: lightblue; 
+  text-decoration: none; 
+  text-align: center;
+}
+
+#menu-word-prp {
+ font-size: clamp(1.0rem, 1.2vw, 1.3rem);  
+  font-weight:  400;
+  color: lightblue; 
+  text-decoration: none; 
+  text-align: center;
+}
+
+.menu-bar-prp {
+ font-size: clamp(1.0rem, 1.2vw, 1.3rem);  
+  font-weight:  200;
+  color: yellow; 
+  text-decoration: none; 
+  text-align: center;
+  border: none;
+}
+
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px; /* Adjust size as needed */
+    font-weight: 500;
+    color: black; 
+  }
+
+@media (max-width: 767px) {
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px; /* Adjust size as needed */
+    font-weight: 500;
+    color: black; 
+  }
+}
+
+
+.pr-bk-links {
+    border: 0.0vw solid black; 
+    text-align: right;
+    margin-top: -3vh;
+    margin-right: 3vw;
+}
+
+.tr-main-row {
+height: 7vh;
+background-color: #9bc7be;
+
+}
+
+.tr-adl-row {
+height: 2vh;
+background-color: #9bc7be;
+
+}
+
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 5vh; 
+}
+
+.tr-btn-row {
+height: 6vh;
+background-color: #9bc7be;
+
+}
+
+@media (max-width: 768px) {
+.tr-main-row {
+height: 4vh;
+background-color: #9bc7be;
+}
+}
+ 
+@media (max-width: 768px) {
+.tr-adl-row {
+height: 1.5vh;
+background-color: #9bc7be;
+}
+}
+
+@media (max-width: 768px) {
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 3vh; 
+}
+}
+@media (max-width: 768px) {
+.tr-btn-row {
+height: 2vh;
+background-color: #9bc7be;
+}
+}
+
+@media (max-width: 768px) {
+.pr-bk-links {
+    border: 0.0vw solid black; 
+    text-align: right;
+    margin-top: -2vh;
+    margin-right: 3vw;
+}
+
+}
+
+.item-db {
+    border: 0.0vw solid black; 
+    text-align: center;
+    margin-top: 3vh;
+   
+}
+
+@media (max-width: 768px) {
+.item-db {
+    border: 0.0vw solid black; 
+    text-align: center;
+    margin-top: 2vh;
+    
+}
+
+}
+
+.items-add-upd  {
+ font-size: clamp(0.7rem, 1.5vw, 1.6rem);
+ font-weight: 650;
+ width: 98%; 
+ border: 0.0vw solid black;
+ margin: 0 auto; 
+ justify-content: center;
+ text-align: center; 
+ margin-top: 4vh;
+}
+
+@media (max-width: 768px) {
+.items-add-upd  {
+ font-size: clamp(1.3rem, 1.9vw, 2.1rem);
+ font-weight: 450;
+ width: 98%; 
+ border: 0.0vw solid black;
+ margin: 0 auto; 
+ justify-content: center;
+ text-align: center; 
+ margin-top: 2vh;
+ 
+}
+}
+
+.input-field {
+ font-size: 12px;
+ font-weight: 500;
+ height: 8vh;
+  border: 2px solid black; 
+ text-align: center;
+ width: 70%;
+}
+
+@media (max-width: 768px) {
+.input-field {
+ font-size: 12px;
+ font-weight: 500;
+ height: 5vh;
+ width: 100%;
+ text-align: center;
+ border: 2px solid black; 
+}
+}
+
+
+.input-field-col {
+ font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+ height: 8vh;
+ background-color: #51DEED; 
+ background-color: LightYellow;  
+ background-color: #f8f2ed;
+ font-weight: 450; 
+ border: 0.1vw solid black; 
+}
+
+@media (max-width: 768px) {
+.input-field-col {
+ font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+ height: 5vh;
+ background-color: #51DEED; 
+ background-color: #f8f2ed; 
+ font-weight: 600; 
+}
+}
+
+
+
+.edit-delt-btn  {
+  width: 50%;
+  height: 8.0vh;
+  text-align: center; 
+  font-weight: 500; 
+  font-size: clamp(0.7rem, 1.0vw, 1.1rem);
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+.edit-delt-btn  {
+  width: 80%;
+  height: 5.0vh;
+  text-align: center; 
+  font-weight: 500; 
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  border-radius: 12px;
+}
+}
+.add-btn {
+  width: 24%; 
+  text-align: center;
+  background-color: #fafafa; 
+  font-size: 12px;
+  height: 8vh;
+  font-weight: 500; 
+  border-radius: 2px;
+  border: 2px solid black;
+ }
+.upd-btn {
+  width: 9%; 
+  text-align: center;
+  background-color: #fafafa; 
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 6vh;
+  font-weight: 600; 
+  border: 0.01vw solid black;
+ }
+.clr-btn {
+  width: 7%; 
+  text-align: center;
+  background-color: #fafafa; 
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 8vh;
+  font-weight: 600; 
+  border: 0.01vw solid black;
+ }
+@media (max-width: 768px) {
+.add-btn {
+  width: 100%; 
+  text-align: center;
+  /* background-color: LightGrey; */
+  background-color: #fafafa;
+  height: 6vh;
+  border-radius: 2px; 
+  font-size: 12px;
+  border: 2px solid black;
+ }
+ }
+@media (max-width: 768px) {
+.upd-btn {
+  width: 11%; 
+  text-align: center;
+  /* background-color: LightGrey; */
+  background-color: #fafafa;
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 4vh;
+  font-weight: 600; 
+   border: 0.02vw solid black;
+ }
+}
+@media (max-width: 768px) {
+.clr-btn {
+  width: 8%; 
+  text-align: center;
+  /* background-color: LightGrey; */
+  background-color: #fafafa;
+  font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  height: 5vh;
+  font-weight: 600; 
+   border: 0.02vw solid black;
+ }
+}
+
+.ext-btn {
+  width: 20%; 
+  text-align: right;
+  background-color: transparent; 
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+ 
+  font-weight: 600; 
+  border: 0.00vw solid black;
+  border-radius: 5px;
+  color: white;
+  margin-right: 1vw;
+  margin-top: 3vh;
+ }
+
+@media (max-width: 768px) {
+.ext-btn {
+  width: 12%; 
+  text-align: center;
+  background-color: transparent; 
+  font-size: clamp(0.9rem, 1.8vw, 2.1rem);
+  height: 4vh;
+  font-weight: 600; 
+  border: 0.00vw solid black;
+  border-radius: 5px;
+  margin-top: 3vh:
+ }
+}
+.prt-btn {
+  width: 0%; 
+  text-align: right;
+  background-color: transparent;
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+  height: 0vh;
+  font-weight: 480; 
+  border: 0.0vw solid black;
+  border-radius: 0px;
+  margin-right: -22vw;
+  
+ }
+
+.option[disabled][selected] {
+    font-size: clamp(1.1rem, 2.3vw, 2.4rem);
+    color: grey; 
+}
+
+  .box11 {  
+  width: 75%;
+  margin: 0 auto; 
+  margin-top: 10vh; 
+  border: 0.0vw solid Black;
+ }
+@media (max-width: 768px) {
+.box11 {  
+  width: 75%;
+  margin: 0 auto; 
+  margin-top: 5vh;
+  margin-top: 5vh;  
+ }
+}
+
+.top-div {  
+ border: 1px solid black;
+ margin: 0 auto; display: flex;
+ justify-content: space-between;
+ background-color: #666666;
+ color: white;
+ margin-top: 0vh; 
+ width: 100%;
+ height: 11vh;
+ }
+
+@media (max-width: 768px) {
+.top-div {  
+ border: 1px solid black;
+ margin: 0 auto; display: flex;
+ justify-content: space-between;
+ background-color: white;
+ color: black;
+ margin-top: 0.35vh; 
+ width: 99%;
+ height: 6.5vh;
+ }
+ }
+
+
+  </style>
+</head>
+
+<body  class="body_cls">
+
+ <!-- 🌍 Navigation Bar Start -->
+<nav class="navbar " >
+
+  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black;  ">
+ 
+
+
+<div style="border: 0vw solid yellow;  margin: 0 auto;">
+<Label id="comp-name" style="margin-left: 8vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: white;">
+</Label>
+</div> 
+    <!-- Toggler -->
+    <button id = "menubtn" class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
+   <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
+    </button>
+
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
+      <ul class="navbar-nav ms-auto">  
+
+      
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+  <!-- 🌍 Navigation Bar End --> 
+
+
+
+ <div class="gap3vh"></div>
+
+<div style="display: flex; width: 60%; border: 0.0vw dashed black; margin: 0 auto; background-color: Transparent; margin-top: 0vh;">
+
+
+ <!-- Input Form -->
+<div class="gap3vh"></div>
+<div class="gap3vh"></div>
+<div class = "items-add-upd" > 
+<div class="gap4vh"></div>
+<div class="gap4vh"></div>
+
+
+
+
+<div style="justify-content: center; display: flex;  border: 0.0vw solid black; margin: 0 auto; ">
+  <input type="text" class="input-field" id="userId" placeholder="User Id"    >
+</div>
+<div class="gap1vh"></div> 
+<div style="justify-content: center; display: flex; justify-content: center;  border: 0.0vw solid black; margin: 0 auto;">
+  <input type="text" class="input-field" id="password" placeholder="User Password"   >
+</div>
+<div class="gap1vh"></div> 
+
+
+<div style="display: flex; justify-content: center; width: 97%; border: 0px solid black; margin: 0 auto; margin-top: 3vh;">
+   <button onclick="additem()" type="button" class="add-btn"; style="clamp(0.8rem, 1.2vw, 1.4rem); font-weight: 500;">Sign In</button>
+</div>
+<div class="gap3vh"></div>
+</div>
+
+<div class="gap3vh"></div>
+
+
+<div class="gap4vh"></div>
+
+
+</div> 
+ <div class="gap3vh"></div> 
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  query,
+  orderBy,
+  addDoc, 
+  setDoc,
+  getDocs, 
+  getDoc,
+  deleteDoc, 
+  doc,
+  updateDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+
+const savedid = 0;
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCSZAx4aG_HY3_B-ZvRfS-Pyp3m5GgKDGs",
+  authDomain: "project-management-fe9a9.firebaseapp.com",
+  projectId: "project-management-fe9a9",
+  storageBucket: "project-management-fe9a9.firebasestorage.app",
+  messagingSenderId: "686798097321",
+  appId: "1:686798097321:web:5cc86a7283990e945b92b8"
+};
+
+
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app); 
+ 
+document.getElementById("comp-name").textContent = "Projects Task Management";
+// document.getElementById("comp-name").textContent = "Projects Tasks Management";
+
+
+// 🔹 CREATE (Insert Data)
+window.additem = async function () {
+
+  
+  const userId = document.getElementById("userId").value;
+  const password = document.getElementById("password").value;
+  
+if (userId === "" || password === "" ){
+    alert("Please Enter all Manadatory datas of the User");
+    return;
+  }
+     
+ 
+
+    const docRef = doc(db, "usertable", userId);    
+    const existingDoc = await getDoc(docRef);
+     if (!existingDoc.exists()) {
+      alert("User Not Found!");
+      return;
+    }
+    const data = existingDoc.data();
+        if (data.password !== password) {
+       alert("Invalid Password!");
+      return;
+    }
+    
+       
+       const adminuserId = data.userId;
+       const paramId = data.ownerId;
+       const paramnm = data.ownernm;
+    //   const paramId = "user1";
+    //   const paramnm = "Asad";
+       console.log(paramId);
+       console.log(paramnm);
+ window.location.href = `./prmg-main.html?param1=${paramId}&param2=${paramnm}&param3=${adminuserId}`; 
+
+     
+     
+  
+     
+
+
+
+     
+};
+
+
+  
+  
+
+
+
+  // 🔹 READ (Load Data into Table)
+async function loadusertable() {
+
+  const table = document.getElementById("usertable");
+  
+  table.innerHTML = "";
+  const collectionRef = collection(db, "usertable");
+  const q = query(collectionRef, orderBy("ownerId", "asc"));
+  
+  const querySnapshot = await getDocs(q);
+
+  let grandTotalCents = 0; // ✅ accumulator for grand total
+
+  querySnapshot.forEach((document) => {
+    const data = document.data();
+    const docId = document.id;
+
+   
+    table.innerHTML += `
+      
+      <tr class="tr-main-row"  >
+       
+        
+        <td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.ownerId}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.ownernm}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.userId}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.password}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 450; padding-left: 0.5vw;">${data.name}</td>
+
+                <td style="border: 0.05vw solid black; text-align: center;">
+           <button onclick="deleteitem('${docId}')" class="edit-delt-btn">Delete</button>
+        </td>  
+          
+        </td>          
+        
+      </tr>
+<tr>
+</tr>
+
+    
+    `;
+  });
+
+     }   // ✅ ONLY ONE closing bracket for function
+
+
+
+
+
+ // Clear input fields
+  window.clearInputs = async function () {
+  
+    
+    document.getElementById("ownernm").value = "";
+    document.getElementById("name").value = "";
+   document.getElementById("ownerId").value = "";
+   document.getElementById("userId").value = "";
+   document.getElementById("password").value = "";
+
+  }
+
+
+
+
+ 
+
+
+
+
+// Fill inputs when Edit button is clicked
+window.edititem = function (id, name) {
+  
+  document.getElementById("name").value = name;
+  
+  
+ 
+  
+
+
+  // Store document ID for update
+  window.currentEditId = id;
+};
+
+ // 🔹 DELETE (Remove Record)
+  window.deleteitem = async function (id) {
+    await deleteDoc(doc(db, "usertable", id));
+    alert("user deleted");
+    clearInputs();
+    loadusertable();
+  };
+
+
+//  PRINT FUNCTION START
+
+function printInvoice() {  
+  const table = document.getElementById("wholeitemTable").outerHTML;
+  const printWindow = window.open('', '', '');
+//  const printWindow = window.open('', '', 'width=900,height=700');
+
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Invoice</title>
+        <style>
+          body {            
+            font-family: Arial, sans-serif;
+            padding: 5vw;
+            background: #a3c2c2;
+          }
+          h5 {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 20px;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }                    
+       @media print {
+          td {
+            border: 0.2vw solid black; 
+            padding: 9px;         
+         }
+                   
+           td:nth-child(1) {
+            text-align: center;
+          }
+           td:nth-child(2),        
+            td:nth-child(3) {       
+            colspan="2";           
+          }  
+            td:nth-child(2) {
+           border-right: 1px solid black !important;
+          } 
+            button {
+              display: none;           
+            }
+            table th:nth-child(3),
+            table td:nth-child(3) {   
+           display: none;     
+           }
+             table th {
+            font-weight: 600;
+            font-size: 50px;
+            color: #3b021c;
+            border: 0.2vw solid black;
+            padding: 12px;                                  
+            }            
+         }    
+    table.invoice-wrapper {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  @media print {
+    thead {
+      display: table-header-group;
+    }
+    .invoice-header {
+    padding-top: 25px;
+  }
+    body {
+    margin: 0;
+  } 
+    tr {
+      page-break-inside: avoid;
+    }
+  }
+  </style>
+ </head>
+<body>
+  <table class="invoice-wrapper">
+  <thead style="padding-top: 25px;">
+    <tr>
+      <td>
+        <div style="text-align: left;">
+          <!-- Your existing header -->
+          <h5>Users</h5>
+          <p style="font-size: 13px;">Maya Enterprise
+          <br>
+          North York Toronto - Phone: 647-999-9999<br>
+          email: ali_albader_alsalem@yahoo.com
+          <br><br>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="invoice-body">
+          <!-- Your existing invoice content -->
+           <table>
+          ${table}
+        </table>
+            
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>          
+</body>
+</html>
+  `);
+  printWindow.print();
+  if (window.matchMedia("(min-width: 768px)").matches) {
+          printWindow.close();
+      }     
+}
+window.printInvoice = printInvoice; // ⭐ IMPORTANT LINE
+//  PRINT FUNCTION END
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Firestore Table (IIS + Localhost)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+  .body_cls {
+          background-color: red;
+          background: linear-gradient(to right, #007bff, #00c6ff);
+          background: white;
+          background: #f7f568;
+          background: #f7f681;
+          background: LightCyan;
+         
+      /*    background:  */
+          line-height: 0.8;         
+            }
+.custom-table-container {
+    height: 76vh;        /* Fixed height */
+   
+     overflow-y: auto;     /* vertical scrollbar */
+    border: 0.0vw solid black;
+    
+}
+
+@media (max-width: 768px) {
+.custom-table-container {
+  height: 76vh;        /* Fixed height */
+    
+     overflow-x: auto;     /* horizontal scrollbar */
+    border: 0.0vw solid #ccc;
+ 
+}
+}
+
+
+ .custom-table {
+    border-collapse: collapse;
+    table-layout: fixed; /* VERY IMPORTANT for percentage widths */
+    width: 99%;
+    font-family: Arial, sans-serif;
+    margin-top: 3vh; 
+    margin-left: 0.2vw; 
+    margin-right: 0.0vw; 
+    border: 0.0vw solid grey; /* Light grey borders */
+    background-color: #b3ffb3;
+    
+}   
+
+ /*  .custom-table tr:nth-child(even) {   */
+ /*    background-color: #D6EEEE;         */ 
+ /*    background-color: rgba(150, 212, 212, 0.4);   */
+ /* }   */
+ .custom-table td:nth-child(2)  {
+     text-align: left;    
+ }
+
+
+.custom-table td:nth-child(2)   {
+     text-align: left;    
+ }
+
+  
+  .custom-table th {
+    background-color: #f2f2f2; /* Light gray background for header */
+   /* color: #333;  */
+    color:black;
+    background-color: #c5effd;  
+    height: 6vh;      
+    border: 0.2vw solid grey;
+
+  }
+
+ 
+
+  .custom-table td {
+    /* background-color: #f2f2f2;  */ /* Light gray background for header */
+    /* color: #333;  */
+    
+    border: 0.05vw solid Black; /* Light grey borders */
+    padding: 0.0vw; /* Spacing inside cells */
+    text-align: center;
+     /* Adjusts the space above and below the text */
+     padding: 7px 7px; 
+    line-height: 12px;
+   white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  
+ .custom-table tr:hover { background-color: #e6f2ff;
+  }
+  
+ 
+
+ 
+ .custom-table td:nth-child(5) {
+  text-align: center;
+  }
+
+.custom-table tr:last-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #e6f2ff;
+  background-color: #f0f0f0;
+  border-top: 0.4vh solid #000;
+}
+
+
+
+ .lkbg { 
+    color: #cce6ff;
+    background-color: Black; 
+    padding: 2.5vh 4vh; /* Adds space around the text */
+    display: inline-block; /* Ensures padding and background apply correctly */
+    border-radius: 3vh;
+ } 
+
+.liheight {
+   line-height: 2.5dvh;
+  } 
+
+ @media (max-width: 768px) {
+ .liheight {
+   line-height: 1.0dvh;
+ } 
+ }
+ 
+.proj-table-container {
+    height: 76vh;        /* Fixed height */
+   
+     overflow-y: auto;     /* vertical scrollbar */
+    border: 0.0vw solid black;
+    
+}
+
+@media (max-width: 768px) {
+.proj-table-container {
+  height: 76vh;        /* Fixed height */
+    
+     overflow-x: auto;     /* horizontal scrollbar */
+    border: 0.0vw solid #ccc;
+ 
+}
+}
+
+
+ .proj-table {
+    border-collapse: collapse;
+    table-layout: fixed; /* VERY IMPORTANT for percentage widths */
+    width: 99%;
+    font-family: Arial, sans-serif;
+    margin-top: 3vh; 
+    margin-left: 0.2vw; 
+    margin-right: 0.0vw; 
+    border: 0.0vw solid grey; /* Light grey borders */
+    
+}   
+
+ /*  .proj-table tr:nth-child(even) {   */
+ /*    background-color: #D6EEEE;         */ 
+ /*    background-color: rgba(150, 212, 212, 0.4);   */
+ /* }   */
+ .proj-table td:nth-child(2)  {
+     text-align: left;    
+ }
+
+.proj-table td:nth-child(3),
+.proj-table td:nth-child(8)   {
+     text-align: left;    
+ }
+
+  
+  .proj-table th {
+    background-color: #f2f2f2; /* Light gray background for header */
+   /* color: #333;  */
+    color:black;
+    background-color: #c5effd;  
+    height: 6vh;      
+    border: 0.2vw solid grey;
+
+  }
+
+ 
+
+  .proj-table td {
+    /* background-color: #f2f2f2;  */ /* Light gray background for header */
+    /* color: #333;  */
+    
+    border: 0.00vw solid lightgrey; /* Light grey borders */
+    padding: 0.0vw; /* Spacing inside cells */
+    text-align: center;
+      /* Adjusts the space above and below the text */
+    padding: 3px 3px; 
+    line-height: 12px;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+
+
+  }
+  
+  
+ .proj-table tr:hover { background-color: #e6f2ff;
+  }
+  
+  
+
+ .proj-table td:nth-child(5),
+ .proj-table td:nth-child(6) {
+  text-align: center;
+  }
+
+.proj-table tr:last-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #e6f2ff;
+  background-color: #f0f0f0;
+  border-top: 0.4vh solid #000;
+}
+
+
+ .grid-container {
+            display: grid;
+            grid-tprojate-columns: repeat(2, 1fr); /* 2 equal columns */
+            gap: 2vw;
+            padding: 0.4vw;
+            grid-auto-rows: auto;
+        }
+
+ .grid-container > div {
+  border: 0.00vw solid red;
+  padding: 0.25vw;
+}
+
+.box {
+            background-color: #c5effd;
+            padding: 10vw;
+            text-align: center;
+            font-size: 20px;
+            border: 0.4vw solid steelblue;
+        }
+
+@media (max-width: 768px) {
+.grid-container {
+  display: grid;
+ grid-tprojate-columns: 1fr; /* Stack vertically */
+grid-auto-flow: row;
+/* height: 90vh; */
+/* gap: 0.5vw; */
+ 
+}
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+ }
+
+.gap1vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap1vh {
+  height: 0.5vh;  /* or any size you want; mobile = desktop */
+}
+}
+
+.gap2vh {
+  height: 2.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap2vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+}
+
+.gap3vh {
+  height: 3.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap3vh {
+  height: 1.5vh;  /* or any size you want; mobile = desktop */
+}
+}
+.gap4vh {
+  height: 4.0vh;  /* or any size you want; mobile = desktop */
+}
+@media (max-width: 768px) {
+.gap4vh {
+  height: 2.0vh;  /* or any size you want; mobile = desktop */
+}
+}
+
+@media (max-width: 768px) {
+ .projTableBody-Cls {
+white-space: normal; 
+overflow-wrap: break-word;
+word-wrap: break-word; 
+word-break: break-all;
+text-wrap: balance;
+hyphens: auto;
+}
+}
+
+
+
+
+
+::placeholder {
+  font-size: clamp(0.9rem, 1.0vw, 1.1rem); 
+  font-weight: 600;
+  color: black; 
+  
+}
+
+.pr-bk-links {
+    border: 0.0vw solid black; 
+    text-align: right;
+    margin-top: -3vh;
+    margin-right: 3vw;
+}
+
+.tr-main-row {
+height: 7vh;
+background-color: #9bc7be;
+
+}
+
+.tr-adl-row {
+height: 2vh;
+background-color: #9bc7be;
+
+}
+
+
+
+.tr-btn-row {
+height: 6vh;
+background-color: #9bc7be;
+
+}
+
+@media (max-width: 768px) {
+.tr-main-row {
+height: 3vh;
+background-color: #9bc7be;
+}
+}
+ 
+@media (max-width: 768px) {
+.tr-adl-row {
+height: 1.5vh;
+background-color: #9bc7be;
+}
+}
+
+
+@media (max-width: 768px) {
+.tr-btn-row {
+height: 2vh;
+background-color: #9bc7be;
+}
+}
+
+@media (max-width: 768px) {
+.pr-bk-links {
+    border: 0.0vw solid black; 
+    text-align: right;
+    margin-top: -2vh;
+    margin-right: 3vw;
+}
+
+}
+
+
+
+.projs-add-upd  {
+ font-size: clamp(0.7rem, 1.5vw, 1.6rem);
+ font-weight: 650;
+ width: 98%; 
+ border: 0.0vw solid black;
+ margin: 0 auto; 
+ justify-content: center;
+ text-align: center; 
+ margin-top: 4vh;
+}
+
+@media (max-width: 768px) {
+.projs-add-upd  {
+ font-size: clamp(1.3rem, 1.9vw, 2.1rem);
+ font-weight: 450;
+ width: 98%; 
+ border: 0.0vw solid black;
+ margin: 0 auto; 
+ justify-content: center;
+ text-align: center; 
+ margin-top: 2vh;
+ 
+}
+}
+
+.input-field {
+ font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+ height: 8vh;
+ font-weight: 450; 
+ border: 0.1vw solid black; 
+ text-align: center;
+ width: 70%;
+}
+
+@media (max-width: 768px) {
+.input-field {
+ font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+ height: 5vh;
+ font-weight: 600; 
+ width: 100%;
+ text-align: center;
+}
+}
+
+
+
+
+
+
+.edit-delt-btn  {
+  width: 50%;
+  height: 8.0vh;
+  text-align: center; 
+  font-weight: 400; 
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+.edit-delt-btn  {
+  width: 80%;
+  height: 5.0vh;
+  text-align: center; 
+  font-weight: 400; 
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  border-radius: 12px; 
+  
+}
+}
+.add-btn {
+  width: 24%; 
+  text-align: center;
+  background-color: #fafafa; 
+  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+  height: 8vh;
+  font-weight: 550; 
+  border-radius: 12px;
+ }
+
+
+@media (max-width: 768px) {
+.add-btn {
+  width: 25%; 
+  text-align: center;
+  /* background-color: LightGrey; */
+  background-color: #fafafa;
+  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+  height: 5vh;
+  font-weight: 600; 
+  border-radius: 12px;
+ }
+ }
+.prt-btn {
+  width: 0%; 
+  text-align: right;
+  background-color: transparent;
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+  height: 0vh;
+  font-weight: 480; 
+  border: 0.0vw solid black;
+  border-radius: 0px;
+  margin-right: -22vw;
+  color: white;
+ }
+
+.ext-btn {
+  width: 20%; 
+  text-align: right;
+  background-color: transparent; 
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+ 
+  font-weight: 600; 
+  border: 0.00vw solid black;
+  border-radius: 5px;
+  color: white;
+  margin-right: 1vw;
+  margin-top: 3vh;
+ }
+
+@media (max-width: 768px) {
+.ext-btn {
+  width: 12%; 
+  text-align: center;
+  background-color: transparent; 
+  font-size: clamp(0.9rem, 1.8vw, 2.1rem);
+  height: 4vh;
+  font-weight: 600; 
+  border: 0.00vw solid black;
+  border-radius: 5px;
+  margin-top: 3vh:
+ }
+}
+
+ .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar .navbar-toggler-icon {
+    font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
+}
+
+.input-field-col {
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 8vh;
+/* background-color: black; */
+/* background-color: LightYellow;  */  
+/* background-color: #f8f2ed; */
+ font-weight: 500; 
+ border: 0.1vw solid black; 
+ width: 60%;
+}
+
+@media (max-width: 768px) {
+.input-field-col {
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 5vh;
+/* background-color: white; */
+/* background-color: #f8f2ed; */
+ font-weight: 500; 
+ width: 100%;
+}
+}
+@media (max-width: 768px) {
+ .itemTableBody-Cls {
+white-space: normal; 
+overflow-wrap: break-word;
+word-wrap: break-word; 
+word-break: break-all;
+text-wrap: balance;
+hyphens: auto;
+}
+}
+
+  </style>
+</head>
+
+<body  class="body_cls">
+
+
+  <!-- 🌍 Navigation Bar Start -->
+<nav class="navbar " >
+
+  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
+ 
+<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
+<button onclick="printInvoice()" type="button" class="prt-btn"; >Print
+</button> 
+</div>
+
+<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
+<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
+</div> 
+    <!-- Toggler -->
+    <button id = "menubtn" class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
+   <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
+    </button>
+
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
+      <ul class="navbar-nav ms-auto">    
+
+        <li class="nav-item">
+          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
+        </li>
+       <li class="nav-item">
+       <label></label>            
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+  <!-- 🌍 Navigation Bar End --> 
+<div class="gap1vh"></div>
+
+<!-- Following are divs which are addition of Navigation Bar -->
+
+
+
+<div style = "height: 6vh; border: 0vw solid red; position relative; display: flex; justify-content: space-between; background-color: transparent; width: 98%; margin: 0 auto;">
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Project Tasks Creation</Label>
+</div>
+</div> 
+
+<!-- Above are divs which are addition of Navigation Bar -->
+
+<div class="gap3vh"></div>
+<div class="gap3vh"></div>
+<div style="display: flex; width: 98%; border: 0.2vw dashed black; margin: 0 auto; background-color: #9bc7be;">
+
+ <!-- Input Form -->
+
+<div class="gap3vh"></div>
+<div class = "projs-add-upd" > 
+<div class="gap3vh"></div>
+<div class="gap3vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" placeholder="Select Project Code" >
+<datalist id="projs"></datalist>
+<span id="projdesc" style= color:blue;></span>
+</div> 
+<div class="gap1vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <input type="number" class="input-field" id="tasknbr" min="1" max="99999999"
+  placeholder="    Task Number"  > 
+</div>
+<div class="gap1vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <input type="text" class="input-field" id="taskname" placeholder="Task Name"  >
+ 
+</div>
+<div class="gap1vh"></div>
+
+
+
+
+
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <input type="text" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task Start Date (Optional)" id="startdt" placeholder="Task Start Date" onfocus="(this.type='date')" onblur="(this.type='text')">
+
+</div>
+<div class="gap1vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+    
+<input type="text" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt" placeholder="Task End Date"onfocus="(this.type='date')" onblur="(this.type='text')" >
+  <input type="hidden" id="docIdHolder">
+</div>
+
+<div class="gap1vh"></div>
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+ <input list="stats" class="input-field-col" title="Select Task" id="stat" name="astat" placeholder="Select  Task Status" >
+ <datalist id="stats">
+   
+   <option>Not Started</option>
+   <option>In Process</option>
+   <option>Delayed</option>
+   <option>Completed</option>
+ </datalist>
+</div>
+
+
+<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
+  
+  <button onclick="addproj()" type="button" class="add-btn";>Add</button>
+  
+</div>
+<div class="gap3vh"></div>
+<div class="gap3vh"></div>
+</div>
+
+<div class="gap4vh"></div>
+
+
+</div> 
+ <div class="gap3vh"></div> 
+ <Div id = "dispdiv" style= "border: 0.0vw solid yellow;  margin-top: -1.0vh; color: black; font-weight: 550; ">
+
+
+<div class="gap2vh"></div>
+  <!-- HTML Table For showing all records of database-->
+<div id = "wholeitemTable" class="custom-table-container">
+  <table class="custom-table">
+    <thead>
+     
+      <tr class="table-height">
+        
+         
+        <th style="text-align: center; width: 35%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Task Title</th> 
+         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Dt</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Dt</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>             
+        
+        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody id="itemTable" class = "itemTableBody-Cls">
+       <tr>
+       
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        
+      </tr>
+    
+     
+     </tbody>
+  <tfoot>
+    <tr style="background-color: #c5effd; height: 3vh;>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     
+        
+    </tr>
+  </tfoot>
+  </table>
+ </div>
+ </div>
+
+>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  query,
+  orderBy,
+  addDoc, 
+  setDoc,
+  getDocs, 
+  getDoc,
+  deleteDoc, 
+  doc,
+  updateDoc,
+  where,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCSZAx4aG_HY3_B-ZvRfS-Pyp3m5GgKDGs",
+  authDomain: "project-management-fe9a9.firebaseapp.com",
+  projectId: "project-management-fe9a9",
+  storageBucket: "project-management-fe9a9.firebasestorage.app",
+  messagingSenderId: "686798097321",
+  appId: "1:686798097321:web:5cc86a7283990e945b92b8"
+};
+
+
+   // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app); 
+  const params = new URLSearchParams(window.location.search);
+let projnbrgb = "";
+let projnamegb = "";
+let startdtgbfl = " ";
+let enddtgbfl = " ";
+let statgbfl = " ";
+let startdtgbin = " ";
+let enddtgbin = " ";
+let statgbin = " ";
+let selectedStatus = "none";
+let paramId = "none";
+let paramnm = "none";
+paramId = params.get("param1");
+paramnm = params.get("param2");
+
+document.getElementById("comp-name").textContent = paramnm;
+  // 🔹 READ (Load Data into Table)
+
+async function loadtaskmaster() {  
+   
+  const table = document.getElementById("itemTable");  
+  table.innerHTML = "";
+  const collectionRef = collection(db, "taskmaster");
+   const q = query(collectionRef, where("ownerId", "==", paramId),
+                where("projnbr", "==", projnbrgb));
+//   const q = query(collectionRef, where("ownerId", "==", paramId));
+//   const q = query(collectionRef);
+                
+  const querySnapshot = await getDocs(q);
+  
+  querySnapshot.forEach((document) => {
+    
+    const data = document.data();
+    const docId = document.id;
+    const color = `${data.status}` === "Delayed" ? "red" : "black"; 
+  
+ 
+    
+    
+    table.innerHTML += `
+      
+      <tr class="tr-main-row"  >
+        
+       
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.taskname}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center; ">${data.startdt}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
+        <td style="padding-left: 0.3vw; text-align: center; color:${color}; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.05vw solid black; ">${data.status}</td> 
+        
+        
+
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center;">
+          <button onclick="deletetask('${docId}', '${data.tasknbr}', '${data.taskname}', )" class = "edit-delt-btn";>Detach</button>
+          
+        </td>                    
+        
+ <tr>
+ </tr>       
+        
+     
+    `;
+ 
+  });
+
+    
+
+ 
+
+ 
+}   // ✅ ONLY ONE closing bracket for function
+
+
+
+
+ // Clear input fields
+  window.clearInputs = async function () {
+  
+    
+    document.getElementById("tasknbr").value = "";
+    document.getElementById("taskname").value = "";
+   
+
+  }
+
+
+
+
+ 
+
+
+
+
+
+
+ // 🔹 DELETE (Remove Record)
+  window.deletetask = async function (id) {
+    await deleteDoc(doc(db, "taskmaster", id));
+    alert("Task Code deleted");
+    clearInputs();
+    loadtaskmaster();
+  };
+
+// 🔹 CREATE (Insert Data)
+window.addproj = async function () {
+  const projnbr = document.getElementById("projnbr").value;
+  const tasknbr = document.getElementById("tasknbr").value;
+  const taskname = document.getElementById("taskname").value; 
+  projnbrgb = document.getElementById("projnbr").value;
+  statgbin = document.getElementById("stat").value;
+  startdtgbin = document.getElementById("startdt").value.trim();
+  enddtgbin = document.getElementById("enddt").value.trim();  
+
+  if (!isValidSelection("projnbr", "projs")) {
+  alert("A valid Project not selected from the Projects list.");
+  return;
+}
+
+ if (!isValidSelection("stat", "stats")) {
+  alert("A valid Task status not selected from the Status list.");
+  return;
+ }
+
+// const startdtInput = document.getElementById("startdt").value.trim();
+
+  if (!isValidDate(startdtgbin)) {
+    alert("Please Enter a valid Task Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    return; // Stop update if invalid
+  }
+ 
+
+
+  if (!isValidDate(enddtgbin)) {
+    alert("Please Enter a valid End Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    return; // Stop update if invalid
+   }
+
+ 
+ try {
+
+    
+    const recordIdm = `${paramId}_${projnbr.toString().padStart(4, '0')}_${tasknbr.toString().padStart(4, '0')}`;
+
+    const docRefm = doc(db, "taskmaster", recordIdm.toString());
+
+    // 🔹 Check if document already exists
+    const existingDoc = await getDoc(docRefm);
+
+    if (existingDoc.exists()) {
+      alert("Task already Exist!");
+      return;
+    }
+  }
+ catch (error) {
+    console.error("Error linking Task:", error);
+    alert("Error linking Task. Check console.");
+    return;
+  }
+
+ 
+//  const recordId = `${paramId}_${tasknbr}`;   
+  const recordId = `${paramId}_${projnbr.toString().padStart(4, '0')}_${tasknbr.toString().padStart(4, '0')}`; 
+  try {
+
+    // 🔹 Use nbr as document ID
+     const docRef = doc(db, "taskmaster", recordId.toString());
+     
+
+    // 🔹 Check if document already exists
+ //   const existingDoc = await getDoc(docRef);
+
+   
+
+    // 🔹 Create document with nbr as ID
+    await setDoc(docRef, {
+      projnbr: parseInt(projnbr, 10),
+      tasknbr: parseInt(tasknbr, 10),
+      startdt: startdtgbin,
+      enddt: enddtgbin,
+      ownerId: paramId,
+      taskname: taskname,
+      projname: projnamegb,
+      delynbr:  0,
+      delyname:  "none",
+      status: statgbin,
+      createdAt: serverTimestamp()
+    });
+
+    alert("New Task added");
+    
+    loadtaskmaster(); // refresh table
+
+  } catch (error) {
+    console.error("Error adding Task Code:", error);
+    alert("Error adding. Check console.");
+  }
+};
+
+  
+  loadtaskmaster();
+
+function mainappl() {  
+         window.location.href = `./prmg-main.html?param1=${paramId}&param2=${paramnm}`; 
+  }
+window.mainappl = mainappl; // ⭐ IMPORTANT LINE
+
+//  Load Firestore data into <datalists>
+async function loadcodestables() {
+
+     
+try {
+    const projlist = document.getElementById("projs");
+    const db = getFirestore();
+    const collectionRefP = collection(db, "projcodes");
+    const q = query(collectionRefP, where("ownerId", "==", paramId));
+    const snapshot = await getDocs(q);
+ //   const snapshot = await getDocs(collection(db, "projcodes")); 
+
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+
+      const option = document.createElement("option");
+      option.value = data.projnbr; // This is what gets inserted into the input
+      option.textContent = `${data.projnbr} - ${data.projname}`;
+
+      
+      projlist.appendChild(option);
+    });
+
+  }
+
+    catch (error) {
+    console.error("Error loading Project Codes:", error);
+  }
+
+
+}
+
+loadcodestables();
+
+function isValidSelection(inputId, datalistId) {
+  const input = document.getElementById(inputId).value;
+  const options = document.querySelectorAll(`#${datalistId} option`);
+
+  const validValues = Array.from(options).map(opt => opt.value);
+
+  return validValues.includes(input);
+}
+
+function isValidDate(expiry) {
+  // Check format using Regular Expression (YYYY-MM-DD)
+//  const regex = /^\d{4}-(0[1-9]|1[0-2])$/;
+   const regex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!regex.test(expiry)) {
+    return false; // Invalid format
+  }
+
+  // Optional: check if it is a real calendar date
+  const [year, month] = expiry.split("-").map(Number);
+
+  const date = new Date(year, month - 1); // month is 0-based in JS
+
+  // Ensure parsed values match input
+  return date.getFullYear() === year && date.getMonth() === month - 1;
+}
+
+projnbr.addEventListener("input", function () {
+alert("in event listner1");
+const option = document.querySelector(
+    `#projs option[value="${this.value}"]`);
+
+if (option) {
+    alert("in event listner22");
+    console.log(option.textContent);   // "P1001 - Building Construction"
+ //   document.getElementById("projdesc").textContent = option.textContent;
+      document.getElementById("projdesc").textContent =
+    option.textContent.replace(option.value + " - ", "");
+ //   projnamegb = option.textContent;
+    projnamegb = document.getElementById("projdesc").textContent;
+
+    projnbrgb = projnbr.value.split(" ")[0];
+    projnbrgb = parseInt(projnbrgb, 10);
+     console.log(projnbrgb);
+    loadtaskmaster();
+  //  projectdisplaydiv.style.display = "block";
+  //  projnbr.style.display = "none";
+}
+});
+
+
+
+
+
+//  PRINT FUNCTION START
+
+function printInvoice() {  
+  const table = document.getElementById("wholetaskTable").outerHTML;
+  const printWindow = window.open('', '', '');
+//  const printWindow = window.open('', '', 'width=900,height=700');
+
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Invoice</title>
+        <style>
+          body {            
+            font-family: Arial, sans-serif;
+            padding: 5vw;
+            background: #a3c2c2;
+          }
+          h5 {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 20px;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }                    
+       @media print {
+          td {
+            border: 0.2vw solid black; 
+            padding: 9px;         
+         }
+                   
+           td:nth-child(1) {
+            text-align: center;
+          }
+           td:nth-child(2),        
+            td:nth-child(3) {       
+            colspan="2";           
+          }  
+            td:nth-child(2) {
+           border-right: 1px solid black !important;
+          } 
+            button {
+              display: none;           
+            }
+            table th:nth-child(3),
+            table td:nth-child(3) {   
+           display: none;     
+           }
+             table th {
+            font-weight: 600;
+            font-size: 50px;
+            color: #3b021c;
+            border: 0.2vw solid black;
+            padding: 12px;                                  
+            }            
+         }    
+    table.invoice-wrapper {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  @media print {
+    thead {
+      display: table-header-group;
+    }
+    .invoice-header {
+    padding-top: 25px;
+  }
+    body {
+    margin: 0;
+  } 
+    tr {
+      page-break-inside: avoid;
+    }
+  }
+  </style>
+ </head>
+<body>
+  <table class="invoice-wrapper">
+  <thead style="padding-top: 25px;">
+    <tr>
+      <td>
+        <div style="text-align: left;">
+          <!-- Your existing header -->        
+          <h4>Tasks List</h4>
+          <p>${paramnm}. All rights reserved.</p>
+          <br>
+          North York Toronto - Phone: 647-999-9999<br>
+          email: ali_albader_alsalem@yahoo.com
+          <br><br>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="invoice-body">
+          <!-- Your existing invoice content -->
+           <table>
+          ${table}
+        </table>
+              
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>          
+</body>
+</html>
+  `);
+  printWindow.print();
+  if (window.matchMedia("(min-width: 768px)").matches) {
+          printWindow.close();
+      }     
+}
+window.printInvoice = printInvoice; // ⭐ IMPORTANT LINE
+//  PRINT FUNCTION END
+
+
+
+
+
+</script>
+
+</body>
+</html>
