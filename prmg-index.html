@@ -16,6 +16,7 @@
           background: #f7f568;
           background: #f7f681;
           background: LightCyan;
+          background: Lightblue;
           
            background-image: url("cloud-image1.jpg");
     background-repeat: no-repeat;
@@ -635,17 +636,14 @@ background-color: #9bc7be;
 
 
 
- <div class="gap3vh"></div>
+ 
 
 <div style="display: flex; width: 60%; border: 0.0vw dashed black; margin: 0 auto; background-color: Transparent; margin-top: 0vh;">
 
 
  <!-- Input Form -->
-<div class="gap3vh"></div>
-<div class="gap3vh"></div>
+
 <div class = "items-add-upd" > 
-<div class="gap4vh"></div>
-<div class="gap4vh"></div>
 
 
 
@@ -663,18 +661,12 @@ background-color: #9bc7be;
 <div style="display: flex; justify-content: center; width: 97%; border: 0px solid black; margin: 0 auto; margin-top: 3vh;">
    <button onclick="additem()" type="button" class="add-btn"; style="clamp(0.8rem, 1.2vw, 1.4rem); font-weight: 500;">Sign In</button>
 </div>
-<div class="gap3vh"></div>
 </div>
-
-<div class="gap3vh"></div>
-
-
-<div class="gap4vh"></div>
-
-
 </div> 
- <div class="gap3vh"></div> 
-
+<div class="gap2vh"></div>
+ <div id="imagePanel" style="width: 40%; margin: 0 auto; height: 3vh;" >
+ <img src="img-login.PNG" class="img-fluid rounded pull-left"   alt="Image REST is notavialable" > 
+    </div>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module">
@@ -713,7 +705,7 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app); 
  
-document.getElementById("comp-name").textContent = "Projects Task Management";
+document.getElementById("comp-name").textContent = "Poly Projects Management System";
 // document.getElementById("comp-name").textContent = "Projects Tasks Management";
 
 
@@ -741,17 +733,41 @@ if (userId === "" || password === "" ){
         if (data.password !== password) {
        alert("Invalid Password!");
       return;
-    }
-    
-       
-       const adminuserId = data.userId;
+    } 
+       const paramuserId = data.userId;
        const paramId = data.ownerId;
        const paramnm = data.ownernm;
-    //   const paramId = "user1";
-    //   const paramnm = "Asad";
+       const paramdatatype = data.ownerdatatype;
+   const docRef1 = doc(db, "ownerstable", paramId);    
+    const existingDoc1 = await getDoc(docRef1);
+     if (!existingDoc1.exists()) {
+      alert("Owner Not Found!");
+      return;
+    }
+    const data1 = existingDoc1.data();   
+    const paramet = data1.owneret;
+    const paramtt = data1.ownertt;
+    const paramtsdt = data1.ownertsdt;
+    const paramtedt = data1.ownertedt;
+    const paramtstt = data1.ownertstt;
+       console.log(paramuserId);
        console.log(paramId);
        console.log(paramnm);
- window.location.href = `./prmg-main.html?param1=${paramId}&param2=${paramnm}&param3=${adminuserId}`; 
+       console.log(paramdatatype);
+       console.log(paramtedt);
+       console.log(paramet);
+       console.log(paramtt);
+       console.log(paramtsdt);
+       console.log(paramtedt);
+       console.log(paramtstt);
+  
+
+    window.location.href = `./prmg-main.html?param1=${paramId}&param2=${paramnm}` +
+                           `&param3=${paramdatatype}&param4=${paramuserId}` + 
+                           `&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}` +
+                           `&param8=${paramtedt}&param9=${paramtstt}`;
+
+
 
      
      

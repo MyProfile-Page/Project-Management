@@ -89,10 +89,14 @@
  /*    background-color: #D6EEEE;         */ 
  /*    background-color: rgba(150, 212, 212, 0.4);   */
  /* }   */
+ .custom-table td:nth-child(2)  {
+     text-align: left;    
+ }
 
 
-
-
+.custom-table td:nth-child(2)   {
+     text-align: left;    
+ }
 
   
   .custom-table th {
@@ -129,7 +133,10 @@
   
  
 
- 
+ .custom-table td:nth-child(5),
+ .custom-table td:nth-child(6) {
+  text-align: center;
+  }
 
 .custom-table tr:last-child {
   font-size: 1.1rem;
@@ -140,12 +147,43 @@
 }
 
 
+ .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+            gap: 2vw;
+            padding: 0.4vw;
+            grid-auto-rows: auto;
+        }
 
+ .grid-container > div {
+  border: 0.00vw solid red;
+  padding: 0.25vw;
+}
 
+.box {
+            background-color: #c5effd;
+            padding: 10vw;
+            text-align: center;
+            font-size: 20px;
+            border: 0.4vw solid steelblue;
+        }
 
+@media (max-width: 768px) {
+.grid-container {
+  display: grid;
+ grid-template-columns: 1fr; /* Stack vertically */
+grid-auto-flow: row;
+/* height: 90vh; */
+/* gap: 0.5vw; */
+ 
+}
+}
 
-
-
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+ }
 
 .gap1vh {
   height: 0.4vh;  /* or any size you want; mobile = desktop */
@@ -193,11 +231,30 @@ hyphens: auto;
 }
 }
 
+.Menubar-header {
+font-family: calibri;
+ font-size: clamp(1.0rem, 1.1vw, 1.2rem); 
+font-weight: 500;
+color: black; 
+font-style: italic;
+font-weight: 550;
+}
 
+#apl-hdr {
+  font-size: clamp(1.1rem, 1.3vw, 1.4rem);  
+  font-weight:  700;
+  color: lightblue; 
+  text-decoration: none; 
+  text-align: center;
+}
 
-
-
-
+#menu-word-prp {
+ font-size: clamp(1.0rem, 1.2vw, 1.3rem);  
+  font-weight:  400;
+  color: lightblue; 
+  text-decoration: none; 
+  text-align: center;
+}
 
 .menu-bar-prp {
  font-size: clamp(1.0rem, 1.2vw, 1.3rem);  
@@ -220,7 +277,12 @@ hyphens: auto;
 
 
 
-
+.pr-bk-links {
+    border: 0.0vw solid black; 
+    text-align: right;
+    margin-top: -3vh;
+    margin-right: 3vw;
+}
 
 .tr-main-row {
 height: 5vh;
@@ -234,7 +296,13 @@ background-color: #9bc7be;
 
 }
 
-
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 5vh; 
+}
 
 .tr-btn-row {
 height: 7vh;
@@ -256,7 +324,15 @@ background-color: #9bc7be;
 }
 }
 
-
+@media (max-width: 768px) {
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 3vh; 
+}
+}
 @media (max-width: 768px) {
 .tr-btn-row {
 height: 2vh;
@@ -264,7 +340,15 @@ background-color: #9bc7be;
 }
 }
 
+@media (max-width: 768px) {
+.pr-bk-links {
+    border: 0.0vw solid black; 
+    text-align: right;
+    margin-top: -2vh;
+    margin-right: 3vw;
+}
 
+}
 
 .item-db {
     border: 0.0vw solid black; 
@@ -510,12 +594,30 @@ border-radius: 12px;
  }  
 }
 
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 8vh; 
+}
 
 
+@media (max-width: 768px) {
+.tr-tl-row {
+font-weight: bold;
+font-size: 1.0rem;
+background-color: #acdbe8;
+border: 0.1vw solid black;
+height: 5vh; 
+}
+}
 
-
-
-
+::-webkit-calendar-picker-indicator {
+    width: 5dvh; /* Increase width */
+    height: 5dvh; /* Increase height */
+    cursor: pointer;
+}
 
 .prt-btn {
   width: 0%; 
@@ -531,15 +633,42 @@ border-radius: 12px;
   
  }
 
+.ext-btn {
+  width: 20%; 
+  text-align: right;
+  background-color: transparent; 
+  font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+ 
+  font-weight: 600; 
+  border: 0.00vw solid black;
+  border-radius: 5px;
+  color: white;
+  margin-right: 1vw;
+  margin-top: 3vh;
+ }
+
+@media (max-width: 768px) {
+.ext-btn {
+  width: 12%; 
+  text-align: center;
+  background-color: transparent; 
+  font-size: clamp(0.9rem, 1.8vw, 2.1rem);
+  height: 4vh;
+  font-weight: 600; 
+  border: 0.00vw solid black;
+  border-radius: 5px;
+  margin-top: 3vh:
+ }
+}
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
- height: 7vh;
+ height: 8vh;
 /* background-color: black; */
 /* background-color: LightYellow;  */  
 /* background-color: #f8f2ed; */
  font-weight: 500; 
  border: 0.1vw solid black; 
- width: 35%;
+ width: 60%;
 }
 
 @media (max-width: 768px) {
@@ -549,7 +678,7 @@ border-radius: 12px;
 background-color: black; */
 /* background-color: #f8f2ed; */
  font-weight: 500; 
- width: 60%;
+ width: 100%;
 }
 }
 
@@ -601,7 +730,7 @@ background-color: black; */
  <!-- 🌍 Navigation Bar Start -->
 <nav class="navbar " >
 
-  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 99.5%; ">
+  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
  
 <div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
 <button onclick="printInvoice()" type="button" class="prt-btn"; id="inv-btn"; >
@@ -628,23 +757,13 @@ background-color: black; */
     <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
       <ul class="navbar-nav ms-auto">    
 
-        <li class="nav-item">        
-<a class="nav-link " href="#" onclick="assigntask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; display: none;"> Assign Tasks to Projects</a>
-<a class="nav-link " href="#" onclick="updatetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; display: none;">Schedule Projects Tasks</a>         
-<a class="nav-link " href="#" onclick="manageproject()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" id = "projectlink"></a>
-<a class="nav-link " href="#" onclick="managetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" id = "tasklink" ></a> 
-<a class="nav-link " href="#" onclick="manageowner()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "addownerlink" >Add Owners</a> 
-<a class="nav-link " href="#" onclick="manageuser()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none; " id = "adduserlink">Add Users</a>
-<a class="nav-link " href="#" onclick="viewallprojs()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "allprojlink" >view All Projects</a> 
-<a class="nav-link " href="#" onclick="Reloadpage()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "refreshlink" >Refresh</a>
-       </li>
+      
 <li class="nav-item">
        <label>&nbsp</label>            
  </li>
-        
-
+        </li>
  <li class="nav-item">
-          <a  style="color: white; font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" href="./prmg-index.html">Back</a>   
+          <a  style="color: white; font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" href="#" onclick="mainappl()">Back</a>   
         </li>
  <li class="nav-item">
        <label></label>            
@@ -656,36 +775,18 @@ background-color: black; */
   </div>
 </nav>
   <!-- 🌍 Navigation Bar End --> 
-<div class="gap3vh"></div>
-
-<!-- following divs to select projects from datalist -->
-
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj"  >
-<!-- <span id="projdesc"></span>  -->
-<datalist id="projs"></datalist>
-</div> 
-
-<!-- Above divs to select projects from datalist -->
+<div class="gap1vh"></div>
 
 <!-- Following are divs which are addition of Navigation Bar -->
 
 
 <div class = "div-hdr">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.7vw, 1.9rem); color: blue; font-weight: 550; id="hdr-pr-wrd;"></Label>
-<span id="projdesc" style= color:blue;></span>
+<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Projects Tasks</Label>
 </div>
 </div> 
 
-
-
 <!-- Above are divs which are addition of Navigation Bar -->
-
-<div id="imagePanel" style="width: 60%; margin: 0 auto; " >
- <img src="index-img-html.jpg" class="img-fluid rounded pull-left"   alt="Image REST is notavialable" > 
-    </div>
-
 
 
 <div class="gap3vh"></div>
@@ -696,9 +797,9 @@ background-color: black; */
 <div class="gap3vh"></div> 
 
 
-<!-- Following is div For Grid Display of Projects and their Tasks -->
+<!-- Following is div For Grid Display of Projects and their asks -->
  
-<div  id="projectdisplaydiv" style="margin-top: -5vh; display: none;"  >
+<div  id="projectdisplaydiv" style="margin-top: -5vh;"  >
 
 <div style="display: flex; width: 99.0%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
 
@@ -707,14 +808,14 @@ background-color: black; */
 
 <div class="gap2vh"></div>
   <!-- HTML Table For showing all records of database-->
-<div id = "wholeitemTable" class="custom-table-container" >
+<div id = "wholeitemTable" class="custom-table-container">
   <table class="custom-table">
     <thead>
       <tr class="table-height">
-       
-        <th style="text-align: center; width: 45%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrmainname";></th>              
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Dt</th>
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Dt</th>
+        <th id = "hdrmainnamee" style="text-align: center; width: 23%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></th>
+        <th id = "hdrmainnamet" style="text-align: center; width: 22%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></th>              
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Dt</th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Dt</th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>
       </tr>
     </thead>
@@ -722,8 +823,8 @@ background-color: black; */
     <tbody id="itemTable" class = "itemTableBody-Cls">
        <tr>
        
-        
-        <td style="text-align: left; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
@@ -733,7 +834,7 @@ background-color: black; */
      </tbody>
      <tfoot >
     <tr style="background-color: #c5effd; height: 3vh;>
-      
+      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
       <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
@@ -792,17 +893,19 @@ const firebaseConfig = {
 
   const params = new URLSearchParams(window.location.search);
 let selectedStatus = "none";
-let todaygb = new Date();
-todaygb.setHours(0, 0, 0, 0);
+let projname = "none";
+let statusgb = "";
 let startgb = "";
 let endgb = "";
-let statusgb = "";
+let todaygb = "";
 let projnbrgb = "";
-let projname = "none";
 let prevprojname = "";
 let teamnamegb = "none";
 let tasknamegb = "none";
 let projnamegb = "none";
+
+let userId = "none";
+
 let paramId = "";
 let paramnm = "";
 let paramdatatype = "";
@@ -821,137 +924,28 @@ paramtt = params.get("param6");
 paramtsdt = params.get("param7");
 paramtedt = params.get("param8");
 paramtstt = params.get("param9");
-
-console.log(paramId);
-console.log(paramnm);
-console.log(paramdatatype);
-console.log(paramuserId);
+// paramId = "ownernbr1";
 
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name1").textContent = paramnm;
-document.getElementById("hdrmainname").textContent = paramtt;
 
-
-
-//  Load Firestore data into <datalists>
-async function loadcodestables() {
-     
-try {
-    const projlist = document.getElementById("projs");
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore();
-    const collectionRefP = collection(db, "projcodes");
-    const q = query(collectionRefP, where("ownerId", "==", paramId));
-    const snapshot = await getDocs(q);
- //   const snapshot = await getDocs(collection(db, "projcodes")); 
-
-    snapshot.forEach((doc) => {
-      const data = doc.data();
-
-      const option = document.createElement("option");
-      option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;
-
-      
-      projlist.appendChild(option);
-    });
-
-  }
-
-    catch (error) {
-    console.error("Error loading Project Codes:", error);
-  }
-
-
-}
-
-loadcodestables();
-
- const projnbr = document.getElementById("projnbr");
- projnbr.placeholder = `Select ${paramet} To View All its ${paramtt}s `;
- 
- 
-
-// console.log(typeof projnbr);
-// console.log(projnbr.length);
-
-projnbr.addEventListener("input", function () {
-const option = document.querySelector(
-    `#projs option[value="${this.value}"]`);
-
-if (option) {
-    console.log(option.textContent);   // "P1001 - Building Construction"
-//    document.getElementById("projdesc").textContent = option.textContent;
-    document.getElementById("projdesc").textContent =
-    option.textContent.replace(option.value + " - ", "");
-    projnbrgb = projnbr.value.split(" ")[0];
-    projnbrgb = parseInt(projnbrgb, 10);
-     console.log(projnbrgb);
-    loadtaskmaster();
-    imagePanel.style.display = "none";
-    projectdisplaydiv.style.display = "block";
-    projnbr.style.display = "none";
-}
-});
-
-menubtn.addEventListener("click", function () {
-  const menuBtn = document.getElementById("menuBtn");
-  const menuPanel = document.getElementById("menuPanel");
- if (menuPanel.style.display === "none") {
-        menuPanel.style.display = "block";
-        document.getElementById("inv-btn").textContent = "";
-    } else {
-        menuPanel.style.display = "none";
-        document.getElementById("inv-btn").textContent = "Print";
-    }
-  
-});
-
-// document.addEventListener('click', function(event) {
- //   alert("in DOC click");
- //   document.getElementById("inv-btn").textContent = "Print";
- // });   
-
-// projnbr.addEventListener("input", loadtaskmaster);
-
-
-
-
-async function loadtaskmaster() {
-
-
-//  loadtaskmaster();
+loadtaskmaster();
 
 
   // 🔹 READ (Load Data into Table)
-// async function loadtaskmaster() {
-
+async function loadtaskmaster() {
  
-
-
-
-//if (!isValidSelection("projnbr", "projs")) {
-//  alert("A valid Project not selected from the Projects list.");
-//  return;
-// }
- 
-  
   const wholeitemTable = document.getElementById("itemTable");
   
-  console.log(paramId);
   wholeitemTable.innerHTML = "";
   const collectionRef = collection(db, "taskmaster");
-  
-//   const q = query(collectionRef);
-//   const q = query(collectionRef, where("ownerId", "==", paramId));
- console.log(projnbrgb);
-   const q = query(collectionRef, where("ownerId", "==", paramId),
-                where("projnbr", "==", projnbrgb));
-  
+  const q = query(collectionRef, where("ownerId", "==", paramId));
+
   const querySnapshot = await getDocs(q);
-  
+
+ 
+
   querySnapshot.forEach((document) => {
-    
     const data = document.data();
     const docId = document.id;
     statusgb = `${data.status}`
@@ -986,20 +980,24 @@ async function loadtaskmaster() {
   }
 
   }
+
+     projname = `${data.projname}`;    
+     const color = `${data.status}` === "Delayed" ? "red" : "black";     
+
+ 
+
     
-     const color = `${statusgb}` === "Delayed" ? "red" : "black";     
-      
     wholeitemTable.innerHTML += `
       
       <tr class="tr-main-row"  >
-        
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left; ">${data.projname !== prevprojname ? data.projname : ""}</td>
     
        
-        <td style="text-align: left; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black;  ">${data.taskname}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black;  ">${data.taskname}</td>
         
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
-        <td style="padding-left: 0.3vw; text-align: center; color:${color}; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.05vw solid black; ">${statusgb}</td> 
+        <td style="padding-left: 0.3vw; text-align: left; color:${color}; text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.05vw solid black; ">${statusgb}</td> 
       </tr>
                  
   
@@ -1013,20 +1011,13 @@ async function loadtaskmaster() {
  
 
 
- 
+ prevprojname = data.projname;
 
   });
  
 }   // ✅ ONLY ONE closing bracket for function
 
-function isValidSelection(inputId, datalistId) {
-  const input = document.getElementById(inputId).value;
-  const options = document.querySelectorAll(`#${datalistId} option`);
 
-  const validValues = Array.from(options).map(opt => opt.value);
-
-  return validValues.includes(input);
-}
 
 function clean(value) {
   return (value === null || 
@@ -1045,21 +1036,13 @@ function clean(value) {
 //  loadtaskmaster();
 
 function manageowner() {  
-    console.log(paramuserId);
-           if (paramuserId === "Admin") {
-          window.location = `./genr-add-del-owner-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}`; 
-    }
-else  { 
- alert("This Function is Not Allowed"); 
+          window.location = `./genr-add-del-owner-code.html?param1=${paramId}&param2=${paramnm}`; 
   }
- } 
-  
 window.manageowner = manageowner; // ⭐ IMPORTANT LINE
 
 function manageuser() {  
-console.log(paramuserId);
-   if (paramuserId === "Admin") {
-          window.location = `./genr-add-del-user-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}`;  
+   if (userId === "Admin") {
+          window.location = `./genr-add-del-user-code.html?param1=${paramId}&param2=${paramnm}`; 
     }
 else  { 
  alert("This Function is Not Allowed"); 
@@ -1068,38 +1051,24 @@ else  {
 window.manageuser = manageuser; // ⭐ IMPORTANT LINE
 
 function manageproject() {  
-          window.location = `./prmg-add-del-proj-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
- }
+          window.location = `./prmg-add-del-proj-code.html?param1=${paramId}&param2=${paramnm}`; 
+  }
 window.manageproject = manageproject; // ⭐ IMPORTANT LINE
 
 function managetask() {        
-         window.location = `./prmg-add-del-task-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
+         window.location = `./prmg-add-del-task-code.html?param1=${paramId}&param2=${paramnm}`;
  }
 window.managetask = managetask; // ⭐ IMPORTANT LINE
 
 function assigntask() {  
-         window.location = `./prmg-link-delink-task.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
- }
+         window.location = `./prmg-link-delink-task.html?param1=${paramId}&param2=${paramnm}`; 
+  }
 window.assigntask = assigntask; // ⭐ IMPORTANT LINE
 
 function updatetask() {  
-         window.location = `./prmg-update-task-dates.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
- }
+         window.location = `./prmg-update-task-dates.html?param1=${paramId}&param2=${paramnm}`; 
+  }
 window.updatetask = updatetask; // ⭐ IMPORTANT LINE
-
-function viewallprojs() {  
-         window.location = `./prmg-main-all-entities.html?param1=${paramId}&param2=${paramnm}&param3=
-${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
- }
- 
-window.viewallprojs = viewallprojs; // ⭐ IMPORTANT LINE
-
-function Reloadpage() {  
-         window.location = `./prmg-main.html?param1=${paramId}&param2=${paramnm}&param3=
-${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
- }
-window.Reloadpage = Reloadpage; // ⭐ IMPORTANT LINE
-
 
 
 // 🔹 user Login
@@ -1136,16 +1105,31 @@ if (userId === "" || usrpassword === "" ){
        console.log(paramId);
        console.log(paramnm);
 // window.location.href = `./Index-team.html?param1=${paramId}&param2=${paramnm}`; 
+    logindiv.style.display = "none";
     loadtaskmaster();
     projectdisplaydiv.style.display = "block";
-    const labelhdr = document.getElementById("hdr-pr-wrd");
-    labelhdr.innerText = "Project&nbsp&nbsp";
     menubtn.style.display = "block";
     document.getElementById("menubtn").disabled = false;  
  
   
 };
 
+function mainappl() {
+         window.location = `./prmg-main.html?param1=${paramId}&param2=${paramnm}&param3=
+${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
+         
+  }
+window.mainappl = mainappl; // ⭐ IMPORTANT LINE
+  //  FIELDS TITLES FUNCTION START
+console.log(`${paramet}`);
+console.log(`${paramtt}`);
+document.addEventListener("DOMContentLoaded", () => {
+// startdt.placeholder = `${paramtt} Start Date`;
+// enddt.placeholder = `${paramtt} End Date`;
+// taskname.placeholder = `${paramtt} Title`;
+document.getElementById("hdrmainnamee").textContent = `${paramet} Title`;
+document.getElementById("hdrmainnamet").textContent = `${paramtt} Title`;
+});
 
   function isTodayBetween() {     
     return todaygb >= startgb && todaygb <= endgb;
@@ -1157,22 +1141,18 @@ function isTodaygreater() {
     return todaygb > endgb;
 } 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("projectlink").textContent = `Create ${paramet}s`;
-    document.getElementById("tasklink").textContent = `Create ${paramtt}s of the ${paramet}s `;
- //   document.getElementById("inv-btn").textContent = "Print";
-  if (paramuserId === "Admin") {
-    document.getElementById("adduserlink").style.display = "block";
-    document.getElementById("addownerlink").style.display = "block";
-    document.getElementById("refreshlink").style.display = "block";
-    document.getElementById("allprojlink").style.display = "block";
-    
-  }
+menubtn.addEventListener("click", function () {
+  const menuBtn = document.getElementById("menuBtn");
+  const menuPanel = document.getElementById("menuPanel");
+ if (menuPanel.style.display === "none") {
+        menuPanel.style.display = "block";
+        document.getElementById("inv-btn").textContent = "";
+    } else {
+        menuPanel.style.display = "none";
+        document.getElementById("inv-btn").textContent = "Print";
+    }
+  
 });
-
-
-
 
 
 //  PRINT FUNCTION START
