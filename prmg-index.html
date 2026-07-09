@@ -389,6 +389,7 @@ background-color: #9bc7be;
   border: 2px solid black; 
  text-align: center;
  width: 70%;
+ 
 }
 
 @media (max-width: 768px) {
@@ -399,27 +400,32 @@ background-color: #9bc7be;
  width: 100%;
  text-align: center;
  border: 2px solid black; 
+ 
 }
 }
 
 
 .input-field-col {
- font-size: clamp(0.5rem, 1.0vw, 1.1rem);
- height: 8vh;
- background-color: #51DEED; 
- background-color: LightYellow;  
- background-color: #f8f2ed;
- font-weight: 450; 
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 7vh;
+/* background-color: black; */
+/* background-color: LightYellow;  */  
+/* background-color: #f8f2ed; */
+ font-weight: 500; 
  border: 0.1vw solid black; 
+ width: 35%;
+ text-align: center;
 }
 
 @media (max-width: 768px) {
 .input-field-col {
- font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
  height: 5vh;
- background-color: #51DEED; 
- background-color: #f8f2ed; 
- font-weight: 600; 
+background-color: black; */
+/* background-color: #f8f2ed; */
+ font-weight: 500; 
+ width: 60%;
+text-align: center;
 }
 }
 
@@ -453,6 +459,7 @@ background-color: #9bc7be;
   font-weight: 500; 
   border-radius: 2px;
   border: 2px solid black;
+   color: black;
  }
 .upd-btn {
   width: 9%; 
@@ -482,6 +489,7 @@ background-color: #9bc7be;
   border-radius: 2px; 
   font-size: 12px;
   border: 2px solid black;
+  color: black;
  }
  }
 @media (max-width: 768px) {
@@ -592,7 +600,29 @@ background-color: #9bc7be;
  height: 6.5vh;
  }
  }
+@media (max-width: 768px) {    
+.div-hdr {
+ height: 4vh; 
+ border: 0vw solid red;
+ position relative;
+ display: flex;
+ justify-content: space-between; 
+ background-color: transparent;
+ width: 98%;
+ margin: 0 auto;
+}
+}
 
+.div-hdr {
+ height: 6vh; 
+ border: 0vw solid red;
+ position relative;
+ display: flex;
+ justify-content: space-between; 
+ background-color: transparent;
+ width: 98%;
+ margin: 0 auto;
+}
 
   </style>
 </head>
@@ -603,13 +633,11 @@ background-color: #9bc7be;
 <nav class="navbar " >
 
   <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black;  ">
- 
 
+  <div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 37.9%;  ">
+  <Label id="comp-name1" style="font-size: clamp(0.8rem, 1.2vw, 1.3rem); color: white; font-weight: 550; color:   white;">Multi Entities Task Management System </Label>
+  </div> 
 
-<div style="border: 0vw solid yellow;  margin: 0 auto;">
-<Label id="comp-name" style="margin-left: 8vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: white;">
-</Label>
-</div> 
     <!-- Toggler -->
     <button id = "menubtn" class="navbar-toggler" type="button" 
             data-bs-toggle="collapse"
@@ -620,7 +648,7 @@ background-color: #9bc7be;
        <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
    <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
     </button>
-
+ 
     <!-- Collapsible menu -->
     <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
       <ul class="navbar-nav ms-auto">  
@@ -634,7 +662,23 @@ background-color: #9bc7be;
 </nav>
   <!-- 🌍 Navigation Bar End --> 
 
+ <!-- following divs to select projects from datalist -->
 
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+<input list="entitys" class="input-field-col" title="Select Entity" id="entitynbr" name="aentity"  >
+<!-- <span id="entityname"></span>  -->
+<datalist id="entitys"></datalist>
+</div> 
+
+<!-- Above divs to select Entities from datalist -->
+
+
+<div class = "div-hdr">
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<Label style="font-size: clamp(0.9rem, 1.7vw, 1.9rem); color: blue; font-weight: 550; id="hdr-pr-wrd;"></Label>
+<span id="entityname" style= "color:blue;"></span>
+</div>
+</div> 
 
  
 
@@ -653,7 +697,7 @@ background-color: #9bc7be;
 </div>
 <div class="gap1vh"></div> 
 <div style="justify-content: center; display: flex; justify-content: center;  border: 0.0vw solid black; margin: 0 auto;">
-  <input type="text" class="input-field" id="password" placeholder="User Password"   >
+  <input type="password" class="input-field" id="password" placeholder="User Password"   >
 </div>
 <div class="gap1vh"></div> 
 
@@ -664,8 +708,8 @@ background-color: #9bc7be;
 </div>
 </div> 
 <div class="gap2vh"></div>
- <div id="imagePanel" style="width: 40%; margin: 0 auto; height: 3vh;" >
- <img src="img-login.PNG" class="img-fluid rounded pull-left"   alt="Image REST is notavialable" > 
+ <div id="imagePanel" style="width: 20%; margin: 0 auto; " >
+ <img src="login-image3.jpg" class="responsive-img rounded "   alt="Image REST is notavialable" > 
     </div>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -687,7 +731,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 
-
+let entitynbrgb = "";
 const savedid = 0;
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -705,8 +749,46 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app); 
  
-document.getElementById("comp-name").textContent = "Poly Projects Management System";
+// document.getElementById("comp-name").textContent = "Poly Projects Management System";
 // document.getElementById("comp-name").textContent = "Projects Tasks Management";
+
+
+//  Load Firestore data into <datalists>
+async function loadcodestables() {
+     
+try {
+    const entitylist = document.getElementById("entitys");
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+    const collectionRefP = collection(db, "entitycodes");
+    const q = query(collectionRefP);
+    const snapshot = await getDocs(q);
+ 
+
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+
+      const option = document.createElement("option");
+      option.value = data.entitynbr; // This is what gets inserted into the input
+      option.textContent = `${data.entitynbr} - ${data.entityname}`;
+
+      
+      entitylist.appendChild(option);
+    });
+
+  }
+
+    catch (error) {
+    console.error("Error loading Entity Codes:", error);
+  }
+
+
+}
+
+loadcodestables();
+
+ const entitynbr = document.getElementById("entitynbr");
+ entitynbr.placeholder = "Select Your Entity From the Poly of Entities";
 
 
 // 🔹 CREATE (Insert Data)
@@ -875,6 +957,26 @@ window.edititem = function (id, name) {
     clearInputs();
     loadusertable();
   };
+
+entitynbr.addEventListener("input", function () {
+const option = document.querySelector(
+    `#entitys option[value="${this.value}"]`);
+
+if (option) {
+    console.log(option.textContent);   // "P1001 - Building Construction"
+//    document.getElementById("projdesc").textContent = option.textContent;
+    document.getElementById("entityname").textContent =
+    option.textContent.replace(option.value + " - ", "");
+    entitynbrgb = entitynbr.value.split(" ")[0];
+    entitynbrgb = parseInt(entitynbrgb, 10);
+     console.log(entitynbrgb);
+    
+ //   imagePanel.style.display = "none";
+ //   projectdisplaydiv.style.display = "block";
+    entitynbr.style.display = "none";
+}
+});
+
 
 
 //  PRINT FUNCTION START

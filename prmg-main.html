@@ -635,6 +635,7 @@ background-color: black; */
 <a class="nav-link " href="#" onclick="managetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" id = "tasklink" ></a> 
 <a class="nav-link " href="#" onclick="manageowner()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "addownerlink" >Add Owners</a> 
 <a class="nav-link " href="#" onclick="manageuser()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none; " id = "adduserlink">Add Users</a>
+<a class="nav-link " href="#" onclick="manageentity()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none; " id = "addentitylink">Add Entity</a>
 <a class="nav-link " href="#" onclick="viewallprojs()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "allprojlink" >view All Projects</a> 
 <a class="nav-link " href="#" onclick="Reloadpage()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "refreshlink" >Refresh</a>
        </li>
@@ -1047,7 +1048,7 @@ function clean(value) {
 function manageowner() {  
     console.log(paramuserId);
            if (paramuserId === "Admin") {
-          window.location = `./genr-add-del-owner-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}`; 
+          window.location = `./genr-add-del-owner-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`;
     }
 else  { 
  alert("This Function is Not Allowed"); 
@@ -1059,13 +1060,24 @@ window.manageowner = manageowner; // ⭐ IMPORTANT LINE
 function manageuser() {  
 console.log(paramuserId);
    if (paramuserId === "Admin") {
-          window.location = `./genr-add-del-user-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}`;  
+          window.location = `./genr-add-del-user-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`;  
     }
 else  { 
  alert("This Function is Not Allowed"); 
   }
  }
 window.manageuser = manageuser; // ⭐ IMPORTANT LINE
+
+function manageentity() {  
+console.log(paramuserId);
+   if (paramuserId === "Admin") {
+          window.location = `./prmg-add-del-entity-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`;  
+    }
+else  { 
+ alert("This Function is Not Allowed"); 
+  }
+ }
+window.manageentity = manageentity; // ⭐ IMPORTANT LINE
 
 function manageproject() {  
           window.location = `./prmg-add-del-proj-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
@@ -1164,6 +1176,7 @@ document.addEventListener("DOMContentLoaded", () => {
  //   document.getElementById("inv-btn").textContent = "Print";
   if (paramuserId === "Admin") {
     document.getElementById("adduserlink").style.display = "block";
+    document.getElementById("addentitylink").style.display = "block";
     document.getElementById("addownerlink").style.display = "block";
     document.getElementById("refreshlink").style.display = "block";
     document.getElementById("allprojlink").style.display = "block";
