@@ -332,6 +332,24 @@ background-color: #9bc7be;
 }
 }
 
+.input-field-dt {
+ font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+ height: 8vh;
+ font-weight: 450; 
+ border: 0.1vw solid black; 
+ text-align: left;
+ width: 20%;
+}
+
+@media (max-width: 768px) {
+.input-field-dt {
+ font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+ height: 5vh;
+ font-weight: 600; 
+ width: 40%;
+ text-align: left;
+}
+}
 
 
 
@@ -596,7 +614,7 @@ hyphens: auto;
 </div>
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="date" class="input-field input-dur-rol-mnl-exp-fmd" id="startdt"  >
+  <input type="date" class="input-field-dt input-dur-rol-mnl-exp-fmd" id="startdt"  >
 
 </div>
 <div class="gap3vh"></div>
@@ -607,7 +625,7 @@ hyphens: auto;
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
  
-<input type="date" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt"  >
+<input type="date" class="input-field-dt input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt"  >
   <input type="hidden" id="docIdHolder">
 </div>
 
