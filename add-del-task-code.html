@@ -360,7 +360,9 @@ background-color: #9bc7be;
 .add-btn {
   width: 24%; 
   text-align: center;
-  background-color: #fafafa; 
+  background-color: LightGrey; 
+  color: black;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4); 
   font-size: clamp(0.8rem, 1.2vw, 1.3rem);
   height: 8vh;
   font-weight: 550; 
@@ -373,7 +375,9 @@ background-color: #9bc7be;
   width: 25%; 
   text-align: center;
   /* background-color: LightGrey; */
-  background-color: #fafafa;
+  background-color: LightGrey; 
+  color: black;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
   font-size: clamp(0.9rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
@@ -432,9 +436,8 @@ background-color: #9bc7be;
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
  height: 8vh;
-/* background-color: black; */
-/* background-color: LightYellow;  */  
-/* background-color: #f8f2ed; */
+background-color: lightgrey;
+  color: black; 
  font-weight: 500; 
  border: 0.1vw solid black; 
  width: 35%;
@@ -445,8 +448,8 @@ background-color: #9bc7be;
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
  height: 5vh;
-/* background-color: white; */
-/* background-color: #f8f2ed; */
+background-color: lightgrey;
+  color: black; 
  font-weight: 500; 
  width: 100%;
  text-align: center;
@@ -593,7 +596,7 @@ hyphens: auto;
 </div>
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="text" class="input-field input-dur-rol-mnl-exp-fmd" id="startdt"  >
+  <input type="date" class="input-field input-dur-rol-mnl-exp-fmd" id="startdt"  >
 
 </div>
 <div class="gap3vh"></div>
@@ -604,7 +607,7 @@ hyphens: auto;
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
  
-<input type="text" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt"  >
+<input type="date" class="input-field input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt"  >
   <input type="hidden" id="docIdHolder">
 </div>
 
