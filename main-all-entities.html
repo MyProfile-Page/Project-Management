@@ -782,7 +782,7 @@ background-color: black; */
 
 <div class = "div-hdr">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;">Projects Tasks</Label>
+<Label id="hdrlabel" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline;"></Label>
 </div>
 </div> 
 
@@ -928,6 +928,7 @@ paramtstt = params.get("param9");
 
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name1").textContent = paramnm;
+document.getElementById("hdrlabel").textContent = `All ${paramet}s ${paramtt}s Grid`;
 
 loadtaskmaster();
 
@@ -997,7 +998,7 @@ async function loadtaskmaster() {
         
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
-        <td style="padding-left: 0.3vw; text-align: left; color:${color}; text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.05vw solid black; ">${statusgb}</td> 
+        <td style="padding-left: 0.3vw; text-align: center; color:${color}; text-wrap: pretty; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.05vw solid black; ">${statusgb}</td> 
       </tr>
                  
   

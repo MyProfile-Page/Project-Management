@@ -221,7 +221,7 @@ hyphens: auto;
 
 
 ::placeholder {
-  font-size: clamp(0.9rem, 1.0vw, 1.1rem); 
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem); 
   font-weight: 600;
   color: black; 
   
@@ -509,6 +509,35 @@ hyphens: auto;
 }
 
 
+/*----------------------------------------------*/
+
+.popupMenu {
+    display:none;
+    position:absolute;
+    top:30%;
+    left:50;
+    min-width:120px;
+    background:lightgrey;
+    border:1px solid gray;
+    box-shadow:2px 2px 6px #888;
+    z-index:1000;
+}
+
+.popupMenu a {
+    display:block;
+    padding:8px;
+    text-decoration:none;
+    color:black;
+    text-align: left;
+}
+
+.popupMenu a:hover {
+    background:#dcecff;
+}
+
+
+
+
   </style>
 </head>
 
@@ -633,7 +662,7 @@ hyphens: auto;
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
   
-  <button onclick="addtask()" type="button" class="add-btn";>Add</button>
+  <button id = "addbtn" onclick="addtask()" type="button" class="add-btn";></button>
   
 </div>
 <div class="gap3vh"></div>
@@ -651,6 +680,13 @@ hyphens: auto;
 <div class="gap2vh"></div>
   <!-- HTML Table For showing all records of database-->
 <div id = "wholetaskTable" class="custom-table-container">
+
+<div style="width: 30%; border: 0.0vw solid black; margin: 0 auto;">
+  <Label id="labelgridname" style="text-align: center; display: block; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
+</Label>
+</div>
+
+
   <table class="custom-table">
     <thead>
      
@@ -660,7 +696,7 @@ hyphens: auto;
         <th style="text-align: center; width: 35%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "id="hdrmainname";></th> 
          <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Dt</th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Dt</th>
-        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>             
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>             
         
         <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
         
@@ -770,6 +806,8 @@ paramtstt = params.get("param9");
 
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name").textContent = paramnm;
+document.getElementById("labelgridname").textContent = `${paramet} ${paramtt}s Grid`;
+labelgridname
   // 🔹 READ (Load Data into Table)
 
 async function loadtaskmaster() {  
@@ -802,14 +840,21 @@ async function loadtaskmaster() {
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
         
-       <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border: 0.05vw solid black; text-align: center; text-decoration: underline;">
-          <a href="#" onclick="deletetask('${docId}', '${data.tasknbr}', '${data.taskname}', )" ;>Delete</a>
-          
-        </td>              
+      <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td>   
     
  
         <td style="font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 500; border: 0.05vw solid black; text-align: center; text-decoration: underline;">
-          <a href="#" onclick="updatetask('${docId}', '${data.tasknbr}', '${data.taskname}', )" ;>Mark Complete</a>
+          <button onclick="showMenu(event,this)" ;>Actions ▼</button>
+           <div class="popupMenu">
+
+    <a href="#" onclick="markcompleted('${docId}');return false;">Mark ${paramtt} Status As Completed</a>
+    <a href="#" onclick="markdropped('${docId}');return false;">Mark ${paramtt} Status As Dropped</a>
+    <a href="#" onclick="markstarted('${docId}');return false;">Mark ${paramtt} Status As Started</a>
+    <a href="#" onclick="markstopped('${docId}');return false;">Mark ${paramtt} Status As Stopped</a>
+    <a href="#" onclick="marknotstarted('${docId}');return false;">Mark ${paramtt} Status As Not Started</a>
+    <a href="#" onclick="deletetask('${docId}');return false;">Delete ${paramtt}</a>
+
+        </div>
           
         </td>                    
         
@@ -852,7 +897,7 @@ async function loadtaskmaster() {
 
 
  // 🔹 Update (Mark Task as completed)
-  window.updatetask = async function (id) {
+  window.markcompleted = async function (id) {
     try {
     await updateDoc(doc(db, "taskmaster", id), {
       status: "Completed",
@@ -860,7 +905,73 @@ async function loadtaskmaster() {
       
     });
 
-    alert("Task Code Updated");
+    alert("Task Code Marked Completed");
+    clearInputs();
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+
+ // 🔹 Update (Mark Task as Dropped)
+  window.markdropped = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Deopped",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Task Code Marked Dropped");
+    clearInputs();
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+ // 🔹 Update (Mark Task as Started)
+  window.markstarted = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Started",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Task Code Marked Started");
+    clearInputs();
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+// 🔹 Update (Mark Task as Stopped)
+  window.markstarted = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Stopped",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Task Code Marked Stopped");
+    clearInputs();
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+
+// 🔹 Update (Mark Task as Not Started)
+  window.marknotstarted = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Not Started",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Task Code Marked Not Started");
     clearInputs();
     loadtaskmaster();
   } catch (error) {
@@ -951,7 +1062,7 @@ await setDoc(
       projname: projnamegb,
       delynbr:  0,
       delyname:  "none",
-      status: "",
+      status: "Not started",
       createdAt: serverTimestamp()
     });
 
@@ -1090,11 +1201,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // startdt.placeholder = `${paramtt} Start Date`;
 // enddt.placeholder = `${paramtt} End Date`;
 // taskname.placeholder = `${paramtt} Title`;
+document.getElementById("addbtn").textContent = `Add ${paramtt}`;
 document.getElementById("labeltaskname").textContent = `${paramtt} Title`;
 document.getElementById("labeltasksdate").textContent = `${paramtt} Start Date`;
 document.getElementById("labeltaskedate").textContent = `${paramtt} End date`;
-document.getElementById("hdrmainname").textContent = `${paramtt} Title`;
-projnbr.placeholder = `Select ${paramet} For Adding ${paramtt}s `;
+document.getElementById("hdrmainname").textContent = `Title`;
+projnbr.placeholder = `Select ${paramet} For Managing its ${paramtt}s `;
 
 });
 
@@ -1111,6 +1223,55 @@ const menuPanel = document.getElementById("menuPanel");
     }
   
 });
+
+window.showMenu = async function (event, button) {
+// function showMenu(event, button) {
+    alert("in showmenu");
+    // Prevent document click from immediately closing it
+    event.stopPropagation();
+
+   
+
+    // Open this row's menu
+    const menu = button.nextElementSibling;
+
+    if (menu.style.display === "block")
+        menu.style.display = "none";
+    else
+        menu.style.display = "block";
+}
+
+
+// Close menu when clicking elsewhere
+document.addEventListener("click", function () {
+
+    document.querySelectorAll(".popupMenu").forEach(menu => {
+        menu.style.display = "none";
+    });
+
+});
+
+// Close menu when clicking elsewhere
+document.addEventListener("click", function () {
+
+    document.querySelectorAll(".popupMenu").forEach(menu => {
+        menu.style.display = "none";
+    });
+
+});
+window.editRecord = async function () {
+// function editRecord() {
+    alert("Edit selected");
+}
+window.copyRecord = async function () {
+// function copyRecord() {
+    alert("Copy selected");
+}
+window.deleteRecord = async function () {
+// function deleteRecord() {
+    alert("Delete selected");
+}
+
 
 //  PRINT FUNCTION START
 

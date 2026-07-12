@@ -598,8 +598,7 @@ background-color: lightgrey;
  display: flex;
  justify-content: space-between; 
  background-color: transparent;
- width: 98%;
- margin: 0 auto;
+ width: 97.5%;
 }
 
 .table-height {
@@ -691,10 +690,10 @@ background-color: lightgrey;
 <!-- Following are divs which are addition of Navigation Bar -->
 
 
-<div class = "div-hdr">
-<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<div class = "div-hdr" >
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; border: 0.0vw dashed green;">
 <Label style="font-size: clamp(0.9rem, 1.7vw, 1.9rem); color: blue; font-weight: 550; id="hdr-pr-wrd;"></Label>
-<span id="projdesc" style= color:blue;></span>
+<span id="projdesc" style= "color:blue; "></span>
 </div>
 </div> 
 
@@ -718,7 +717,7 @@ background-color: lightgrey;
 
 <!-- Following is div For Grid Display of Projects and their Tasks -->
  
-<div  id="projectdisplaydiv" style="margin-top: -5vh; display: none;"  >
+<div  id="projectdisplaydiv" style="margin-top: -5vh; display: none; border: 0.0vw dashed green;"   >
 
 <div style="display: flex; width: 99.0%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
 
@@ -728,6 +727,12 @@ background-color: lightgrey;
 <div class="gap2vh"></div>
   <!-- HTML Table For showing all records of database-->
 <div id = "wholeitemTable" class="custom-table-container" >
+
+<div style="width: 30%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
+  <Label id="labelgridname" style="text-align: center; display: block; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
+</Label>
+</div>
+
   <table class="custom-table">
     <thead>
       <tr class="table-height">
@@ -850,7 +855,7 @@ console.log(paramuserId);
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name1").textContent = paramnm;
 document.getElementById("hdrmainname").textContent = paramtt;
-
+document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
 
 
 //  Load Firestore data into <datalists>
@@ -888,7 +893,7 @@ try {
 loadcodestables();
 
  const projnbr = document.getElementById("projnbr");
- projnbr.placeholder = `Select ${paramet} To View All its ${paramtt}s `;
+ projnbr.placeholder = `Select ${paramet} To View All ${paramtt}s `;
  
  
 
@@ -994,7 +999,7 @@ async function loadtaskmaster() {
 
     if (isTodayBetween()) {
     console.log("Today's date is within the range.");
-    statusgb = "In Process";
+    statusgb = "Progressing";
   }
    if (isTodayless()) {
     console.log("Today's date is less than start date.");
@@ -1002,7 +1007,7 @@ async function loadtaskmaster() {
   }
   if (isTodaygreater()) {
     console.log("Today's date is higher than end date.");
-    statusgb = "Delayed";
+    statusgb = "Incomplete";
   }
 
   }
@@ -1202,7 +1207,7 @@ function isTodaygreater() {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("projectlink").textContent = `Create ${paramet}s`;
-    document.getElementById("tasklink").textContent = `Create ${paramtt}s of the ${paramet}s `;
+    document.getElementById("tasklink").textContent = `Manage ${paramtt}s of the ${paramet}s `;
  //   document.getElementById("inv-btn").textContent = "Print";
   if (paramuserId === "Admin") {
     document.getElementById("adduserlink").style.display = "block";
