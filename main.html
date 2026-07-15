@@ -73,7 +73,7 @@
  .custom-table {
     border-collapse: collapse;
     table-layout: fixed; /* VERY IMPORTANT for percentage widths */
-    width: 99%;
+    width: 97.5%;
     font-family: Arial, sans-serif;
     margin-top: 3vh; 
     margin-left: 0.2vw; 
@@ -532,8 +532,8 @@ border-radius: 12px;
 
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
- height: 7vh;
-background-color: lightgrey;
+ height: 9vh;
+background-color: white;
   color: black;    
  font-weight: 500; 
  border: 0.1vw solid black; 
@@ -554,7 +554,7 @@ background-color: lightgrey;
 
 .imagediv {
  border: 0.1vw solid black; 
- width: 50%;
+ width: 35%;
  margin: 0 auto;
 }
 
@@ -609,6 +609,12 @@ background-color: lightgrey;
 .table-height {
  height: 6vh;
 }
+}
+
+.custom-datalist::-webkit-calendar-picker-indicator {
+  opacity: 1 !important;
+  display: block !important;
+  cursor: pointer;
 }
 
   </style>
@@ -681,9 +687,11 @@ background-color: lightgrey;
 
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
 <input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj"  >
-<!-- <span id="projdesc"></span>  -->
-<datalist id="projs"></datalist>
+<datalist id="projs">
+</datalist>
+<Label id = "dropdown" style="margin-left: -2vw; margin-top: 2vh;">▼</Label>
 </div> 
+ 
 
 <!-- Above divs to select projects from datalist -->
 
@@ -738,9 +746,9 @@ background-color: lightgrey;
       <tr class="table-height">
        
         <th style="text-align: center; width: 45%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrmainname";></th>              
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Dt</th>
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Dt</th>
-        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>
+        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrsdate"></th>
+        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdredate"></th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrstatus"></th>
       </tr>
     </thead>
     
@@ -855,8 +863,94 @@ console.log(paramuserId);
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name1").textContent = paramnm;
 document.getElementById("hdrmainname").textContent = paramtt;
-document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
+// document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
 
+async function loadheaders() {
+// alert("in heading");
+
+  const recordId1 = `${paramdatatype}main1`;
+  const docRefmain1 = doc(db, "hdrnames", recordId1);    
+    const existingDocmain1 = await getDoc(docRefmain1);
+     if (!existingDocmain1.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain1 = existingDocmain1.data();  
+    const projnbrhd = document.getElementById("projnbr");
+    projnbrhd.placeholder = datamain1.hds;
+
+  const recordId2 = `${paramdatatype}main2`;
+  const docRefmain2 = doc(db, "hdrnames", recordId2);    
+    const existingDocmain2 = await getDoc(docRefmain2);
+     if (!existingDocmain2.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain2 = existingDocmain2.data();  
+    document.getElementById("labelgridname").textContent = datamain2.hds;
+
+    const recordId3 = `${paramdatatype}main3`;
+  const docRefmain3 = doc(db, "hdrnames", recordId3);    
+    const existingDocmain3 = await getDoc(docRefmain3);
+     if (!existingDocmain3.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain3 = existingDocmain3.data();  
+    document.getElementById("hdrmainname").textContent = datamain3.hds;
+
+     const recordId4 = `${paramdatatype}main4`;
+  const docRefmain4 = doc(db, "hdrnames", recordId4);    
+    const existingDocmain4 = await getDoc(docRefmain4);
+     if (!existingDocmain4.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain4 = existingDocmain4.data();  
+    document.getElementById("hdrsdate").textContent = datamain4.hds;
+
+     const recordId5 = `${paramdatatype}main5`;
+  const docRefmain5 = doc(db, "hdrnames", recordId5);    
+    const existingDocmain5 = await getDoc(docRefmain5);
+     if (!existingDocmain5.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain5 = existingDocmain5.data();  
+    document.getElementById("hdredate").textContent = datamain5.hds;
+
+    const recordId6 = `${paramdatatype}main6`;
+  const docRefmain6 = doc(db, "hdrnames", recordId6);    
+    const existingDocmain6 = await getDoc(docRefmain6);
+     if (!existingDocmain6.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain6 = existingDocmain6.data();  
+    document.getElementById("hdrstatus").textContent = datamain6.hds;
+
+    const recordId7 = `${paramdatatype}main7`;
+  const docRefmain7 = doc(db, "hdrnames", recordId7);    
+    const existingDocmain7 = await getDoc(docRefmain7);
+     if (!existingDocmain7.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain7 = existingDocmain7.data();  
+    document.getElementById("projectlink").textContent = datamain7.hds;
+
+      const recordId8 = `${paramdatatype}main8`;
+  const docRefmain8 = doc(db, "hdrnames", recordId8);    
+    const existingDocmain8 = await getDoc(docRefmain8);
+     if (!existingDocmain8.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain8 = existingDocmain8.data();  
+    document.getElementById("tasklink").textContent = datamain8.hds;
+    
+}
+loadheaders();
 
 //  Load Firestore data into <datalists>
 async function loadcodestables() {
@@ -892,8 +986,8 @@ try {
 
 loadcodestables();
 
- const projnbr = document.getElementById("projnbr");
- projnbr.placeholder = `Select ${paramet} To View All ${paramtt}s `;
+// const projnbr = document.getElementById("projnbr");
+// projnbr.placeholder = `Select ${paramet} To View All ${paramtt}s `;
  
  
 
@@ -916,6 +1010,7 @@ if (option) {
     imagePanel.style.display = "none";
     projectdisplaydiv.style.display = "block";
     projnbr.style.display = "none";
+    dropdown.style.display = "none";
 }
 });
 
@@ -1138,11 +1233,14 @@ window.Reloadpage = Reloadpage; // ⭐ IMPORTANT LINE
 
 function backpage() {  
 
-if (paramdatatype === "projects") {
-         window.location = `./index-p.html`; 
+if (paramdatatype === "P") {
+         window.location = `./index.html`; 
 }
-if (paramdatatype === "employees") {
-         window.location = `./index-e.html`; 
+if (paramdatatype === "E") {
+         window.location = `./index.html`; 
+}
+if (paramdatatype === "C") {
+         window.location = `./index.html`; 
 }
  }
 window.backpage = backpage; // ⭐ IMPORTANT LINE
@@ -1206,8 +1304,8 @@ function isTodaygreater() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("projectlink").textContent = `Create ${paramet}s`;
-    document.getElementById("tasklink").textContent = `Manage ${paramtt}s of the ${paramet}s `;
+    // document.getElementById("projectlink").textContent = `Create ${paramet}s`;
+    // document.getElementById("tasklink").textContent = `Manage ${paramtt}s of the ${paramet}s `;
  //   document.getElementById("inv-btn").textContent = "Print";
   if (paramuserId === "Admin") {
     document.getElementById("adduserlink").style.display = "block";

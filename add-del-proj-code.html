@@ -343,7 +343,7 @@ background-color: #9bc7be;
   font-weight: 400; 
   font-size: clamp(0.9rem, 1.2vw, 1.3rem);
   border-radius: 12px;
-  background-color: LightGrey; 
+  background-color: white; 
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
 }
@@ -356,7 +356,7 @@ background-color: #9bc7be;
   font-weight: 400; 
   font-size: clamp(0.9rem, 1.2vw, 1.3rem);
   border-radius: 12px; 
-  background-color: LightGrey; 
+  background-color: white; 
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
   
@@ -365,7 +365,7 @@ background-color: #9bc7be;
 .add-btn {
   width: 24%; 
   text-align: center;
-  background-color: LightGrey; 
+  background-color: white; 
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
   font-size: clamp(0.8rem, 1.2vw, 1.3rem);
@@ -379,7 +379,7 @@ background-color: #9bc7be;
 .add-btn {
   width: 25%; 
   text-align: center;
-  background-color: LightGrey; 
+  background-color: white; 
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
   font-size: clamp(0.9rem, 1.0vw, 1.1rem);
@@ -508,7 +508,7 @@ background-color: #9bc7be;
 <div class = "projs-add-upd" > 
 
 <div style="display: flex; margin-left: 45%; border: 0.5vw black; width: 25%; "> 
-<Label id="hdrlabel" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; text-decoration: underline; "></Label>
+<Label id="hdrlabel" style="font-size: clamp(0.8rem, 1.3vw, 1.4rem); color: black; font-weight: 550; text-decoration: underline; "></Label>
 </div>
 
 <div class="gap3vh"></div>
@@ -517,7 +517,7 @@ background-color: #9bc7be;
 <div class="gap1vh"></div>
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labelname" style="margin-left: 0vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
+  <Label id="labelname" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
 </Label>
 </div>
 <div class="gap3vh"></div>
@@ -527,7 +527,7 @@ background-color: #9bc7be;
 
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">  
-  <button onclick="addproj()" type="button" class="add-btn";>Add</button>
+  <button id="addbtn" onclick="addproj()" type="button" class="add-btn";></button>
   
 </div>
 <div class="gap3vh"></div>
@@ -548,16 +548,16 @@ background-color: #9bc7be;
      
       <tr>
        
-        <th id="thname" style="text-align: center; width: 19%; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></th>      
+        <th id="thname" style="text-align: center; width: 19%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></th>      
         
       
-        <th class="no-print" style="padding: 0.0vw; text-align: center; width: 13%; font-size: clamp(0.9rem, 1.1vw, 1.2rem); font-weight: 500; ">Action</th>
+        <th class="no-print" style="padding: 0.0vw; text-align: center; width: 13%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
       </tr>
     </thead>
     <tbody id="projTable" class = "projTableBody-Cls">
        <tr>
-        <td  style="text-align: center; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
-        <td  style="text-align: center; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
+        <td  style="text-align: center; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
+        <td  style="text-align: center; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
         
       </tr>
      
@@ -638,6 +638,52 @@ paramtstt = params.get("param9");
 document.getElementById("comp-name").textContent = paramnm;
 document.getElementById("inv-btn").textContent = "Print";
 
+async function loadheaders() {
+// alert("in heading");
+
+  const recordId1 = `${paramdatatype}proj1`;
+  const docRefmain1 = doc(db, "hdrnames", recordId1);    
+    const existingDocmain1 = await getDoc(docRefmain1);
+     if (!existingDocmain1.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain1 = existingDocmain1.data();  
+    document.getElementById("hdrlabel").textContent = datamain1.hds;
+
+  const recordId2 = `${paramdatatype}proj2`;
+  const docRefmain2 = doc(db, "hdrnames", recordId2);    
+    const existingDocmain2 = await getDoc(docRefmain2);
+     if (!existingDocmain2.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain2 = existingDocmain2.data();  
+    document.getElementById("labelname").textContent = datamain2.hds;
+
+    const recordId3 = `${paramdatatype}proj3`;
+  const docRefmain3 = doc(db, "hdrnames", recordId3);    
+    const existingDocmain3 = await getDoc(docRefmain3);
+     if (!existingDocmain3.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain3 = existingDocmain3.data();  
+    document.getElementById("addbtn").textContent = datamain3.hds;
+
+     const recordId4 = `${paramdatatype}proj4`;
+  const docRefmain4 = doc(db, "hdrnames", recordId4);    
+    const existingDocmain4 = await getDoc(docRefmain4);
+     if (!existingDocmain4.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain4 = existingDocmain4.data();  
+    document.getElementById("thname").textContent = datamain4.hds;
+   
+    
+}
+loadheaders();
 
 
   // 🔹 READ (Load Data into Table)
@@ -664,7 +710,7 @@ async function loadnewitemstable() {
        
         
         
-<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw; text-align: left;">${data.projname}</td>
+<td style="border-top: 0.05vw solid black; border-right: 0.05vw solid black; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 400; padding-left: 0.5vw; text-align: left;">${data.projname}</td>
                 <td style="border: 0.05vw solid black; text-align: center;">
 
            <button onclick="deleteproj('${docId}')" class="edit-delt-btn">Delete</button>
@@ -795,11 +841,11 @@ async function saveProject(paramId, projname) {
 //  FIELDS TITLES FUNCTION START
 
 document.addEventListener("DOMContentLoaded", () => {
- document.getElementById('thname').textContent = `${paramet} Name`;
- document.getElementById('labelname').textContent = `${paramet} Name`;
+// document.getElementById('thname').textContent = `${paramet} Name`;
+// document.getElementById('labelname').textContent = `${paramet} Name`;
  
  // projname.placeholder = `${paramet} Name`;
-   document.getElementById('hdrlabel').textContent = `Add ${paramet}s`;
+ //  document.getElementById('hdrlabel').textContent = `Add ${paramet}s`;
    alertadd = `${paramet} Added`;
    alertdel = `${paramet} Deleted`;
 });

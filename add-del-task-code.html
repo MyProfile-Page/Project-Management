@@ -378,10 +378,10 @@ background-color: #9bc7be;
 .add-btn {
   width: 24%; 
   text-align: center;
-  background-color: LightGrey; 
+  background-color: white; 
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4); 
-  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
   height: 8vh;
   font-weight: 550; 
   border-radius: 12px;
@@ -393,10 +393,10 @@ background-color: #9bc7be;
   width: 25%; 
   text-align: center;
   /* background-color: LightGrey; */
-  background-color: LightGrey; 
+  background-color: white; 
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4);
-  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
   height: 5vh;
   font-weight: 600; 
   border-radius: 12px;
@@ -453,12 +453,12 @@ background-color: #9bc7be;
 
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
- height: 8vh;
-background-color: lightgrey;
+ height: 9vh;
+background-color: white;
   color: black; 
  font-weight: 500; 
  border: 0.1vw solid black; 
- width: 35%;
+ width: 40%;
  text-align: center;
 }
 
@@ -466,7 +466,7 @@ background-color: lightgrey;
 .input-field-col {
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
  height: 5vh;
-background-color: lightgrey;
+background-color: white;
   color: black; 
  font-weight: 500; 
  width: 100%;
@@ -517,7 +517,7 @@ hyphens: auto;
     top:100%;
     left:0;
     min-width:120px;
-    background:lightgrey;
+    background:white;
     border:1px solid gray;
     box-shadow:2px 2px 6px #888;
     z-index:1000;
@@ -540,7 +540,7 @@ hyphens: auto;
     top:80%;
     left:5;
     min-width:120px;
-    background:lightgrey;
+    background:white;
     border:1px solid gray;
     box-shadow:2px 2px 6px #888;
     z-index:1000;
@@ -559,10 +559,6 @@ hyphens: auto;
 }
 
 }
-
-
-
-
 
 
   </style>
@@ -633,7 +629,7 @@ hyphens: auto;
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
 <input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" >
 <datalist id="projs"></datalist>
-<!-- <span id="projdesc" style= color:blue;></span>   -->
+<Label id = "dropdown" style="margin-left: -2vw; margin-top: 3vh;">▼</Label>
 </div> 
 
 <!-- Following are divs which are addition of Navigation Bar -->
@@ -656,7 +652,7 @@ hyphens: auto;
 
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltaskname" style="margin-left: 0vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
+  <Label id="labeltaskname" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
 </Label>
 </div>
 <div class="gap3vh"></div>
@@ -665,27 +661,27 @@ hyphens: auto;
 </div>
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltasksdate" style="margin-left: 0vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
+  <Label id="labeltasksdate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
 </Label>
 </div>
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="date" class="input-field-dt input-dur-rol-mnl-exp-fmd" id="startdt"  >
+  <input type="date" class="input-field-dt" id="startdt"  >
 
 </div>
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltaskedate" style="margin-left: 0vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
+  <Label id="labeltaskedate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
 </Label>
 </div>
 <div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
  
-<input type="date" class="input-field-dt input-dur-rol-mnl-exp-fmd" title="Enter Task End Date (Optional)" id="enddt"  >
+<input type="date" class="input-field-dt" title="Enter Task End Date (Optional)" id="enddt"  >
   <input type="hidden" id="docIdHolder">
 </div>
 
-
+<div class="gap3vh"></div>
 
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
   
@@ -721,9 +717,9 @@ hyphens: auto;
         
          
         <th style="text-align: center; width: 35%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "id="hdrmainname";></th> 
-         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Start Dt</th>
-        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">End Dt</th>
-        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Status</th>             
+         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrsdate"></th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdredate"></th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrstatus"></th>             
         
         <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
         
@@ -807,7 +803,7 @@ let enddtgbfl = " ";
 let startdtgbin = " ";
 let enddtgbin = " ";
 let alertselect = "";
-
+let statusgb = "";
 let ownerproj = "";
 let paramId = "";
 let paramnm = "";
@@ -818,6 +814,7 @@ let paramtt = "";
 let paramtsdt = "";
 let paramtedt = "";
 let paramtstt = "";
+let mark11gb = "";
 paramId = params.get("param1");
 paramnm = params.get("param2");
 paramdatatype = params.get("param3");
@@ -833,8 +830,128 @@ paramtstt = params.get("param9");
 
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name").textContent = paramnm;
-document.getElementById("labelgridname").textContent = `${paramet} ${paramtt}s Grid`;
-labelgridname
+// document.getElementById("labelgridname").textContent = `${paramet} ${paramtt}s Grid`;
+
+async function loadheaders() {
+// alert("in heading");
+
+  const recordId1 = `${paramdatatype}task1`;
+  const docRefmain1 = doc(db, "hdrnames", recordId1);    
+    const existingDocmain1 = await getDoc(docRefmain1);
+     if (!existingDocmain1.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain1 = existingDocmain1.data();  
+    const projnbrhd = document.getElementById("projnbr");
+    projnbrhd.placeholder = datamain1.hds;
+
+  const recordId2 = `${paramdatatype}task2`;
+  const docRefmain2 = doc(db, "hdrnames", recordId2);    
+    const existingDocmain2 = await getDoc(docRefmain2);
+     if (!existingDocmain2.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain2 = existingDocmain2.data();  
+    document.getElementById("labelgridname").textContent = datamain2.hds;
+
+    const recordId3 = `${paramdatatype}task3`;
+  const docRefmain3 = doc(db, "hdrnames", recordId3);    
+    const existingDocmain3 = await getDoc(docRefmain3);
+     if (!existingDocmain3.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain3 = existingDocmain3.data();  
+    document.getElementById("hdrmainname").textContent = datamain3.hds;
+
+     const recordId4 = `${paramdatatype}task4`;
+  const docRefmain4 = doc(db, "hdrnames", recordId4);    
+    const existingDocmain4 = await getDoc(docRefmain4);
+     if (!existingDocmain4.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain4 = existingDocmain4.data();  
+    document.getElementById("hdrsdate").textContent = datamain4.hds;
+
+     const recordId5 = `${paramdatatype}task5`;
+  const docRefmain5 = doc(db, "hdrnames", recordId5);    
+    const existingDocmain5 = await getDoc(docRefmain5);
+     if (!existingDocmain5.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain5 = existingDocmain5.data();  
+    document.getElementById("hdredate").textContent = datamain5.hds;
+
+    const recordId6 = `${paramdatatype}task6`;
+  const docRefmain6 = doc(db, "hdrnames", recordId6);    
+    const existingDocmain6 = await getDoc(docRefmain6);
+     if (!existingDocmain6.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain6 = existingDocmain6.data();  
+    document.getElementById("hdrstatus").textContent = datamain6.hds;
+
+   const recordId7 = `${paramdatatype}task7`;
+  const docRefmain7 = doc(db, "hdrnames", recordId7);    
+    const existingDocmain7 = await getDoc(docRefmain7);
+     if (!existingDocmain7.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain7 = existingDocmain7.data();  
+    document.getElementById("labeltaskname").textContent = datamain7.hds;
+
+    const recordId8 = `${paramdatatype}task8`;
+  const docRefmain8 = doc(db, "hdrnames", recordId8);    
+    const existingDocmain8 = await getDoc(docRefmain8);
+     if (!existingDocmain8.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain8 = existingDocmain8.data();  
+    document.getElementById("labeltasksdate").textContent = datamain8.hds;
+
+   const recordId9 = `${paramdatatype}task9`;
+  const docRefmain9 = doc(db, "hdrnames", recordId9);    
+    const existingDocmain9 = await getDoc(docRefmain9);
+     if (!existingDocmain9.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain9 = existingDocmain9.data();  
+    document.getElementById("labeltaskedate").textContent = datamain9.hds;
+
+    const recordId10 = `${paramdatatype}task10`;
+    const docRefmain10 = doc(db, "hdrnames", recordId10);    
+    const existingDocmain10 = await getDoc(docRefmain10);
+     if (!existingDocmain10.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain10 = existingDocmain10.data();  
+    document.getElementById("addbtn").textContent = datamain10.hds;
+
+    const recordId15 = `${paramdatatype}task15`;
+    const docRefmain15 = doc(db, "hdrnames", recordId15);    
+    const existingDocmain15 = await getDoc(docRefmain15);
+     if (!existingDocmain15.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain15= existingDocmain15.data();  
+    statusgb = datamain15.hds;
+
+   
+    
+}
+loadheaders();
+
+
   // 🔹 READ (Load Data into Table)
 
 async function loadtaskmaster() {  
@@ -874,12 +991,11 @@ async function loadtaskmaster() {
           <button onclick="showMenu(event,this)" ;>Actions ▼</button>
            <div class="popupMenu">
 
-    <a href="#" onclick="markcompleted('${docId}');return false;">Mark ${paramtt} Status As Completed</a>
-    <a href="#" onclick="markdropped('${docId}');return false;">Mark ${paramtt} Status As Dropped</a>
-    <a href="#" onclick="markstarted('${docId}');return false;">Mark ${paramtt} Status As Started</a>
-    <a href="#" onclick="markstopped('${docId}');return false;">Mark ${paramtt} Status As Stopped</a>
-    <a href="#" onclick="marknotstarted('${docId}');return false;">Mark ${paramtt} Status As Not Started</a>
-    <a href="#" onclick="deletetask('${docId}');return false;">Delete ${paramtt}</a>
+    <a id = "mark11" href="#" onclick="markcompleted('${docId}');return false;">Mark ${statusgb} As Completed</a>
+    <a id = "mark12" href="#" onclick="markdropped('${docId}');return false;">Mark ${statusgb} As Dropped</a>
+    <a id = "mark13" href="#" onclick="markstarted('${docId}');return false;">Mark ${statusgb} As Started</a>
+    <a id = "mark14" href="#" onclick="markstopped('${docId}');return false;">Mark ${statusgb} As Stopped</a>
+    <a id = "mark15" href="#" onclick="deletetask('${docId}');return false;">Delete ${statusgb}</a>
 
         </div>
           
@@ -1193,6 +1309,7 @@ if (option) {
     loadtaskmaster();
   //  projectdisplaydiv.style.display = "block";
     projnbr.style.display = "none";
+    dropdown.style.display = "none";
 }
 });
 
@@ -1225,15 +1342,7 @@ async function saveTask(ownerproj, taskname) {
 //  FIELDS TITLES FUNCTION START
 
 document.addEventListener("DOMContentLoaded", () => {
-// startdt.placeholder = `${paramtt} Start Date`;
-// enddt.placeholder = `${paramtt} End Date`;
-// taskname.placeholder = `${paramtt} Title`;
-document.getElementById("addbtn").textContent = `Add ${paramtt}`;
-document.getElementById("labeltaskname").textContent = `${paramtt} Title`;
-document.getElementById("labeltasksdate").textContent = `${paramtt} Start Date`;
-document.getElementById("labeltaskedate").textContent = `${paramtt} End date`;
-document.getElementById("hdrmainname").textContent = `Title`;
-projnbr.placeholder = `Select ${paramet} For Managing its ${paramtt}s `;
+
 
 });
 
@@ -1253,7 +1362,8 @@ const menuPanel = document.getElementById("menuPanel");
 
 window.showMenu = async function (event, button) {
 // function showMenu(event, button) {
-   
+
+      
     // Prevent document click from immediately closing it
     event.stopPropagation();
 
