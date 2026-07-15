@@ -1100,7 +1100,7 @@ async function loadtaskmaster() {
   }
 };
 // 🔹 Update (Mark Task as Stopped)
-  window.markstarted = async function (id) {
+  window.markstopped = async function (id) {
     try {
     await updateDoc(doc(db, "taskmaster", id), {
       status: "Stopped",
