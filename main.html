@@ -617,6 +617,20 @@ background-color: lightgrey;
   cursor: pointer;
 }
 
+.dropdown-cls {
+ margin-left: -2vw;
+ margin-top: 2vh;
+}
+
+@media (max-width: 768px) {
+.dropdown-cls {
+ margin-left: -3vw;
+ margin-top: 2.5vh;
+}
+}
+
+
+
   </style>
 </head>
 
@@ -689,7 +703,7 @@ background-color: lightgrey;
 <input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj"  >
 <datalist id="projs">
 </datalist>
-<Label id = "dropdown" style="margin-left: -2vw; margin-top: 2vh;">▼</Label>
+<Label id = "dropdown" class="dropdown-cls" >▼</Label>
 </div> 
  
 
