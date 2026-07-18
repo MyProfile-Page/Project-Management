@@ -69,6 +69,13 @@
 }
 }
 
+.container-cls {
+ background-color: black;
+ border: 0.0vw solid black; 
+ width: 99.5%;
+ height: 10vh;
+}
+
 
  .custom-table {
     border-collapse: collapse;
@@ -617,102 +624,135 @@ background-color: lightgrey;
   cursor: pointer;
 }
 
-.dropdown-cls {
- margin-left: -2vw;
- margin-top: 2vh;
+.sel-cls {
+ background-color: black; 
+ color: white; 
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 12vh;
+ width: 41.3%; 
+ text-align: left;
+ padding-left: 0.5vw;
+ font-weight: 550;
+} 
+
+
+.sel-cls option:disabled {
+  text-align: left;
 }
 
-@media (max-width: 768px) {
-.dropdown-cls {
- margin-left: -6vw;
- margin-top: 2.7vh;
+.popupMenu {
+    display:none;
+    position:absolute;
+    top:74%;
+    left:36;
+    min-width:120px;
+    background:white;
+    border:1px solid gray;
+    box-shadow:2px 2px 6px #888;
+    z-index:1000;
 }
+.popupMenu a {
+    display:block;
+    padding:8px;
+    text-decoration:none;
+    color:black;
+    text-align: left;
 }
+
+.popupMenu a:hover {
+    background:#dcecff;
+}
+@media (max-width: 768px) { 
+.popupMenu {
+    display:none;
+    position:absolute;
+    top:80%;
+    left:5;
+    min-width:120px;
+    background:white;
+    border:1px solid gray;
+    box-shadow:2px 2px 6px #888;
+    z-index:1000;
+}
+
+.popupMenu a {
+    display:block;
+    padding:8px;
+    text-decoration:none;
+    color:black;
+    text-align: left;
+}
+
+.popupMenu a:hover {
+    background:#dcecff;
+}
+
+}
+
+
 
 
 
   </style>
 </head>
-
 <body  class="body_cls">
 
- <!-- 🌍 Navigation Bar Start -->
-<nav class="navbar " >
 
-  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 99.5%; ">
- 
-<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
-<button onclick="printInvoice()" type="button" class="prt-btn"; id="inv-btn"; >
-</button> 
+<!-- Following is div0  which is replacement of Navigation Bar -->
+<div style = "margin: 0 auto; width: 100%; position relative; display: flex; justify-content: space-between; background-color: black;">
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<Label id="comp-name1" style="font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; text-decoration: underline;"></Label>
+<a class="nav-link " href="#" onclick="printInvoice()" style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 80vw; margin-top: -3.75vh;" id = "printid" >Print</a>
+<a class="nav-link " href="Index.html" style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 90vw; margin-top: -3.5vh;" id = "backlink" >Back</a>
 </div>
-
-<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
-<Label id="comp-name1" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: white;"></Label>
 </div> 
-    <!-- Toggler -->
-    <button id = "menubtn" class="navbar-toggler" type="button" 
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
-   <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
-    </button>
-
-    <div id="menuPanel" style="display:none; width: 100%;" ></div>
-
-    <!-- Collapsible menu -->
-    <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
-      <ul class="navbar-nav ms-auto">    
-
-        <li class="nav-item">        
-<a class="nav-link " href="#" onclick="assigntask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; display: none;"> Assign Tasks to Projects</a>
-<a class="nav-link " href="#" onclick="updatetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; display: none;">Schedule Projects Tasks</a>         
-<a class="nav-link " href="#" onclick="manageproject()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" id = "projectlink"></a>
-<a class="nav-link " href="#" onclick="managetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white;" id = "tasklink" ></a> 
-<a class="nav-link " href="#" onclick="manageowner()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "addownerlink" >Add Owners</a> 
-<a class="nav-link " href="#" onclick="manageuser()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none; " id = "adduserlink">Add Users</a>
-<a class="nav-link " href="#" onclick="manageentity()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none; " id = "addentitylink">Add Entity</a>
-<a class="nav-link " href="#" onclick="viewallprojs()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "allprojlink" >view All Projects</a> 
-<a class="nav-link " href="#" onclick="Reloadpage()" style="font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6; display: none;" id = "refreshlink" >Refresh</a>
-       </li>
-<li class="nav-item">
-       <label>&nbsp</label>            
- </li>
-        
-
- <li class="nav-item">
-          <a  style="color: white; font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" href="#" onclick="backpage()">Back</a>   
-        </li>
- <li class="nav-item">
-       <label></label>            
- </li>
-
-      </ul>
-    </div>
-
-  </div>
-</nav>
-  <!-- 🌍 Navigation Bar End --> 
 <div class="gap3vh"></div>
+<!-- Above is div0 which is replacement of Navigation Bar -->
+
+<!-- Following is div1  which is replacement of Navigation Bar -->
+<div style = "margin: 0 auto; width: 40%; justify-content: space-between; background-color: black; height: 10vh;">
+<div style="text-align: left; margin: 0 auto;   margin-top: 3vh; ">
+<div class="gap3vh"></div>
+<div class="gap1vh"></div>
+<a class="nav-link " href="#" onclick="manageproject()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;" id = "projectlink"></a>
+</div>
+</div> 
+<div class="gap1vh"></div>
+<!-- Above is div1 which is replacement of Navigation Bar -->
+
+<!-- Following is div2  which is replacement of Navigation Bar -->
+<div style = "margin: 0 auto; width: 40%; position relative; justify-content: space-between; background-color: black; height: 10vh;">
+<div style="text-align: left; margin: 0 auto;   margin-top: 3vh; ">
+<div class="gap3vh"></div>
+<div class="gap1vh"></div>
+<a class="nav-link " href="#" onclick="managetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;" id = "tasklink" ></a>
+</div>
+</div> 
+<div class="gap3vh"></div>
+<!-- Above is div2 which is replacement of Navigation Bar -->
+
+
+
 
 <!-- following divs to select projects from datalist -->
-
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj"  >
-<datalist id="projs">
-</datalist>
-<Label id = "dropdown" class="dropdown-cls" >▼</Label>
+<!--
+<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" autocomplete="off"  >
+-->
+<select id="projnbr" class="sel-cls" autocomplete="off">
+</select>
 </div> 
- 
+<div class="gap3vh"></div> 
 
 <!-- Above divs to select projects from datalist -->
+
+
+
 
 <!-- Following are divs which are addition of Navigation Bar -->
 
 
-<div class = "div-hdr" >
+<div class = "div-hdr" style="display: none;" >
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; border: 0.0vw dashed green;">
 <Label style="font-size: clamp(0.9rem, 1.7vw, 1.9rem); color: blue; font-weight: 550; id="hdr-pr-wrd;"></Label>
 <span id="projdesc" style= "color:blue; "></span>
@@ -729,71 +769,64 @@ background-color: lightgrey;
 
 
 
-<div class="gap3vh"></div>
 
 
-<div class="gap3vh"></div>
-<div class="gap4vh"></div> 
-<div class="gap3vh"></div> 
 
 
 <!-- Following is div For Grid Display of Projects and their Tasks -->
  
-<div  id="projectdisplaydiv" style="margin-top: -5vh; display: none; border: 0.0vw dashed green;"   >
 
-<div style="display: flex; width: 99.0%; border: 0.0vw dashed green; margin: 0 auto; background-color: #709c95;">
-
-<Div class="items-add-upd" style= "border: 0.0vw solid yellow;  margin-top: -1.0vh; color: black; font-weight: 550;">
-
-
-<div class="gap2vh"></div>
   <!-- HTML Table For showing all records of database-->
-<div id = "wholeitemTable" class="custom-table-container" >
+<div id = "wholetaskTable" class="custom-table-container">
 
-<div style="width: 60%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
-  <Label id="labelgridname" style="text-align: center; display: block; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
-</Label>
-</div>
+
+
+
+
 
   <table class="custom-table">
     <thead>
+     
       <tr class="table-height">
-       
-        <th style="text-align: center; width: 45%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrmainname";></th>              
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrsdate"></th>
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdredate"></th>
-        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrstatus"></th>
+        
+         
+        <th style="text-align: center; width: 35%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "id="hdrmainname";></th> 
+         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrsdate"></th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdredate"></th>
+        <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrstatus"></th>             
+        
+        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
+        
+        
       </tr>
     </thead>
-    
     <tbody id="itemTable" class = "itemTableBody-Cls">
        <tr>
        
-        
-        <td style="text-align: left; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
-        <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
+        <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; "></td>
         <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; "></td>
         
       </tr>
-         
+    
+     
      </tbody>
-     <tfoot >
+  <tfoot>
     <tr style="background-color: #c5effd; height: 3vh;>
-      
-      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-     <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
-      <td style="text-align: center; font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+      <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
+     <td style="text-align: center; font-size: clamp(0.5rem, 0.8vw, 1.1rem); font-weight: 400; ">&nbsp</td>
      
         
     </tr>
   </tfoot>
   </table>
  </div>
- </div>
-
  </div>
 <!-- Bootstrap JS -->
 
@@ -859,6 +892,7 @@ let paramtt = "";
 let paramtsdt = "";
 let paramtedt = "";
 let paramtstt = "";
+let selplaceholder = "";
 paramId = params.get("param1");
 paramnm = params.get("param2");
 paramdatatype = params.get("param3");
@@ -874,13 +908,16 @@ console.log(paramnm);
 console.log(paramdatatype);
 console.log(paramuserId);
 
-document.getElementById("inv-btn").textContent = "Print";
-document.getElementById("comp-name1").textContent = paramnm;
+// document.getElementById("inv-btn").textContent = "Print";
+ document.getElementById("comp-name1").textContent = paramnm;
 document.getElementById("hdrmainname").textContent = paramtt;
 // document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
 
+loadheaders();
+
+
 async function loadheaders() {
-// alert("in heading");
+
 
   const recordId1 = `${paramdatatype}main1`;
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
@@ -890,9 +927,10 @@ async function loadheaders() {
       return;
     }
     const datamain1 = existingDocmain1.data();  
-    const projnbrhd = document.getElementById("projnbr");
-    projnbrhd.placeholder = datamain1.hds;
-
+ //   const projnbrhd = document.getElementById("projnbr");
+ //   projnbrhd.placeholder = datamain1.hds;
+      selplaceholder = datamain1.hds;
+      console.log("sel", selplaceholder);
   const recordId2 = `${paramdatatype}main2`;
   const docRefmain2 = doc(db, "hdrnames", recordId2);    
     const existingDocmain2 = await getDoc(docRefmain2);
@@ -901,7 +939,7 @@ async function loadheaders() {
       return;
     }
     const datamain2 = existingDocmain2.data();  
-    document.getElementById("labelgridname").textContent = datamain2.hds;
+ //   document.getElementById("labelgridname").textContent = datamain2.hds;
 
     const recordId3 = `${paramdatatype}main3`;
   const docRefmain3 = doc(db, "hdrnames", recordId3);    
@@ -963,31 +1001,55 @@ async function loadheaders() {
     const datamain8 = existingDocmain8.data();  
     document.getElementById("tasklink").textContent = datamain8.hds;
     
+    loadcodestables();
 }
-loadheaders();
+
 
 //  Load Firestore data into <datalists>
+
 async function loadcodestables() {
      
 try {
-    const projlist = document.getElementById("projs");
+  
+    const projlist = document.getElementById("projnbr");
+    projlist.innerHTML = ""; 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
+
+
+const placeholder = document.createElement('option');
+placeholder.value = '';
+placeholder.textContent = '-- Please select an option --';
+placeholder.textContent = selplaceholder;
+placeholder.disabled = true;
+placeholder.selected = true;
+placeholder.hidden = true;
+projlist.appendChild(placeholder);
+ 
+// const option1 = document.createElement("option");
+// option1.value = ""; // This is what gets inserted into the input
+// option1.textContent = "";      
+// projlist.appendChild(option1);
+
+
+//console.log("selholder", selplaceholder);
     const collectionRefP = collection(db, "projcodes");
     const q = query(collectionRefP, where("ownerId", "==", paramId));
     const snapshot = await getDocs(q);
- //   const snapshot = await getDocs(collection(db, "projcodes")); 
-
     snapshot.forEach((doc) => {
       const data = doc.data();
 
       const option = document.createElement("option");
       option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;
-
-      
+      option.textContent = `${data.projnbr} - ${data.projname}`;      
       projlist.appendChild(option);
     });
+
+// const option2 = document.createElement("option");
+// option2.value = ""; // This is what gets inserted into the input
+// option2.textContent = "";      
+// projlist.appendChild(option2);
+
 
   }
 
@@ -998,7 +1060,7 @@ try {
 
 }
 
-loadcodestables();
+
 
 // const projnbr = document.getElementById("projnbr");
 // projnbr.placeholder = `Select ${paramet} To View All ${paramtt}s `;
@@ -1008,41 +1070,36 @@ loadcodestables();
 // console.log(typeof projnbr);
 // console.log(projnbr.length);
 
-projnbr.addEventListener("input", function () {
+
+projnbr.addEventListener("change", function () {
 const option = document.querySelector(
-    `#projs option[value="${this.value}"]`);
+    `#projnbr option[value="${this.value}"]`);
 
 if (option) {
     console.log(option.textContent);   // "P1001 - Building Construction"
 //    document.getElementById("projdesc").textContent = option.textContent;
+
     document.getElementById("projdesc").textContent =
     option.textContent.replace(option.value + " - ", "");
+
+//    option.value = projdesc.projnbr;
+//    option.textContent = projdesc.projname;
+
     projnbrgb = projnbr.value.split(" ")[0];
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
     loadtaskmaster();
     imagePanel.style.display = "none";
-    projectdisplaydiv.style.display = "block";
-    projnbr.style.display = "none";
-    dropdown.style.display = "none";
+//    projectdisplaydiv.style.display = "block";
+//   projnbr.style.display = "none";
+//    dropdown.style.display = "none";
 }
 });
 
-menubtn.addEventListener("click", function () {
-  const menuBtn = document.getElementById("menuBtn");
-  const menuPanel = document.getElementById("menuPanel");
- if (menuPanel.style.display === "none") {
-        menuPanel.style.display = "block";
-        document.getElementById("inv-btn").textContent = "";
-    } else {
-        menuPanel.style.display = "none";
-        document.getElementById("inv-btn").textContent = "Print";
-    }
-  
-});
+
 
 // document.addEventListener('click', function(event) {
- //   alert("in DOC click");
+
  //   document.getElementById("inv-btn").textContent = "Print";
  // });   
 
@@ -1051,107 +1108,71 @@ menubtn.addEventListener("click", function () {
 
 
 
-async function loadtaskmaster() {
-
-
-//  loadtaskmaster();
-
-
-  // 🔹 READ (Load Data into Table)
-// async function loadtaskmaster() {
-
- 
-
-
-
-//if (!isValidSelection("projnbr", "projs")) {
-//  alert("A valid Project not selected from the Projects list.");
-//  return;
-// }
- 
-  
-  const wholeitemTable = document.getElementById("itemTable");
-  
-  console.log(paramId);
-  wholeitemTable.innerHTML = "";
+async function loadtaskmaster() {  
+   
+  const table = document.getElementById("itemTable");  
+  table.innerHTML = "";
   const collectionRef = collection(db, "taskmaster");
-  
-//   const q = query(collectionRef);
-//   const q = query(collectionRef, where("ownerId", "==", paramId));
- console.log(projnbrgb);
    const q = query(collectionRef, where("ownerId", "==", paramId),
                 where("projnbr", "==", projnbrgb));
-  
+//   const q = query(collectionRef, where("ownerId", "==", paramId));
+//   const q = query(collectionRef);
+                
   const querySnapshot = await getDocs(q);
   
   querySnapshot.forEach((document) => {
     
     const data = document.data();
     const docId = document.id;
-    statusgb = `${data.status}`
-//     projname = `${data.projname}`;  
-       console.log(`${data.projnbr}`);
-     console.log(paramnm);  
-     console.log(projnbrgb);
-     if (statusgb === "")  {
-     startgb = new Date(`${data.startdt}`);
-    startgb.setHours(0, 0, 0, 0);
-    endgb = new Date(`${data.enddt}`);
-    endgb.setHours(0, 0, 0, 0);
-    console.log(todaygb);
-    console.log(startgb);
-    console.log(endgb);
-    isTodayBetween();
-    isTodayless();
-    isTodaygreater();
     
-
-    if (isTodayBetween()) {
-    console.log("Today's date is within the range.");
-    statusgb = "Progressing";
-  }
-   if (isTodayless()) {
-    console.log("Today's date is less than start date.");
-    statusgb = "Not Started";
-  }
-  if (isTodaygreater()) {
-    console.log("Today's date is higher than end date.");
-    statusgb = "Incomplete";
-  }
-
-  }
+  
+ 
     
-     const color = `${statusgb}` === "Delayed" ? "red" : "black";     
-      
-    wholeitemTable.innerHTML += `
+    
+    table.innerHTML += `
       
       <tr class="tr-main-row"  >
         
-    
        
-        <td style="text-align: left; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black;  ">${data.taskname}</td>
-        
-        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.startdt}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; padding-left: 0.3vw; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: left;  ">${data.taskname}</td>
+        <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; text-align: center; ">${data.startdt}</td>
         <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.enddt}</td>
-        <td style="padding-left: 0.3vw; text-align: center; color:${color}; font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.05vw solid black; ">${statusgb}</td> 
-      </tr>
-                 
-  
-     <tr>
-     </tr>   
+        
+      <td style="font-size: clamp(0.7rem, 1.2vw, 1.3rem); font-weight: 500; border-top: 0.05vw solid black; border-right: 0.00vw solid black; ">${data.status}</td>   
+    
+ 
+        <td style="font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 500; border: 0.05vw solid black; text-align: center; text-decoration: underline;">
+          <button onclick="showMenu(event,this)" ;>Actions ▼</button>
+           <div class="popupMenu">
+
+    <a id = "mark11" href="#" onclick="markcompleted('${docId}');return false;">Mark ${statusgb} As Completed</a>
+    <a id = "mark12" href="#" onclick="markdropped('${docId}');return false;">Mark ${statusgb} As Dropped</a>
+    <a id = "mark13" href="#" onclick="markstarted('${docId}');return false;">Mark ${statusgb} As Started</a>
+    <a id = "mark14" href="#" onclick="markstopped('${docId}');return false;">Mark ${statusgb} As Stopped</a>
+    <a id = "mark15" href="#" onclick="deletetask('${docId}');return false;">Delete ${statusgb}</a>
+
+        </div>
+          
+        </td>                    
+        
+ <tr>
+ </tr>       
         
      
     `;
-
-
  
-
-
- 
-
   });
+
+    
+
+ 
+
  
 }   // ✅ ONLY ONE closing bracket for function
+
+
+
+
 
 function isValidSelection(inputId, datalistId) {
   const input = document.getElementById(inputId).value;
@@ -1296,7 +1317,7 @@ if (userId === "" || usrpassword === "" ){
        console.log(paramnm);
 // window.location.href = `./Index-team.html?param1=${paramId}&param2=${paramnm}`; 
     loadtaskmaster();
-    projectdisplaydiv.style.display = "block";
+//    projectdisplaydiv.style.display = "block";
     const labelhdr = document.getElementById("hdr-pr-wrd");
     labelhdr.innerText = "Project&nbsp&nbsp";
     menubtn.style.display = "block";
@@ -1331,6 +1352,121 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+ // 🔹 Update (Mark Task as completed)
+  window.markcompleted = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Completed",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Status Code Marked Completed");
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+
+ // 🔹 Update (Mark Task as Dropped)
+  window.markdropped = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Dropped",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Status Code Marked Dropped");
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+ // 🔹 Update (Mark Task as Started)
+  window.markstarted = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Started",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Status Code Marked Started");
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+// 🔹 Update (Mark Task as Stopped)
+  window.markstopped = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Stopped",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Status Code Marked Stopped");
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+
+// 🔹 Update (Mark Task as Not Started)
+  window.marknotstarted = async function (id) {
+    try {
+    await updateDoc(doc(db, "taskmaster", id), {
+      status: "Not Started",
+      createdAt: serverTimestamp() 
+      
+    });
+
+    alert("Status Code Marked Not Started");
+    loadtaskmaster();
+  } catch (error) {
+    console.error("Update error:", error);
+  }
+};
+
+window.showMenu = async function (event, button) {
+// function showMenu(event, button) {
+
+      
+    // Prevent document click from immediately closing it
+    event.stopPropagation();
+
+   
+
+    // Open this row's menu
+    const menu = button.nextElementSibling;
+
+    if (menu.style.display === "block")
+        menu.style.display = "none";
+    else
+        menu.style.display = "block";
+}
+
+
+// Close menu when clicking elsewhere
+document.addEventListener("click", function () {
+
+    document.querySelectorAll(".popupMenu").forEach(menu => {
+        menu.style.display = "none";
+    });
+
+});
+
+// Close menu when clicking elsewhere
+document.addEventListener("click", function () {
+
+    document.querySelectorAll(".popupMenu").forEach(menu => {
+        menu.style.display = "none";
+    });
+
+});
+
 
 
 
@@ -1340,7 +1476,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function printInvoice() {
   
 
-  const table = document.getElementById("wholeitemTable").outerHTML;
+  const table = document.getElementById("wholetaskTable").outerHTML;
 
   const printWindow = window.open('', '', 'width=900,height=700');
 
@@ -1378,18 +1514,20 @@ function printInvoice() {
            td:nth-child(6) {
             text-align: center;
           }
-           td:nth-child(5),        
-            td:nth-child(6) {       
+           td:nth-child(4),        
+            td:nth-child(5) {       
             colspan="2";           
           }  
-            td:nth-child(5) {
+            td:nth-child(4) {
            border-right: 1px solid black !important;
           } 
             button {
               display: none;           
             }
-             table th:nth-child(6),    
-            table td:nth-child(6) {   
+           table td:nth-child(5) {   
+           display: none;     
+           }
+           table th:nth-child(5) {   
            display: none;     
            }
              table th {

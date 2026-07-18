@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+
+ <!-- Following are standards of user and owner
+
+ 1. Paramdatatype is in both owners (ownerstable) and users (usertable) tables and represents sub systems
+
+    1. P  Projects Management   
+    2. E  Employees Management  
+    3. C  Courses Management  
+
+ 2. Screens headings of all programs are all stored in table hdrnames. key of table is follows
+
+    P(programname)NBR
+    E(programname)NBR
+    C(programname)NBR
+    
+ --> 
 <html>
 <head>
 
@@ -17,6 +33,7 @@
           background: #f7f681;
           background: LightCyan;
           background: Lightblue;
+          background: grey;
           
            background-image: url("cloud-image1.jpg");
     background-repeat: no-repeat;
@@ -656,7 +673,7 @@ background-color: #9bc7be;
 </nav>
   <!-- 🌍 Navigation Bar End --> 
 
-<div class="gap4vh"></div> 
+<div class="gap2vh"></div> 
 
 
 
@@ -691,7 +708,7 @@ background-color: #9bc7be;
 <div class="gap4vh"></div>
 <div class="gap4vh"></div> 
  <div id="imagePanel" class="imagediv" >
- <img src="login-image2.jpg" class="img-fluid rounded pull-left" alt="unavialable" class="responsive-img">  
+ <img src="image-to-do-list.png" class="img-fluid rounded pull-left" alt="unavialable" class="responsive-img">  
     </div>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -732,7 +749,7 @@ const firebaseConfig = {
   const db = getFirestore(app); 
  
 // document.getElementById("comp-name").textContent = "Tasks Management of Projects";
-   document.getElementById("comp-name").textContent = "Welcome To GrowLite Systems";
+   document.getElementById("comp-name").textContent = "Welcome To Projects Task management System";
        let paramId = "";
        let paramnm = "";
        let paramet = "";
@@ -764,24 +781,19 @@ if (password === "" ){
 
   
        paramnm = data1.ownernm;
-       paramet = data1.owneret;
-       paramtt = data1.ownertt;
+//       paramet = data1.owneret;
+//       paramtt = data1.ownertt;
        
-       const paramtsdt = data1.ownertsdt;
-       const paramtedt = data1.ownertedt;
-       const paramtstt = data1.ownertstt;
+//       const paramtsdt = data1.ownertsdt;
+//       const paramtedt = data1.ownertedt;
+//       const paramtstt = data1.ownertstt;
      
    
        console.log(paramuserId);
        console.log(paramId);
        console.log(paramnm);
        console.log(paramdatatype);
-       console.log(paramtedt);
-       console.log(paramet);
-       console.log(paramtt);
-       console.log(paramtsdt);
-       console.log(paramtedt);
-       console.log(paramtstt);
+     
   
 
 //    window.location.href = `./main.html?param1=${paramId}&param2=${paramnm}` +

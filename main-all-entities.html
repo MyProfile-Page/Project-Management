@@ -928,7 +928,27 @@ paramtstt = params.get("param9");
 
 document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name1").textContent = paramnm;
-document.getElementById("hdrlabel").textContent = `All ${paramet}s ${paramtt}s Grid`;
+// document.getElementById("hdrlabel").textContent = `All ${paramet}s ${paramtt}s Grid`;
+
+
+async function loadheaders() {
+
+
+  const recordId1 = `${paramdatatype}main20`;
+  const docRefmain20 = doc(db, "hdrnames", recordId1);    
+    const existingDocmain20 = await getDoc(docRefmain20);
+     if (!existingDocmain20.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain20 = existingDocmain20.data();  
+    document.getElementById("hdrlabel").textContent = datamain20.hds;
+
+     
+}
+loadheaders();
+
+
 
 loadtaskmaster();
 
@@ -1072,48 +1092,6 @@ function updatetask() {
 window.updatetask = updatetask; // ⭐ IMPORTANT LINE
 
 
-// 🔹 user Login
-window.loginrtn = async function () {
-  
-  const userId = document.getElementById("userId").value;
-//  const usrpassword = document.getElementById("usrpassword").value;
-
-  const usrpassword = "usrno2pw";
-  
-if (userId === "" || usrpassword === "" ){
-    alert("Please Enter all Manadatory datas of the User");
-    return;
-  } 
- 
-    const docRef = doc(db, "usertable", userId);    
-    const existingDoc = await getDoc(docRef);
-     if (!existingDoc.exists()) {
-      alert("User Not Found!");
-      return;
-    }
-    const data = existingDoc.data();
-        if (data.password !== usrpassword) {
-       alert("Invalid Password!");
-      return;
-    }
-         
-       paramId = data.ownerId;
-       paramnm = data.ownernm;
-    //   document.getElementById("comp-name").textContent = paramnm;
-       document.getElementById("comp-name1").textContent = paramnm;
-    //   const paramId = "user1";
-    //   const paramnm = "Asad";
-       console.log(paramId);
-       console.log(paramnm);
-// window.location.href = `./Index-team.html?param1=${paramId}&param2=${paramnm}`; 
-    logindiv.style.display = "none";
-    loadtaskmaster();
-    projectdisplaydiv.style.display = "block";
-    menubtn.style.display = "block";
-    document.getElementById("menubtn").disabled = false;  
- 
-  
-};
 
 function mainappl() {
          window.location = `./main.html?param1=${paramId}&param2=${paramnm}&param3=

@@ -443,51 +443,19 @@ background-color: #9bc7be;
 
 <body  class="body_cls">
 
-
-  <!-- 🌍 Navigation Bar Start -->
-<nav class="navbar " >
-
-  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
- 
-<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
-<button onclick="printInvoice()" type="button" class="prt-btn"; id="inv-btn"; >
-</button> 
+<!-- Following is div0  which is replacement of Navigation Bar -->
+<div style = "margin: 0 auto; width: 100%; position relative; display: flex; justify-content: space-between; background-color: black;">
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<Label id="comp-name" style="font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; text-decoration: underline;"></Label>
+<a class="nav-link " href="#" onclick="printInvoice()" style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 80vw; margin-top: -3.75vh;" id = "printid" >Print</a>
+<a class="nav-link " href="#" onclick="mainappl()"  style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 90vw; margin-top: -3.5vh;" id = "backlink" >Back</a>
 </div>
-
-<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
-<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
 </div> 
-    <!-- Toggler -->
-    <button id = "menubtn" class="navbar-toggler" type="button" 
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
-   <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
-    </button>
+<div class="gap3vh"></div>
+<!-- Above is div0 which is replacement of Navigation Bar -->
 
-    <div id="menuPanel" style="display:none; width: 100%;" ></div>
 
-    <!-- Collapsible menu -->
-    <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
-      <ul class="navbar-nav ms-auto">    
 
-        <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
-        </li>
-       <li class="nav-item">
-       <label></label>            
-        </li>
-
-      </ul>
-    </div>
-
-  </div>
-</nav>
-  <!-- 🌍 Navigation Bar End --> 
-<div class="gap1vh"></div>
 
 <!-- Following are divs which are addition of Navigation Bar -->
 
@@ -524,8 +492,7 @@ background-color: #9bc7be;
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
   <input type="text" class="input-field" id="projname" > 
 </div>
-
-
+<div class="gap3vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">  
   <button id="addbtn" onclick="addproj()" type="button" class="add-btn";></button>
   
@@ -534,11 +501,12 @@ background-color: #9bc7be;
 <div class="gap3vh"></div>
 </div>
 
-<div class="gap4vh"></div>
+
 
 
 </div> 
- <div class="gap3vh"></div>  <div class="projs-add-upd" style= "margin-top: -0.3vh;" >
+ 
+ <div class="projs-add-upd" style= "margin-top: -0.3vh;" >
 
 <div class="gap2vh"></div>
   <!-- HTML Table For showing all records of database-->
@@ -619,8 +587,6 @@ let paramId = "none";
 let paramnm = "none";
 let paramdatatype = "";
 let paramuserId = "";
-let alertadd = "";
-let alertdel = "";
 let paramet = "";
 let paramtt = "";
 let paramtsdt = "";
@@ -636,10 +602,9 @@ paramtsdt = params.get("param7");
 paramtedt = params.get("param8");
 paramtstt = params.get("param9");
 document.getElementById("comp-name").textContent = paramnm;
-document.getElementById("inv-btn").textContent = "Print";
+// document.getElementById("inv-btn").textContent = "Print";
 
 async function loadheaders() {
-// alert("in heading");
 
   const recordId1 = `${paramdatatype}proj1`;
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
@@ -755,7 +720,7 @@ async function loadnewitemstable() {
  // 🔹 DELETE (Remove Record)
   window.deleteproj = async function (id) {
     await deleteDoc(doc(db, "projcodes", id));
-    alert(`${alertdel}`);
+    alert("Deleted");
     clearInputs();
     loadnewitemstable();
   };
@@ -791,8 +756,8 @@ await setDoc(
     }
 );
 
-//    alert("New Project added");
-    alert(`${alertadd}`);
+
+    alert("Added");
     loadnewitemstable(); // refresh table
 
   } catch (error) {
@@ -846,22 +811,10 @@ document.addEventListener("DOMContentLoaded", () => {
  
  // projname.placeholder = `${paramet} Name`;
  //  document.getElementById('hdrlabel').textContent = `Add ${paramet}s`;
-   alertadd = `${paramet} Added`;
-   alertdel = `${paramet} Deleted`;
+ 
 });
 
-menubtn.addEventListener("click", function () {
-  const menuBtn = document.getElementById("menuBtn");
-  const menuPanel = document.getElementById("menuPanel");
- if (menuPanel.style.display === "none") {
-        menuPanel.style.display = "block";
-        document.getElementById("inv-btn").textContent = "";
-    } else {
-        menuPanel.style.display = "none";
-        document.getElementById("inv-btn").textContent = "Print";
-    }
-  
-});
+
 //  PRINT FUNCTION START
 
 function printInvoice() {  

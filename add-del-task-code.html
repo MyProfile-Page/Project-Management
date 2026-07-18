@@ -458,7 +458,7 @@ background-color: white;
   color: black; 
  font-weight: 500; 
  border: 0.1vw solid black; 
- width: 40%;
+ width: 42%;
  text-align: center;
 }
 
@@ -560,16 +560,20 @@ hyphens: auto;
 
 }
 
-.dropdown-cls {
- margin-left: -2vw;
- margin-top: 2vh;
-}
+.sel-cls {
+ background-color: black; 
+ color: white; 
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 12vh;
+ width: 40%; 
+ text-align: left;
+ padding-left: 1vw;
+ font-weight: 550;
+} 
 
-@media (max-width: 768px) {
-.dropdown-cls {
- margin-left: -6vw;
- margin-top: 2.3vh;
-}
+
+.sel-cls option:disabled {
+  text-align: center;
 }
 
   </style>
@@ -577,51 +581,18 @@ hyphens: auto;
 
 <body  class="body_cls">
 
-
-  <!-- 🌍 Navigation Bar Start -->
-<nav class="navbar " >
-
-  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
- 
-<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
-<button onclick="printInvoice()" type="button" class="prt-btn"; id="inv-btn"; >
-</button> 
+<!-- Following is div0  which is replacement of Navigation Bar -->
+<div style = "margin: 0 auto; width: 100%; position relative; display: flex; justify-content: space-between; background-color: black;">
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<Label id="comp-name" style="font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; text-decoration: underline;"></Label>
+<a class="nav-link " href="#" onclick="mainappl()" style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 90vw; margin-top: -3.75vh;" id = "backlink" >Back</a>
 </div>
-
-<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
-<Label id="comp-name" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
 </div> 
-    <!-- Toggler -->
-    <button id = "menubtn" class="navbar-toggler" type="button" 
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
-   <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
-    </button>
+<div class="gap3vh"></div>
+<!-- Above is div0 which is replacement of Navigation Bar -->
 
-    <div id="menuPanel" style="display:none; width: 100%;" ></div>
 
-    <!-- Collapsible menu -->
-    <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
-      <ul class="navbar-nav ms-auto">    
-
-        <li class="nav-item">
-          <a  style="color: white; font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem);" href="#" onclick="mainappl()" >Back</a>   
-        </li>
-       <li class="nav-item">
-       <label></label>            
-        </li>
-
-      </ul>
-    </div>
-
-  </div>
-</nav>
-  <!-- 🌍 Navigation Bar End --> 
-
+ 
 
 
 
@@ -637,21 +608,33 @@ hyphens: auto;
 
 
 <div class="gap3vh"></div>
+<!-- following divs to select projects from datalist -->
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" >
-<datalist id="projs"></datalist>
-<Label id = "dropdown" class="dropdown-cls" >▼</Label>
+<!--
+<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" autocomplete="off"  >
+-->
+<select id="projnbr" class="sel-cls" autocomplete="off">
+<option value="" disabled="" selected="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+</option>
+</select>
 </div> 
+ 
+
+<!-- Above divs to select projects from datalist -->
+
+
 
 <!-- Following are divs which are addition of Navigation Bar -->
-
-
-<div class = "div-hdr">
+<div class = "div-hdr" style="display: none;">
 <div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
 <Label style="font-size: clamp(0.9rem, 1.7vw, 1.9rem); color: blue; font-weight: 550; id="hdr-pr-wrd;"></Label>
 <span id="projdesc" style= color:blue;></span>
 </div>
 </div> 
+
 
 
 
@@ -715,11 +698,24 @@ hyphens: auto;
   <!-- HTML Table For showing all records of database-->
 <div id = "wholetaskTable" class="custom-table-container">
 
+<!-- Following is div  for Grid Name and Print Icon -->
+<div style = "margin: 0 auto; width: 100%; position relative; display: flex; justify-content: space-between; background-color: transparent;">
+<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
+<Label id="labelgridname" style="font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: black; text-decoration: underline;"></Label>
+<a class="nav-link " href="#" onclick="printInvoice()" style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 90vw; margin-top: -3.75vh;" id = "printid" >Print</a>
+</div>
+</div> 
+
+<!-- Above is div0 which is replacement of Navigation Bar -->
+
+
+<!-- Following is div For Grid Display of Projects and their Tasks -->
+<!--
 <div style="width: 30%; border: 0.0vw solid black; margin: 0 auto;">
   <Label id="labelgridname" style="text-align: center; display: block; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: black;">
 </Label>
 </div>
-
+-->
 
   <table class="custom-table">
     <thead>
@@ -813,7 +809,6 @@ let enddtgbfl = " ";
 
 let startdtgbin = " ";
 let enddtgbin = " ";
-let alertselect = "";
 let statusgb = "";
 let ownerproj = "";
 let paramId = "";
@@ -826,6 +821,7 @@ let paramtsdt = "";
 let paramtedt = "";
 let paramtstt = "";
 let mark11gb = "";
+let selplaceholder = "";
 paramId = params.get("param1");
 paramnm = params.get("param2");
 paramdatatype = params.get("param3");
@@ -839,12 +835,12 @@ paramtstt = params.get("param9");
 
 
 
-document.getElementById("inv-btn").textContent = "Print";
+// document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name").textContent = paramnm;
-// document.getElementById("labelgridname").textContent = `${paramet} ${paramtt}s Grid`;
+wholetaskTable.style.display = "none";
 
 async function loadheaders() {
-// alert("in heading");
+
 
   const recordId1 = `${paramdatatype}task1`;
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
@@ -854,8 +850,11 @@ async function loadheaders() {
       return;
     }
     const datamain1 = existingDocmain1.data();  
-    const projnbrhd = document.getElementById("projnbr");
-    projnbrhd.placeholder = datamain1.hds;
+ //   const projnbrhd = document.getElementById("projnbr");
+ //   projnbrhd.placeholder = datamain1.hds;
+     
+      selplaceholder = datamain1.hds;
+      console.log("sel", selplaceholder);
 
   const recordId2 = `${paramdatatype}task2`;
   const docRefmain2 = doc(db, "hdrnames", recordId2);    
@@ -957,7 +956,7 @@ async function loadheaders() {
     const datamain15= existingDocmain15.data();  
     statusgb = datamain15.hds;
 
-   
+    loadcodestables();
     
 }
 loadheaders();
@@ -1059,9 +1058,9 @@ async function loadtaskmaster() {
       
     });
 
-    alert("Task Code Marked Completed");
+    alert("Status Code Marked Completed");
     clearInputs();
-    loadtaskmaster();
+ //   loadtaskmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1076,9 +1075,9 @@ async function loadtaskmaster() {
       
     });
 
-    alert("Task Code Marked Dropped");
+    alert("Status Code Marked Dropped");
     clearInputs();
-    loadtaskmaster();
+ //   loadtaskmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1092,9 +1091,9 @@ async function loadtaskmaster() {
       
     });
 
-    alert("Task Code Marked Started");
+    alert("Status Code Marked Started");
     clearInputs();
-    loadtaskmaster();
+ //   loadtaskmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1108,9 +1107,9 @@ async function loadtaskmaster() {
       
     });
 
-    alert("Task Code Marked Stopped");
+    alert("Status Code Marked Stopped");
     clearInputs();
-    loadtaskmaster();
+ //   loadtaskmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1125,9 +1124,9 @@ async function loadtaskmaster() {
       
     });
 
-    alert("Task Code Marked Not Started");
+    alert("Status Code Marked Not Started");
     clearInputs();
-    loadtaskmaster();
+ //   loadtaskmaster();
   } catch (error) {
     console.error("Update error:", error);
   }
@@ -1141,9 +1140,9 @@ async function loadtaskmaster() {
  // 🔹 DELETE (Remove Record)
   window.deletetask = async function (id) {
     await deleteDoc(doc(db, "taskmaster", id));
-    alert("Task Code deleted");
+    alert("Deleted");
     clearInputs();
-    loadtaskmaster();
+  //  loadtaskmaster();
   };
 // 🔹 CREATE (Insert Data)
 window.addtask = async function () {
@@ -1156,17 +1155,25 @@ window.addtask = async function () {
   startdtgbin = document.getElementById("startdt").value.trim();
   enddtgbin = document.getElementById("enddt").value.trim();  
 
-  if (!isValidSelection("projnbr", "projs")) {
-  alert(`${alertselect}`);
-  return;
-}
+//  if (!isValidSelection("projnbr", "projs")) {
+//  alert("Please First Select The Related Business");
+//  return;
+// }
 
+    const projectSelect = document.getElementById("projnbr");
+    if (projectSelect.value === "") {
+    alert("Please First Select The Business");
+    projectSelect.focus();
+    return;
+    
+}
+   
 
 
 // const startdtInput = document.getElementById("startdt").value.trim();
 
   if (!isValidDate(startdtgbin)) {
-    alert("Please Enter a valid Task Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
+    alert("Please Enter a valid Start Date in YYYY-MM-DD format (e.g. 2026-03-31)");
     return; // Stop update if invalid
   }
  
@@ -1220,9 +1227,9 @@ await setDoc(
       createdAt: serverTimestamp()
     });
 
-    alert("New Task added");
+    alert("Added");
     
-    loadtaskmaster(); // refresh table
+  //  loadtaskmaster(); // refresh table
 
   } catch (error) {
     console.error("Error adding Task Code:", error);
@@ -1231,7 +1238,7 @@ await setDoc(
 };
 
   
-  loadtaskmaster();
+//  loadtaskmaster();
 
 function mainappl() {  
           window.location = `./main.html?param1=${paramId}&param2=${paramnm}&param3=
@@ -1240,27 +1247,49 @@ ${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param
 window.mainappl = mainappl; // ⭐ IMPORTANT LINE
 
 //  Load Firestore data into <datalists>
-async function loadcodestables() {
 
+async function loadcodestables() {
      
 try {
-    const projlist = document.getElementById("projs");
+  
+    const projlist = document.getElementById("projnbr");
+    projlist.innerHTML = ""; 
+    const app = initializeApp(firebaseConfig);
     const db = getFirestore();
+
+
+const placeholder = document.createElement('option');
+placeholder.value = '';
+placeholder.textContent = '-- Please select an option --';
+placeholder.textContent = selplaceholder;
+placeholder.disabled = true;
+placeholder.selected = true;
+projlist.appendChild(placeholder);
+ 
+const option1 = document.createElement("option");
+option1.value = ""; // This is what gets inserted into the input
+option1.textContent = "";      
+projlist.appendChild(option1);
+
+
+//console.log("selholder", selplaceholder);
     const collectionRefP = collection(db, "projcodes");
     const q = query(collectionRefP, where("ownerId", "==", paramId));
     const snapshot = await getDocs(q);
- //   const snapshot = await getDocs(collection(db, "projcodes")); 
-
     snapshot.forEach((doc) => {
       const data = doc.data();
 
       const option = document.createElement("option");
       option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;
-
-      
+      option.textContent = `${data.projnbr} - ${data.projname}`;      
       projlist.appendChild(option);
     });
+
+const option2 = document.createElement("option");
+option2.value = ""; // This is what gets inserted into the input
+option2.textContent = "";      
+projlist.appendChild(option2);
+
 
   }
 
@@ -1271,7 +1300,48 @@ try {
 
 }
 
-loadcodestables();
+
+
+// const projnbr = document.getElementById("projnbr");
+// projnbr.placeholder = `Select ${paramet} To View All ${paramtt}s `;
+ 
+ 
+
+// console.log(typeof projnbr);
+// console.log(projnbr.length);
+
+projnbr.addEventListener("change", function () {
+
+const option = document.querySelector(
+    `#projnbr option[value="${this.value}"]`);
+
+if (option) {
+    
+    console.log(option.textContent);   // "P1001 - Building Construction"
+ //   document.getElementById("projdesc").textContent = option.textContent;
+      document.getElementById("projdesc").textContent =
+      option.textContent.replace(option.value + " - ", "");
+ //   projnamegb = option.textContent;
+    projnamegb = document.getElementById("projdesc").textContent;
+
+    projnbrgb = projnbr.value.split(" ")[0];
+    projnbrgb = parseInt(projnbrgb, 10);
+     console.log(projnbrgb);
+    ownerproj = `${paramId}_${projnbrgb.toString().padStart(4, '0')}`;
+    console.log(ownerproj);
+    wholetaskTable.style.display = "block";
+ //   loadtaskmaster();
+  //  projectdisplaydiv.style.display = "block";
+ //   projnbr.style.display = "none";
+ //   dropdown.style.display = "none";
+}
+});
+
+
+
+
+
+
 function isValidSelection(inputId, datalistId) {
   const input = document.getElementById(inputId).value;
   const options = document.querySelectorAll(`#${datalistId} option`);
@@ -1298,7 +1368,7 @@ function isValidDate(expiry) {
   return date.getFullYear() === year && date.getMonth() === month - 1;
 }
 
-projnbr.addEventListener("input", function () {
+projnbr.addEventListener("change", function () {
 
 const option = document.querySelector(
     `#projs option[value="${this.value}"]`);
@@ -1317,10 +1387,11 @@ if (option) {
      console.log(projnbrgb);
     ownerproj = `${paramId}_${projnbrgb.toString().padStart(4, '0')}`;
     console.log(ownerproj);
-    loadtaskmaster();
+    wholetaskTable.style.display = "block";
+  //  loadtaskmaster();
   //  projectdisplaydiv.style.display = "block";
     projnbr.style.display = "none";
-    dropdown.style.display = "none";
+  //  dropdown.style.display = "none";
 }
 });
 
