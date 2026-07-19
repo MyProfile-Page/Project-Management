@@ -627,7 +627,15 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 }
 }
 
-
+select {
+  -webkit-appearance: none; /* Crucial for Chrome Android */
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ff5733; /* Your custom color */
+  color: #ffffff;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 
 
 
