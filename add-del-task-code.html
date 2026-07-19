@@ -570,11 +570,67 @@ hyphens: auto;
  padding-left: 1vw;
  font-weight: 550;
 } 
-
-
 .sel-cls option:disabled {
   text-align: center;
 }
+@media (max-width: 768px) { 
+.sel-cls {
+ background-color: black; 
+ color: white; 
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 12vh;
+ width: 40%; 
+ text-align: left;
+ padding-left: 1vw;
+ font-weight: 550;
+} 
+.sel-cls option:disabled {
+  text-align: center;
+}
+}
+.div-flex0  {
+margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 12vh;
+}
+
+.div0-1  {
+ margin-left: 1%; width: 30%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+}
+.div0-1label {
+font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding-left 1%; 
+}
+
+
+.div0-3  { margin-left: 63%; border: 0.0vw solid yellow; margin-top: 3vh;
+ 
+}
+.div0-3back  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; 
+}
+
+@media (max-width: 768px) { 
+.div-flex0  {
+margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 9vh;
+}
+
+.div0-1  {
+ margin-left: 1%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+}
+.div0-1label {
+font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding-left 1%; 
+}
+
+.div0-3  { margin-left: 63%; border: 0.0vw solid yellow; margin-top: 6vh;
+ 
+}
+.div0-3back  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; 
+}
+}
+
+
+
+
+
 
   </style>
 </head>
@@ -582,16 +638,17 @@ hyphens: auto;
 <body  class="body_cls">
 
 <!-- Following is div0  which is replacement of Navigation Bar -->
-<div style = "margin: 0 auto; width: 100%; position relative; display: flex; justify-content: space-between; background-color: black;">
-<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; ">
-<Label id="comp-name" style="font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; text-decoration: underline;"></Label>
-<a class="nav-link " href="#" onclick="mainappl()" style="font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-left: 90vw; margin-top: -3.75vh;" id = "backlink" >Back</a>
+<div class = "div-flex0">
+<div class="div0-1">
+<Label id="comp-name" class="div0-1label" ></Label>
+</div>
+<div class="div0-3">
+<a href="Index.html"  id = "backlink" class="div0-3back" >Back</a>
 </div>
 </div> 
-<div class="gap3vh"></div>
+
 <!-- Above is div0 which is replacement of Navigation Bar -->
-
-
+<div class="gap2vh"></div>
  
 
 
