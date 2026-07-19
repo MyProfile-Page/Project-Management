@@ -634,10 +634,23 @@ background-color: lightgrey;
  padding-left: 0.5vw;
  font-weight: 550;
 } 
-
-
 .sel-cls option:disabled {
   text-align: left;
+}
+@media (max-width: 768px) { 
+.sel-cls {
+ background-color: black; 
+ color: white; 
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 12vh;
+ width: 41.3%; 
+ text-align: left;
+ padding-left: 0.5vw;
+ font-weight: 550;
+} 
+.sel-cls option:disabled {
+  text-align: left;
+}
 }
 
 .popupMenu {
@@ -694,17 +707,17 @@ margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 1
 }
 
 .div0-1  {
- margin-left: 1%; width: 20%; flex-shrink: 0; border: 0.2vw solid yellow; margin-top: 3vh;
+ margin-left: 1%; width: 20%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
 }
 .div0-1label {
 font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding-left 1%; 
 }
-.div0-2  { margin-left: 69%; border: 0.2vw solid yellow; margin-top: 3vh;
+.div0-2  { margin-left: 69%; border: 0.0vw solid yellow; margin-top: 3vh;
 }
 .div0-2print  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh; 
 }
-.div0-3  { margin-left: 1%; border: 0.2vw solid yellow; margin-top: 3vh;
+.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 3vh;
  
 }
 .div0-3back  {
@@ -716,22 +729,34 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 7vh;
 } 
 .div0-1  {
- margin-left: 1%; width: 70%; flex-shrink: 0; border: 0.2vw solid yellow; margin-top: 2vh;
+ margin-left: 1%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
 }
 .div0-1label {
 font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding-left 1%; 
 }
-.div0-2  { margin-left: 9%; border: 0.2vw solid yellow; margin-top: 2vh;
+.div0-2  { margin-left: 9%; border: 0.0vw solid yellow; margin-top: 2vh;
 }
 .div0-2print  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh; 
 }
-.div0-3  { margin-left: 1%; border: 0.2vw solid yellow; margin-top: 2vh;
+.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2vh;
  
 }
 .div0-3back  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh;
 }
+}
+.div1 {
+text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 40%;
+}
+.div1-a {
+font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;
+}
+.div2 {
+text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 40%;
+}
+.div2-a {
+font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;
 }
 
 
@@ -756,24 +781,21 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 <!-- Above is div0 which is replacement of Navigation Bar -->
 
 <!-- Following is div1  which is replacement of Navigation Bar -->
-<div style = "margin: 0 auto; width: 40%; justify-content: space-between; background-color: black; height: 10vh;">
-<div style="text-align: left; margin: 0 auto;   margin-top: 3vh; ">
-<div class="gap3vh"></div>
-<div class="gap1vh"></div>
-<a class="nav-link " href="#" onclick="manageproject()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;" id = "projectlink"></a>
-</div>
-</div> 
-<div class="gap1vh"></div>
-<!-- Above is div1 which is replacement of Navigation Bar -->
 
-<!-- Following is div2  which is replacement of Navigation Bar -->
-<div style = "margin: 0 auto; width: 40%; position relative; justify-content: space-between; background-color: black; height: 10vh;">
-<div style="text-align: left; margin: 0 auto;   margin-top: 3vh; ">
+<div class="div1">
 <div class="gap3vh"></div>
-<div class="gap1vh"></div>
-<a class="nav-link " href="#" onclick="managetask()" style="font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;" id = "tasklink" ></a>
-</div>
+<a class="div1-a" href="#" onclick="manageproject()"  id = "projectlink"></a>
+<div class="gap3vh"></div>
 </div> 
+<!-- Above is div1 which is replacement of Navigation Bar -->
+<div class="gap1vh"></div>
+<!-- Following is div2  which is replacement of Navigation Bar -->
+<div class="div2">
+<div class="gap3vh"></div>
+<a class="div2-a" href="#" onclick="managetask()"  id = "tasklink" ></a>
+<div class="gap3vh"></div>
+</div>
+ 
 <div class="gap3vh"></div>
 <!-- Above is div2 which is replacement of Navigation Bar -->
 
@@ -782,9 +804,6 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 
 <!-- following divs to select projects from datalist -->
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<!--
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" autocomplete="off"  >
--->
 <select id="projnbr" class="sel-cls" autocomplete="off">
 </select>
 </div> 
