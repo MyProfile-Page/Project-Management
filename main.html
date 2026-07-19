@@ -624,6 +624,17 @@ background-color: lightgrey;
   cursor: pointer;
 }
 
+select, select::picker(select) {
+  appearance: base-select;
+}
+
+option {
+  font-size: clamp(0.7rem, 1.0vw, 1.1rem);
+  background-color: black;
+  color: white;    
+}
+
+
 .sel-cls {
  background-color: black; 
  color: white; 
@@ -632,6 +643,7 @@ background-color: lightgrey;
  width: 41.3%; 
  text-align: left;
  padding-left: 0.5vw;
+ padding-top: 4vh;
  font-weight: 550;
 } 
 .sel-cls option:disabled {
@@ -646,6 +658,7 @@ background-color: lightgrey;
  width: 70%; 
  text-align: left;
  padding-left: 0.5vw;
+ padding-top: 2vh;
  font-weight: 550;
 } 
 .sel-cls option:disabled {

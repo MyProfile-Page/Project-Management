@@ -560,6 +560,16 @@ hyphens: auto;
 
 }
 
+select, select::picker(select) {
+  appearance: base-select;
+}
+
+option {
+  font-size: clamp(0.7rem, 1.0vw, 1.1rem);
+  background-color: black;
+  color: white;    
+}
+
 .sel-cls {
  background-color: black; 
  color: white; 
@@ -568,6 +578,7 @@ hyphens: auto;
  width: 40%; 
  text-align: left;
  padding-left: 1vw;
+ padding-top: 4vh;
  font-weight: 550;
 } 
 .sel-cls option:disabled {
@@ -582,6 +593,7 @@ hyphens: auto;
  width: 85%; 
  text-align: left;
  padding-left: 1vw;
+ padding-top: 2vh;
  font-weight: 550;
 } 
 .sel-cls option:disabled {
