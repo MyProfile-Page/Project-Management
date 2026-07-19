@@ -1321,12 +1321,10 @@ placeholder.textContent = '-- Please select an option --';
 placeholder.textContent = selplaceholder;
 placeholder.disabled = true;
 placeholder.selected = true;
+placeholder.hidden = true;
 projlist.appendChild(placeholder);
  
-const option1 = document.createElement("option");
-option1.value = ""; // This is what gets inserted into the input
-option1.textContent = "";      
-projlist.appendChild(option1);
+
 
 
 //console.log("selholder", selplaceholder);
@@ -1341,12 +1339,6 @@ projlist.appendChild(option1);
       option.textContent = `${data.projnbr} - ${data.projname}`;      
       projlist.appendChild(option);
     });
-
-const option2 = document.createElement("option");
-option2.value = ""; // This is what gets inserted into the input
-option2.textContent = "";      
-projlist.appendChild(option2);
-
 
   }
 
