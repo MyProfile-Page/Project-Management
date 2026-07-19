@@ -945,7 +945,7 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-
+  wholetaskTable.style.display = "none"; 
   const params = new URLSearchParams(window.location.search);
 let selectedStatus = "none";
 let todaygb = new Date();
@@ -1164,6 +1164,7 @@ if (option) {
     projnbrgb = projnbr.value.split(" ")[0];
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
+    wholetaskTable.style.display = "block";
     loadtaskmaster();
     imagePanel.style.display = "none";
 //    projectdisplaydiv.style.display = "block";
