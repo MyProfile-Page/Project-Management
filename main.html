@@ -802,7 +802,7 @@ margin-top: 2vh;}
 <a href="#" onclick="printInvoice()" class="div0-2print" id = "printid" >Print</a>
 </div>
 <div class="div0-3">
-<a href="index.html"  id = "backlink" class="div0-3back" >Back</a>
+<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >Back</a>
 </div>
 </div> 
 
@@ -1178,6 +1178,12 @@ if (option) {
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
     wholetaskTable.style.display = "block";
+    if (projnbrgb === 9999){
+     window.location.href = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}` +
+                           `&param3=${paramdatatype}&param4=${paramuserId}` + 
+                           `&param5=""&param6=""&param7=""` +
+                           `&param8=""&param9=""`;  
+  }    
     loadtaskmaster();
     imagePanel.style.display = "none";
 //    projectdisplaydiv.style.display = "block";
@@ -1358,16 +1364,14 @@ window.Reloadpage = Reloadpage; // ⭐ IMPORTANT LINE
 
 function backpage() {  
 
-if (paramdatatype === "P") {
-         window.location = `./index.html`; 
-}
-if (paramdatatype === "E") {
-         window.location = `./index.html`; 
-}
-if (paramdatatype === "C") {
-         window.location = `./index.html`; 
-}
+if (paramuserId === "Admin") {
+   window.location = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}&param3=
+${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
  }
+else {
+         window.location = `./index.html`; 
+}
+}
 window.backpage = backpage; // ⭐ IMPORTANT LINE
 
 
@@ -1688,7 +1692,7 @@ function printInvoice() {
         <div style="text-align: left;">
           <!-- Your existing header -->
           
-          <h4>Projects Listasad</h4>
+          <h4>Projects List</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>

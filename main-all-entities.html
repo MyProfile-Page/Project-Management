@@ -722,59 +722,73 @@ background-color: black; */
  height: 6vh;
 }
 }
+
+.div-flex0  {
+margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 12vh;
+}
+
+.div0-1  {
+ margin-left: 1%; width: 30%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+}
+.div0-1label {
+font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding-left 1%; 
+}
+.div0-2  { margin-left: 59%; border: 0.0vw solid yellow; margin-top: 3vh;
+}
+.div0-2print  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh; 
+}
+.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 3vh;
+ 
+}
+.div0-3back  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; 
+}
+
+@media (max-width: 768px) {
+.div-flex0  {
+margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 7vh;
+} 
+.div0-1  {
+ margin-left: 1%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
+}
+.div0-1label {
+font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding-left 1%; 
+}
+.div0-2  { margin-left: 9%; border: 0.0vw solid yellow; margin-top: 2vh;
+}
+.div0-2print  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh; 
+}
+.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2vh;
+ 
+}
+.div0-3back  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh;
+}
+}
   </style>
 </head>
 
 <body  class="body_cls">
 
- <!-- 🌍 Navigation Bar Start -->
-<nav class="navbar " >
-
-  <div class="container-fluid" style ="background-color: black; border: 0.0vw solid black; width: 98%; ">
- 
-<div style=" margin-top: -1vh; border: 0.0vw solid white; ">  
-<button onclick="printInvoice()" type="button" class="prt-btn"; id="inv-btn"; >
-</button> 
+<!-- Following is div0  which is replacement of Navigation Bar -->
+<div class = "div-flex0">
+<div class="div0-1">
+<Label id="comp-name1" class="div0-1label" ></Label>
 </div>
-
-<div style="border: 0vw solid yellow; text-align: center;   margin-top: -1.0vh; margin-left: 3.5vw;  ">
-<Label id="comp-name1" style="font-size: clamp(0.9rem, 1.4vw, 1.6rem); color: black; font-weight: 550; color: white;"></Label>
+<div class="div0-2">
+<a href="#" onclick="printInvoice()" class="div0-2print">Print</a>
+</div>
+<div class="div0-3">
+<a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" >Back</a>
+</div>
 </div> 
-    <!-- Toggler -->
-    <button id = "menubtn" class="navbar-toggler" type="button" 
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon menu-bar-prp" style="height: 5vh;" ></span>
-   <!--   <span id = "menu-word-prp" class="d-none d-sm-inline menu-word-prp" >Menu</span> -->
-    </button>
 
-    <div id="menuPanel" style="display:none; width: 100%;" ></div>
+<!-- Above is div0 which is replacement of Navigation Bar -->
 
-    <!-- Collapsible menu -->
-    <div class="collapse navbar-collapse" id="navbarNav" style="color: black";>
-      <ul class="navbar-nav ms-auto">    
 
-      
-<li class="nav-item">
-       <label>&nbsp</label>            
- </li>
-        </li>
- <li class="nav-item">
-          <a  style="color: white; font-weight: 350; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #ffffe6;" href="#" onclick="mainappl()">Back</a>   
-        </li>
- <li class="nav-item">
-       <label></label>            
- </li>
 
-      </ul>
-    </div>
-
-  </div>
-</nav>
-  <!-- 🌍 Navigation Bar End --> 
 <div class="gap1vh"></div>
 
 <!-- Following are divs which are addition of Navigation Bar -->
@@ -926,27 +940,45 @@ paramtedt = params.get("param8");
 paramtstt = params.get("param9");
 // paramId = "ownernbr1";
 
-document.getElementById("inv-btn").textContent = "Print";
+// document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name1").textContent = paramnm;
 // document.getElementById("hdrlabel").textContent = `All ${paramet}s ${paramtt}s Grid`;
 
+loadheaders();
 
 async function loadheaders() {
-
-
-  const recordId1 = `${paramdatatype}main20`;
-  const docRefmain20 = doc(db, "hdrnames", recordId1);    
-    const existingDocmain20 = await getDoc(docRefmain20);
-     if (!existingDocmain20.exists()) {
+ 
+  const recordId1 = `${paramdatatype}maina1`;
+  const docRefmain1 = doc(db, "hdrnames", recordId1);    
+    const existingDocmain1 = await getDoc(docRefmain1);
+     if (!existingDocmain1.exists()) {
       alert("heading Names Not Found!");
       return;
     }
-    const datamain20 = existingDocmain20.data();  
-    document.getElementById("hdrlabel").textContent = datamain20.hds;
+    const datamain1 = existingDocmain1.data();  
+    document.getElementById("hdrlabel").textContent = datamain1.hds;
 
-     
-}
-loadheaders();
+    const recordId2 = `${paramdatatype}maina2`;
+  const docRefmain2 = doc(db, "hdrnames", recordId2);    
+    const existingDocmain2 = await getDoc(docRefmain2);
+     if (!existingDocmain2.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    } 
+    const datamain2 = existingDocmain2.data();  
+    document.getElementById("hdrmainnamee").textContent = datamain2.hds;
+
+     const recordId3 = `${paramdatatype}main3`;
+  const docRefmain3 = doc(db, "hdrnames", recordId3);    
+    const existingDocmain3 = await getDoc(docRefmain3);
+     if (!existingDocmain3.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain3 = existingDocmain3.data();  
+    document.getElementById("hdrmainnamet").textContent = datamain3.hds;
+
+    }   
 
 
 
@@ -1106,8 +1138,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // startdt.placeholder = `${paramtt} Start Date`;
 // enddt.placeholder = `${paramtt} End Date`;
 // taskname.placeholder = `${paramtt} Title`;
-document.getElementById("hdrmainnamee").textContent = `${paramet} Title`;
-document.getElementById("hdrmainnamet").textContent = `${paramtt} Title`;
+// document.getElementById("hdrmainnamee").textContent = `${paramet} Title`;
+// document.getElementById("hdrmainnamet").textContent = `${paramtt} Title`;
 });
 
   function isTodayBetween() {     
@@ -1120,18 +1152,7 @@ function isTodaygreater() {
     return todaygb > endgb;
 } 
 
-menubtn.addEventListener("click", function () {
-  const menuBtn = document.getElementById("menuBtn");
-  const menuPanel = document.getElementById("menuPanel");
- if (menuPanel.style.display === "none") {
-        menuPanel.style.display = "block";
-        document.getElementById("inv-btn").textContent = "";
-    } else {
-        menuPanel.style.display = "none";
-        document.getElementById("inv-btn").textContent = "Print";
-    }
-  
-});
+
 
 
 //  PRINT FUNCTION START
@@ -1259,7 +1280,7 @@ function printInvoice() {
         <div style="text-align: left;">
           <!-- Your existing header -->
           
-          <h4>Projects Listasad</h4>
+          <h4>Projects List</h4>
           <p>${paramnm}. All rights reserved.</p>
           <br>
           North York Toronto - Phone: 647-999-9999<br>

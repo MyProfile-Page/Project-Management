@@ -752,23 +752,7 @@ if (password === "" ){
       return;
     } 
       
-   const docRef1 = doc(db, "ownerstable", paramId);    
-    const existingDoc1 = await getDoc(docRef1);
-     if (!existingDoc1.exists()) {
-      alert("Owner Not Found!");
-      return;
-    }
-    const data1 = existingDoc1.data(); 
-
-  
-       paramnm = data1.ownernm;
-//       paramet = data1.owneret;
-//       paramtt = data1.ownertt;
-       
-//       const paramtsdt = data1.ownertsdt;
-//       const paramtedt = data1.ownertedt;
-//       const paramtstt = data1.ownertstt;
-     
+   
    
        console.log(paramuserId);
        console.log(paramId);
@@ -802,7 +786,18 @@ const userId = document.getElementById("userId").value;
        paramuserId = data.userId;
        paramId = data.ownerId;
        parampw = data.password;
-       paramdatatype = data.ownerdatatype;
+       
+
+   const docRef1 = doc(db, "ownerstable", paramId);    
+   const existingDoc1 = await getDoc(docRef1);
+     if (!existingDoc1.exists()) {
+      alert("Owner Not Found!");
+      return;
+    }
+    const data1 = existingDoc1.data(); 
+    paramnm = data1.ownernm;
+    paramdatatype = data1.ownerdatatype;
+    
   const recordId = `${paramdatatype}index1`;
   const docRef2 = doc(db, "hdrnames", recordId);    
     const existingDoc2 = await getDoc(docRef2);
@@ -813,6 +808,11 @@ const userId = document.getElementById("userId").value;
   //   alert("heading Names Found!");
     const data2 = existingDoc2.data();
     document.getElementById("comp-name").textContent = data2.hds;
+
+ 
+
+
+
 });
 
 
