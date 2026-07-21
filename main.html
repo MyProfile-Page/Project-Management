@@ -626,12 +626,14 @@ background-color: lightgrey;
 
 select, select::picker(select) {
   appearance: base-select;
+  
 }
 
 option {
   font-size: clamp(0.7rem, 1.0vw, 1.1rem);
   background-color: black;
-  color: white;    
+  color: white; 
+    
 }
 
 
@@ -642,12 +644,14 @@ option {
  height: 12vh;
  width: 41.3%; 
  text-align: left;
- padding-left: 0.5vw;
+ padding-left: 1.75vw;
  padding-top: 4vh;
  font-weight: 550;
 } 
 .sel-cls option:disabled {
   text-align: left;
+}
+
 }
 @media (max-width: 768px) { 
 .sel-cls {
@@ -657,7 +661,7 @@ option {
  height: 6vh;
  width: 85%; 
  text-align: left;
- padding-left: 0.5vw;
+ padding-left: 1.0vw;
  padding-top: 2vh;
  font-weight: 550;
 } 
@@ -741,13 +745,13 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 40%; display: flex; height: 10vh;
 }
 .div1-a {
-font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;
+font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1.75vw;
 margin-top: 3vh;}
 .div2 {
 text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 40%; display: flex; height: 10vh;
 }
 .div2-a {
-font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;
+font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1.75vw;
 margin-top: 3vh;}
 
 @media (max-width: 768px) {
@@ -775,13 +779,13 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 70%; display: flex; height: 6.4vh;
 }
 .div1-a {
-font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;
+font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1.75vw;
 margin-top: 2vh; text-decoration: none;}
 .div2 {
 text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 70%; display: flex; height: 6.4vh;
 }
 .div2-a {
-font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1vw;
+font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1.75vw;
 margin-top: 2vh;}
 }
 
@@ -982,6 +986,7 @@ let paramtsdt = "";
 let paramtedt = "";
 let paramtstt = "";
 let selplaceholder = "";
+let finalentrygb = "";
 paramId = params.get("param1");
 paramnm = params.get("param2");
 paramdatatype = params.get("param3");
@@ -1089,6 +1094,19 @@ async function loadheaders() {
     }
     const datamain8 = existingDocmain8.data();  
     document.getElementById("tasklink").textContent = datamain8.hds;
+
+
+      const recordId9 = `${paramdatatype}maina1`;
+  const docRefmain9 = doc(db, "hdrnames", recordId9);    
+    const existingDocmain9 = await getDoc(docRefmain9);
+     if (!existingDocmain9.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain9 = existingDocmain9.data();  
+    finalentrygb = datamain9.hds;
+
+
     
     loadcodestables();
 }
@@ -1130,14 +1148,15 @@ projlist.appendChild(placeholder);
 
       const option = document.createElement("option");
       option.value = data.projnbr; // This is what gets inserted into the input
-      option.textContent = `${data.projnbr} - ${data.projname}`;      
+  //  option.textContent = `${data.projnbr} - ${data.projname}`; 
+      option.textContent = `${data.projname}`;      
       projlist.appendChild(option);
     });
 
-// const option2 = document.createElement("option");
-// option2.value = ""; // This is what gets inserted into the input
-// option2.textContent = "";      
-// projlist.appendChild(option2);
+ const option2 = document.createElement("option");
+ option2.value = "9999"; // This is what gets inserted into the input
+ option2.textContent = finalentrygb;      
+ projlist.appendChild(option2);
 
 
   }
