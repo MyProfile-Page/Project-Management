@@ -2,7 +2,8 @@
 
  <!-- Following are standards of user and owner
 
- 1. Paramdatatype is in both owners (ownerstable) and users (usertable) tables and represents sub systems
+ 1. ownerdatatype is in both owners (ownerstable) and users (usertable) tables and represents sub systems
+    However index application takes ownerid from ownerstable only and passes it onwards in the system. 
 
     1. P  Projects Management   
     2. E  Employees Management  
@@ -13,6 +14,18 @@
     P(programname)NBR
     E(programname)NBR
     C(programname)NBR
+    V(programname)NBR
+
+ 3. Following are userid (and their relavent ownerids) which have test datas for displaying to customers.
+
+    USER              OWNER          OWNER TYPE       
+
+    itc001            C-itc          C 
+    cityuser001       ownernbr1      P 
+    cityuser001E       ownernbr1     E
+    cityuser001C       ownernbr1     C
+
+    ivc001           V-ivc           V
     
  --> 
 <html>
