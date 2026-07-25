@@ -732,7 +732,6 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh; 
 }
 .div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 3vh;
- 
 }
 .div0-3back  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; 
@@ -743,13 +742,15 @@ text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; widt
 }
 .div1-a {
 font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1.75vw;
-margin-top: 3vh;}
+margin-top: 3vh;
+}
 .div2 {
 text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 40%; display: flex; height: 10vh;
 }
 .div2-a {
 font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 1.75vw;
-margin-top: 3vh;}
+margin-top: 3vh;
+}
 
 @media (max-width: 768px) {
 .div-flex0  {
@@ -766,8 +767,7 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; padding
 .div0-2print  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh; 
 }
-.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2vh;
- 
+.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2vh; 
 }
 .div0-3back  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: blue; margin-top: 2vh;
@@ -777,16 +777,29 @@ text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; widt
 }
 .div1-a {
 font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 3.3vw;
-margin-top: 2vh; text-decoration: none;}
+margin-top: 2vh; text-decoration: none;
+}
 .div2 {
 text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 70%; display: flex; height: 6.4vh;
 }
 .div2-a {
 font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: white; text-align: left; padding-left: 3.3vw;
-margin-top: 2vh;}
+margin-top: 2vh;
 }
 }
 
+.rightimg  {
+margin-top: 4.0vh;
+width: 1.2vw;
+height: 2vh;
+}
+@media (max-width: 768px) {
+.rightimg  {
+margin-top: 3.0vh;
+width: 1.2vw;
+height: 2vh;
+}
+}
 
 
   </style>
@@ -813,12 +826,16 @@ margin-top: 2vh;}
 
 <div class="div1">
 <a class="div1-a" href="#" onclick="manageproject()" style="text-decoration: none;" id = "projectlink"></a>
+<label>&nbsp&nbsp</label>
+<img src="img-right-arrow-nb2.jpg" class="rightimg">
 </div> 
 <!-- Above is div1 which is replacement of Navigation Bar -->
 <div class="gap1vh"></div>
 <!-- Following is div2  which is replacement of Navigation Bar -->
 <div class="div2">
 <a class="div2-a" href="#" onclick="managetask()" style="text-decoration: none;" id = "tasklink" ></a>
+<label>&nbsp&nbsp</label>
+<img src="img-right-arrow-nb2.jpg" class="rightimg">
 </div>
  
 <div class="gap3vh"></div>
