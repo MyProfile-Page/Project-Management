@@ -789,13 +789,14 @@ margin-top: 2.25vh;
 }
 
 .rightimg  {
-margin-top: 4.0vh;
+/* margin-top: 4.0vh;  */
 width: 1.2vw;
 height: 2vh;
+vertical-align: middle;
 }
 @media (max-width: 768px) {
 .rightimg  {
-margin-top: 2.45vh;
+vertical-align: middle;
 width: 2.3vw;
 height: 1.6vh;
 }
@@ -825,17 +826,21 @@ height: 1.6vh;
 <!-- Following is div1  which is replacement of Navigation Bar -->
 
 <div class="div1">
-<a class="div1-a" href="#" onclick="manageproject()" style="text-decoration: none;" id = "projectlink"></a>
+<a class="div1-a" href="#" onclick="manageproject()" style="text-decoration: none;" id = "projectlink">
+<span id="span1id"></span>
 <label>&nbsp&nbsp</label>
-<img src="img-right-arrow-nb2.jpg" class="rightimg">
+<img src="img-right-arrow-nb2.jpg" class="rightimg"  >
+</a>
 </div> 
 <!-- Above is div1 which is replacement of Navigation Bar -->
 
 <!-- Following is div2  which is replacement of Navigation Bar -->
 <div class="div2">
-<a class="div2-a" href="#" onclick="managetask()" style="text-decoration: none;" id = "tasklink" ></a>
+<a class="div2-a" href="#" onclick="managetask()" style="text-decoration: none;" id = "tasklink" >
+<span id="span2id"></span>
 <label>&nbsp&nbsp</label>
 <img src="img-right-arrow-nb2.jpg" class="rightimg">
+</a>
 </div>
  
 <div class="gap3vh"></div>
@@ -1021,12 +1026,60 @@ console.log(paramuserId);
 document.getElementById("hdrmainname").textContent = paramtt;
 // document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
 
+if (paramdatatype === "I") {
+   loadheadersinventory();
+}
+else {
 loadheaders();
+}
+
+async function loadheadersinventory() {
+
+  const recordId1 = `${paramdatatype}main1`;
+  const docRefmain1 = doc(db, "hdrnames", recordId1);    
+    const existingDocmain1 = await getDoc(docRefmain1);
+     if (!existingDocmain1.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain1 = existingDocmain1.data();  
+ //   const projnbrhd = document.getElementById("projnbr");
+ //   projnbrhd.placeholder = datamain1.hds;
+      selplaceholder = datamain1.hds;
+      console.log("sel", selplaceholder);
+
+     const recordId7 = `${paramdatatype}main7`;
+  const docRefmain7 = doc(db, "hdrnames", recordId7);    
+    const existingDocmain7 = await getDoc(docRefmain7);
+     if (!existingDocmain7.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain7 = existingDocmain7.data(); 
+ //   document.getElementById("projectlink").textContent = datamain7.hds;
+    document.getElementById("span1id").textContent = datamain7.hds;
+
+      const recordId8 = `${paramdatatype}main8`;
+  const docRefmain8 = doc(db, "hdrnames", recordId8);    
+    const existingDocmain8 = await getDoc(docRefmain8);
+     if (!existingDocmain8.exists()) {
+      alert("heading Names Not Found!");
+      return;
+    }
+    const datamain8 = existingDocmain8.data();  
+ //   document.getElementById("tasklink").textContent = datamain8.hds;
+    document.getElementById("span2id").textContent = datamain8.hds;
+
+    
+
+
+    
+    loadcodestables();
+}
+
 
 
 async function loadheaders() {
-
-
   const recordId1 = `${paramdatatype}main1`;
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
     const existingDocmain1 = await getDoc(docRefmain1);
@@ -1096,8 +1149,9 @@ async function loadheaders() {
       alert("heading Names Not Found!");
       return;
     }
-    const datamain7 = existingDocmain7.data();  
-    document.getElementById("projectlink").textContent = datamain7.hds;
+    const datamain7 = existingDocmain7.data(); 
+ //   document.getElementById("projectlink").textContent = datamain7.hds;
+    document.getElementById("span1id").textContent = datamain7.hds;
 
       const recordId8 = `${paramdatatype}main8`;
   const docRefmain8 = doc(db, "hdrnames", recordId8);    
@@ -1107,8 +1161,8 @@ async function loadheaders() {
       return;
     }
     const datamain8 = existingDocmain8.data();  
-    document.getElementById("tasklink").textContent = datamain8.hds;
-
+ //   document.getElementById("tasklink").textContent = datamain8.hds;
+    document.getElementById("span2id").textContent = datamain8.hds;
 
       const recordId9 = `${paramdatatype}maina1`;
   const docRefmain9 = doc(db, "hdrnames", recordId9);    
@@ -1363,13 +1417,25 @@ else  {
 window.manageentity = manageentity; // ⭐ IMPORTANT LINE
 
 function manageproject() {  
-          window.location = `./add-del-proj-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
+console.log(paramdatatype);
+
+if (paramdatatype === "I") {
+          window.location = `./catalog.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
+}
+else {
+window.location = `./add-del-proj-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
+}
  }
 window.manageproject = manageproject; // ⭐ IMPORTANT LINE
 
-function managetask() {        
+function managetask() {  
+if (paramdatatype === "I") {
+          window.location = `./transaction.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
+}
+else {      
          window.location = `./add-del-task-code.html?param1=${paramId}&param2=${paramnm}&param3=${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
  }
+}
 window.managetask = managetask; // ⭐ IMPORTANT LINE
 
 function assigntask() {  

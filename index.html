@@ -11,21 +11,28 @@
 
  2. Screens headings of all programs are all stored in table hdrnames. key of table is follows
 
-    P(programname)NBR
-    E(programname)NBR
-    C(programname)NBR
-    V(programname)NBR
+    P(programname)NBR       Managing Tasks in Projects.
+    E(programname)NBR       Managing Assignments of Employees.
+    C(programname)NBR       Managing Students in Courses.
+    V(programname)NBR       Managing Assignments of Volunteers.
+    M                       Material Management.                      
+
+
 
  3. Following are userid (and their relavent ownerids) which have test datas for displaying to customers.
 
     USER              OWNER          OWNER TYPE       
 
-    itc001            C-itc          C 
+    C-itc001            C-itc          C 
+    V-ivc001            V-ivc          V 
+    P-ipc001          ownernbr1        P
+    E-iec001          ownernbr3        E
+    I-iic001            I-iic          I
     cityuser001       ownernbr1      P 
     cityuser001E       ownernbr1     E
     cityuser001C       ownernbr1     C
 
-    ivc001           V-ivc           V
+   
     
  --> 
 <html>
@@ -743,12 +750,12 @@ const firebaseConfig = {
   const db = getFirestore(app); 
  
 // document.getElementById("comp-name").textContent = "Tasks Management of Projects";
-   document.getElementById("comp-name").textContent = "Welcome To Course management System";
+   document.getElementById("comp-name").textContent = "Welcome To Group of Small Business Systems";
        let paramId = "";
        let paramnm = "";
        let paramet = "";
        let paramtt = "";
-       let paramdatatype = "";
+       var paramdatatype = "";
        let parampw = "";
        let paramuserId = "";
         
@@ -778,13 +785,21 @@ if (password === "" ){
   //                         `&param3=${paramdatatype}&param4=${paramuserId}` + 
     //                       `&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}` +
       //                     `&param8=${paramtedt}&param9=${paramtstt}`; 
-
-
+   
+   if (document.getElementById("comp-name").textContent === "International Items center") { 
+   
    window.location.href = `./main.html?param1=${paramId}&param2=${paramnm}` +
                            `&param3=${paramdatatype}&param4=${paramuserId}` + 
                            `&param5=""&param6=""&param7=""` +
                            `&param8=""&param9=""`;  
-     
+  }
+else {
+
+   window.location.href = `./main.html?param1=${paramId}&param2=${paramnm}` +
+                           `&param3=${paramdatatype}&param4=${paramuserId}` + 
+                           `&param5=""&param6=""&param7=""` +
+                           `&param8=""&param9=""`; 
+  }   
 };
 userId.addEventListener("change", async (event) => {
 const userId = document.getElementById("userId").value;
@@ -799,7 +814,8 @@ const userId = document.getElementById("userId").value;
        paramuserId = data.userId;
        paramId = data.ownerId;
        parampw = data.password;
-       
+      
+
 
    const docRef1 = doc(db, "ownerstable", paramId);    
    const existingDoc1 = await getDoc(docRef1);
@@ -810,6 +826,7 @@ const userId = document.getElementById("userId").value;
     const data1 = existingDoc1.data(); 
     paramnm = data1.ownernm;
     paramdatatype = data1.ownerdatatype;
+   
     
   const recordId = `${paramdatatype}index1`;
   const docRef2 = doc(db, "hdrnames", recordId);    
