@@ -573,6 +573,69 @@ background-color: lightgrey;
 }
 }
 
+.adv-div {
+ border: 0.0vw solid black; 
+ width: 40%;
+ margin: 0 auto;
+ background-image: url('index-img-html.jpg');
+ background-repeat: no-repeat;
+ /* Scale the image to perfectly fill the entire div space */
+ background-size: cover;
+ /* Position the image directly in the center of the container */
+ background-position: center;
+  /* Ensure the container has height so the image is actually visible */
+/*  min-height: 400px;  */ 
+
+ color: yellow;
+ height: 70vh; 
+}
+.adv-div-txt {
+ width: 65%;
+ border: 0.0vw solid black; 
+ margin: 0 auto;
+ background-color: black;
+ }
+.adv-div-txt-n { 
+ border: 0.0vw solid black; 
+ color: white;
+ font-size: clamp(0.6rem, 1.1vw, 1.2rem);
+ font-weight: 550; 
+ padding-left: 0.5vw;
+}
+
+@media (max-width: 768px) {
+.adv-div {
+border: 0.0vw solid black; 
+ width: 95%;
+ margin: 0 auto;
+ background-image: url('index-img-html.jpg');
+ background-repeat: no-repeat;
+ /* Scale the image to perfectly fill the entire div space */
+ background-size: cover;
+ /* Position the image directly in the center of the container */
+ background-position: center;
+  /* Ensure the container has height so the image is actually visible */
+/*  min-height: 400px;  */ 
+
+ color: yellow;
+ height: 60vh;
+}
+.adv-div-txt {
+ width: 65%;
+ border: 0.0vw solid black; 
+ margin: 0 auto;
+ background-color: black;
+ }
+.adv-div-txt-n { 
+ border: 0.0vw solid black; 
+ color: white;
+ font-size: clamp(0.6rem, 1.1vw, 1.2rem);
+ font-weight: 550; 
+ padding-left: 0.5vw;
+}
+}
+
+
 
 
 
@@ -871,13 +934,62 @@ height: 1.6vh;
 </div>
 </div> 
 
-
+1
 
 <!-- Above are divs which are addition of Navigation Bar -->
 
-<div id="imagePanel" class="imagediv">
- <img src="index-img-html.jpg" class="img-fluid rounded pull-left"   alt="notavialable" class="responsive-img"> 
-    </div>
+<div id="advPanel" class="adv-div">
+ <div class="adv-div-txt">
+
+  <div class="adv-div-txt-n" style="text-decoration: underline; margin-top: 5vh; text-align: center; color: yellow;">
+  <div class="gap3vh"></div>
+  <div class="gap2vh"></div>
+  Free Digital Systems 
+  </div>
+
+ <div class="adv-div-txt-n" style="text-decoration: underline; text-align: center; color: yellow;" >
+  <div class="gap3vh"></div>
+  For Under-Resourced Emerging Organizations
+  </div>
+
+ 
+
+  <div class="adv-div-txt-n" style="text-decoration: underline;  text-align: center; color: blue;">
+  <div class="gap3vh"></div> 
+  info@growlite.online
+  </div>
+
+  <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  <div class="gap3vh"></div> 
+  1. Project Tasks Management
+  </div>
+
+   <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  2. Employee Assignments Management
+  </div>
+
+   <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  3. Training course Enrolment Management
+  </div>
+
+   <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  4. Library Books Circulation Management
+  </div>
+
+  <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  5. Items Inventory Management
+  <div class="gap3vh"></div> 
+  </div>
+   
+ </div>
+</div>
+
+
 
 
 
@@ -1039,7 +1151,7 @@ async function loadheadersinventory() {
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
     const existingDocmain1 = await getDoc(docRefmain1);
      if (!existingDocmain1.exists()) {
-      alert("heading Names Not Found!");
+      alert("heading Name main1 Not Found!");
       return;
     }
     const datamain1 = existingDocmain1.data();  
@@ -1052,7 +1164,7 @@ async function loadheadersinventory() {
   const docRefmain7 = doc(db, "hdrnames", recordId7);    
     const existingDocmain7 = await getDoc(docRefmain7);
      if (!existingDocmain7.exists()) {
-      alert("heading Names Not Found!");
+      alert("heading Name main7 Not Found!");
       return;
     }
     const datamain7 = existingDocmain7.data(); 
@@ -1063,16 +1175,23 @@ async function loadheadersinventory() {
   const docRefmain8 = doc(db, "hdrnames", recordId8);    
     const existingDocmain8 = await getDoc(docRefmain8);
      if (!existingDocmain8.exists()) {
-      alert("heading Names Not Found!");
+      alert("heading Name main8 Not Found!");
       return;
     }
     const datamain8 = existingDocmain8.data();  
  //   document.getElementById("tasklink").textContent = datamain8.hds;
     document.getElementById("span2id").textContent = datamain8.hds;
 
-    
-
-
+  const recordId9 = `${paramdatatype}maina1`;
+  const docRefmain9 = doc(db, "hdrnames", recordId9);    
+    const existingDocmain9 = await getDoc(docRefmain9);
+     if (!existingDocmain9.exists()) {
+      alert("heading Name main1a Not Found!");
+      return;
+    }
+    const datamain9 = existingDocmain9.data();  
+    finalentrygb = datamain9.hds;
+ 
     
     loadcodestables();
 }
@@ -1220,7 +1339,7 @@ projlist.appendChild(placeholder);
       option.textContent = `${data.projname}`;      
       projlist.appendChild(option);
     });
-
+  
  const option2 = document.createElement("option");
  option2.value = "9999"; // This is what gets inserted into the input
  option2.textContent = finalentrygb;      
@@ -1265,12 +1384,18 @@ if (option) {
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
     wholetaskTable.style.display = "block";
-    if (projnbrgb === 9999){
+    if (paramdatatype != "I" && projnbrgb === 9999){
      window.location.href = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}` +
                            `&param3=${paramdatatype}&param4=${paramuserId}` + 
                            `&param5=""&param6=""&param7=""` +
                            `&param8=""&param9=""`;  
-  }    
+  } 
+    if (paramdatatype === "I" && projnbrgb === 9999){
+     window.location.href = `./catalog.html?param1=${paramId}&param2=${paramnm}` +
+                           `&param3=${paramdatatype}&param4=${paramuserId}` + 
+                           `&param5=""&param6=""&param7=""` +
+                           `&param8=""&param9=""`;  
+  }       
     loadtaskmaster();
     imagePanel.style.display = "none";
 //    projectdisplaydiv.style.display = "block";
