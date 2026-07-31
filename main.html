@@ -828,7 +828,7 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; paddi
 .div0-2  { margin-left: 9%; border: 0.0vw solid yellow; margin-top: 2vh;
 }
 .div0-2print  {
- font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; 
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF;  
 }
 .div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2vh; 
 }
@@ -876,8 +876,8 @@ height: 1.6vh;
 <div class="div0-1">
 <Label id="comp-name1" class="div0-1label" ></Label>
 </div>
-<div class="div0-2">
-<a href="#" onclick="printInvoice()" class="div0-2print" id = "printid" >Print</a>
+<div id="divlink" class="div0-2">
+<a href="#" onclick="printInvoice()" class="div0-2print" id = "printid" ></a>
 </div>
 <div class="div0-3">
 <a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >Back</a>
@@ -1390,6 +1390,7 @@ if (option) {
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
     advPanel.style.display = "none";
+    document.getElementById("printid").textContent = "Print";
     wholetaskTable.style.display = "block";
     if (paramdatatype != "I" && projnbrgb === 9999){
      window.location.href = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}` +
