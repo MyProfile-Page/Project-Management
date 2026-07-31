@@ -968,22 +968,27 @@ height: 1.6vh;
 
    <div class="adv-div-txt-n">
   <div class="gap3vh"></div> 
-  2. Employee Assignments Management
-  </div>
-
-   <div class="adv-div-txt-n">
-  <div class="gap3vh"></div> 
-  3. Training course Enrolment Management
-  </div>
-
-   <div class="adv-div-txt-n">
-  <div class="gap3vh"></div> 
-  4. Library Books Circulation Management
+  2. Volunteer Assignments Management
   </div>
 
   <div class="adv-div-txt-n">
   <div class="gap3vh"></div> 
-  5. Items Inventory Management
+  3. Employee Assignments Management
+  </div>
+
+   <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  4. Training course Enrolment Management
+  </div>
+
+   <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  5. Library Books Circulation Management
+  </div>
+
+  <div class="adv-div-txt-n">
+  <div class="gap3vh"></div> 
+  6. Items Inventory Management
   <div class="gap3vh"></div> 
   </div>
    
@@ -1384,6 +1389,7 @@ if (option) {
     projnbrgb = projnbr.value.split(" ")[0];
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
+    advPanel.style.display = "none";
     wholetaskTable.style.display = "block";
     if (paramdatatype != "I" && projnbrgb === 9999){
      window.location.href = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}` +
@@ -1398,7 +1404,7 @@ if (option) {
                            `&param8=""&param9=""`;  
   }       
     loadtaskmaster();
-    imagePanel.style.display = "none";
+//    imagePanel.style.display = "none";
 //    projectdisplaydiv.style.display = "block";
 //   projnbr.style.display = "none";
 //    dropdown.style.display = "none";
@@ -1748,6 +1754,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Update error:", error);
   }
 };
+
+ // 🔹 DELETE (Remove Record)
+  window.deletetask = async function (id) {
+    await deleteDoc(doc(db, "taskmaster", id));
+    alert("Deleted");
+    loadtaskmaster();  
+  };
 
 window.showMenu = async function (event, button) {
 // function showMenu(event, button) {

@@ -477,6 +477,21 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 }
 }
 
+.hdr-div {
+ margin: 0 auto;
+ width: 35%;
+ text-align: center;
+ background-color: black; 
+}
+@media (max-width: 768px) {
+.hdr-div {
+ margin: 0 auto;
+ width: 65%;
+ text-align: center;
+ background-color: black; 
+}
+}
+
 
 
 
@@ -519,8 +534,10 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 
 <div class = "projs-add-upd" > 
 
-<div style="display: flex; margin-left: 45%; border: 0.5vw black; width: 25%; "> 
-<Label id="hdrlabel" style="font-size: clamp(0.8rem, 1.3vw, 1.4rem); color: black; font-weight: 550; text-decoration: underline; "></Label>
+<div class="hdr-div"> 
+<div class="gap2vh"></div>
+<Label id="hdrlabel" style="font-size: clamp(0.8rem, 1.3vw, 1.4rem); color: white; font-weight: 550; text-decoration: underline; "></Label>
+<div class="gap2vh"></div>
 </div>
 
 <div class="gap3vh"></div>
