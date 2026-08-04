@@ -587,27 +587,26 @@ background-color: lightgrey;
 /*  min-height: 400px;  */ 
 
  
- height: 70vh; 
+ height: 60vh; 
 }
 .adv-div-txt {
- width: 65%;
+ width: 40%;
  border: 0.0vw solid black; 
  margin: 0 auto;
  background-color: black;
- margin-top: 5vh;
+ margin-top: 0vh;
  }
 .adv-div-txt-n { 
  border: 0.0vw solid black; 
  color: white;
  font-size: clamp(0.6rem, 1.1vw, 1.2rem);
  font-weight: 550; 
- padding-left: 0.5vw;
-}
+ }
 
 @media (max-width: 768px) {
 .adv-div {
 border: 0.0vw solid black; 
- width: 75%;
+ width: 45%;
  margin: 0 auto;
  background-image: url('index-img-html.jpg');
  background-repeat: no-repeat;
@@ -626,14 +625,14 @@ border: 0.0vw solid black;
  border: 0.0vw solid black; 
  margin: 0 auto;
  background-color: black;
- margin-top: 5vh;
+ margin-top: 0vh;
  }
 .adv-div-txt-n { 
  border: 0.0vw solid black; 
  color: off-white;
  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
  font-weight: 550; 
- padding-left: 0.5vw;
+ 
  }
 }
 
@@ -882,7 +881,7 @@ height: 1.6vh;
 <a href="#" onclick="printInvoice()" class="div0-2print" id = "printid" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
 </div>
 <div class="div0-3">
-<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >Back</a>
+<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" ></a>
 </div>
 </div> 
 
@@ -890,7 +889,7 @@ height: 1.6vh;
 
 <!-- Following is div1  which is replacement of Navigation Bar -->
 
-<div class="div1">
+<div id="divop1" class="div1">
 <a class="div1-a" href="#" onclick="manageproject()" style="text-decoration: none;" id = "projectlink">
 <span id="span1id"></span>
 <label>&nbsp&nbsp</label>
@@ -900,7 +899,7 @@ height: 1.6vh;
 <!-- Above is div1 which is replacement of Navigation Bar -->
 
 <!-- Following is div2  which is replacement of Navigation Bar -->
-<div class="div2">
+<div id="divop2" class="div2">
 <a class="div2-a" href="#" onclick="managetask()" style="text-decoration: none;" id = "tasklink" >
 <span id="span2id"></span>
 <label>&nbsp&nbsp</label>
@@ -915,7 +914,7 @@ height: 1.6vh;
 
 
 <!-- following divs to select projects from datalist -->
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid red; margin: 0 auto;">
+<div id="divsel" style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid red; margin: 0 auto;">
 <select id="projnbr" class="sel-cls" autocomplete="off">
 </select>
 </div> 
@@ -926,75 +925,66 @@ height: 1.6vh;
 
 
 
-<!-- Following are divs which are addition of Navigation Bar -->
 
-
-<div class = "div-hdr" style="display: none;" >
-<div style="text-align: center; margin: 0 auto;  height: 7vh; margin-top: 3vh; border: 0.0vw dashed green;">
-<Label style="font-size: clamp(0.9rem, 1.7vw, 1.9rem); color: blue; font-weight: 550; id="hdr-pr-wrd;"></Label>
-<span id="projdesc" style= "color:blue; "></span>
-</div>
-</div> 
-
-<!-- Above are divs which are addition of Navigation Bar -->
 <div class="gap3vh"></div>
  
-<div id="advPanel" class="adv-div" >
- <div class="gap3vh"></div>
- 
- <div class="adv-div-txt" >
+
+  
+ <div id="txtPanel" class="adv-div-txt" >
 
   <div class="adv-div-txt-n" style="text-decoration: underline; text-align: center; color: #FFF59D;">
   <div class="gap3vh"></div>
   <div class="gap2vh"></div>
-  Following Digital Systems are avialable  
+  <div class="gap3vh"></div>
+  
+  Cloud-Integrated Lite Digital systems Avialable Free  
   </div>
 
  <div class="adv-div-txt-n" style="text-decoration: underline; text-align: center; color: #FFF59D;" >
   <div class="gap3vh"></div>
-  Free For Under-Resourced Organizations 
+  For the Resource-Constrained Small Organizations 
+  <div class="gap3vh"></div>
   </div> 
 
-  <div class="adv-div-txt-n" style="text-decoration: underline;  text-align: center; color: #E0FFFF;">
+  <div class="adv-div-txt-n" style="text-align: center; color: #E0FFFF;">
   <div class="gap3vh"></div> 
-  info@growlite.online
+  Please Contact info@growlite.online
   </div>
 
-  <div class="adv-div-txt-n">
+  <div class="adv-div-txt-n" style="padding-left: 3.6vw;">
   <div class="gap3vh"></div> 
   <div class="gap3vh"></div> 
-  1. Project Tasks Management
+  1. Projects Management For Micro-businesses
   </div>
 
-   <div class="adv-div-txt-n">
+   <div class="adv-div-txt-n" style="padding-left: 3.6vw;">
   <div class="gap3vh"></div> 
-  2. Volunteer Assignments Management
+  2. Employees/Volunteers Management For Micro-businesses 
   </div>
 
-  <div class="adv-div-txt-n">
+  <div class="adv-div-txt-n" style="padding-left: 3.6vw;">
   <div class="gap3vh"></div> 
-  3. Employee Assignments Management
+  3. Courses Management For Micro-Institutes
   </div>
 
-   <div class="adv-div-txt-n">
+   <div class="adv-div-txt-n" style="padding-left: 3.6vw;">
   <div class="gap3vh"></div> 
-  4. Training course Enrolment Management
+  4. Books Circulation Management For Mini-Libraries
   </div>
 
-   <div class="adv-div-txt-n">
+  <div class="adv-div-txt-n" style="padding-left: 3.6vw;">
   <div class="gap3vh"></div> 
-  5. Library Books Circulation Management
-  </div>
-
-  <div class="adv-div-txt-n">
+  5. Items Inventory Management For Mini-Stores
+  <div class="gap3vh"></div>
   <div class="gap3vh"></div> 
-  6. Items Inventory Management
-  <div class="gap3vh"></div> 
+  <div class="gap3vh"></div>
+   <div class="gap3vh"></div>
   </div>
    
  </div>
+<div class="gap3vh"></div>
+<div id="advPanel" class="adv-div"  >
 </div>
-
 
 
 
@@ -1025,7 +1015,7 @@ height: 1.6vh;
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdredate"></th>
         <th style="text-align: center; width: 15%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "hdrstatus"></th>             
         
-        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; ">Action</th>
+        <th style="text-align: center; width: 20%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; " id = "thaction"></th>
         
         
       </tr>
@@ -1101,12 +1091,13 @@ const firebaseConfig = {
   const db = getFirestore(app);
   wholetaskTable.style.display = "none"; 
   const params = new URLSearchParams(window.location.search);
+let printgb = "Print";
 let selectedStatus = "none";
 let todaygb = new Date();
 todaygb.setHours(0, 0, 0, 0);
+let actiongb = "Action";
 let startgb = "";
 let endgb = "";
-let statusgb = "";
 let projnbrgb = "";
 let projname = "none";
 let prevprojname = "";
@@ -1124,6 +1115,11 @@ let paramtedt = "";
 let paramtstt = "";
 let selplaceholder = "";
 let finalentrygb = "";
+let compgb = "Mark As Completed";
+let dropgb = "Mark As Dropped";
+let stargb = "Mark As Started";
+let delegb = "Delete";
+let stopgb = "Mark As Stopped";
 paramId = params.get("param1");
 paramnm = params.get("param2");
 paramdatatype = params.get("param3");
@@ -1140,9 +1136,23 @@ console.log(paramdatatype);
 console.log(paramuserId);
 
 // document.getElementById("inv-btn").textContent = "Print";
- document.getElementById("comp-name1").textContent = paramnm;
 document.getElementById("hdrmainname").textContent = paramtt;
+document.getElementById("thaction").textContent = "Action";
+document.getElementById("backlink").textContent = "Back";
 // document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
+
+if (paramdatatype === "TL") {
+   compgb = "İade edildi";
+   dropgb = "Veril rafa kaldırıldı";
+   stargb = "Veriliş";
+   delegb = "Sildir";
+   stopgb = "Belirtilmemiş";
+   actiongb = "Aksiyon";
+   printgb = "Yazdır";
+   document.getElementById("thaction").textContent = "Aksiyon";
+   document.getElementById("backlink").textContent = "Geri";
+   
+}
 
 if (paramdatatype === "I") {
    loadheadersinventory();
@@ -1151,156 +1161,164 @@ else {
 loadheaders();
 }
 
+if (paramuserId === "Admin") {
+   divop1.style.display = "none";
+   divop2.style.display = "none";
+   divsel.style.display = "none";
+   document.getElementById("comp-name1").textContent = "GrowLite OnLine Digital Systems";
+   txtPanel.style.display = "block";
+}
+else {
+txtPanel.style.display = "none";
+document.getElementById("comp-name1").textContent = paramnm;
+
+}
+
 async function loadheadersinventory() {
 
   const recordId1 = `${paramdatatype}main1`;
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
     const existingDocmain1 = await getDoc(docRefmain1);
      if (!existingDocmain1.exists()) {
-      alert("heading Name main1 Not Found!");
-      return;
+      selplaceholder = "Undefined-main1";
     }
+  else {
     const datamain1 = existingDocmain1.data();  
- //   const projnbrhd = document.getElementById("projnbr");
- //   projnbrhd.placeholder = datamain1.hds;
-      selplaceholder = datamain1.hds;
-      console.log("sel", selplaceholder);
-
+      selplaceholder = datamain1.hds;    
+  }
      const recordId7 = `${paramdatatype}main7`;
   const docRefmain7 = doc(db, "hdrnames", recordId7);    
     const existingDocmain7 = await getDoc(docRefmain7);
      if (!existingDocmain7.exists()) {
-      alert("heading Name main7 Not Found!");
-      return;
+      document.getElementById("span1id").textContent =  "Undefined-main7";
     }
+  else {
     const datamain7 = existingDocmain7.data(); 
  //   document.getElementById("projectlink").textContent = datamain7.hds;
     document.getElementById("span1id").textContent = datamain7.hds;
-
+   }
       const recordId8 = `${paramdatatype}main8`;
   const docRefmain8 = doc(db, "hdrnames", recordId8);    
     const existingDocmain8 = await getDoc(docRefmain8);
      if (!existingDocmain8.exists()) {
-      alert("heading Name main8 Not Found!");
-      return;
+      document.getElementById("span2id").textContent =  "Undefined-main8";
     }
+  else {
     const datamain8 = existingDocmain8.data();  
  //   document.getElementById("tasklink").textContent = datamain8.hds;
     document.getElementById("span2id").textContent = datamain8.hds;
-
+}
   const recordId9 = `${paramdatatype}maina1`;
   const docRefmain9 = doc(db, "hdrnames", recordId9);    
     const existingDocmain9 = await getDoc(docRefmain9);
      if (!existingDocmain9.exists()) {
-      alert("heading Name main1a Not Found!");
-      return;
+       finalentrygb = "Undefined-main8";
     }
+  else {
     const datamain9 = existingDocmain9.data();  
-    finalentrygb = datamain9.hds;
- 
-    
+    finalentrygb = datamain9.hds;  
+} 
     loadcodestables();
 }
 
 
 
 async function loadheaders() {
-  const recordId1 = `${paramdatatype}main1`;
+   const recordId1 = `${paramdatatype}main1`;
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
     const existingDocmain1 = await getDoc(docRefmain1);
      if (!existingDocmain1.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      selplaceholder = "Undefined-main1";
     }
-    const datamain1 = existingDocmain1.data();  
- //   const projnbrhd = document.getElementById("projnbr");
- //   projnbrhd.placeholder = datamain1.hds;
-      selplaceholder = datamain1.hds;
-      console.log("sel", selplaceholder);
+  else {
+      const datamain1 = existingDocmain1.data();  
+      selplaceholder = datamain1.hds;    
+  }
+
   const recordId2 = `${paramdatatype}main2`;
   const docRefmain2 = doc(db, "hdrnames", recordId2);    
     const existingDocmain2 = await getDoc(docRefmain2);
      if (!existingDocmain2.exists()) {
-      alert("heading Names Not Found!");
-      return;
+ //  document.getElementById("labelgridname").textContent =  "Undefined-main2";
     }
+  else {
     const datamain2 = existingDocmain2.data();  
  //   document.getElementById("labelgridname").textContent = datamain2.hds;
-
+ }
     const recordId3 = `${paramdatatype}main3`;
   const docRefmain3 = doc(db, "hdrnames", recordId3);    
     const existingDocmain3 = await getDoc(docRefmain3);
      if (!existingDocmain3.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      document.getElementById("hdrmainname").textContent = "Undefined-main3";
     }
+  else {
     const datamain3 = existingDocmain3.data();  
     document.getElementById("hdrmainname").textContent = datamain3.hds;
-
+ }
      const recordId4 = `${paramdatatype}main4`;
   const docRefmain4 = doc(db, "hdrnames", recordId4);    
     const existingDocmain4 = await getDoc(docRefmain4);
      if (!existingDocmain4.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      document.getElementById("hdrsdate").textContent = "Undefined-main4";
     }
+  else {
     const datamain4 = existingDocmain4.data();  
     document.getElementById("hdrsdate").textContent = datamain4.hds;
+ }
 
      const recordId5 = `${paramdatatype}main5`;
   const docRefmain5 = doc(db, "hdrnames", recordId5);    
     const existingDocmain5 = await getDoc(docRefmain5);
      if (!existingDocmain5.exists()) {
-      alert("heading Names Not Found!");
-      return;
+       document.getElementById("hdredate").textContent = "Undefined-main5";
     }
+  else {
     const datamain5 = existingDocmain5.data();  
     document.getElementById("hdredate").textContent = datamain5.hds;
+ }
 
     const recordId6 = `${paramdatatype}main6`;
   const docRefmain6 = doc(db, "hdrnames", recordId6);    
     const existingDocmain6 = await getDoc(docRefmain6);
      if (!existingDocmain6.exists()) {
-      alert("heading Names Not Found!");
-      return;
+       document.getElementById("hdrstatus").textContent = "Undefined-main6";
     }
+  else {
     const datamain6 = existingDocmain6.data();  
     document.getElementById("hdrstatus").textContent = datamain6.hds;
-
+ }
     const recordId7 = `${paramdatatype}main7`;
   const docRefmain7 = doc(db, "hdrnames", recordId7);    
     const existingDocmain7 = await getDoc(docRefmain7);
      if (!existingDocmain7.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      document.getElementById("span1id").textContent = "Undefined-main7";
     }
+  else {
     const datamain7 = existingDocmain7.data(); 
  //   document.getElementById("projectlink").textContent = datamain7.hds;
     document.getElementById("span1id").textContent = datamain7.hds;
-
+ }
       const recordId8 = `${paramdatatype}main8`;
   const docRefmain8 = doc(db, "hdrnames", recordId8);    
     const existingDocmain8 = await getDoc(docRefmain8);
      if (!existingDocmain8.exists()) {
-      alert("heading Names Not Found!");
-      return;
+       document.getElementById("span2id").textContent = "Undefined-main8";
     }
+  else {
     const datamain8 = existingDocmain8.data();  
  //   document.getElementById("tasklink").textContent = datamain8.hds;
     document.getElementById("span2id").textContent = datamain8.hds;
-
+}
       const recordId9 = `${paramdatatype}maina1`;
   const docRefmain9 = doc(db, "hdrnames", recordId9);    
     const existingDocmain9 = await getDoc(docRefmain9);
      if (!existingDocmain9.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      finalentrygb = "Undefined-main9";
     }
+  else {
     const datamain9 = existingDocmain9.data();  
     finalentrygb = datamain9.hds;
-
-
-    
+  }  
     loadcodestables();
 }
 
@@ -1380,8 +1398,8 @@ if (option) {
     console.log(option.textContent);   // "P1001 - Building Construction"
 //    document.getElementById("projdesc").textContent = option.textContent;
 
-    document.getElementById("projdesc").textContent =
-    option.textContent.replace(option.value + " - ", "");
+//  now    document.getElementById("projdesc").textContent =
+//  now  option.textContent.replace(option.value + " - ", "");
 
 //    option.value = projdesc.projnbr;
 //    option.textContent = projdesc.projname;
@@ -1390,7 +1408,7 @@ if (option) {
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
     advPanel.style.display = "none";
-    document.getElementById("printid").textContent = "Print";
+    document.getElementById("printid").textContent = printgb;
     wholetaskTable.style.display = "block";
     if (paramdatatype != "I" && projnbrgb === 9999){
      window.location.href = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}` +
@@ -1458,14 +1476,14 @@ async function loadtaskmaster() {
     
  
         <td style="font-size: clamp(0.5rem, 1.0vw, 1.1rem); font-weight: 500; border: 0.05vw solid black; text-align: center; text-decoration: underline;">
-          <button onclick="showMenu(event,this)" ;>Actions ▼</button>
+          <button onclick="showMenu(event,this)" ;>${actiongb} ▼</button>
            <div class="popupMenu">
 
-    <a id = "mark11" href="#" onclick="markcompleted('${docId}');return false;">Mark ${statusgb} As Completed</a>
-    <a id = "mark12" href="#" onclick="markdropped('${docId}');return false;">Mark ${statusgb} As Dropped</a>
-    <a id = "mark13" href="#" onclick="markstarted('${docId}');return false;">Mark ${statusgb} As Started</a>
-    <a id = "mark14" href="#" onclick="markstopped('${docId}');return false;">Mark ${statusgb} As Stopped</a>
-    <a id = "mark15" href="#" onclick="deletetask('${docId}');return false;">Delete ${statusgb}</a>
+    <a id = "mark11" href="#" onclick="markcompleted('${docId}');return false;">${compgb}</a>
+    <a id = "mark12" href="#" onclick="markdropped('${docId}');return false;">${dropgb}</a>
+    <a id = "mark13" href="#" onclick="markstarted('${docId}');return false;">${stargb}</a>
+    <a id = "mark14" href="#" onclick="markstopped('${docId}');return false;">${stopgb}</a>
+    <a id = "mark15" href="#" onclick="deletetask('${docId}');return false;">${delegb}</a>
 
         </div>
           
@@ -1595,62 +1613,11 @@ ${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param
 window.Reloadpage = Reloadpage; // ⭐ IMPORTANT LINE
 
 function backpage() {  
-
-if (paramuserId === "Admin") {
-   window.location = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}&param3=
-${paramdatatype}&param4=${paramuserId}&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}&param8=${paramtedt}&param9=${paramtstt}`; 
- }
-else {
          window.location = `./index.html`; 
-}
 }
 window.backpage = backpage; // ⭐ IMPORTANT LINE
 
 
-
-// 🔹 user Login
-window.loginrtn = async function () {
-  
-  const userId = document.getElementById("userId").value;
-//  const usrpassword = document.getElementById("usrpassword").value;
-
-  const usrpassword = "usrno2pw";
-  
-if (userId === "" || usrpassword === "" ){
-    alert("Please Enter all Manadatory datas of the User");
-    return;
-  } 
- 
-    const docRef = doc(db, "usertable", userId);    
-    const existingDoc = await getDoc(docRef);
-     if (!existingDoc.exists()) {
-      alert("User Not Found!");
-      return;
-    }
-    const data = existingDoc.data();
-        if (data.password !== usrpassword) {
-       alert("Invalid Password!");
-      return;
-    }
-         
-       paramId = data.ownerId;
-       paramnm = data.ownernm;
-    //   document.getElementById("comp-name").textContent = paramnm;
-       document.getElementById("comp-name1").textContent = paramnm;
-    //   const paramId = "user1";
-    //   const paramnm = "Asad";
-       console.log(paramId);
-       console.log(paramnm);
-// window.location.href = `./Index-team.html?param1=${paramId}&param2=${paramnm}`; 
-    loadtaskmaster();
-//    projectdisplaydiv.style.display = "block";
-    const labelhdr = document.getElementById("hdr-pr-wrd");
-    labelhdr.innerText = "Project&nbsp&nbsp";
-    menubtn.style.display = "block";
-    document.getElementById("menubtn").disabled = false;  
- 
-  
-};
 
 
   function isTodayBetween() {     

@@ -1,6 +1,65 @@
 <!DOCTYPE html>
 
- <!-- Following are standards of user and owner
+<!-- Following about flutterflow
+
+     website https://flutterflow.io/
+
+     1. Basic    https://docs.flutterflow.io/quickstart/   
+
+        how to collect your created rows and columns into container of Flutter
+
+Method 1: The "Wrap Widget" Shortcut (Fastest)FlutterFlow has a built-in shortcut that wraps your layout instantly without breaking your current design.Right-click on your existing Row or Column (either on the visual canvas or in the Widget Tree).Click on Wrap Widget from the context menu.Select Container from the popup list of widgets.FlutterFlow will automatically generate a new Container and place your Row or Column neatly inside it.
+
+Method 2: Using the Widget Tree (Drag & Drop)If you already have an empty Container on your screen, you can move your filled layout into it structurally.Locate your filled Row or Column in the Widget Tree panel on the left side of the screen.Click and hold the Row or Column.Drag it directly onto the Container widget in the Widget Tree.Release the mouse to drop it inside.
+
+NOTE: If your filled Container is placed inside a Stack widget, you can click and drag it completely freely to any exact pixel coordinate on the canvas
+
+NOTE: You can have multiple containers inside a single canvas screen in FlutterFlow. There is no limit to how many containers you can add to a page.To manage multiple containers successfully, you just need to arrange them using a layout widget.How to Arrange Multiple ContainersBecause a standard screen canvas needs structure, you cannot just drop multiple containers randomly unless you organize them in one of three ways:
+
+Vertically: Place them inside a Column to stack your containers from top to bottom (like a news feed or product list).
+
+Horizontally: Place them inside a Row to line your containers up side-by-side (like a horizontal scrolling menu).
+
+Free-Floating / Overlapping: Place them inside a Stack if you want to drag your containers anywhere on the screen or overlap them on top of one another.
+
+NOTE: 
+
+Column: Arranges widgets vertically (top to bottom). Elements cannot overlap.Row: Arranges widgets horizontally (left to right). Elements cannot overlap.Stack: Arranges widgets on top of each other (back to front). The first widget you put in the Stack is at the bottom/back, and subsequent widgets sit on top of it.
+
+     2. Getting Started Roadmap  https://docs.flutterflow.io/
+
+     3. Solutions  https://www.solutionstreet.com/blog/2024/03/26/flutterflow-tutorial-part-1/
+
+     4. Rapid Developer  https://www.rapidevelopers.com/flutterflow-tutorials/how-to-build-a-predictive-text-input-feature-in-flutterflow
+
+     A Tip for Your WorkflowWhen using the Official FlutterFlow Docs, keep the documentation open in one browser tab and your FlutterFlow workspace open in another.
+
+ cooection of firestore to flutter
+
+   Step 2: Allow FlutterFlow to Access Your Firebase ProjectFlutterFlow requires backend administrative permissions to automatically manage schemas and security rules on your behalf.Within your Firebase Console, click the Project Settings gear icon in the top-left menu.Go to the Users and permissions tab.Click Add member.In the email field, paste the official FlutterFlow configuration email: firebase@flutterflow.io.Set their access Role to Editor and click Save.
+
+ Step 3: Link the Project ID to FlutterFlowNow you will tell FlutterFlow exactly which cloud database it should talk to.While still in your Firebase Project Settings tab, look for the Project ID row and copy that unique string of text.Open your project dashboard inside FlutterFlow.On the left sidebar navigation menu, click Settings & Integrations (the gear icon).Under the Project Setup section, select Firebase.Paste your copied ID string directly into the Firebase Project ID entry field.Click the Connect button right next to the field.
+
+ Step 4: Auto-Generate the Configuration FilesFlutterFlow features a automated generator tool that builds the connection files for Web, Android, and iOS platforms simultaneously.Right below where you clicked connect, look for the section labeled Firebase Config Files.Click the Auto Generate Config Files button.A popup will ask you for a package/nickname. You can leave the defaults or type a generic identifier.Click Generate Files.Wait roughly 30–60 seconds. The dashboard will update to show "Firebase Setup Complete!".
+
+ Step 5: Verify Everything is WorkingThe easiest way to confirm your visual layout tool is speaking to Firestore is by creating a sample data collection.On the far left sidebar of FlutterFlow, click the Firestore icon (it looks like a stack of three database disks).Click the + (Plus icon) next to Collections to create a new database table.Name it users and click Create.Add a test field (e.g., Field Name: display_name, Data Type: String).Look at the top right of your panel and click the Deploy button. If it turns green with a checkmark, your visual environment is linked to Firestore.Would you like me to write out a text-based guide on how to drag a Text Field and a Button onto your screen and wire them up to save data to this collection?12 sites
+
+Following about Flex and Grid in html/css
+
+Best practices to prevent layout degradationSet
+1. Minimum Widths: Use min-width on child elements so they wrap before getting too squished.
+2. Use Flex Gap: Apply the CSS gap property for consistent spacing between rows and columns.
+3. Control Alignment: Use align-items: stretch to keep all elements in a row the same height.
+4. Switch to Grid: For strict structural alignment, use CSS Grid with repeat(auto-fit, minmax(...)) instead of flex
+ 
+ --> 
+
+
+
+
+
+
+<!-- Following are standards of user and owner
 
  1. ownerdatatype is in both owners (ownerstable) and users (usertable) tables and represents sub systems
     However index application takes ownerid from ownerstable only and passes it onwards in the system. 
@@ -8,6 +67,10 @@
     1. P  Projects Management   
     2. E  Employees Management  
     3. C  Courses Management  
+    4. V  Volunteers Management   
+    5. L  Librray Management  
+    6. I  Items Management  
+    7. TL Librray Management (Turkish Version) 
 
  2. Screens headings of all programs are all stored in table hdrnames. key of table is follows
 
@@ -15,7 +78,9 @@
     E(programname)NBR       Managing Assignments of Employees.
     C(programname)NBR       Managing Students in Courses.
     V(programname)NBR       Managing Assignments of Volunteers.
-    M                       Material Management.                      
+    L(programname)NBR       Managing Circulation of Books.
+    TL(programname)NBR      Managing Circulation of Books (Turkish Version).
+    I                       Items Management.                      
 
 
 
@@ -28,13 +93,17 @@
     P-ipc001          ownernbr1        P
     E-iec001          ownernbr3        E
     I-iic001            I-iic          I
+    L-ibc001            L-ibc          L
+    TL-ibc001          TL-ibc          TL
+    
+
     cityuser001       ownernbr1      P 
     cityuser001E       ownernbr1     E
     cityuser001C       ownernbr1     C
 
-   
     
  --> 
+
 <html>
 <head>
 
@@ -53,7 +122,6 @@
           background: #f7f681;
           background: LightCyan;
           background: Lightblue;
-          background: grey;
           
            background-image: url("cloud-image1.jpg");
     background-repeat: no-repeat;
@@ -652,20 +720,15 @@ background-color: #9bc7be;
 }
 }
 
-.comp-cls {
- margin-left: 8vw; font-size: clamp(0.9rem, 1.4vw, 1.6rem); font-weight: 550; color: white;
- }
-
 
   </style>
 </head>
 
 <body  class="body_cls">
 
-
 <!-- Following is div0  which is replacement of Navigation Bar -->
 <div style = "margin: 0 auto; width: 100%; position relative; justify-content: space-between; background-color: black;">
-<div style="text-align: center; margin: 0 auto;  margin-top: 3vh; ">
+<div style="text-align: center; margin: 0 auto;  margin-top: 0vh; ">
 <div class="gap4vh"></div> 
 <Label id="comp-name" style="font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: white; "></Label>
 <div class="gap4vh"></div> 
@@ -674,7 +737,7 @@ background-color: #9bc7be;
 <div class="gap3vh"></div>
 <!-- Above is div0 which is replacement of Navigation Bar -->
 
-<div class="gap2vh"></div> 
+<div class="gap4vh"></div> 
 
 
 
@@ -749,18 +812,19 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app); 
  
-// document.getElementById("comp-name").textContent = "Tasks Management of Projects";
+
    document.getElementById("comp-name").textContent = "Welcome To Group of Small Business Systems";
        let paramId = "";
        let paramnm = "";
        let paramet = "";
        let paramtt = "";
-       var paramdatatype = "";
+       let paramdatatype = "";
        let parampw = "";
        let paramuserId = "";
         
 // 🔹 CREATE (Insert Data)
 window.additem = async function () {
+
 const password = document.getElementById("password").value;
   
 if (password === "" ){
@@ -772,7 +836,7 @@ if (password === "" ){
       return;
     } 
       
-   
+ 
    
        console.log(paramuserId);
        console.log(paramId);
@@ -785,21 +849,13 @@ if (password === "" ){
   //                         `&param3=${paramdatatype}&param4=${paramuserId}` + 
     //                       `&param5=${paramet}&param6=${paramtt}&param7=${paramtsdt}` +
       //                     `&param8=${paramtedt}&param9=${paramtstt}`; 
-   
-   if (document.getElementById("comp-name").textContent === "International Items center") { 
-   
-   window.location.href = `./main.html?param1=${paramId}&param2=${paramnm}` +
-                           `&param3=${paramdatatype}&param4=${paramuserId}` + 
-                           `&param5=""&param6=""&param7=""` +
-                           `&param8=""&param9=""`;  
-  }
-else {
+
 
    window.location.href = `./main.html?param1=${paramId}&param2=${paramnm}` +
                            `&param3=${paramdatatype}&param4=${paramuserId}` + 
                            `&param5=""&param6=""&param7=""` +
-                           `&param8=""&param9=""`; 
-  }   
+                           `&param8=""&param9=""`;  
+     
 };
 userId.addEventListener("change", async (event) => {
 const userId = document.getElementById("userId").value;
@@ -813,11 +869,9 @@ const userId = document.getElementById("userId").value;
   const data = existingDoc.data();
        paramuserId = data.userId;
        paramId = data.ownerId;
-       parampw = data.password;
-      
+       parampw = data.password;  
 
-
-   const docRef1 = doc(db, "ownerstable", paramId);    
+     const docRef1 = doc(db, "ownerstable", paramId);    
    const existingDoc1 = await getDoc(docRef1);
      if (!existingDoc1.exists()) {
       alert("Owner Not Found!");
@@ -831,18 +885,13 @@ const userId = document.getElementById("userId").value;
   const recordId = `${paramdatatype}index1`;
   const docRef2 = doc(db, "hdrnames", recordId);    
     const existingDoc2 = await getDoc(docRef2);
-     if (!existingDoc2.exists()) {
-      alert("heading Names Not Found!");
-      return;
+     if (!existingDoc2.exists()) {   
+     document.getElementById("comp-name").textContent = "Undefined Company";  
     }
-  //   alert("heading Names Found!");
+  else {
     const data2 = existingDoc2.data();
     document.getElementById("comp-name").textContent = data2.hds;
-
- 
-
-
-
+  }
 });
 
 
