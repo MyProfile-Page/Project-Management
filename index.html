@@ -824,9 +824,10 @@ const firebaseConfig = {
         
 // 🔹 CREATE (Insert Data)
 window.additem = async function () {
-
+document.getElementById("password").value = "guest"; 
 const password = document.getElementById("password").value;
-  
+
+    
 if (password === "" ){
     alert("Please Enter Password");
     return;
