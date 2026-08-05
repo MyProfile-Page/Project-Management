@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-  .body_cls {
+  .body_cls {in
           background-color: red;
           background: linear-gradient(to right, #007bff, #00c6ff);
           background: white;
@@ -315,7 +315,7 @@ background-color: #9bc7be;
 
 .input-field {
  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
- height: 8vh;
+ height: 6vh;
  font-weight: 450; 
  border: 0.1vw solid black; 
  text-align: left;
@@ -334,7 +334,7 @@ background-color: #9bc7be;
 
 .input-field-dt {
  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
- height: 8vh;
+ height: 6vh;
  font-weight: 450; 
  border: 0.1vw solid black; 
  text-align: left;
@@ -382,7 +382,7 @@ background-color: #9bc7be;
   color: black;
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.4); 
   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
-  height: 8vh;
+  height: 6vh;
   font-weight: 550; 
   border-radius: 12px;
  }
@@ -654,7 +654,7 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 <Label id="comp-name" class="div0-1label" ></Label>
 </div>
 <div class="div0-3">
-<a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" >Back</a>
+<a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" ></a>
 </div>
 </div> 
 
@@ -675,7 +675,7 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 
 
 
-<div class="gap3vh"></div>
+<div class="gap2vh"></div>
 <!-- following divs to select projects from datalist -->
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
 <!--
@@ -712,7 +712,7 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 
 
 
-<div class="gap3vh"></div>
+<div class="gap2vh"></div>
 <div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
   <Label id="labeltaskname" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
 </Label>
@@ -905,6 +905,11 @@ paramtstt = params.get("param9");
 
 // document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("comp-name").textContent = paramnm;
+document.getElementById("backlink").textContent = "Back";
+if (paramdatatype === "TL") {
+   document.getElementById("backlink").textContent = "Geri";
+  }
+
 wholetaskTable.style.display = "none";
 
 async function loadheaders() {
@@ -914,115 +919,58 @@ async function loadheaders() {
   const docRefmain1 = doc(db, "hdrnames", recordId1);    
     const existingDocmain1 = await getDoc(docRefmain1);
      if (!existingDocmain1.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      selplaceholder = "Undefined";
     }
+ else {
     const datamain1 = existingDocmain1.data();  
  //   const projnbrhd = document.getElementById("projnbr");
- //   projnbrhd.placeholder = datamain1.hds;
-     
+ //   projnbrhd.placeholder = datamain1.hds;  
       selplaceholder = datamain1.hds;
-      console.log("sel", selplaceholder);
+      
+  }
 
-  const recordId2 = `${paramdatatype}task2`;
-  const docRefmain2 = doc(db, "hdrnames", recordId2);    
-    const existingDocmain2 = await getDoc(docRefmain2);
-     if (!existingDocmain2.exists()) {
-      alert("heading Names Not Found!");
-      return;
-    }
-    const datamain2 = existingDocmain2.data();  
-    document.getElementById("labelgridname").textContent = datamain2.hds;
-
-    const recordId3 = `${paramdatatype}task3`;
-  const docRefmain3 = doc(db, "hdrnames", recordId3);    
-    const existingDocmain3 = await getDoc(docRefmain3);
-     if (!existingDocmain3.exists()) {
-      alert("heading Names Not Found!");
-      return;
-    }
-    const datamain3 = existingDocmain3.data();  
-    document.getElementById("hdrmainname").textContent = datamain3.hds;
-
-     const recordId4 = `${paramdatatype}task4`;
-  const docRefmain4 = doc(db, "hdrnames", recordId4);    
-    const existingDocmain4 = await getDoc(docRefmain4);
-     if (!existingDocmain4.exists()) {
-      alert("heading Names Not Found!");
-      return;
-    }
-    const datamain4 = existingDocmain4.data();  
-    document.getElementById("hdrsdate").textContent = datamain4.hds;
-
-     const recordId5 = `${paramdatatype}task5`;
-  const docRefmain5 = doc(db, "hdrnames", recordId5);    
-    const existingDocmain5 = await getDoc(docRefmain5);
-     if (!existingDocmain5.exists()) {
-      alert("heading Names Not Found!");
-      return;
-    }
-    const datamain5 = existingDocmain5.data();  
-    document.getElementById("hdredate").textContent = datamain5.hds;
-
-    const recordId6 = `${paramdatatype}task6`;
-  const docRefmain6 = doc(db, "hdrnames", recordId6);    
-    const existingDocmain6 = await getDoc(docRefmain6);
-     if (!existingDocmain6.exists()) {
-      alert("heading Names Not Found!");
-      return;
-    }
-    const datamain6 = existingDocmain6.data();  
-    document.getElementById("hdrstatus").textContent = datamain6.hds;
-
-   const recordId7 = `${paramdatatype}task7`;
+    const recordId7 = `${paramdatatype}task7`;
   const docRefmain7 = doc(db, "hdrnames", recordId7);    
     const existingDocmain7 = await getDoc(docRefmain7);
      if (!existingDocmain7.exists()) {
-      alert("heading Names Not Found!");
-      return;
+      document.getElementById("labeltaskname").textContent = "Undefined";
     }
+ else {
     const datamain7 = existingDocmain7.data();  
     document.getElementById("labeltaskname").textContent = datamain7.hds;
+  }
 
     const recordId8 = `${paramdatatype}task8`;
   const docRefmain8 = doc(db, "hdrnames", recordId8);    
     const existingDocmain8 = await getDoc(docRefmain8);
      if (!existingDocmain8.exists()) {
-      alert("heading Names Not Found!");
-      return;
+     document.getElementById("labeltasksdate").textContent = "Undefined";
     }
+  else {
     const datamain8 = existingDocmain8.data();  
     document.getElementById("labeltasksdate").textContent = datamain8.hds;
-
+  }
    const recordId9 = `${paramdatatype}task9`;
   const docRefmain9 = doc(db, "hdrnames", recordId9);    
     const existingDocmain9 = await getDoc(docRefmain9);
      if (!existingDocmain9.exists()) {
-      alert("heading Names Not Found!");
-      return;
+     document.getElementById("labeltaskedate").textContent = "Undefined";
     }
+ else {
     const datamain9 = existingDocmain9.data();  
     document.getElementById("labeltaskedate").textContent = datamain9.hds;
-
+ }
     const recordId10 = `${paramdatatype}task10`;
     const docRefmain10 = doc(db, "hdrnames", recordId10);    
     const existingDocmain10 = await getDoc(docRefmain10);
      if (!existingDocmain10.exists()) {
-      alert("heading Names Not Found!");
-      return;
+       document.getElementById("addbtn").textContent = "Undefined";
     }
+ else {
     const datamain10 = existingDocmain10.data();  
     document.getElementById("addbtn").textContent = datamain10.hds;
-
-    const recordId15 = `${paramdatatype}task15`;
-    const docRefmain15 = doc(db, "hdrnames", recordId15);    
-    const existingDocmain15 = await getDoc(docRefmain15);
-     if (!existingDocmain15.exists()) {
-      alert("heading Names Not Found!");
-      return;
-    }
-    const datamain15= existingDocmain15.data();  
-    statusgb = datamain15.hds;
+  }
+  
 
     loadcodestables();
     

@@ -710,6 +710,7 @@ background-color: #9bc7be;
  border: 0.1vw solid black; 
  width: 35%;
  margin: 0 auto;
+ height: 40vh;
 }
 
 @media (max-width: 768px) {
@@ -718,6 +719,24 @@ background-color: #9bc7be;
  width: 95%;
  margin: 0 auto;
 }
+}
+
+.login-div {
+ border: 0.0vw solid black; 
+ width: 40%;
+ margin: 0 auto;
+ background-image: url('image-to-do-list.PNG');
+ background-repeat: no-repeat;
+ /* Scale the image to perfectly fill the entire div space */
+ background-size: 60% 39.5vh;
+ /* Position the image directly in the center of the container */
+ background-position: center;
+  /* Ensure the container has height so the image is actually visible */
+/*  min-height: 400px;  */ 
+
+ 
+/* height: 60vh; */ 
+ height: 40vh;
 }
 
 
@@ -737,7 +756,7 @@ background-color: #9bc7be;
 <div class="gap3vh"></div>
 <!-- Above is div0 which is replacement of Navigation Bar -->
 
-<div class="gap4vh"></div> 
+
 
 
 
@@ -771,8 +790,8 @@ background-color: #9bc7be;
 </div> 
 <div class="gap4vh"></div>
 <div class="gap4vh"></div> 
- <div id="imagePanel" class="imagediv" >
- <img src="image-to-do-list.PNG" class="img-fluid rounded pull-left" alt="unavialable" class="responsive-img">  
+ <div id="imagePanel" class="login-div" >
+   
     </div>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -813,7 +832,7 @@ const firebaseConfig = {
   const db = getFirestore(app); 
  
 
-   document.getElementById("comp-name").textContent = "Welcome To Group of Small Business Systems";
+   document.getElementById("comp-name").textContent = "Welcome To Cloud Database Business Systems";
        let paramId = "";
        let paramnm = "";
        let paramet = "";
