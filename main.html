@@ -1165,6 +1165,8 @@ if (paramuserId === "Admin") {
    divsel.style.display = "none";
    document.getElementById("comp-name1").textContent = "GrowLite OnLine Digital Systems";
    txtPanel.style.display = "block";
+ //  advPanel.style.Display = "none"; 
+   advPanel.style.setProperty("display", "none", "important"); 
 }
 else {
 txtPanel.style.display = "none";
@@ -1629,19 +1631,7 @@ function isTodaygreater() {
 } 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    // document.getElementById("projectlink").textContent = `Create ${paramet}s`;
-    // document.getElementById("tasklink").textContent = `Manage ${paramtt}s of the ${paramet}s `;
- //   document.getElementById("inv-btn").textContent = "Print";
-  if (paramuserId === "Admin") {
-    document.getElementById("adduserlink").style.display = "block";
-    document.getElementById("addentitylink").style.display = "block";
-    document.getElementById("addownerlink").style.display = "block";
-    document.getElementById("refreshlink").style.display = "block";
-    document.getElementById("allprojlink").style.display = "block";
-    
-  }
-});
+
 
  // 🔹 Update (Mark Task as completed)
   window.markcompleted = async function (id) {
