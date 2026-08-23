@@ -572,7 +572,7 @@ background-color: lightgrey;
 
 .adv-div {
  border: 0.0vw solid black; 
- width: 40%;
+ width: 60%;
  margin: 0 auto;
  background-image: url('index-img-html-700.jpg');
  background-repeat: no-repeat;
@@ -585,10 +585,10 @@ background-color: lightgrey;
 
  
 /* height: 60vh; */ 
- height: 40vh;
+ height: 30vh;
 }
 .adv-div-txt {
- width: 40%;
+ width: 70%;
  border: 0.0vw solid black; 
  margin: 0 auto;
  background-color: black;
@@ -687,7 +687,7 @@ border: 0.0vw solid black;
 }
 
 select, select::picker(select) {
-  appearance: base-select; 
+  appearance: none; 
 }
 
 option {
@@ -700,12 +700,15 @@ option {
  background-color: black; 
  color: #E0E0E0; 
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
- height: 12vh;
- width: 41.3%; 
+ height: 6vh;
+ width: 70%; 
  text-align: left;
  padding-left: 1.75vw;
- padding-top: 4vh;
+ padding-top: 0vh;
  font-weight: 550;
+ border: none;
+ outline: none;
+ margin-top: 0vh;
 } 
 .sel-cls option:disabled {
   text-align: left;
@@ -716,7 +719,7 @@ option {
  background-color: black; 
  color: #E0E0E0; 
  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
- height: 6vh;
+ 
  width: 85%; 
  text-align: left;
  padding-left: 3.3vw;
@@ -778,22 +781,28 @@ option {
 
 }
 
+.div-boundry { background-color: black; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 5vh;
+}
+@media (max-width: 768px) { 
+.div-boundry { background-color: black; margin: 0 auto; width: 100%;
+}
+}
 .div-flex0  {
-margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 12vh;
+margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12vh;
 }
 
-.div0-1  {
- margin-left: 1%; width: 30%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+.div0-1  { 
+ margin-left: 10%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
 }
 .div0-1label {
 font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; padding-left 1%; 
 }
-.div0-2  { margin-left: 59%; border: 0.0vw solid yellow; margin-top: 3.3vh;
+.div0-2  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
 }
 .div0-2print  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; text-decoration: none; 
 }
-.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 3.3vh;
+.div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
 }
 .div0-3back  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; text-decoration: none;
@@ -852,15 +861,43 @@ margin-top: 2.25vh;
 
 .rightimg  {
 /* margin-top: 4.0vh;  */
-width: 1.2vw;
-height: 2vh;
+width: 2.4vw;
+height: 4vh;
 vertical-align: middle;
 }
 @media (max-width: 768px) {
 .rightimg  {
 vertical-align: middle;
-width: 2.3vw;
-height: 1.6vh;
+width: 4.6vw;
+height: 3.2vh;
+}
+}
+
+.prtimg  {
+/* margin-top: 4.0vh;  */
+width: 2.4vw;
+height: 4vh;
+vertical-align: middle;
+}
+@media (max-width: 768px) {
+.prtimg  {
+vertical-align: middle;
+width: 4.6vw;
+height: 3.2vh;
+}
+}
+
+.dropimg  {
+/* margin-top: 4.0vh;  */
+width: 2.4vw;
+height: 5vh;
+vertical-align: middle;
+}
+@media (max-width: 768px) {
+.dropimg  {
+vertical-align: middle;
+width: 4.3vw;
+height: 3vh;
 }
 }
 
@@ -869,17 +906,22 @@ height: 1.6vh;
 </head>
 <body  class="body_cls">
 
-
 <!-- Following is div0  which is replacement of Navigation Bar -->
+<div class="div-boundry">
+
 <div class = "div-flex0">
 <div class="div0-1">
 <Label id="comp-name1" class="div0-1label" ></Label>
 </div>
 <div id="divlink" class="div0-2">
-<a href="#" onclick="printInvoice()" class="div0-2print" id = "printid" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+<a href="#" onclick="printInvoice()" class="div0-2print" id = "printid" >
+<img src="Printer-icon1.png" class="prtimg">
+</a>
 </div>
 <div class="div0-3">
-<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" ></a>
+<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >
+<img src="img-back-icon.jpg" class="rightimg">
+</a>
 </div>
 </div> 
 
@@ -889,9 +931,9 @@ height: 1.6vh;
 
 <div id="divop1" class="div1">
 <a class="div1-a" href="#" onclick="manageproject()" style="text-decoration: none;" id = "projectlink">
-<span id="span1id"></span>
+<img src="plus-icon-red.jpg" class="rightimg"  >
 <label>&nbsp&nbsp</label>
-<img src="img-right-arrow-nb2.jpg" class="rightimg"  >
+<span id="span1id"></span>
 </a>
 </div> 
 <!-- Above is div1 which is replacement of Navigation Bar -->
@@ -899,12 +941,13 @@ height: 1.6vh;
 <!-- Following is div2  which is replacement of Navigation Bar -->
 <div id="divop2" class="div2">
 <a class="div2-a" href="#" onclick="managetask()" style="text-decoration: none;" id = "tasklink" >
-<span id="span2id"></span>
+<img src="plus-icon-red.jpg" class="rightimg">
 <label>&nbsp&nbsp</label>
-<img src="img-right-arrow-nb2.jpg" class="rightimg">
+<span id="span2id"></span>
 </a>
 </div>
  
+<div class="gap3vh"></div>
 <div class="gap3vh"></div>
 <!-- Above is div2 which is replacement of Navigation Bar -->
 
@@ -912,7 +955,8 @@ height: 1.6vh;
 
 
 <!-- following divs to select projects from datalist -->
-<div id="divsel" style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid red; margin: 0 auto;">
+<div id="divsel" style="display: flex;  width: 36%; justify-content: center;border: 0.0vw solid red; margin: 0 auto;">
+<img src="drop-icon-white1.jpg" class="dropimg" style="margin-top: 0vh">
 <select id="projnbr" class="sel-cls" autocomplete="off">
 </select>
 </div> 
@@ -984,7 +1028,7 @@ height: 1.6vh;
 <div id="advPanel" class="adv-div"  >
 </div>
 
-
+</div>
 
 
 
@@ -1136,7 +1180,7 @@ console.log(paramuserId);
 // document.getElementById("inv-btn").textContent = "Print";
 document.getElementById("hdrmainname").textContent = paramtt;
 document.getElementById("thaction").textContent = "Action";
-document.getElementById("backlink").textContent = "Back";
+// document.getElementById("backlink").textContent = "Back";
 // document.getElementById("labelgridname").textContent = `Selected ${paramet} ${paramtt}s Grid`;
 
 if (paramdatatype === "TL") {
@@ -1148,7 +1192,7 @@ if (paramdatatype === "TL") {
    actiongb = "Aksiyon";
    printgb = "Yazdır";
    document.getElementById("thaction").textContent = "Aksiyon";
-   document.getElementById("backlink").textContent = "Geri";
+   // document.getElementById("backlink").textContent = "Geri";
    
 }
 
@@ -1408,7 +1452,7 @@ if (option) {
     projnbrgb = parseInt(projnbrgb, 10);
      console.log(projnbrgb);
     advPanel.style.display = "none";
-    document.getElementById("printid").textContent = printgb;
+  //  document.getElementById("printid").textContent = printgb;
     wholetaskTable.style.display = "block";
     if (paramdatatype != "I" && projnbrgb === 9999){
      window.location.href = `./main-all-entities.html?param1=${paramId}&param2=${paramnm}` +
