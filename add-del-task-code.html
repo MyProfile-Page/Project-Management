@@ -319,7 +319,7 @@ background-color: #9bc7be;
  font-weight: 450; 
  border: 0.1vw solid black; 
  text-align: left;
- width: 50%;
+ width: 80%;
 }
 
 @media (max-width: 768px) {
@@ -327,7 +327,7 @@ background-color: #9bc7be;
  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
  height: 5vh;
  font-weight: 600; 
- width: 100%;
+ width: 80%;
  text-align: left;
 }
 }
@@ -338,7 +338,7 @@ background-color: #9bc7be;
  font-weight: 450; 
  border: 0.1vw solid black; 
  text-align: left;
- width: 20%;
+ width: 40%;
 }
 
 @media (max-width: 768px) {
@@ -601,47 +601,151 @@ option {
 }
 }
 .div-flex0  {
-margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 12vh;
+margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12vh;
 }
 
-.div0-1  {
- margin-left: 1%; width: 30%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+.div0-1  { 
+ margin-left: 10%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+ text-align: center;
 }
-.div0-1label {
-font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; padding-left 1%; 
+.div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
 }
 
-
-.div0-3  { margin-left: 63%; border: 0.0vw solid yellow; margin-top: 3vh;
- 
+.div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
 }
 .div0-3back  {
- font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; 
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; text-decoration: none;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
 .div-flex0  {
-margin: 0 auto; width: 100%;   background-color: black; display: flex; height: 9vh;
-}
-
+margin: 0 auto; width: 80%;   background-color: black; display: flex; height: 7vh; margin-top: 2vh;
+} 
 .div0-1  {
- margin-left: 1%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+ margin-left: 7%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
+ text-align: center;
 }
 .div0-1label {
-font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; padding-left 1%; 
+font-size: clamp(1.0rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0;  
+margin-top: 1vh; 
 }
 
-.div0-3  { margin-left: 19%; border: 0.0vw solid yellow; margin-top: 3vh;
- 
+.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2.2vh; 
 }
 .div0-3back  {
- font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; 
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; text-decoration: none;
+}
+}
+.div-boundry { background-color: black; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 1.5vh;
+}
+@media (max-width: 768px) { 
+.div-boundry { background-color: black; margin: 0 auto; width: 100%; margin-top: 1.0vh;
 }
 }
 
-
-
-
+.backimg  {
+/* margin-top: 4.0vh;  */
+width: 2.4vw;
+height: 4vh;
+vertical-align: middle;
+}
+@media (max-width: 768px) {
+.backimg  {
+vertical-align: middle;
+width: 10vw;
+height: 3.5vh;
+}
+}
+.rightimg  {
+/* margin-top: 4.0vh;  */
+width: 2.4vw;
+height: 4vh;
+vertical-align: middle;
+}
+@media (max-width: 768px) {
+.rightimg  {
+vertical-align: middle;
+width: 7vw;
+height: 3.2vh;
+}
+}
+.dropimg  {
+/* margin-top: 4.0vh;  */
+width: 2.4vw;
+height: 5vh;
+vertical-align: middle;
+}
+@media (max-width: 768px) {
+.dropimg  {
+margin-top: 1.5vh; 
+/* vertical-align: middle; */
+width: 7vw;
+height: 3vh;
+border: 0.0vw solid red;
+}
+}
+.divsel-cls {
+display: flex;  width: 100%; justify-content: center; border: 0.0vw solid red; margin: 0 auto;
+margin-top: 1vh;
+}
+.sel-cls {
+ background-color: black; 
+ /* color: #E0E0E0; */
+ color: lightyellow;
+ font-size: clamp(0.8rem, 1.2vw, 1.3rem);
+ height: 6vh;
+ width: 70%; 
+ text-align: left;
+ padding-left: 1.60vw;
+ padding-top: 0vh;
+ font-weight: 550;
+ border: none;
+ outline: none;
+ margin-top: 0vh;
+} 
+.sel-cls option:disabled {
+  text-align: left;
+}
+@media (max-width: 768px) {
+.divsel-cls {
+display: flex;  width: 100%; justify-content: center ;border: 0.0vw solid red; margin: 0 auto;
+margin-top: 0.5vh;
+}
+.sel-cls {
+ background-color: black; 
+  color: lightyellow; 
+ font-size: clamp(1.1rem, 1.8vw, 2.0rem);
+ width: 85%; 
+ text-align: left;
+ padding-left: 3.8vw;
+ padding-top: 0vh;
+ font-weight: 600;
+ border:0px solid yellow; 
+} 
+.sel-cls option:disabled {
+  text-align: left;
+}
+}
+.div-a {
+font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #E0E0E0; text-align: left; padding-left: 0.2vw;
+margin-top: 3vh;
+}
+@media (max-width: 768px) {
+.div-a {
+font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; text-align: left; padding-left: 0.8vw;
+margin-top: 2.25vh; text-decoration: none;
+}
+}
+.divtaskname {
+display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;
+margin-top: 6vh;
+}
+@media (max-width: 768px) {
+.divtaskname {
+display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;
+margin-top: 4vh;
+}
+}
 
   </style>
 </head>
@@ -649,23 +753,28 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 <body  class="body_cls">
 
 <!-- Following is div0  which is replacement of Navigation Bar -->
+<div class="div-boundry">
+
 <div class = "div-flex0">
 <div class="div0-1">
-<Label id="comp-name" class="div0-1label" ></Label>
+<Label id="page-heading" class="div0-1label" ></Label>
+<a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" >
+<label>&nbsp&nbsp&nbsp</label>
+<img src="img-back-icon-new5.JPG" class="backimg" title="Back">
+</a>
 </div>
+
 <div class="div0-3">
-<a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" ></a>
 </div>
 </div> 
 
-<!-- Above is div0 which is replacement of Navigation Bar -->
-<div class="gap2vh"></div>
+<!-- Above is div0 which is replacement of Navigation Bar --><div class="gap2vh"></div>
  
 
 
 
 
-<div style="display: flex; width: 98%; border: 0.2vw solid black; margin: 0 auto; background-color: #9bc7be;">
+<div style="display: flex; width: 98%; border: 0.2vw solid black; margin: 0 auto; background-color: transparent;">
 
  <!-- Input Form -->
 
@@ -673,20 +782,10 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 <div class = "projs-add-upd" > 
 
 
-
-
-<div class="gap2vh"></div>
 <!-- following divs to select projects from datalist -->
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-<!--
-<input list="projs" class="input-field-col" title="Select Project" id="projnbr" name="aproj" autocomplete="off"  >
--->
+<div id="divsel" class="divsel-cls">
+<img src="drop-icon-white1.JPG" class="dropimg" title="Select">
 <select id="projnbr" class="sel-cls" autocomplete="off">
-<option value="" disabled="" selected="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-</option>
 </select>
 </div> 
  
@@ -712,42 +811,44 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
 
 
 
-<div class="gap2vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltaskname" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
+
+<div class = "divtaskname" >
+  <Label id="labeltaskname" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;">
 </Label>
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
   <input type="text" class="input-field" id="taskname"   >
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltasksdate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <Label id="labeltasksdate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;">
 </Label>
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
   <input type="date" class="input-field-dt" id="startdt"  >
 
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltaskedate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: black;">
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+  <Label id="labeltaskedate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;">
 </Label>
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
  
 <input type="date" class="input-field-dt" title="Enter Task End Date (Optional)" id="enddt"  >
   <input type="hidden" id="docIdHolder">
 </div>
 
-<div class="gap3vh"></div>
 
-<div style="display: flex; justify-content: left; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">
+
+<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">  
   
-  <button id = "addbtn" onclick="addtask()" type="button" class="add-btn";></button>
+  <a class="div-a" href="#" onclick="addtask()" style="text-decoration: none;" id = "addbtn">
+<img src="plus-icon-red.JPG" class="rightimg" title="Add"  >
+</a>
   
 </div>
 <div class="gap3vh"></div>
@@ -829,6 +930,8 @@ font-size: clamp(0.9rem, 1.6vw, 1.8rem); font-weight: 550; color: #FAF9F6; paddi
   </table>
  </div>
  </div>
+ 
+ </div>
 
 
 <!-- Bootstrap JS -->
@@ -904,10 +1007,10 @@ paramtstt = params.get("param9");
 
 
 // document.getElementById("inv-btn").textContent = "Print";
-document.getElementById("comp-name").textContent = paramnm;
-document.getElementById("backlink").textContent = "Back";
+// document.getElementById("page-heading").textContent = paramnm;
+// document.getElementById("backlink").textContent = "Back";
 if (paramdatatype === "TL") {
-   document.getElementById("backlink").textContent = "Geri";
+ //  document.getElementById("backlink").textContent = "Geri";
   }
 
 wholetaskTable.style.display = "none";
@@ -964,12 +1067,23 @@ async function loadheaders() {
     const docRefmain10 = doc(db, "hdrnames", recordId10);    
     const existingDocmain10 = await getDoc(docRefmain10);
      if (!existingDocmain10.exists()) {
-       document.getElementById("addbtn").textContent = "Undefined";
+   //    document.getElementById("addbtn").textContent = "Undefined";
     }
  else {
     const datamain10 = existingDocmain10.data();  
-    document.getElementById("addbtn").textContent = datamain10.hds;
+  //  document.getElementById("addbtn").textContent = datamain10.hds;
   }
+  
+  const recordId11 = `${paramdatatype}main8`;
+  const docRefmain11 = doc(db, "hdrnames", recordId11);    
+    const existingDocmain11 = await getDoc(docRefmain11);
+     if (!existingDocmain11.exists()) {
+      document.getElementById("page-heading").textContent = "Undefined";
+    }
+ else {
+    const datamain11 = existingDocmain11.data();  
+    document.getElementById("page-heading").textContent = datamain11.hds;
+ }   
   
 
     loadcodestables();

@@ -427,8 +427,9 @@ margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12
 
 .div0-1  { 
  margin-left: 10%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
-}
-.div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; padding-left 1%; 
+ text-align: center;
+ }
+.div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
 }
 
 .div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
@@ -443,9 +444,10 @@ margin: 0 auto; width: 80%;   background-color: black; display: flex; height: 7v
 } 
 .div0-1  {
  margin-left: 7%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
+ text-align: center;
 }
 .div0-1label {
-font-size: clamp(1.0rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; padding-left 1%; 
+font-size: clamp(1.0rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
 margin-top: 1vh;
 }
 
@@ -543,13 +545,15 @@ color: white;
 
 <div class = "div-flex0">
 <div class="div0-1">
-<Label id="comp-name" class="div0-1label" ></Label>
-</div>
-
-<div class="div0-3">
+<Label id="page-heading" class="div0-1label" ></Label>
+<label>&nbsp&nbsp&nbsp</label>
 <a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" >
 <img src="img-back-icon-new5.JPG" class="backimg" title="Back">
 </a>
+</div>
+
+<div class="div0-3">
+
 </div>
 </div> 
 
@@ -709,7 +713,7 @@ paramtt = params.get("param6");
 paramtsdt = params.get("param7");
 paramtedt = params.get("param8");
 paramtstt = params.get("param9");
-document.getElementById("comp-name").textContent = paramnm;
+// document.getElementById("page-heading").textContent = paramnm;
 // document.getElementById("backlink").textContent = "Back";
 // document.getElementById("inv-btn").textContent = "Print";
 
@@ -771,6 +775,17 @@ async function loadheaders() {
  else {
     const datamain5 = existingDocmain5.data();  
   //  document.getElementById("thaction").textContent = datamain5.hds;
+ }   
+ 
+  const recordId6 = `${paramdatatype}main7`;
+  const docRefmain6 = doc(db, "hdrnames", recordId6);    
+    const existingDocmain6 = await getDoc(docRefmain6);
+     if (!existingDocmain6.exists()) {
+      document.getElementById("page-heading").textContent = "Undefined";
+    }
+ else {
+    const datamain6 = existingDocmain6.data();  
+    document.getElementById("page-heading").textContent = datamain6.hds;
  }   
 
     
