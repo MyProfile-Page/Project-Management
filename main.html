@@ -813,9 +813,12 @@ text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; widt
 .div2-a {
 font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #E0E0E0; text-align: left; padding-left: 1.75vw; margin-top: 3vh;
 }
+.div3 { 
+text-align: left; margin: 0 auto; margin-top: 3vh; background-color: black; width: 60%; display: flex; height: 10vh;
+}
 .divsel-cls { 
-display: flex;  width: 60%; justify-content: center; border: 0.0vw solid red; margin: 0 auto;
-margin-top: 6.8vh;
+display: flex; justify-content: center; border: 0.0vw solid red; margin: 0 auto;
+margin-top: 3vh;
 }
 
 @media (max-width: 768px) {
@@ -848,9 +851,12 @@ display: flex;  width: 60%; justify-content: left; border: 0.0vw solid red; marg
 font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; text-align: left; padding-left: 3.3vw;
 margin-top: 2.25vh;
 }
+.div3 {
+display: flex;  width: 60%; justify-content: left; border: 0.0vw solid red; margin: 0 auto;
+}
 .divsel-cls {
-display: flex;  width: 95%; justify-content: left ;border: 0.0vw solid red; margin: 0 auto;
-margin-top: 2vh;
+display: flex;  justify-content: left ;border: 0.0vw solid red; margin: 0 auto;
+margin-top: 2.25vh;
 }
 }
 
@@ -923,12 +929,14 @@ height: 3.5vh;
 <div class = "div0-flex">
 <div class="div0-1">
 <Label id="comp-name1" class="div0-1label" ></Label>
+<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >
+<label>&nbsp&nbsp</label>
+<img src="img-back-icon-new5.JPG" class="backimg" title="Back">
+</a>
 </div>
 
 <div class="div0-3">
-<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >
-<img src="img-back-icon-new5.JPG" class="backimg" title="Back">
-</a>
+
 </div>
 </div> 
 
@@ -961,12 +969,13 @@ height: 3.5vh;
 
 
 <!-- following divs to select projects from datalist -->
+<div id="divop3" class="div3">
 <div id="divsel" class="divsel-cls">
 <img src="drop-icon-white1.JPG" class="dropimg" title="Select">
 <select id="projnbr" class="sel-cls" autocomplete="off">
 </select>
 </div> 
-
+</div>
 
 <!-- Above divs to select projects from datalist -->
 
