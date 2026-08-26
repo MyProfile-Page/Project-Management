@@ -520,17 +520,25 @@ margin-top: 2.25vh; text-decoration: none;
 }
 }
 .projnameclass {
-margin-left: 0vw;
 font-size: clamp(0.7rem, 1.0vw, 1.3rem);
 font-weight: 550;
 color: white;
 }
 @media (max-width: 768px) {
 .projnameclass {
-margin-left: 0vw;
 font-size: clamp(1.1rem, 1.5vw, 1.9rem);
 font-weight: 550;
 color: white;
+}
+}
+.divprojname {border: 0.0vw solid red;
+display: flex; justify-content: center; width: 97%;  margin: 0 auto;
+margin-top: 5vh;
+}
+@media (max-width: 768px) {
+.divprojname {
+display: flex; justify-content: center; width: 97%; border: 0.0vw solid red; margin: 0 auto;
+margin-top: 3vh;
 }
 }
 
@@ -568,9 +576,10 @@ color: white;
 <div class = "projs-add-upd" > 
 
 
+<div class="gap1vh"></div>
 
 
-<div style="display: flex; justify-content: center; width: 97%; border: 0.1vw solid black; margin: 0 auto;">
+<div class="divprojname">
   <Label id="projnamelabel" class="projnameclass" >
 </Label>
 </div>
