@@ -16,6 +16,7 @@
           background: #f7f568;
           background: #f7f681;
           background: LightCyan;
+		  background-color: black;
          
       /*    background:  */
           line-height: 0.8;         
@@ -421,12 +422,12 @@ background-color: #9bc7be;
     font-size: 1.0rem; /* Increase or decrease to scale the entire icon */
 }
 
-.div-flex0  {
-margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12vh;
+.div-flex0  {border: 0.1vw solid yellow;
+margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12vh; margin-top: 5vh;
 }
 
 .div0-1  { 
- margin-left: 10%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
+ margin: 0 auto; width: 70%; flex-shrink: 0; border: 0.1vw solid yellow; margin-top: 3vh;
  text-align: center;
  }
 .div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
@@ -434,27 +435,27 @@ margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12
 
 .div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
 }
-.div0-3back  {
+.div0-1back  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; text-decoration: none;
 }
 
 @media (max-width: 768px) {
 .div-flex0  {
-margin: 0 auto; width: 80%;   background-color: black; display: flex; height: 7vh; margin-top: 2vh;
+margin: 0 auto; width: 80%;   background-color: black; display: flex; height: 7vh; margin-top: 5vh;
 } 
 .div0-1  {
- margin-left: 7%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
+ margin: 0 auto; width: 70%; flex-shrink: 0; border: 0.1vw solid yellow; margin-top: 1.0vh;
  text-align: center;
 }
 .div0-1label {
 font-size: clamp(1.0rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
-margin-top: 1vh;
+
 }
 
 .div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2.2vh; 
 }
-.div0-3back  {
- font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; text-decoration: none;
+.div0-1back  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF;  text-decoration: none;
 }
 }
 
@@ -474,10 +475,10 @@ margin-top: 1vh;
  background-color: black; 
 }
 }
-.div-boundry { background-color: black; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 1.5vh;
+.div-boundry { background-color: #333333; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 5vh; border: 0.1vw solid red;
 }
 @media (max-width: 768px) { 
-.div-boundry { background-color: black; margin: 0 auto; width: 100%; margin-top: 1.0vh;
+.div-boundry { background-color: #333333; margin: 0 auto; width: 100%; margin-top: 3.0vh;
 }
 }
 
@@ -547,42 +548,16 @@ color: white;
 <div class="div0-1">
 <Label id="page-heading" class="div0-1label" ></Label>
 <label>&nbsp&nbsp&nbsp</label>
-<a href="#" onclick="mainappl()" id = "backlink" class="div0-3back" >
+<a href="#" onclick="mainappl()" id = "backlink" class="div0-1back" >
 <img src="img-back-icon-new5.JPG" class="backimg" title="Back">
 </a>
 </div>
 
-<div class="div0-3">
-
+<div >
 </div>
 </div> 
 
 <!-- Above is div0 which is replacement of Navigation Bar -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Following are divs which are addition of Navigation Bar -->
-
-
-
-
-
-<!-- Above are divs which are addition of Navigation Bar -->
-
 
 <div style="display: flex; width: 98%; border: 0.0vw dashed black; margin: 0 auto; background-color: transparent;  ">
 
