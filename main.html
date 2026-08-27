@@ -786,16 +786,14 @@ option {
 .div-boundry { background-color: #333333; margin: 0 auto; width: 40%; margin-top: 5vh;
   justify-content: center; border: 0.0vw solid white;}
 .div0-flex  {margin: 0 auto; width: 100%;   display: flex; height: 12vh;
- border: 0.2vw solid yellow;}
+ border: 0.2vw solid yellow; margin-top: 0.5vh;}
 .div0-1  { 
  margin: 0 auto; width: 95%; flex-shrink: 0; border: 0.2vw solid red; margin-top: 3vh;
  justify-content: center; display: flex; align-items: center;}
 .div0-1label {
 font-size: clamp(0.8rem, 1.4vw, 1.6rem); font-weight: 550; color: #E0E0E0;  
 }
-.div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
-}
-.div0-3back  {
+.backherf  {
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; text-decoration: none;
  }
 .div1 { justify-content: left; border: 0.2vw solid yellow; margin: 0 auto;
@@ -815,50 +813,45 @@ font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #E0E0E0; text-
 margin-top: 2vh; display: flex;  width: 100%; height: 10vh;  
 }
 
-
-
 @media (max-width: 768px) {
 .div-boundry { background-color: #333333; margin: 0 auto; width: 100%; justify-content: center;
  border: 0.0vw solid white; margin-top: 3.5vh;
  }
 .div0-flex  {
-margin: 0 auto; width: 100%;   display: flex; height: 7vh; margin-top: 2vh;
+margin: 0 auto; width: 100%;   display: flex; height: 7vh; margin-top: 0.3vh;
  border: 0.0vw solid yellow;} 
 .div0-1  {
- margin-left: 14.3%; width: 80%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
- justify-content: center; border: 0.0vw solid red;}
+ margin-left: 14.3%; width: 95%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
+ justify-content: center; display: flex; align-items: center; border: 0.0vw solid red;}
 .div0-1label {
-font-size: clamp(1.2rem, 1.9vw, 2.1rem); font-weight: 550; color: #E0E0E0; padding-left 1%; 
-margin-top: 1vh;
+font-size: clamp(1.2rem, 1.9vw, 2.1rem); font-weight: 550; color: #E0E0E0; 
 }
-.div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2.2vh; 
-}
-.div0-3back  {
- font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; text-decoration: none;
+.backherf  {
+ font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; text-decoration: none;
 }
 .div1 {
-display: flex;  width: 80%; justify-content: left; border: 0.0vw solid red; margin: 0 auto; margin-top: 4vh; height: 9vh; 
+display: flex;  width: 80%; justify-content: left; border: 0.0vw solid red; margin: 0 auto; margin-top: 2.5vh; height: 9vh; 
 }
-.div1-a { display: flex; 
-font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; margin: 0 auto; width: 75%;
-margin-top: 2.25vh; background-color: black; border: 0.0vw solid white;
+.div1-a { 
+font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; width: 75%;
+margin-top: 2.25vh;  border: 0.0vw solid white; padding-left: 2.25vw;
 }
 .div2 {
 display: flex;  width: 80%; justify-content: left; border: 0.0vw solid red; margin: 0 auto;
-height: 9vh; margin-top: 4vh; 
+height: 9vh; margin-top: 4vh; background-color: black;
 }
-.div2-a { display: flex; 
-font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; margin: 0 auto; width: 75%;
-margin-top: 2.25vh; background-color: black; border: 0.0vw solid white; 
+.div2-a { 
+font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; width: 75%;
+margin-top: 2.25vh;  border: 0.0vw solid white; 
 }
 .div3 {
 display: flex;  width: 80%; justify-content: left; border: 0.0vw solid red; margin: 0 auto;
 height: 9vh; margin-top: 4vh; 
 }
-.divsel-cls {
+.divsel-cls {justify-content: left;
 display: flex;  border: 0.0vw solid red; margin: 0 auto;
-padding-left: 3.1vw; width: 75%;
-margin-top: 2.25vh; background-color: black; border: 0.0vw solid white;
+width: 100%;
+margin-top: 2.25vh; border: 0.0vw solid white;
 }
 }
 
@@ -946,7 +939,7 @@ margin-top: 1vh;
 <div class = "div0-flex">
 <div class="div0-1">
 <Label id="comp-name1" class="div0-1label" ></Label>
-<a href="#" onclick="backpage()" id = "backlink" class="div0-3back" >
+<a href="#" onclick="backpage()" id = "backlink" class="backherf" >
 <label>&nbsp&nbsp</label>
 <img src="img-back-icon-new5.JPG" class="backimg" title="Back">
 </a>
