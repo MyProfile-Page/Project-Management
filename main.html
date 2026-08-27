@@ -808,6 +808,10 @@ margin-top: 3vh; background-color: black; width: 60%; display: flex; height: 10v
 font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #E0E0E0; text-align: left; padding-left: 1.75vw; margin-top: 3vh;
 }
 
+.divsel-cls-cover {
+ background-color: black; width: 60%; margin: 0 auto;
+}
+
 .divsel-cls { justify-content: left; border: 0.2vw solid yellow; margin: 0 auto;
 margin-top: 2vh; display: flex;  width: 100%; height: 10vh;  
 }
@@ -842,6 +846,10 @@ height: 9vh; margin-top: 4vh; background-color: black;
 .div2-a { 
 font-weight: 500; font-size: clamp(1.1rem, 1.8vw, 2.0rem); color: #E0E0E0; width: 75%;
 margin-top: 2.25vh;  border: 0.0vw solid white; 
+}
+
+.divsel-cls-cover {
+ background-color: black; width: 80%; margin: 0 auto;
 }
 
 .divsel-cls {justify-content: left;
@@ -974,7 +982,7 @@ margin-top: 1vh;
 
 
 <!-- following divs to select projects from datalist -->
-<div style="background-color: black; width: 60%; margin: 0 auto;"> 
+<div class="divsel-cls-cover"> 
 <div id="divsel" class="divsel-cls">
 <img src="manage-icon1.JPG" class="dropimg" title="Select">
 <select id="projnbr" class="sel-cls" autocomplete="off">
