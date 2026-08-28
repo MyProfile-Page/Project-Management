@@ -321,6 +321,7 @@ background-color: #9bc7be;
  border: 0.1vw solid black; 
  text-align: left;
  width: 80%;
+ margin-top: 3vh;
 }
 
 @media (max-width: 768px) {
@@ -330,16 +331,18 @@ background-color: #9bc7be;
  font-weight: 600; 
  width: 80%;
  text-align: left;
+ margin-top: 1.5vh;
 }
 }
 
 .input-field-dt {
+ margin-top: 3.3vh;
+ margin-left: 2vw;
  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
- height: 6vh;
+ height: 5.5vh;
  font-weight: 450; 
  border: 0.1vw solid black; 
- text-align: left;
- width: 70%;
+ width: 60%;
  text-align: center;
 }
 
@@ -603,7 +606,7 @@ option {
 }
 }
 .div-flex0  {
-margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12vh;
+margin: 0 auto; width: 90%;    display: flex; height: 12vh;
 }
 
 .div0-1  { 
@@ -621,7 +624,7 @@ margin: 0 auto; width: 90%;   background-color: black; display: flex; height: 12
 
 @media (max-width: 768px) {
 .div-flex0  {
-margin: 0 auto; width: 80%;   background-color: black; display: flex; height: 7vh; margin-top: 2vh;
+margin: 0 auto; width: 80%;   display: flex; height: 7vh; margin-top: 2vh;
 } 
 .div0-1  {
  margin-left: 7%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 2vh;
@@ -638,10 +641,11 @@ margin-top: 1vh;
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; text-decoration: none;
 }
 }
-.div-boundry { background-color: #333333;; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 1.5vh;
+.div-boundry { background-color: #333333;; margin: 0 auto; width: 40%;  height: 115vh; margin-top: 1.5vh;
 }
 @media (max-width: 768px) { 
 .div-boundry { background-color: #333333;; margin: 0 auto; width: 100%; margin-top: 1.0vh;
+ height: 125vh;
 }
 }
 
@@ -691,6 +695,7 @@ border: 0.0vw solid red;
 }
 .divsel-cls { justify-content: left; border: 0.0vw solid yellow; margin: 0 auto;
 margin-top: 2vh; display: flex;  width: 75%; height: 11vh; background-color: black;  
+border-radius: 0.5vw;
 }
 .sel-cls {
  background-color: black; 
@@ -753,7 +758,7 @@ margin-top: 4vh;
 }
 .labeldtclass {
 margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;
-margin-top: 1.7vh;
+margin-top: 3.9vh; margin-left: 1.2vw;
 }
 @media (max-width: 768px) {
 .labeldtclass {
@@ -762,11 +767,22 @@ margin-top: 1vh;
 }
 }
 .divdtclass {
-display: flex; justify-content: space-between; width: 60%; border: 0.0vw solid red; margin-left: 4.5vw; margin-top: 3vh;
+display: flex;  width: 60%; border: 0.0vw solid red; margin-left: 4.5vw; margin-top: 3vh; background-color: black; height: 12vh; 
 }
 @media (max-width: 768px) {
 .divdtclass {
-display: flex; justify-content: space-between; width: 65%; border: 0.1vw solid red; margin-left: 9.8vw; margin-top: 2vh;
+display: flex; justify-content: center; width: 65%; border: 0.1vw solid red; margin-left: 9.8vw; margin-top: 2vh;
+}
+}
+
+.divinputfield {
+display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;
+background-color: black; height: 12vh;
+}
+@media (max-width: 768px) {
+.divinputfield {
+display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;
+background-color: black; height: 9vh;
 }
 }
 
@@ -841,7 +857,7 @@ display: flex; justify-content: space-between; width: 65%; border: 0.1vw solid r
 </Label>
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
+<div class="divinputfield">
   <input type="text" class="input-field" id="taskname"   >
 </div>
 <div class="gap3vh"></div>
