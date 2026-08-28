@@ -16,6 +16,7 @@
           background: #f7f568;
           background: #f7f681;
           background: LightCyan;
+		  background: black;
          
       /*    background:  */
           line-height: 0.8;         
@@ -338,7 +339,8 @@ background-color: #9bc7be;
  font-weight: 450; 
  border: 0.1vw solid black; 
  text-align: left;
- width: 40%;
+ width: 70%;
+ text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -346,7 +348,7 @@ background-color: #9bc7be;
  font-size: clamp(0.9rem, 1.0vw, 1.1rem);
  height: 5vh;
  font-weight: 600; 
- width: 40%;
+ width: 70%;
  text-align: left;
 }
 }
@@ -636,10 +638,10 @@ margin-top: 1vh;
  font-weight: 500; font-size: clamp(0.9rem, 1.4vw, 1.5rem); color: #E0FFFF; margin-top: 2vh; text-decoration: none;
 }
 }
-.div-boundry { background-color: black; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 1.5vh;
+.div-boundry { background-color: #333333;; margin: 0 auto; width: 40%;  height: 93vh; margin-top: 1.5vh;
 }
 @media (max-width: 768px) { 
-.div-boundry { background-color: black; margin: 0 auto; width: 100%; margin-top: 1.0vh;
+.div-boundry { background-color: #333333;; margin: 0 auto; width: 100%; margin-top: 1.0vh;
 }
 }
 
@@ -670,11 +672,12 @@ height: 3.2vh;
 }
 }
 .dropimg  {
-/* margin-top: 4.0vh;  */
+margin-top: 3.0vh;
 width: 2.4vw;
 height: 5vh;
 vertical-align: middle;
 border: 0.0vw solid red;
+background-color: black;
 }
 @media (max-width: 768px) {
 .dropimg  {
@@ -686,20 +689,17 @@ height: 3vh;
 border: 0.0vw solid red;
 }
 }
-.divsel-cls {
-display: flex;  width: 100%; justify-content: center; border: 0.0vw solid red; margin: 0 auto;
-margin-top: 1vh;
+.divsel-cls { justify-content: left; border: 0.0vw solid yellow; margin: 0 auto;
+margin-top: 2vh; display: flex;  width: 75%; height: 11vh; background-color: black;  
 }
 .sel-cls {
  background-color: black; 
- /* color: #E0E0E0; */
- color: lightyellow;
+ color: #E0E0E0; 
  font-size: clamp(0.8rem, 1.2vw, 1.3rem);
- height: 6vh;
- width: 70%; 
+ height: 10vh;
+ width: 100%; 
  text-align: left;
- padding-left: 1.60vw;
- padding-top: 0vh;
+ padding-left: 1.5vw; 
  font-weight: 550;
  border: none;
  outline: none;
@@ -709,20 +709,23 @@ margin-top: 1vh;
   text-align: left;
 }
 @media (max-width: 768px) {
-.divsel-cls {
-display: flex;  width: 100%; justify-content: center ;border: 0.0vw solid red; margin: 0 auto;
-margin-top: 0.5vh; border: 0.0vw solid red;
+.divsel-cls {justify-content: space-between;
+display: flex;  margin: 0 auto;
+width: 100%;
+margin-top: 2.25vh; border: 0.0vw solid white;
+height: 9vh;
 }
 .sel-cls {
  background-color: black; 
-  color: lightyellow; 
+ color: #E0E0E0; 
  font-size: clamp(1.1rem, 1.8vw, 2.0rem);
- width: 80%; 
+ height: 9vh;
+ width: 90%; 
  text-align: left;
- padding-left: 3.8vw;
- padding-top: 0.8vh;
+ padding-left: 4.6vw;
  font-weight: 600;
- border:0px solid yellow; 
+ border: 0vw solid red; 
+ outline: none;
 } 
 .sel-cls option:disabled {
   text-align: left;
@@ -740,12 +743,30 @@ margin-top: 2.25vh; text-decoration: none;
 }
 .divtaskname {
 display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;
-margin-top: 6vh;
+margin-top: 9vh;
 }
 @media (max-width: 768px) {
 .divtaskname {
 display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;
 margin-top: 4vh;
+}
+}
+.labeldtclass {
+margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;
+margin-top: 1.7vh;
+}
+@media (max-width: 768px) {
+.labeldtclass {
+margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;
+margin-top: 1vh;
+}
+}
+.divdtclass {
+display: flex; justify-content: space-between; width: 60%; border: 0.0vw solid red; margin-left: 4.5vw; margin-top: 3vh;
+}
+@media (max-width: 768px) {
+.divdtclass {
+display: flex; justify-content: space-between; width: 60%; border: 0.0vw solid red; margin-left: 4.5vw; margin-top: 2vh;
 }
 }
 
@@ -755,8 +776,9 @@ margin-top: 4vh;
 <body  class="body_cls">
 
 <!-- Following is div0  which is replacement of Navigation Bar -->
+<div class="gap3vh"></div>
 <div class="div-boundry">
-
+<div class="gap3vh"></div>
 <div class = "div-flex0">
 <div class="div0-1">
 <Label id="page-heading" class="div0-1label" ></Label>
@@ -776,7 +798,7 @@ margin-top: 4vh;
 
 
 
-<div style="display: flex; width: 98%; border: 0.2vw solid black; margin: 0 auto; background-color: transparent;">
+<div style="display: flex; width: 98%; border: 0.0vw solid black; margin: 0 auto; background-color: transparent;">
 
  <!-- Input Form -->
 
@@ -786,7 +808,7 @@ margin-top: 4vh;
 
 <!-- following divs to select projects from datalist -->
 <div id="divsel" class="divsel-cls">
-<img src="drop-icon.JPG" class="dropimg" title="Select">
+<img src="manage-icon1.JPG" class="dropimg" title="Select">
 <select id="projnbr" class="sel-cls" autocomplete="off">
 </select>
 </div> 
@@ -823,26 +845,22 @@ margin-top: 4vh;
   <input type="text" class="input-field" id="taskname"   >
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltasksdate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;">
+<div class="divdtclass">
+  <Label id="labeltasksdate" class="labeldtclass">
 </Label>
-</div>
-<div class="gap3vh"></div>
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <input type="date" class="input-field-dt" id="startdt"  >
 
+ <input type="date" class="input-field-dt" id="startdt"  >
 </div>
 <div class="gap3vh"></div>
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
-  <Label id="labeltaskedate" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;">
+
+<div class="divdtclass">
+  <Label id="labeltaskedate" class="labeldtclass">
 </Label>
-</div>
-<div class="gap3vh"></div>
-<div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto;">
- 
+
 <input type="date" class="input-field-dt" title="Enter Task End Date (Optional)" id="enddt"  >
   <input type="hidden" id="docIdHolder">
 </div>
+<div class="gap3vh"></div>
 
 
 
