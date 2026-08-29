@@ -616,7 +616,8 @@ margin: 0 auto; width: 90%;    display: flex; height: 12vh;
  margin-left: 10%; width: 70%; flex-shrink: 0; border: 0.0vw solid yellow; margin-top: 3vh;
  text-align: center;
 }
-.div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
+.div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0;
+text-decoration: underline;  
 }
 
 .div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
@@ -635,7 +636,7 @@ margin: 0 auto; width: 80%;   display: flex; height: 7vh; margin-top: 2vh;
 }
 .div0-1label {
 font-size: clamp(1.0rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0;  
-margin-top: 1vh; 
+margin-top: 1vh; text-decoration: underline; 
 }
 
 .div0-3  { margin-left: 1%; border: 0.0vw solid yellow; margin-top: 2.2vh; 
@@ -895,7 +896,7 @@ margin-left: 0vw; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 550; col
 <div style="display: flex; justify-content: center; width: 97%; border: 0.0vw solid black; margin: 0 auto; margin-top: 3vh;">  
   
   <a class="div-a" href="#" onclick="addtask()" style="text-decoration: none;" id = "addbtn">
-<img src="add-icon.JPG" class="rightimg" title="Add"  >
+<img src="add-icon-file.JPG" class="rightimg" title="Add"  >
 </a>
   
 </div>
@@ -1598,19 +1599,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-menubtn.addEventListener("click", function () {
 
-  const menuBtn = document.getElementById("menuBtn");
-const menuPanel = document.getElementById("menuPanel");
- if (menuPanel.style.display === "none") {
-        menuPanel.style.display = "block";
-        document.getElementById("inv-btn").textContent = "";
-    } else {
-        menuPanel.style.display = "none";
-        document.getElementById("inv-btn").textContent = "Print";
-    }
-  
-});
 
 window.showMenu = async function (event, button) {
 // function showMenu(event, button) {

@@ -68,7 +68,7 @@
     
      overflow-x: auto;     /* horizontal scrollbar */
     border: 0.0vw solid #ccc;
- 
+    
 }
 }
 
@@ -84,7 +84,7 @@
     margin-left: 0.2vw; 
     margin-right: 0.0vw; 
     border: 0.0vw solid grey; /* Light grey borders */
-    background-color: #b3ffb3;
+    background-color: #b3ffb3;  
     
     
 }   
@@ -815,6 +815,8 @@ font-weight: 500; font-size: clamp(0.6rem, 1.4vw, 1.5rem); color: #E0E0E0; text-
 .divsel-cls { justify-content: left; border: 0.0vw solid yellow; margin: 0 auto;
 margin-top: 2vh; display: flex;  width: 100%; height: 10vh;  
 }
+.div-boundry-table { margin: 0 auto; width: 57%; margin-top: 5vh;
+  justify-content: center; border: 0.0vw solid yellow;}
 
 @media (max-width: 768px) {
 .div-boundry { background-color: #333333; margin: 0 auto; width: 100%; justify-content: center;
@@ -859,6 +861,8 @@ width: 100%;
 margin-top: 2.25vh; border: 0.0vw solid white;
 height: 9vh;
 }
+.div-boundry-table { margin: 0 auto; width: 100%; margin-top: 3vh;
+  justify-content: center; border: 0.1vw solid yellow;}
 }
 
 .rightimg  {
@@ -958,7 +962,7 @@ margin-top: 1vh;
 
 <div id="divop1" class="div1">
 <a class="div1-a" href="#" onclick="manageproject()" style="text-decoration: none;" id = "projectlink">
-<img src="add-icon.JPG" class="rightimg" title="Add"  >
+<img src="add-icon-file.JPG" class="rightimg" title="Add"  >
 <label>&nbsp&nbsp</label>
 <span id="span1id" class="spancss"></span>
 </a>
@@ -968,7 +972,7 @@ margin-top: 1vh;
 <!-- Following is div2  which is replacement of Navigation Bar -->
 <div id="divop2" class="div2">
 <a class="div2-a" href="#" onclick="managetask()" style="text-decoration: none;" id = "tasklink" >
-<img src="add-icon.JPG" class="rightimg" title="Add">
+<img src="add-icon-file.JPG" class="rightimg" title="Add">
 <label>&nbsp&nbsp</label>
 <span id="span2id" class="spancss"></span>
 </a>
@@ -1055,7 +1059,7 @@ margin-top: 1vh;
  </div>
  
  </div>
- 
+
 <div id = "htmlimageshow" class="div-boundry boundry-top"> 
 <div id="advPanel" class="adv-div"  >
 </div>
@@ -1071,8 +1075,7 @@ margin-top: 1vh;
 
 
 <!-- Following is div For Grid Display of Projects and their Tasks -->
- 
-
+ <div class="div-boundry-table">
   <!-- HTML Table For showing all records of database-->
 <div id = "wholetaskTable" class="custom-table-container">
 
@@ -1114,6 +1117,8 @@ margin-top: 1vh;
   </table>
  </div>
  </div>
+ 
+</div>
 <!-- Bootstrap JS -->
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
