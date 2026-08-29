@@ -685,13 +685,14 @@ height: 5vh;
 vertical-align: middle;
 border: 0.0vw solid red;
 background-color: black;
+margin-left: 1.5vw;
 }
 @media (max-width: 768px) {
 .dropimg  {
 margin-top: 3.2vh;
 /* vertical-align: middle; */
 width: 9vw;
-padding-left: 2vw;
+margin-left: 2.7vw;
 height: 3.5vh;
 border: 0.0vw solid red;
 }
@@ -751,12 +752,12 @@ margin-top: 2.25vh; text-decoration: none;
 }
 }
 .divtaskname {
-display: flex; justify-content: left; width: 87%; border: 0.0vw solid black; margin: 0 auto;
+display: flex; justify-content: left; width: 87%; border: 0.0vw solid black; margin-left: 1.5vw; 
 margin-top: 9vh;
 }
 @media (max-width: 768px) {
 .divtaskname {
-display: flex; justify-content: left; width: 87%; border: 0.0vw solid black; margin: 0 auto;
+display: flex; justify-content: left; width: 87%; border: 0.0vw solid black; margin-left: 2.5vw; 
 margin-top: 4vh;
 }
 }
@@ -771,22 +772,30 @@ margin-top: 3.5vh;
 }
 }
 .divdtclass {
-display: flex;  width: 60%; border: 0.0vw solid red; margin-left: 0.5vw; margin-top: 3vh; background-color: black; height: 12vh; 
+display: flex;  width: 60%; border: 0.0vw solid red; margin-left: 0.5vw; margin-top: 3vh; background-color: black; height: 12vh; border-radius: 0.5vw; 
 }
 @media (max-width: 768px) {
 .divdtclass {
-display: flex; justify-content: center; width: 65%; border: 0.1vw solid yellow; margin-left: 2.5vw; margin-top: 2vh; height: 10vh;
+display: flex; justify-content: center; width: 65%; border: 0.1vw solid yellow; margin-left: 2.5vw; margin-top: 2vh; height: 10vh; border-radius: 0.9vw;
 }
 }
 
 .divinputfield {
 display: flex;  width: 97%; border: 0.0vw solid black; margin: 0 auto;
-background-color: black; height: 12vh;
+background-color: black; height: 12vh; border-radius: 0.5vw;
 }
 @media (max-width: 768px) {
 .divinputfield {
 display: flex;  width: 97%; border: 0.0vw solid black; margin: 0 auto;
-background-color: black; height: 9vh;
+background-color: black; height: 9vh; border-radius: 0.9vw;
+}
+}
+.labeltasknamecss {
+margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;
+}
+@media (max-width: 768px) {
+.labeltasknamecss {
+margin-left: 0vw; font-size: clamp(0.9rem, 1.3vw, 1.4rem); font-weight: 550; color: white;
 }
 }
 
@@ -857,8 +866,7 @@ background-color: black; height: 9vh;
 
 
 <div class = "divtaskname" >
-  <Label id="labeltaskname" style="margin-left: 0vw; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 550; color: white;">
-</Label>
+  <Label id="labeltaskname" class="labeltasknamecss"></Label>
 </div>
 <div class="gap3vh"></div>
 <div class="divinputfield">
