@@ -99,7 +99,9 @@
      /* Adjusts the space above and below the text */
      padding: 3px 3px; 
     height: 6vh;
-   
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
 
   }
   
@@ -197,16 +199,7 @@ grid-auto-flow: row;
 }
 }
 
-@media (max-width: 768px) {
- .projTableBody-Cls {
-white-space: normal; 
-overflow-wrap: break-word;
-word-wrap: break-word; 
-word-break: break-all;
-text-wrap: balance;
-hyphens: auto;
-}
-}
+
 
 
 
