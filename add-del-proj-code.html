@@ -44,7 +44,7 @@
     height: 43vh;        /* Fixed height */
      overflow-y: auto;     /* vertical scrollbar */
     border: 0.0vw solid black;
-	background-color: black;
+    background-color: black;
 }
 
 @media (max-width: 768px) {
@@ -85,15 +85,7 @@
  }
 
   
-  .proj-table th {
-    background-color: transparent; /* Light gray background for header */
-   /* color: #333;  */
-    color:black;
-    background-color: transparent;  
-    height: 6vh;      
-    border: 0.1vw solid white;
-
-  }
+ 
 
  
 
@@ -433,7 +425,6 @@ border: 0.0vw solid yellow;
  text-align: center;
  }
 .div0-1label {font-size: clamp(0.7rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
-text-decoration: underline;
 }
 
 .div0-3  { margin-left: 2%; border: 0.0vw solid yellow; margin-top: 3.3vh;
@@ -452,7 +443,6 @@ margin: 0 auto; width: 80%;   background-color: black; display: flex; height: 7v
 }
 .div0-1label {
 font-size: clamp(1.0rem, 1.6vw, 1.8rem); font-weight: 550; color: #E0E0E0; 
-text-decoration: underline;
 
 }
 
@@ -544,6 +534,24 @@ display: flex; justify-content: center; width: 97%; border: 0.0vw solid red; mar
 margin-top: 3vh;
 }
 }
+.tbprojname {
+text-align: center; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500;
+}
+@media (max-width: 768px) {
+.tbprojname {
+text-align: center; font-size: clamp(0.9rem, 1.5vw, 1.6rem); font-weight: 500;
+}
+}
+.tbprojnameheader { color: lightblue;
+text-align: center; font-size: clamp(0.8rem, 1.5vw, 1.6rem); font-weight: 500;
+width: 30%;
+}
+@media (max-width: 768px) {
+.tbprojnameheader { color: lightblue;
+text-align: center; font-size: clamp(0.9rem, 1.5vw, 1.6rem); font-weight: 500;
+width: 30%;
+}
+}
 
 
   </style>
@@ -618,7 +626,7 @@ margin-top: 3vh;
      
       <tr>
        
-        <th id="thname" style="text-align: center; width: 30%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; color: lightblue; "></th>      
+        <th id="thname" class="tbprojnameheader"></th>      
         
       
         <th id="thaction" class="no-print" style="padding: 0.0vw; text-align: center; width: 3%; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; color: yellow; "></th>
@@ -626,7 +634,7 @@ margin-top: 3vh;
     </thead>
     <tbody id="projTable" class = "projTableBody-Cls">
        <tr>
-        <td  style="text-align: center; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
+        <td  class="tbprojname"></td>
         <td  style="text-align: center; font-size: clamp(0.8rem, 1.3vw, 1.4rem); font-weight: 500; "></td>
         
       </tr>
