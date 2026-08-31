@@ -56,13 +56,29 @@
   color: #333;
 }
 
-.carousel-container {
+.div-buttons {
   position: relative;
     width: 50%;
   /*  max-width: 600px;  */ /* Adjust to fit your design */
     margin: 0 auto;
     overflow: hidden;
     margin-top: 8vh;
+  border: 0.0vw solid red;
+  
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ /* gap: 15px;  */  
+}
+
+.carousel-container {
+  position: relative;
+    width: 50%;
+  /*  max-width: 600px;  */ /* Adjust to fit your design */
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 3vh;
   border: 0.0vw solid red;
   
  
@@ -101,13 +117,28 @@
 	}
 	
 @media (max-width: 768px) {	
-.carousel-container {
+.div-buttons {
   position: relative;
     width: 100%;
   /*  max-width: 600px;  */ /* Adjust to fit your design */
     margin: 0 auto;
     overflow: hidden;
     margin-top: 8vh;
+  border: 0.0vw solid red;
+  
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ /* gap: 15px;  */  
+}
+.carousel-container {
+  position: relative;
+    width: 100%;
+  /*  max-width: 600px;  */ /* Adjust to fit your design */
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 2vh;
   border: 0.0vw solid red;
   
  
@@ -171,19 +202,22 @@ backg
 <body  class="body_cls">
 
  
-
- <div class="carousel-container">
+ <div id="div-buttons" class="div-buttons">
   <!-- Buttons use standard arrow symbols -->
   
   <button id="prevBtn" class="prevBtn">&#10094; Prev</button>
    <label>&nbsp</label>
+   <button id="nextBtn" class="nextBtn">Next &#10095;</button>
+ </div>
+ <div class="carousel-container">
+  
   <img id="carouselImage" src="adv-scr-shot1.JPG" alt="Carousel Image">
   <label>&nbsp</label>
   <p id="carouselCaption" ></p>
   <!-- Add this line for the caption -->
    
   
-  <button id="nextBtn" class="nextBtn">Next &#10095;</button>
+  
 </div>
 
 
