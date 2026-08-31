@@ -99,6 +99,54 @@
 	font-size: clamp(0.8rem, 1.4vw, 1.5rem); 
 	font-weight: 550;	
 	}
+	
+@media (max-width: 768px) {	
+.carousel-container {
+  position: relative;
+    width: 100%;
+  /*  max-width: 600px;  */ /* Adjust to fit your design */
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 8vh;
+  border: 0.0vw solid red;
+  
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ /* gap: 15px;  */  
+}
+#carouselImage {
+    width: 70%;
+    display: block;
+    height: 80vh;
+}
+#carouselCaption {
+    position: absolute;
+    bottom: 3vh;         /* Places it at the very bottom of the image */
+    text-align: center;
+    
+    margin: 0vh;
+	color: black;
+	font-size: clamp(0.8rem, 1.4vw, 1.5rem); 
+	font-weight: 550;
+	}
+	
+#prevBtn {    
+    text-align: center;
+   	color: black;
+	font-size: clamp(0.8rem, 1.4vw, 1.5rem); 
+	font-weight: 550;	
+	}
+#nextBtn {    
+    text-align: center;
+   	color: black;
+	font-size: clamp(0.8rem, 1.4vw, 1.5rem); 
+	font-weight: 550;	
+	}	
+}
+	
+	
 .firstimgcss  {
 margin-top: 50vh;  
 vertical-align: middle; 
