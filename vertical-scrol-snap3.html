@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Firestore Table (IIS + Localhost)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <style>
+.vertical-scroll-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;                 /* Full screen height */
+  width: 100%;                   /* 100% mobile screen width */
+  scrollbar-width: none;         /* Hides scrollbar on Firefox */
+}
+
+.vertical-scroll-container::-webkit-scrollbar {
+  display: none;                 /* Hides scrollbar on Chrome/Safari */
+}
+
+.scroll-page {
+  flex: 0 0 100vh;               /* Forces each section to be exactly full height */
+  width: 100%;                   /* Forces each section to be exactly 100% width */
+  scroll-snap-align: start;
+}
+
+.scroll-page img {
+  width: 100%;                   /* Forces image to stretch/shrink to 100% width */
+  height: 100%;                  /* Matches the height of the container */
+  object-fit: cover;             /* Scaled to fill; crops the edges if aspect ratios don't match */
+  object-position: center;       /* Keeps the center of the image focused */
+}
+</style>
+</head>
+
+<body ">
+ 
+ <div class="vertical-scroll-container">
+  <!-- Card 1 -->
+  <figure class="scroll-page">
+    <img src="CA-IMG-1982-WT.JPG" alt="A beautiful mountain landscape">
+    <figcaption class="image-caption">Mountain Landscape at Sunrise</figcaption>
+  </figure>
+
+  <!-- Card 2 -->
+  <figure class="scroll-page">
+    <img src="CA-IMG-1939-1945-WT.JPG" alt="A busy city street at night">
+    <figcaption class="image-caption">Downtown Tokyo Lights</figcaption>
+  </figure>
+  
+  <!-- Card 3 -->
+  <figure class="scroll-page">
+    <img src="CA-IMG-1999-WT.JPG" alt="A busy city street at night">
+    <figcaption class="image-caption">Downtown Tokyo Lights</figcaption>
+  </figure>
+</div>
+</body>
+</html>
