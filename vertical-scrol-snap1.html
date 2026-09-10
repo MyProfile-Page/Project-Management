@@ -15,35 +15,54 @@
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   height: 100vh;                 /* Full screen height */
+  width: 50%;                   /* 100% mobile screen width */
+ /* scrollbar-width: none;  */         /* Hides scrollbar on Firefox */
+ margin: 0 auto;
+  padding: 0;
+}
+@media (max-width: 768px) {
+.vertical-scroll-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;                 /* Full screen height */
   width: 100%;                   /* 100% mobile screen width */
-  scrollbar-width: none;         /* Hides scrollbar on Firefox */
+ /* scrollbar-width: none;  */         /* Hides scrollbar on Firefox */
+ margin: 0 auto;
+  padding: 0;
+}
 }
 
-.vertical-scroll-container::-webkit-scrollbar {
-  display: none;                 /* Hides scrollbar on Chrome/Safari */
-}
+/* .vertical-scroll-container::-webkit-scrollbar { */
+/*  display: none;       */          /* Hides scrollbar on Chrome/Safari */
+/* }  */
 
-.scroll-page {
-  flex: 0 0 100vh;               /* Forces each section to be exactly full height */
-  width: 100%;                   /* Forces each section to be exactly 100% width */
-  scroll-snap-align: start;
-}
 
-.scroll-page img {
-  width: 100%;                   /* Forces image to stretch/shrink to 100% width */
-  height: 100%;                  /* Matches the height of the container */
-  object-fit: cover;             /* Scaled to fill; crops the edges if aspect ratios don't match */
-  object-position: center;       /* Keeps the center of the image focused */
-}
 </style>
 </head>
 
 <body ">
  
  <div class="vertical-scroll-container">
-  <div class="scroll-card"><img src="CA-IMG-1999.JPG" alt="Item 1"></div>
-  <div class="scroll-card"><img src="CA-IMG-1982.JPG" alt="Item 2"></div>
-  <div class="scroll-card"><img src="CA-IMG-1939-1945.JPG" alt="Item 3"></div>
+  <div >
+  <figure >
+  <img style="width: 100%; height: 100%; object-fit: cover" src="CA-IMG-1999.JPG" alt="Item 2">
+  <figcaption style="background-color: grey; color: white; font-style: italic; padding: 12px; text-align: center;">1999 CE</figcaption>
+  </figure>
+  </div>
+  <div >
+  <figure>
+  <img style="width: 100%; height: 100%; object-fit: cover" src="CA-IMG-1982.JPG" alt="Item 2">
+  <figcaption style="background-color: grey; color: white; font-style: italic; padding: 12px; text-align: center;">1982 CE</figcaption>
+  </figure>
+  </div>
+  <div >
+  <figure>
+  <img style="width: 100%; height: 100%; object-fit: cover" src="CA-IMG-1939-1945.JPG" alt="Item 3">
+   <figcaption style="background-color: grey; color: white; font-style: italic; padding: 12px; text-align: center;">1939-1945 CE</figcaption>
+   </figure>
+  </div>
 </div>
 </body>
 </html>
