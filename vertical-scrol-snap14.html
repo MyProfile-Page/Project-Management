@@ -87,8 +87,8 @@
 /* Caption on top of the image */
 .caption-overlay-top {
   position: absolute;
-  top: 22vh;          /* Pins caption to the top */
-  left: 2%;
+  top: 25vh;          /* Pins caption to the top */
+  left: 1.3%;
   width: 50%;
  /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
   color: red;
@@ -101,7 +101,7 @@
   position: absolute;
   top: 3vh;          /* Pins caption to the top */
   left: 2%;
-  width: 80%;
+  width: 60%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
   color: white;
   padding: 1vh;
@@ -109,15 +109,16 @@
 }
 
 .captop {
- font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+ font-size: clamp(0.8rem, 1.0vw, 1.2rem);
  font-weight: 500;
  font-style: italic;
- color: white; 
+ color: lightyellow; 
  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
  height: 10vh;
  text-align: center;
  align-items: center;
  display: flex;
+ padding-left: 1vw;
 }
 
 .capdate {
@@ -132,16 +133,16 @@
 
 .capln1 {
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
- font-weight: 450;
+ font-weight: 500;
 }
 
 .capln2 {
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
- font-weight: 450;
+ font-weight: 500;
 }
 .capln3 {
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
- font-weight: 450;
+ font-weight: 500;
 }
 @media (max-width: 768px) {
 
@@ -174,7 +175,7 @@
 .caption-overlay-top {
   position: absolute;
   top: 14vh;          /* Pins caption to the top */
-  left: 2%;
+  left: 1.3%;
   width: 70%;
  /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
   color: red;
@@ -187,7 +188,7 @@
   position: absolute;
   top: 3vh;          /* Pins caption to the top */
   left: 2%;   
-  width: 80%;
+  width: 40%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
   color: white;
   padding: 1vh;
@@ -199,12 +200,13 @@
 font-size: clamp(0.9rem, 1.2vw, 1.3rem);
  font-weight: 500;
  font-style: italic;
- color: white;
+ color: lightyellow;
  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
  height: 5vh;
  text-align: center;
  align-items: center;
  display: flex;
+ padding-left: 2.5vw;
 }
 
 .capdate {
@@ -219,16 +221,16 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
 
 .capln1 {
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
- font-weight: 450;
+ font-weight: 500;
 }
 
 .capln2 {
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
- font-weight: 450;
+ font-weight: 500;
 }
 .capln3 {
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
- font-weight: 450;
+ font-weight: 500;
 }
 }
 
@@ -251,7 +253,7 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
 	     <div class="caption-overlay">
 	        <div class="caphdr">History Of Canada Spans From</div><br>
             <div class="capln1">Indigineous civilization To European Contacts</div>
-	        <div class="capln2">To a Modern world state.</div>
+	        <div class="capln2">to a modern world state.</div>
 	     </div>	
     </div>
 	
@@ -297,9 +299,9 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
           <div class="caption-overlay">
 	         <div class="capdate">1,497 CE</div><br>
              <div class="caphdr">John Cabot</div><br>
-             <div class="capln1">was an Italian explorer who</div>
-	         <div class="capln2">sailed under the commission of King Henry VII</div>
-	         <div class="capln3">of England and made landfall in Newfoundland</div>
+             <div class="capln1">was an Italian explorer who sailed under</div>
+	         <div class="capln2">the commission of King Henry VII of</div>
+	         <div class="capln3">England making landfall in Newfoundland</div>
 	      </div>
     </div>
 	
@@ -319,8 +321,9 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
           <div class="caption-overlay">
 	         <div class="capdate">1,608 CE</div><br>
              <div class="caphdr">Samuel de Champlain</div><br>
-             <div class="capln1">founds Québec City as a permanent French</div>
-	         <div class="capln2">settlement and the capital of New France.</div>	         
+             <div class="capln1">founds Québec City as a permanent</div>
+	         <div class="capln2">French settlement and the capital</div>	
+             <div class="capln3">of New France.</div>				 
 	      </div>
     </div>
 	
@@ -351,8 +354,8 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
           <div class="caption-overlay">
 	         <div class="capdate">1,763 CE</div><br>
              <div class="caphdr">The Treaty of Paris</div><br>
-             <div class="capln1">formally cedes New France to British control  </div>
-	         <div class="capln2">turning it into a British colony. ,</div>
+             <div class="capln1">formally cedes New France to British</div>
+	         <div class="capln2">control, turning into a British colony</div>
              <div class="capln2">and ends French authority on Qubec.</div>	         
 	      </div>
     </div>
@@ -373,9 +376,9 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
           <div class="caption-overlay">
 	         <div class="capdate">1812-1814 CE</div><br>
              <div class="caphdr">U.S Invasions</div><br>
-             <div class="capln1">Canadian and British forces successfully</div>
-	         <div class="capln2">repel U.S. invasion</div>
-             <div class="capln2"></div>	         
+             <div class="capln1">Canadian and British forces</div>
+	         <div class="capln2">successfully repel</div>
+             <div class="capln3">the U.S. invasion</div>	         
 	      </div>
     </div>
 	
@@ -390,60 +393,96 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
 	      </div>
     </div>
 	
+	<div class="image-card">
+        <img src="CA-IMG-CANADA-1873.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1870-1873 CE</div><br>
+             <div class="caphdr">Provinces Join the federation</div><br>
+             <div class="capln1">Manitoba, British Columbia,</div>
+	         <div class="capln2">and Prince Edward Island</div>
+             <div class="capln2">join the new confederation.</div>	         
+	      </div>
+    </div>
 	
+	<div class="image-card">
+        <img src="CA-IMG-CANADA-PACIFIC-RAILWAY.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1885 CE</div><br>
+             <div class="caphdr">The Pacific Railway</div><br>
+             <div class="capln1">The transcontinental Railway</div>
+	         <div class="capln2">is completed linking</div>
+             <div class="capln2">the country from coast to coast.</div>	         
+	      </div>
+    </div>
 	
+	<div class="image-card">
+        <img src="CA-IMG-ALBERTA-SAS.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1905 CE</div><br>
+             <div class="caphdr">More Join the federation</div><br>
+             <div class="capln1">Alberta and Saskatchewan </div>
+	         <div class="capln2">join the federal Dominion</div>
+             <div class="capln2">of Canada as Provinces.</div>	         
+	      </div>
+    </div>
 	
+	<div class="image-card">
+        <img src="CA-IMG-1914-1918.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1914-1918 CE</div><br>
+             <div class="caphdr">World War I</div><br>
+             <div class="capln1">Canada fights alongside the </div>
+	         <div class="capln2">Allies establishing a strong</div>
+             <div class="capln2">international identity.</div>	         
+	      </div>
+    </div>
 	
+	<div class="image-card">
+        <img src="CA-IMG-1931.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1931 CE</div><br>
+             <div class="caphdr">Legislative independence</div><br>
+             <div class="capln1">Statute of Westminster grants </div>
+	         <div class="capln2">Canada legislative independence</div>
+             <div class="capln2">from the British Parliament.</div>	         
+	      </div>
+    </div>
 	
+	<div class="image-card">
+        <img src="CA-IMG-1939-1945.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1939-1945 CE</div><br>
+             <div class="caphdr">World War II</div><br>
+             <div class="capln1">Canada plays a major role  </div>
+	         <div class="capln2">in World War II and experiencese</div>
+             <div class="capln2">a massive postwar economic boom.</div>	         
+	      </div>
+    </div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<div class="image-card">
+        <img src="CA-IMG-1982.JPG" alt="Description">
+          <div class="caption-overlay">
+	         <div class="capdate">1982 CE</div><br>
+             <div class="caphdr">Constitution Act</div><br>
+             <div class="capln1">Queen Elizabeth II signs the Act</div>
+	         <div class="capln2">Patriating Canada constitution and</div>
+	         <div class="capln3">establish the Charter of Freedom</div>
+	      </div>
+    </div>	
 	
 	
 	<div class="image-card">  
         <img src="CA-IMG-1999.JPG" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1999 CE</div><br>
-             <div class="caphdr">Constitution Act</div><br>
-             <div class="capln1">Queen Elizabeth II signs the Constitution Act ll</div>
-	         <div class="capln2">The Charter of Rights and Freedom</div>
+             <div class="caphdr">Third territory</div><br>
+             <div class="capln1">Nunavut is established</div>
+	         <div class="capln2">as third territory, separating</div>
+			 <div class="capln3">from the Northwest Territories.</div
 	      </div>
     </div>
   
-    <div class="image-card">
-        <img src="CA-IMG-1982.JPG" alt="Description">
-          <div class="caption-overlay">
-	         <div class="capdate">1982 CE</div><br>
-             <div class="caphdr">Constitution Act</div><br>
-             <div class="capln1">Queen Elizabeth II signs the Constitution Act ll</div>
-	         <div class="capln2">Patriating Canada constitution and establish</div>
-	         <div class="capln3">The Charter of Rights and Freedom</div>
-	      </div>
-    </div>
+    
 </div>
  
   
