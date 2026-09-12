@@ -52,7 +52,7 @@
   width: 60%;
 }
 
-/*     Working CSS down     */ 
+/*     Working CSS down from HERE    */ 
 
 .bodycls {
  line-height: 1.0; 
@@ -65,7 +65,7 @@
   flex-direction: column;
   width: 50%;                   /* 100% mobile screen width */
   margin: 0 auto;
-  border: 0.2vw solid red;   
+  border: 0.0vw solid red;   
 }
 
 /* Parent wrapper for each image */
@@ -87,9 +87,9 @@
 /* Caption on top of the image */
 .caption-overlay-top {
   position: absolute;
-  top: 3vh;          /* Pins caption to the top */
-  left: 30%;
-  width: 40%;
+  top: 22vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 50%;
  /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
   color: red;
   padding: 1vh;
@@ -99,7 +99,7 @@
 /* Caption on top of the image */
 .caption-overlay {
   position: absolute;
-  top: 18vh;          /* Pins caption to the top */
+  top: 3vh;          /* Pins caption to the top */
   left: 2%;
   width: 80%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
@@ -109,13 +109,15 @@
 }
 
 .captop {
- font-size: clamp(1.1rem, 1.4vw, 1.7rem);
+ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
  font-weight: 500;
  font-style: italic;
- color: red;
- text-decoration: underline;
- /* background: lightgrey;  */
- 
+ color: white; 
+ background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+ height: 10vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
 }
 
 .capdate {
@@ -142,6 +144,7 @@
  font-weight: 450;
 }
 @media (max-width: 768px) {
+
 .scroll-container {
   display: flex;
   overflow-y: auto; /* or overflow-y depending on your layout */
@@ -149,7 +152,7 @@
   flex-direction: column;
   width: 90%;                   /* 100% mobile screen width */
   margin: 0 auto;
-  border: 0.2vw solid red;   
+  border: 0.0vw solid red;   
 }
 
 /* Parent wrapper for each image */
@@ -170,9 +173,9 @@
 
 .caption-overlay-top {
   position: absolute;
-  top: 2vh;          /* Pins caption to the top */
-  left: 30%;
-  width: 60%;
+  top: 19vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 70%;
  /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
   color: red;
   padding: 1vh;
@@ -182,7 +185,7 @@
 /* Caption on top of the image */
 .caption-overlay {
   position: absolute;
-  top: 17vh;          /* Pins caption to the top */
+  top: 3vh;          /* Pins caption to the top */
   left: 2%;   
   width: 80%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
@@ -193,11 +196,16 @@
 
 .captop {
 
-font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+font-size: clamp(0.9rem, 1.2vw, 1.3rem);
  font-weight: 500;
  font-style: italic;
- color: red;
+ color: white;
  text-decoration: underline;
+ background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+ height: 8vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
 }
 
 .capdate {
@@ -235,10 +243,11 @@ font-size: clamp(1.2rem, 1.6vw, 1.8rem);
  <div class="scroll-container">
  
     <div class="image-card">  
-       <img src="canada-landescape1.JPG" alt="Description">
+       <img src="CA-IMG-CANADA-FLAG.JPG" alt="Description">
 	     <div class="caption-overlay-top">
-	        <div class="captop">Down The TimeLine</div><br> 
-            		
+	        <div class="captop">Down The Memory lane</div><br> 
+			
+			            		
 	     </div>	
 	     <div class="caption-overlay">
 	        <div class="caphdr">History Of Canada Spans From</div><br>
