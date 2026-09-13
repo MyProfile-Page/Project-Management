@@ -13,7 +13,7 @@
 /*     Working CSS down from HERE    */ 
 
 .bodycls {
- line-height: 1.0; 
+ line-height: 0.8; 
 }
 
 .scroll-container {
@@ -46,7 +46,7 @@
 /* Caption on top of the image */
 .caption-overlay-top {
   position: absolute;
-  top: 34vh;          /* Pins caption to the top */
+  top: 20vh;          /* Pins caption to the top */
   left: 2%;
   width: 50%;
   background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
@@ -82,27 +82,34 @@
 }
 
 .capdate {
- font-size: clamp(1.1rem, 1.4vw, 1.7rem);
+ font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
  }
 
 .caphdr {
- font-size: clamp(0.9rem, 1.1vw, 1.6rem);
+ font-size: clamp(0.6rem, 0.8vw, 1.3rem);
  font-weight: 500;
 }
 
 .capln1 {
- font-size: clamp(0.8rem, 1.0vw, 1.2rem);
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
  font-weight: 500;
 }
 
 .capln2 {
- font-size: clamp(0.8rem, 1.0vw, 1.2rem);
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
  font-weight: 500;
 }
 .capln3 {
- font-size: clamp(0.8rem, 1.0vw, 1.2rem);
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
  font-weight: 500;
+}
+
+.gap1vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+.gap1-5vh {
+  height: 1.5vh;  /* or any size you want; mobile = desktop */
 }
 
 @media (max-width: 768px) {
@@ -136,7 +143,7 @@
 
 .caption-overlay-top {
   position: absolute;
-  top: 17vh;          /* Pins caption to the top */
+  top: 8vh;          /* Pins caption to the top */
   left: 2%;
   width: 60%;
   background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
@@ -196,6 +203,13 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
  font-size: clamp(0.8rem, 1.0vw, 1.2rem);
  font-weight: 500;
 }
+
+.gap1vh {
+  height: 0.75vh;  /* or any size you want; mobile = desktop */
+}
+.gap1-5vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
 }
 
 </style>
@@ -215,8 +229,10 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
 			            		
 	     </div>	
 	     <div class="caption-overlay">
-	        <div class="capdate">History Of Canada</div><br>
-			<div class="capdate">Spans From</div><br>
+	        <div class="capdate">History Of Canada</div>
+			<div class="gap1-5vh"></div>
+			<div class="capdate">Spans From</div>
+			<div class="gap1-5vh"></div>
             <div class="capln1">Indigineous civilization To European</div>
 	        <div class="capln2">Contacts to a modern world state.</div>
 	     </div>	
@@ -228,8 +244,10 @@ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
 	<div class="image-card">  
         <img src="CA-IMG-BERINGIA.JPG" alt="Description">
           <div class="caption-overlay">
-	         <div class="capdate">30,000–15,000 BC</div><br>
-             <div class="caphdr">The First Migration</div><br>
+	         <div class="capdate">30,000–15,000 BC</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">The First Migration</div>
+			 <div class="gap1-5vh"></div>
              <div class="capln1">First peoples cross into North America</div>
 	         <div class="capln2">from Asia, establishing rich</div>
 			 <div class="capln2">and diverse Indigenous societies.</div>
