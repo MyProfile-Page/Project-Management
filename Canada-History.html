@@ -48,7 +48,7 @@
 /* Caption on top of the image */
 .caption-overlay-top {
   position: absolute;
-  top: 36vh;          /* Pins caption to the top */
+  top: 38vh;          /* Pins caption to the top */
   left: 2%;
   width: 40%;
   background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
@@ -58,9 +58,34 @@
 }
 
 /* Caption on top of the image */
+.caption-overlay-edu {
+  position: absolute;
+  top: 1vh;          /* Pins caption to the top */
+  left: 25%;
+  width: 44%;
+  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  color: yellow;
+  padding: 1vh;
+  box-sizing: border-box; 
+  height: 5vh;  
+}
+
+/* Caption on top of the image */
 .caption-overlay {
   position: absolute;
   top: 3vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: white;
+  padding: 2vh;
+  box-sizing: border-box;  
+}
+
+/* Caption on top of the image */
+.caption-overlay-flag {
+  position: absolute;
+  top: 7vh;          /* Pins caption to the top */
   left: 2%;
   width: 45%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
@@ -81,6 +106,19 @@
  display: flex;
  padding-left: 0.5vw;
  padding-top: 3vh;
+}
+.capedu {
+ font-size: clamp(0.6rem, 0.7vw, 1.2rem);
+ font-weight: 500;
+ font-style: italic;
+ color: yellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 1.0vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 1.5vh;
 }
 
 .capdate {
@@ -157,6 +195,32 @@
 }
 
 /* Caption on top of the image */
+.caption-overlay-edu {
+  position: absolute;
+  top: 1vh;          /* Pins caption to the top */
+  left: 18%;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  color: yellow;
+  padding: 1vh;
+  box-sizing: border-box; 
+  height: 3.5vh;  
+}
+
+/* Caption on top of the image */
+.caption-overlay-flag {
+  position: absolute;
+  top: 6vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 55%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: white;
+  padding: 1.8vh;
+  box-sizing: border-box;  
+}
+
+
+/* Caption on top of the image */
 .caption-overlay {
   position: absolute;
   top: 2vh;          /* Pins caption to the top */
@@ -166,6 +230,20 @@
   color: white;
   padding: 1.5vh;
   box-sizing: border-box;  
+}
+
+.capedu {
+ font-size: clamp(0.6rem, 0.7vw, 1.2rem);
+ font-weight: 500;
+ font-style: italic;
+ color: yellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 0.8vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.7vw;
+ padding-top: 1.2vh;
 }
 
 .captop {
@@ -308,18 +386,19 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
  
     <div class="image-card">  
        <img src="UNSP-CA-FLAG-2026.JPG" alt="Description">
-	     <div class="caption-overlay-top">
-	        <div class="captop">For Educational Purpose only!</div><br> 
-			
-			            		
+	     <div class="caption-overlay-edu">
+	        <div class="capedu">This Site is For Educational Purpose only!</div><br>		            		
 	     </div>	
-	     <div class="caption-overlay">
+	     <div class="caption-overlay-flag" >
 	        <div class="capdate">History Of Canada</div>
 			<div class="gap1-5vh"></div>
 			<div class="capdate">Spans From</div>
 			<div class="gap1-5vh"></div>
             <div class="capln1">Indigineous civilization To European</div>
 	        <div class="capln2">Contacts to a modern world state.</div>
+	     </div>	
+		 <div class="caption-overlay-top">
+	        <div class="captop">Down The Memory Lane.</div><br>			            		
 	     </div>	
     </div>
 	
