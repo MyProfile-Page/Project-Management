@@ -6,7 +6,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, noindex, nofollow">
+  
 
  <style>
 
@@ -152,6 +153,22 @@
   height: 1.5vh;  /* or any size you want; mobile = desktop */
 }
 
+.overlay30000 {
+ top: 32vh; left: 26%; width: 40%;
+ }
+  
+ .overlay1982 {
+ top: 6vh;
+ }
+ .bottom {
+ background: black; color: white; width: 90%; padding: 1vw; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center;
+ } 
+
+
+
+
+
+
 @media (max-width: 768px) {
 
 .scroll-container {
@@ -292,6 +309,17 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 .gap1-5vh {
   height: 0.50vh;  /* or any size you want; mobile = desktop */
 }
+
+.overlay30000 {
+ top: 26vh; left: 20%; width: 30%;
+ }
+  
+ .overlay1982 {
+ top: 4vh;
+ }
+ .bottom {
+ background: black; color: white; width: 100%; padding: 1vw; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center;
+ } 
 }
 
 </style>
@@ -299,97 +327,14 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 
 <body class="bodycls" oncontextmenu="return false;">
 
- <!-- 
  
- Enhancements
-
-Here are a few common ways to elevate a CSS scroll-snap timeline:Smooth Scrolling: Adding scroll-behavior: smooth; to your scroll container makes transitions feel fluid rather than abrupt when navigating.Scroll-Padding: If you have a fixed header, using scroll-padding-top or scroll-padding-left ensures your timeline content doesn't snap underneath your navigation bar.Visual Indicators: Adding subtle fade-in effects or scale transitions to the captions using CSS intersections or basic hover states can make the timeline feel highly interactive.Typography & Spacing: Elevating the design often comes down to generous whitespace, high-contrast typography, and a deliberate color palette.If you want to refine the design further, let me know:Is your timeline scrolling horizontally or vertically?Would you like to share your current CSS code so we can polish the styling together?Are there any specific design styles you are aiming for (e.g., minimalist, dark mode, bold and colorful)?    AI can make mistakes, so double-check responses  
-
-Approaching organizations to build free chronologies is an excellent strategy. It allows you to build a diverse portfolio, test your HTML/CSS scroll-snap template under different content constraints, and establish trust with potential future clients.When looking for organizations that would benefit most from a history or timeline feature—but likely lack the budget or technical staff to build one—you should target entities where heritage, milestones, and community impact are central to their identity.Here are the best types of organizations to approach for your portfolio-building phase:1. Local Non-Profits and CharitiesNon-profits rely heavily on storytelling to drive donations and volunteer engagement. A visual chronology showing their founding, major project launches, and impact milestones can be a powerful asset for their fundraising pages.Who to look for: Local food banks, animal shelters, community youth centers, or environmental conservation groups.The Pitch: "I can help you visually demonstrate your organization's historical impact to donors using a modern, interactive timeline on your website."2. Historical Societies and Small MuseumsThese organizations are literally in the business of history, but they are notoriously underfunded and often have outdated websites. They have a wealth of archival photos and text captions that are perfect for a scroll-snap chronology.Who to look for: Town or county historical societies, small specialized museums (e.g., a local railway or textile museum), or heritage preservation trusts.The Pitch: "I can digitize one of your physical exhibits or town history timelines into an interactive online experience for your visitors."3. Local Sports Clubs and Amateur LeaguesCommunity sports clubs often have deep roots in a town, spanning decades of championships, venue changes, and famous local alumni.Who to look for: Long-running community football (soccer) clubs, cricket clubs, rowing clubs, or minor league teams.The Pitch: "I'd love to build a 'Hall of Fame' or club history timeline to celebrate your upcoming anniversary and display your historic victories."4. Generational Family BusinessesSmall local businesses that have survived for 30, 50, or 100 years love to brag about their longevity. It establishes massive trust with their customers.Who to look for: Local multi-generational bakeries, family-owned funeral homes, long-standing construction companies, or historic local diners.The Pitch: "To celebrate your decades of serving our community, I'd like to build an interactive 'Our Story' feature for your website completely free of charge."5. Community Libraries and Public SchoolsSchools and libraries frequently celebrate major milestones (e.g., "50 years of our school building" or "a century of our library system") and love to showcase archive photos of old classrooms or past graduating classes.Who to look for: Public libraries running community archive projects, or local high school alumni associations.The Pitch: "I can help create a digital time capsule for the library/school archive to make our local history highly engaging for younger generations."Tips for Making Your Approach EffectivePick an upcoming milestone: Look for organizations celebrating an anniversary soon (e.g., 10th, 25th, or 50th year). This gives them an immediate, timely reason to accept your offer.Create a "Demo" first: Before reaching out, take 3 or 4 public images and text snippets from their current website or social media. Plug them into your scroll-snap template so you can send them a working link showing exactly what their data would look like in your system. Seeing is believing!Be clear about "No Hidden Costs": Make sure they know it is 100% free, that you are building your portfolio, and that they are under no obligation to pay anything or hire you later.Would you like me to help you draft a short, polite email template that you can customize and send out to these local organizations?  
-
-That is a massive advantage! Having Firestore experience means you aren’t just offering a static template—you are offering a dynamic, future-proof web application.Instead of hardcoding text and images into the HTML, you can tell these organizations that you will build them an easy-to-use content management system (CMS). They can add new milestones, edit dates, or upload photos directly into Firestore, and the scroll-snap timeline will update automatically. This completely removes the fear that their timeline will become outdated the moment they want to add a new event.Here is a short, professional outreach template tailored for email or contact forms, highlighting your technical capabilities.Email Template: Dynamic Timeline ProposalSubject: Complimentary Interactive History Timeline for [Organization Name]Hi [Name of Contact, or "the [Organization Name] Team"],My name is [Your Name], and I am a local web developer. I’ve been following [Organization Name] and really admire the impact you’ve made in our community, especially with [mention a specific project, anniversary, or milestone you found on their website/social media].To help celebrate your journey, I would love to build an interactive digital history timeline for your website completely free of charge.I have developed a modern, smooth-scrolling chronology template that handles historical text and images beautifully. Furthermore, because I integrate this with Google Firestore (a cloud database), the system is fully dynamic. This means:Easy Updates: You can easily add new milestones or edit existing ones anytime without needing to write code.No Maintenance Needed: The data updates automatically in real-time.Completely Free: I am currently expanding my development portfolio, so I am offering this build, database setup, and integration entirely free of cost.If you are open to it, I can take a few photos and milestones from your current website to create a quick, private demo link so you can see exactly how it looks and works before making a decision.Would you be open to seeing a quick demo next week?Best regards,[Your Name][Your Portfolio Link or LinkedIn, if available][Your Contact Information]
-
-Here is how you should structure the fields inside each event document:id (String): Unique identifier (automatically generated by Firestore).year (Number or String): The year of the event (e.g., 1995 or "June 2012").title (String): A short, punchy headline for the milestone.caption (String): The detailed description or story of the event.imageUrl (String): The web link to the image (hosted on Firebase Storage or an external URL).sortOrder (Number): A sequential number (e.g., 1, 2, 3) or a standardized timestamp. This is crucial because Firestore does not retrieve documents in order by default; you must use this field to sort them chronologically.2. The HTML StructureKeep your HTML simple. Create an empty container where JavaScript will inject your scroll-snap items dynamically.html<div class="scroll-container" id="chronology-timeline">
-  
-</div>
-Use code with caution.3. JavaScript ImplementationThis script initializes Firebase, fetches your events sorted by your custom order, loops through them, and injects them into your HTML layout.(Note: This uses the modern Firebase v9+ / v10+ modular syntax).javascript// Import the required Firebase SDK functions
-import { initializeApp } from "https://gstatic.com";
-import { getFirestore, collection, getDocs, query, orderBy } from "https://gstatic.com";
-
-// 1. Your Firebase Configuration (Copy this from your Firebase Console)
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_://firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_://appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-// 2. Initialize Firebase and Firestore
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// 3. Function to fetch data and build the timeline
-async function loadChronology() {
-  const timelineContainer = document.getElementById('chronology-timeline');
-  
-  try {
-    // Query the 'timeline_events' collection, ordered chronologically
-    const timelineQuery = query(collection(db, "timeline_events"), orderBy("sortOrder", "asc"));
-    const querySnapshot = await getDocs(timelineQuery);
-    
-    // Clear any loading text inside the container
-    timelineContainer.innerHTML = "";
-
-    // Loop through each document in Firestore
-    querySnapshot.forEach((doc) => {
-      const eventData = doc.data();
-
-      // Create the structure for a single scroll-snap section
-      const eventElement = document.createElement('section');
-      eventElement.className = 'timeline-item'; // Assumes you have CSS scroll-snap-align attached here
-
-      eventElement.innerHTML = `
-        <div class="image-wrapper">
-          <img src="${eventData.imageUrl}" alt="${eventData.title}" loading="lazy">
-        </div>
-        <div class="caption-wrapper">
-          <span class="timeline-date">${eventData.year}</span>
-          <h2>${eventData.title}</h2>
-          <p>${eventData.caption}</p>
-        </div>
-      `;
-
-      // Append the new section into your main scroll container
-      timelineContainer.appendChild(eventElement);
-    });
-
-  } catch (error) {
-    console.error("Error loading timeline data: ", error);
-    timelineContainer.innerHTML = "<p>Failed to load the timeline. Please try again later.</p>";
-  }
-}
-
-// Execute the function when the page loads
-window.addEventListener('DOMContentLoaded', loadChronology);
-Use code with caution.Why this setup works perfectly for your offer:By setting up the code this way, your layout remains entirely detached from the content. If the organization wants to change the sequence of events, they don't touch code
-
-How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These platforms offer high-resolution, completely free images that you can use for commercial or non-commercial projects without needing permission (though attribution is appreciated). You can search for terms like "Canada landscape," "Ottawa," "Canadian flag," or "Toronto history."Wikimedia Commons: This is the best source for actual historical photos. Many older images of Canadian history (like early prime ministers, historic railways, or vintage maps) are in the Public Domain, meaning their copyright has expired, and anyone can use them freely. Just check the license on the image page to ensure it is marked as Public Domain or Creative Commons (CC BY).Library and Archives Canada (LAC): Canada's national archives have thousands of historical photographs online. Many are free to use, especially if they are in the public domain. They usually state the copyright status clearly under each archival item.Action Plan for Your Template:Before you show this template to any potential clients or organizations, take 30 minutes to swap out your current image URLs in Firestore with safe images from Unsplash or public domain images from Wikimedia Commons. This ensures your portfolio is 100% legally clean and gives a highly professional first impression.If you want, tell me 3 or 4 specific historical events featured in your Canadian History timeline, and I can help you find or describe the exact keywords to use to locate safe, public-domain images for them.
-
-How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These platforms offer high-resolution, completely free images that you can use for commercial or non-commercial projects without needing permission (though attribution is appreciated). You can search for terms like "Canada landscape," "Ottawa," "Canadian flag," or "Toronto history."Wikimedia Commons: This is the best source for actual historical photos. Many older images of Canadian history (like early prime ministers, historic railways, or vintage maps) are in the Public Domain, meaning their copyright has expired, and anyone can use them freely. Just check the license on the image page to ensure it is marked as Public Domain or Creative Commons (CC BY).Library and Archives Canada (LAC): Canada's national archives have thousands of historical photographs online. Many are free to use, especially if they are in the public domain. They usually state the copyright status clearly under each archival item.Action Plan for Your Template:Before you show this template to any potential clients or organizations, take 30 minutes to swap out your current image URLs in Firestore with safe images from Unsplash or public domain images from Wikimedia Commons. This ensures your portfolio is 100% legally clean and gives a highly professional first impression.If you want, tell me 3 or 4 specific historical events featured in your Canadian History timeline, and I can help you find or describe the exact keywords to use to locate safe, public-domain images for them.
-
-
- -->
  
  <div class="scroll-container">
  
     <div class="image-card">  
        <img src="UNSP-CA-FLAG-2026.JPG" alt="Description">
-	     <div class="caption-overlay-edu">
-	        <div class="capedu">This Site is For Educational Purpose only!</div><br>		            		
-	     </div>	
-	     <div class="caption-overlay-flag" >
+	    
+	     <div class="caption-overlay" >
 	        <div class="capdate">History Of Canada</div>
 			<div class="gap1-5vh"></div>
 			<div class="capdate">Spans From</div>
@@ -397,20 +342,18 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
             <div class="capln1">Indigineous civilization > European</div>
 	        <div class="capln2">Contacts > a modern world state.</div>
 	     </div>	
-		 <div class="caption-overlay-top">
-	        <div class="captop">Down The Memory Lane.</div><br>			            		
-	     </div>	
+		 
     </div>
 	
 	
 	
 	
 	<div class="image-card">  
-        <img src="CA-IMG-BERINGIA.JPG" alt="Description">
-          <div class="caption-overlay">
+        <img src="BC30000.jpg" alt="Description">
+          <div class="caption-overlay overlay30000" >
 	         <div class="capdate">30,000–15,000 BC</div>
 			 <div class="gap1-5vh"></div>
-             <div class="caphdr">The First Migration</div>
+             <div class="caphdr">The First Migration Through Baringia</div>
 			 <div class="gap1-5vh"></div>
              <div class="capln1">First peoples cross into North America</div>
 	         <div class="capln2">from Asia, establishing rich</div>
@@ -419,7 +362,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
   
     <div class="image-card">
-        <img src="CA-IMG-5000-4000.JPG" alt="Description">
+        <img src="BC5000.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">5,000 BC - 4,000 BC</div>
 			 <div class="gap1-5vh"></div>
@@ -432,7 +375,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">  
-        <img src="CA-IMG-NORSE.JPG" alt="Description">
+        <img src="CE1000.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">999 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -446,7 +389,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
   
     <div class="image-card">
-        <img src="CA-IMG-1497-JC.JPG" alt="Description">
+        <img src="CE1497.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1,497 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -459,7 +402,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="JACQUES-1534.JPG" alt="Description">
+        <img src="CE1534.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1,534 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -472,7 +415,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="QUBEC-CITY-1608.JPG" alt="Description">
+        <img src="CE1608.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1,608 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -485,7 +428,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="HUDSONBAY-1670.JPG" alt="Description">
+        <img src="CE1670.jfif" alt="Description">
           <div class="caption-overlay" >
 	         <div class="capdate">1,670 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -498,7 +441,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="PLAINSOFABRAHAM-1759.JPG" alt="Description">
+        <img src="CE1759.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1,759 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -511,7 +454,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="TREATYOFPARIS-1763.jpg" alt="Description">
+        <img src="CE1763.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1,763 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -524,8 +467,8 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CONSTACT-1791.JPG" alt="Description">
-          <div class="caption-overlay" style="top: 5vh;">
+        <img src="CE1791.jfif" alt="Description">
+          <div class="caption-overlay " >
 	         <div class="capdate">1,791 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The Constitutional Act</div>
@@ -537,7 +480,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-WAR1812.JPG" alt="Description">
+        <img src="CE1812.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1812-1814 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -550,8 +493,8 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CANCONF-1867.JPG" alt="Description">
-          <div class="caption-overlay" style="top: 8vh;">
+        <img src="CE1867.jfif" alt="Description">
+          <div class="caption-overlay " >
 	         <div class="capdate">1867 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Canada Formed</div>
@@ -563,7 +506,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-CANADA-1873.JPG" alt="Description">
+        <img src="CE1870.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1870-1873 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -576,8 +519,8 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="PACFRAILWAY-1885.JPG" alt="Description">
-          <div class="caption-overlay" style="top: 10vh;">
+        <img src="CE1885.jfif" alt="Description">
+          <div class="caption-overlay" >
 	         <div class="capdate">1885 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The Pacific Railway</div>
@@ -589,7 +532,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-ALBERTA-SAS.JPG" alt="Description">
+        <img src="CE1905.jfif" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1905 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -602,7 +545,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-1914-1918.JPG" alt="Description">
+        <img src="WW1-1914-1918.jpg" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1914-1918 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -615,7 +558,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-1931.JPG" alt="Description">
+        <img src="CE1931.jpg" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1931 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -628,7 +571,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-1939-1945.JPG" alt="Description">
+        <img src="WW2-1939-1945.jpg" alt="Description">
           <div class="caption-overlay">
 	         <div class="capdate">1939-1945 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -641,8 +584,8 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
     </div>
 	
 	<div class="image-card">
-        <img src="CA-IMG-1982.JPG" alt="Description">
-          <div class="caption-overlay">
+        <img src="CE1982.JPG" alt="Description">
+          <div class="caption-overlay overlay1982" >
 	         <div class="capdate">1982 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Constitution Act</div>
@@ -655,7 +598,7 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
 	
 	
 	<div class="image-card">  
-        <img src="NUNAVANT-1999.JPG" alt="Description">
+        <img src="NUNAVUT-1999-2.JPG" alt="Description">
           <div class="caption-overlay" >
 	         <div class="capdate">1999 CE</div>
 			 <div class="gap1-5vh"></div>
@@ -667,21 +610,23 @@ How to Find Safe, Free Images for Canadian History:Unsplash and Pexels: These pl
 	      </div>
     </div>
 	
-	<div class="image-card">  
-        <img src="ST-PAUL-CATHEDERAL-LONDON.JPG" alt="Description">
-          <div class="caption-overlay" >
-	         <div class="capdate">2026 CE</div>
-			 <div class="gap1-5vh"></div>
-             <div class="caphdr">London Ontario</div>
-			 <div class="gap1-5vh"></div>
-             <div class="capln1">St. Paul</div>
-	         <div class="capln2">Cathederal</div>
-			 <div class="capln3">Church.</div
-	      </div>
-    </div>
-  
-    
+	
+   
+	
+     
 </div>
-<P>&nbsp</P>
+
+   
+	         
+<P></P>	      		  
+
+<div class ="bottom">          
+	         This is a non-commercial site 
+	      </div>
+	  
+  <P></P>	     
+	         
+	     		  
+		 
 </body>
 </html>
