@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Firestore Table (IIS + Localhost)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+  .body_cls {
+          background-color: red;
+          background: linear-gradient(to right, #007bff, #00c6ff);
+          background: white;
+          background: #f7f568;
+          background: #f7f681;
+          background: LightCyan;
+		  background: white;
+	/*	  background-color: black;   */
+         
+      /*    background:  */
+          line-height: 1.0;         
+            }
+ .scroll-container {
+  display: flex;
+  overflow-y: auto; /* or overflow-y depending on your layout */
+  scroll-snap-type: y mandatory; /* optional for smooth snapping */
+  flex-direction: column;
+  width: 50%;                   /* 100% mobile screen width */
+  margin: 0 auto;
+  border: 0.0vw solid red;   
+  scroll-behavior: smooth;
+  background: #ccf2ff;
+ 
+  
+}
+
+/* Parent wrapper for each image */
+.image-card {
+  position: relative; /* Makes this the anchor for absolute positioning */
+  flex: 0 0 auto;
+  margin-top: 4vh; 
+  object-fit: cover; 
+  margin-left: 3.15%;
+    
+}
+
+/* Image styling */
+.image-card img {
+  display: block;
+  width: 97%;
+  height: 70vh;
+  filter: brightness(100%);
+   
+  
+}
+
+/* Caption on top of the image */
+.caption-overlay-top {
+  position: absolute;
+  top: 38vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 40%;
+  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  color: red;
+  padding: 1vh;
+  box-sizing: border-box;  
+}
+
+/* Caption on top of the image */
+.caption-overlay-edu {
+  position: absolute;
+  top: 1vh;          /* Pins caption to the top */
+  left: 25%;
+  width: 44%;
+  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  color: yellow;
+  padding: 1vh;
+  box-sizing: border-box; 
+  height: 5vh;  
+}
+
+/* Caption on top of the image */
+.caption-overlay {
+  position: absolute;
+  top: 3vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: white;
+  padding: 2vh;
+  box-sizing: border-box;  
+}
+
+/* Caption on top of the image */
+.caption-overlay-flag {
+  position: absolute;
+  top: 7vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: white;
+  padding: 2vh;
+  box-sizing: border-box;  
+}
+
+.captop {
+ font-size: clamp(0.7rem, 0.8vw, 1.3rem);
+ font-weight: 500;
+ font-style: italic;
+ color: lightyellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 2vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 3vh;
+}
+.capedu {
+ font-size: clamp(0.6rem, 0.7vw, 1.2rem);
+ font-weight: 500;
+ font-style: italic;
+ color: yellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 1.0vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 1.5vh;
+}
+
+.capdate {
+ font-size: clamp(0.8rem, 1.1vw, 1.4rem);
+ font-weight: 550;
+ }
+
+.caphdr {
+ font-size: clamp(0.6rem, 0.8vw, 1.3rem);
+ font-weight: 500;
+}
+
+.capln1 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+ font-weight: 500;
+}
+
+.capln2 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+ font-weight: 500;
+}
+.capln3 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+ font-weight: 500;
+}
+
+.gap1vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+.gap1-5vh {
+  height: 1.5vh;  /* or any size you want; mobile = desktop */
+}
+
+.overlay30000 {
+ top: 32vh; left: 26%; width: 40%;
+ }
+  
+ .overlay1982 {
+ top: 6vh;
+ }
+ .bottom {
+ background: black; color: white; width: 50%; padding: 1vw; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
+ } 
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+.scroll-container {
+  display: flex;
+  overflow-y: auto; /* or overflow-y depending on your layout */
+  scroll-snap-type: y mandatory; /* optional for smooth snapping */
+  flex-direction: column;
+  width: 90%;                   /* 100% mobile screen width */
+  margin: 0 auto;
+  border: 0.0vw solid red;  
+  scroll-behavior: smooth; 
+  background: #ccf2ff;  
+  
+}
+
+/* Parent wrapper for each image */
+.image-card {
+  position: relative; /* Makes this the anchor for absolute positioning */
+  flex: 0 0 auto;
+  margin-top: 3vh; 
+  object-fit: cover; 
+  margin-left: 3.15%;  
+}
+
+/* Image styling */
+.image-card img {
+  display: block;
+  width: 97%;
+  height: 35vh;
+  filter: brightness(125%);
+  
+}
+
+.caption-overlay-top {
+  position: absolute;
+  top: 20vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 45%;
+  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  color: red;
+  padding: 1vh;
+  box-sizing: border-box;  
+}
+
+/* Caption on top of the image */
+.caption-overlay-edu {
+  position: absolute;
+  top: 1vh;          /* Pins caption to the top */
+  left: 21%;
+  width: 52%;
+  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  color: yellow;
+  padding: 1vh;
+  box-sizing: border-box; 
+  height: 3.5vh;  
+}
+
+/* Caption on top of the image */
+.caption-overlay-flag {
+  position: absolute;
+  top: 5vh;          /* Pins caption to the top */
+  left: 2%;
+  width: 54%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: white;
+  padding: 1.3vh;
+  box-sizing: border-box;  
+}
+
+
+/* Caption on top of the image */
+.caption-overlay {
+  position: absolute;
+  top: 2vh;          /* Pins caption to the top */
+  left: 2%;   
+  width: 64%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: white;
+  padding: 1.3vh;
+  box-sizing: border-box;  
+}
+
+.capedu {
+ font-size: clamp(0.6rem, 0.7vw, 1.2rem);
+ font-weight: 500;
+ font-style: italic;
+ color: yellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 0.8vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.7vw;
+ padding-top: 1.0vh;
+}
+
+.captop {
+
+font-size: clamp(0.7rem, 1.0vw, 1.1rem);
+ font-weight: 500;
+ font-style: italic;
+ color: lightyellow;
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 0.75vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 1.0vh;
+ 
+}
+
+.capdate {
+ font-size: clamp(0.8rem, 1.1vw, 1.4rem);
+ font-weight: 550;
+}
+
+.caphdr {
+ font-size: clamp(0.7rem, 1.0vw, 1.3rem);
+ font-weight: 500;
+}
+
+.capln1 {
+ font-size: clamp(0.7rem, 0.9vw, 1.2rem);
+ font-weight: 500;
+}
+
+.capln2 {
+  font-size: clamp(0.7rem, 0.9vw, 1.2rem);
+ font-weight: 500;
+}
+.capln3 {
+  font-size: clamp(0.7rem, 0.9vw, 1.2rem);
+ font-weight: 500;
+}
+
+.gap1vh {
+  height: 0.50vh;  /* or any size you want; mobile = desktop */
+}
+.gap1-5vh {
+  height: 0.50vh;  /* or any size you want; mobile = desktop */
+}
+
+.overlay30000 {
+ top: 14vh; left: 23%; width: 58%;
+ }
+  
+ .overlay1982 {
+ top: 4vh;
+ }
+ .bottom {
+ background: black; color: white; width: 90%; padding: 2vh; font-size: clamp(0.7rem, 0.8vw, 0.9rem); font-weight: 500; text-align: center; margin: 0 auto;
+ } 
+}
+
+
+
+  </style>
+</head>
+
+<body  class="body_cls">
+
+<div class="scroll-container">
+ 
+    <div class="image-card">  
+       <img id="ih1" src="ISLAMIC-HISTORY.JPG" alt="test1">
+	    
+	     <div class="caption-overlay" >
+	        <div class="capdate" id="imageDt">Islamic Chronology</div>
+			<div class="gap1-5vh"></div>
+			<div class="caphdr">Important Dates of the Islamic</div>
+			<div class="capln1">expansion, rapid military advances,</div>
+			<div class="capln2">dynistic rules, power struggle,</div>
+			<div class="capln3">cultural advances and civil wars.</div>
+			
+	     </div>	
+		 
+    </div>
+	
+	
+	
+	
+	<div class="image-card">  
+        <img src="BC2000-IBRAHIM-FIRE1.jpg" alt="Description">
+          <div class="caption-overlay" >
+	         <div class="capdate">2000 BC</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Prophet Ibrahim, was put on fire</div>
+			 <div class="capln1">by King Namrud in the city of Ur</div>
+			 <div class="capln2">Mesapotamia, when he defied </div>
+			 <div class="capln3">his claim of being GOD</div>
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE520-ABRAHA-WMC-PD.jpg" alt="Description">
+          <div class="caption-overlay" >
+	         <div class="capdate">520 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Ethiopian King Abraha Attacked Mecca.</div>
+			 <div class="capln1">His forces & Elephents were crushed</div>
+			 <div class="capln2">to Death from stones, dropped by birds</div>
+			 <div class="capln3">Which all of sudden appeared on the sky</div>
+			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE570-MECCA-WMC-PD.jpg" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">570 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Prophet Muhammad was born</div>
+			 <div class="capln1">as an orphan in the city of Mecca</div>
+			 <div class="capln2">in the tribe Banu-Hashim, who were</div>
+			 <div class="capln3">the custodians of Kaaba at that time</div>
+			
+	      </div>
+    </div>
+  
+     <div class="image-card">  
+        <img src="CE610-MOUNT-HIRA.jpg" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">610 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">First revelation received from</div>
+			 <div class="capln1">Angel Gabriel on Mount Hira</div>
+			 <div class="capln2">Where Prophet used to come regularly</div>
+			 <div class="capln3">to think about GOD </div>
+			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE613-HANDS.jpg" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">613 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Prophet Muhammad begins public</div>
+			 <div class="capln1">preaching in Mecca and was severely</div>
+			 <div class="capln2">opposed by city elites, except few poor</div>
+			 <div class="capln3">who dared to accept Islam risking lives.</div>			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE622-MADINA.jpg" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">622 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Prophet Muhammad receives invitation</div>
+			 <div class="capln1">from Madina and avails this opportunity</div>
+			 <div class="capln2">to establish the first Islamic state in the </div>
+			 <div class="capln3">world. Islamic Calendar starts from here.</div>			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE624-627-UHAD.JPG" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">624-627 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Key battles including Badr, Uhad and </div>
+			 <div class="capln1">the Battle of the Trench are fought</div>
+			 <div class="capln2">between Muslims and non-beleivers. </div>
+			 <div class="capln3">victories in battles consolidated Islam.</div>			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE630-MAKKA-1845.jpg" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">630 CE</div>
+			 <div class="gap1-5vh"></div >
+             <div class="caphdr">Mecca is conquered; Islam gets fully</div>
+			 <div class="capln1">established in the Arabian Peninsula</div>
+			 <div class="capln2">Idols are removed from Kaaba. Haj is</div>
+			 <div class="capln3">performed first time in the Islamic way.</div>			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE632.JPG" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">632 CE</div>
+			 <div class="gap1-5vh"></div >
+             <div class="caphdr">Prophet Muhammad passes away,</div>
+			 <div class="capln1">Abu Bakr becomes the first Caliph</div>
+			 <div class="capln2">initiating the Rashidun Caliphate</div>
+			 <div class="capln3">which lasts for the next 30 years</div>			
+	      </div>
+    </div>
+	
+	<div class="image-card">  
+        <img src="CE632-661-RASHEDEEN.jpg" alt="Description">
+          <div class="caption-overlay " >
+	         <div class="capdate">632-661 CE</div>
+			 <div class="gap1-5vh"></div >
+             <div class="caphdr">Khilafate-Rashdeen (four rightly guided)</div>
+			 <div class="capln1">starts and lasts for the next 30 years,</div>
+			 <div class="capln2">with expansion into Byzantine & Sassanid</div>
+			 <div class="capln3">territories and first civil war in Muslims.</div>			
+	      </div>
+    </div>   
+	
+	
+   
+	
+ <P></P>    
+</div>
+
+   
+	         
+<P></P>	      		  
+
+<div class ="bottom">          
+	         This is a non-commercial site<br> 
+			 Imagery sourced via open-access historical<br>
+			 repositories and public domain archives.
+	      </div>
+	  
+  <P></P>	     
+	         
+	     		  
+		
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  query,
+  orderBy,
+  addDoc, 
+  setDoc,
+  getDocs, 
+  getDoc,
+  deleteDoc, 
+  doc,
+  updateDoc,
+  where,
+  runTransaction,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCSZAx4aG_HY3_B-ZvRfS-Pyp3m5GgKDGs",
+  authDomain: "project-management-fe9a9.firebaseapp.com",
+  projectId: "project-management-fe9a9",
+  storageBucket: "project-management-fe9a9.firebasestorage.app",
+  messagingSenderId: "686798097321",
+  appId: "1:686798097321:web:5cc86a7283990e945b92b8"
+};
+
+
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app); 
+ 
+async function updateImageSources() {
+  try {
+    // 1. Fetch all documents from the Firestore collection
+  //  const querySnapshot = await getDocs(collection(db, "imagepath"));
+//	const querySnapshot = await getDocs(query(collection(db, "imagepath"), where("imageId", "==",   // "image1")));
+	const querySnapshot = await getDocs(
+  query(
+    collection(db, "imagepath"), 
+    where("imageId", ">=", "ih0"),
+    where("imageId", "<", "ih5") // "f" is the character immediately after "e"
+  )
+);
+//	const q = query(collectionRef, where("ownerId", "==", paramId)
+    
+    // 2. Loop through each record in the collection
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const imageId = data.imageId;
+      const imageURL = data.imageURL;
+      
+      // 3. Find the hardcoded HTML <img> element by its ID
+      const imgElement = document.getElementById(imageId);
+      
+      // 4. Assign the URL if the element exists in your HTML
+      if (imgElement) {
+        imgElement.src = imageURL;
+      }
+    });
+  } catch (error) {
+    console.error("Error fetching images from Firestore: ", error);
+  }
+}
+
+// Execute the function
+//  updateImageSources();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+import { db } from "./firebase-config.js"; 
+import { collection, getDocs } from "firebase/firestore";
+
+async function updateImageSources() {
+  try {
+    // 1. Fetch all documents from the Firestore collection
+    const querySnapshot = await getDocs(collection(db, "your-collection-name"));
+    
+    // 2. Loop through each record in the collection
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const imageId = data.imageId;
+      const imageURL = data.imageURL;
+      
+      // 3. Find the hardcoded HTML <img> element by its ID
+      const imgElement = document.getElementById(imageId);
+      
+      // 4. Assign the URL if the element exists in your HTML
+      if (imgElement) {
+        imgElement.src = imageURL;
+      }
+    });
+  } catch (error) {
+    console.error("Error fetching images from Firestore: ", error);
+  }
+}
+
+// Execute the function
+updateImageSources();
