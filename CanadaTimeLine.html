@@ -1,10 +1,17 @@
-<!doctype html><title>digital chronology of Canada</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,noindex,nofollow"><style>/*     Working CSS down from HERE    */ 
-
-.bodycls {
- line-height: 1.0; 
- 
-
-.scroll-container {
+<!doctype html><title>Firestore Table (IIS + Localhost)</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>.body_cls {
+          background-color: red;
+          background: linear-gradient(to right, #007bff, #00c6ff);
+          background: white;
+          background: #f7f568;
+          background: #f7f681;
+          background: LightCyan;
+		  background: white;
+	/*	  background-color: black;   */
+         
+      /*    background:  */
+          line-height: 1.0;         
+            }
+ .scroll-container {
   display: flex;
   overflow-y: auto; /* or overflow-y depending on your layout */
   scroll-snap-type: y mandatory; /* optional for smooth snapping */
@@ -117,12 +124,11 @@
 .capdate {
  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
- 
  }
 
 .caphdr {
- font-size: clamp(0.7rem, 1.0vw, 1.3rem);
- font-weight: 550;
+ font-size: clamp(0.6rem, 0.8vw, 1.3rem);
+ font-weight: 500;
 }
 
 .capln1 {
@@ -147,14 +153,14 @@
 }
 
 .overlay30000 {
-   width: 47%; 
+ top: 32vh; left: 26%; width: 40%;
  }
   
  .overlay1982 {
  top: 6vh;
  }
  .bottom {
- background: black; color: white; width: 90%; padding: 1vw; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
+ background: black; color: white; width: 50%; padding: 1vw; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
  } 
 
 
@@ -237,12 +243,12 @@
   position: absolute;
   top: 2vh;          /* Pins caption to the top */
   left: 2%;   
-  width: 64%;
+  width: 80%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
   color: white;
   padding: 1.3vh;
   box-sizing: border-box;  
- }
+}
 
 .capedu {
  font-size: clamp(0.6rem, 0.7vw, 1.2rem);
@@ -277,8 +283,6 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 .capdate {
  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
- text-decoration: underline;
- 
 }
 
 .caphdr {
@@ -308,7 +312,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 }
 
 .overlay30000 {
- width: 62%;
+ top: 14vh; left: 23%; width: 58%;
  }
   
  .overlay1982 {
@@ -317,4 +321,4 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
  .bottom {
  background: black; color: white; width: 90%; padding: 2vh; font-size: clamp(0.7rem, 0.8vw, 0.9rem); font-weight: 500; text-align: center; margin: 0 auto;
  } 
-}</style><body class="bodycls" oncontextmenu="return!1"><div class="scroll-container"><div class="image-card"><img src="UNSP-CA-FLAG-2026.JPG" alt="Description"><div class="caption-overlay"><div class="capdate">History Of Canada</div><div class="gap1-5vh"></div><div class="caphdr">Spans From</div><div class="gap1-5vh"></div><div class="capln1">Indigineous civilization > European</div><div class="capln2">Contacts > a modern world state.</div></div></div><div class="image-card"><img src="BC30000.jpg" alt="Description"><div class="caption-overlay overlay30000"><div class="capdate">30,000–15,000 BC</div><div class="gap1-5vh"></div><div class="caphdr">The First Migration Through Baringia</div><div class="gap1-5vh"></div><div class="capln1">First peoples cross into North America</div><div class="capln2">from Asia, establishing rich</div><div class="capln2">and diverse Indigenous societies.</div></div></div><div class="image-card"><img src="BC5000.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">5,000 BC - 4,000 BC</div><div class="gap1-5vh"></div><div class="caphdr">Paleo-Inuit</div><div class="gap1-5vh"></div><div class="capln1">A later migration brought the ancestors</div><div class="capln2">of the Paleo-Inuit from Siberia settling</div><div class="capln3">northern coasts of Canada & Greenland.</div></div></div><div class="image-card"><img src="CE1000.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">999 CE</div><div class="gap1-5vh"></div><div class="caphdr">First Migration From Europe</div><div class="gap1-5vh"></div><div class="capln1">Norse Explorers, reached Canada and</div><div class="capln1">colonized parts of Newfoundland making</div><div class="capln2">the first known European contact.</div></div></div><div class="image-card"><img src="CE1497.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,497 CE</div><div class="gap1-5vh"></div><div class="caphdr">John Cabot</div><div class="gap1-5vh"></div><div class="capln1">was an Italian explorer, sailed under the</div><div class="capln2">commission of King Henry VII of England</div><div class="capln3">making landfall in Newfoundland.</div></div></div><div class="image-card"><img src="CE1534.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,534 CE</div><div class="gap1-5vh"></div><div class="caphdr">Jacques Cartier</div><div class="gap1-5vh"></div><div class="capln1">Explores the Gulf of St. Lawrence</div><div class="capln2">and claims the land for France</div><div class="capln3">using the local word kanata.</div></div></div><div class="image-card"><img src="CE1608.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,608 CE</div><div class="gap1-5vh"></div><div class="caphdr">Samuel de Champlain</div><div class="gap1-5vh"></div><div class="capln1">founds Québec City as a permanent</div><div class="capln2">French settlement and the capital</div><div class="capln3">of New France.</div></div></div><div class="image-card"><img src="CE1670.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,670 CE</div><div class="gap1-5vh"></div><div class="caphdr">Hudsons Bay Company</div><div class="gap1-5vh"></div><div class="capln1">The British Crown grants a charter</div><div class="capln2">to the Hudson's Bay Company,</div><div class="capln2">expanding the fur trade.</div></div></div><div class="image-card"><img src="CE1759.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,759 CE</div><div class="gap1-5vh"></div><div class="caphdr">Plains of Abraham</div><div class="gap1-5vh"></div><div class="capln1">British forces defeat the French</div><div class="capln2">at the Battle of the Plains of Abraham ,</div><div class="capln2">in Qubec.</div></div></div><div class="image-card"><img src="CE1763.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,763 CE</div><div class="gap1-5vh"></div><div class="caphdr">The Treaty of Paris</div><div class="gap1-5vh"></div><div class="capln1">formally cedes New France to British</div><div class="capln2">control, turning into a British colony</div><div class="capln2">and ends French authority on Qubec.</div></div></div><div class="image-card"><img src="CE1791.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1,791 CE</div><div class="gap1-5vh"></div><div class="caphdr">The Constitutional Act</div><div class="gap1-5vh"></div><div class="capln1">divides Quebec into two divisions</div><div class="capln2">Upper Canada English-speaking,</div><div class="capln2">Lower Canada French-speaking.</div></div></div><div class="image-card"><img src="CE1812.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1812-1814 CE</div><div class="gap1-5vh"></div><div class="caphdr">U.S Invasions</div><div class="gap1-5vh"></div><div class="capln1">Canadian and British forces</div><div class="capln2">successfully repel</div><div class="capln3">the U.S. invasion.</div></div></div><div class="image-card"><img src="CE1867.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1867 CE</div><div class="gap1-5vh"></div><div class="caphdr">Canada Formed</div><div class="gap1-5vh"></div><div class="capln1">Unites Ontario, Quebec,</div><div class="capln2">Nova Scotia and New Brunswick</div><div class="capln2">into the federal Dominion of Canada.</div></div></div><div class="image-card"><img src="CE1870.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1870-1873 CE</div><div class="gap1-5vh"></div><div class="caphdr">Provinces Join the federation</div><div class="gap1-5vh"></div><div class="capln1">Manitoba, British Columbia,</div><div class="capln2">and Prince Edward Island</div><div class="capln2">join the new confederation.</div></div></div><div class="image-card"><img src="CE1885.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1885 CE</div><div class="gap1-5vh"></div><div class="caphdr">The Pacific Railway</div><div class="gap1-5vh"></div><div class="capln1">The transcontinental Railway</div><div class="capln2">is completed linking</div><div class="capln2">the country from coast to coast.</div></div></div><div class="image-card"><img src="CE1905.jfif" alt="Description"><div class="caption-overlay"><div class="capdate">1905 CE</div><div class="gap1-5vh"></div><div class="caphdr">More Join the federation</div><div class="gap1-5vh"></div><div class="capln1">Alberta and Saskatchewan</div><div class="capln2">join the federal Dominion</div><div class="capln2">of Canada as Provinces.</div></div></div><div class="image-card"><img src="WW1-1914-1918.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">1914-1918 CE</div><div class="gap1-5vh"></div><div class="caphdr">World War I</div><div class="gap1-5vh"></div><div class="capln1">Canada fights alongside the</div><div class="capln2">Allies establishing a strong</div><div class="capln2">international identity.</div></div></div><div class="image-card"><img src="CE1931.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">1931 CE</div><div class="gap1-5vh"></div><div class="caphdr">Legislative independence</div><div class="gap1-5vh"></div><div class="capln1">Statute of Westminster grants</div><div class="capln2">Canada legislative independence</div><div class="capln2">from the British Parliament.</div></div></div><div class="image-card"><img src="WW2-1939-1945.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">1939-1945 CE</div><div class="gap1-5vh"></div><div class="caphdr">World War II</div><div class="gap1-5vh"></div><div class="capln1">Canada plays a major role</div><div class="capln2">in World War II and experiencese</div><div class="capln2">a massive postwar economic boom.</div></div></div><div class="image-card"><img src="CE1982.JPG" alt="Description"><div class="caption-overlay overlay1982"><div class="capdate">1982 CE</div><div class="gap1-5vh"></div><div class="caphdr">Constitution Act</div><div class="gap1-5vh"></div><div class="capln1">Queen Elizabeth II signs the Act</div><div class="capln2">Patriating Canada constitution and</div><div class="capln3">establish the Charter of Freedom.</div></div></div><div class="image-card"><img src="NUNAVUT-1999-2.JPG" alt="Description"><div class="caption-overlay"><div class="capdate">1999 CE</div><div class="gap1-5vh"></div><div class="caphdr">Third territory</div><div class="gap1-5vh"></div><div class="capln1">Nunavut is established</div><div class="capln2">as third territory, separating</div><div class="capln3">from the Northwest Territories.</div></div></div><p><div class="bottom">This is a non-commercial site<br>Imagery sourced via open-access historical<br>repositories and public domain archives.</div><p>
+}</style><body class="body_cls"><div class="scroll-container"><div class="image-card"><img id="ih1" src="world-map.jpg" alt="test1"><div class="caption-overlay"><div class="capdate" id="imageDt">Islamic Chronology</div><div class="gap1-5vh"></div><div class="caphdr">Important Dates of the Islamic</div><div class="capln1">expansion, rapid military advances,</div><div class="capln2">dynistic rules, power struggle,</div><div class="capln3">cultural advances and civil wars.</div></div></div><div class="image-card"><img src="BC2000-IBRAHIM-FIRE1.JPG" alt="Description"><div class="caption-overlay"><div class="capdate">2000 BC</div><div class="gap1-5vh"></div><div class="caphdr">Prophet Ibrahim, was put on fire</div><div class="capln1">by King Namrud in the city of Ur</div><div class="capln2">Mesapotamia, when he defied</div><div class="capln3">his claim of being GOD</div></div></div><div class="image-card"><img src="CE520-ABRAHA-WMC-PD.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">520 CE</div><div class="gap1-5vh"></div><div class="caphdr">Ethiopian King Abraha Attacked Mecca.</div><div class="capln1">His forces & Elephents were crushed</div><div class="capln2">to Death from stones, dropped by birds</div><div class="capln3">Which all of sudden appeared on the sky</div></div></div><div class="image-card"><img src="CE570-MECCA-WMC-PD.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">570 CE</div><div class="gap1-5vh"></div><div class="caphdr">Prophet Muhammad was born</div><div class="capln1">as an orphan in the city of Mecca</div><div class="capln2">in the tribe Banu-Hashim, who were</div><div class="capln3">the custodians of Kaaba at that time</div></div></div><div class="image-card"><img src="CE610-MOUNT-HIRA.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">610 CE</div><div class="gap1-5vh"></div><div class="caphdr">First revelation received from</div><div class="capln1">Angel Gabriel on Mount Hira</div><div class="capln2">Where Prophet used to come regularly</div><div class="capln3">to think about GOD</div></div></div><div class="image-card"><img src="CE613-HANDS.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">613 CE</div><div class="gap1-5vh"></div><div class="caphdr">Prophet Muhammad begins public</div><div class="capln1">preaching in Mecca and was severely</div><div class="capln2">opposed by city elites, except few poor</div><div class="capln3">who dared to accept Islam risking lives.</div></div></div><div class="image-card"><img src="CE622-MADINA.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">622 CE</div><div class="gap1-5vh"></div><div class="caphdr">Prophet Muhammad receives invitation</div><div class="capln1">from Madina and avails this opportunity</div><div class="capln2">to establish the first Islamic state in the</div><div class="capln3">world. Islamic Calendar starts from here.</div></div></div><div class="image-card"><img src="CE624-627-UHAD.JPG" alt="Description"><div class="caption-overlay"><div class="capdate">624-627 CE</div><div class="gap1-5vh"></div><div class="caphdr">Key battles including Badr, Uhad and</div><div class="capln1">the Battle of the Trench are fought</div><div class="capln2">between Muslims and non-beleivers.</div><div class="capln3">victories in battles consolidated Islam.</div></div></div><div class="image-card"><img src="CE630-MAKKA-1845.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">630 CE</div><div class="gap1-5vh"></div><div class="caphdr">Mecca is conquered; Islam gets fully</div><div class="capln1">established in the Arabian Peninsula</div><div class="capln2">Idols are removed from Kaaba. Haj is</div><div class="capln3">performed first time in the Islamic way.</div></div></div><div class="image-card"><img src="CE632.JPG" alt="Description"><div class="caption-overlay"><div class="capdate">632 CE</div><div class="gap1-5vh"></div><div class="caphdr">Prophet Muhammad passes away,</div><div class="capln1">Abu Bakr becomes the first Caliph</div><div class="capln2">initiating the Rashidun Caliphate</div><div class="capln3">which lasts for the next 30 years</div></div></div><div class="image-card"><img src="CE632-661-RASHEDEEN.jpg" alt="Description"><div class="caption-overlay"><div class="capdate">632-661 CE</div><div class="gap1-5vh"></div><div class="caphdr">Khilafate-Rashdeen (four rightly guided)</div><div class="capln1">starts and lasts for the next 30 years,</div><div class="capln2">with expansion into Byzantine & Sassanid</div><div class="capln3">territories and first civil war in Muslims.</div></div></div><p></div><p><div class="bottom">This is a non-commercial site<br>Imagery sourced via open-access historical<br>repositories and public domain archives.</div><p></p><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script><script type="module">import{initializeApp as e}from"https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";import{getFirestore as a,collection as t,query as s,orderBy as r,addDoc as p,setDoc as m,getDocs as o,getDoc as i,deleteDoc as f,doc as c,updateDoc as g,where as b,runTransaction as n,serverTimestamp as j}from"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";a(e({apiKey:"AIzaSyCSZAx4aG_HY3_B-ZvRfS-Pyp3m5GgKDGs",authDomain:"project-management-fe9a9.firebaseapp.com",projectId:"project-management-fe9a9",storageBucket:"project-management-fe9a9.firebasestorage.app",messagingSenderId:"686798097321",appId:"1:686798097321:web:5cc86a7283990e945b92b8"}))</script>
