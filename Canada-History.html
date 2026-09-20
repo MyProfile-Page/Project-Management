@@ -14,7 +14,7 @@
 /*     Working CSS down from HERE    */ 
 
 .bodycls {
- line-height: 0.8; 
+ line-height: 1.0; 
  
 
 .scroll-container {
@@ -37,19 +37,31 @@
   flex: 0 0 auto;
   margin-top: 4vh; 
   object-fit: cover; 
-  margin-left: 3.15%;
-    
+  margin-left: 3.15%;    
 }
-
 /* Image styling */
 .image-card img {
   display: block;
   width: 97%;
   height: 70vh;
-  filter: brightness(100%);
-   
-  
+  filter: brightness(100%);  
+ }
+ 
+ .image-card-flag {
+  position: relative; /* Makes this the anchor for absolute positioning */
+  flex: 0 0 auto;
+  margin-top: 4vh; 
+  object-fit: cover; 
+  margin-left: 3.15%;    
 }
+/* Image styling */
+.image-card-flag img {
+  display: block;
+  width: 97%;
+  height: 70vh;
+  filter: brightness(100%);  
+ }
+ 
 
 /* Caption on top of the image */
 .caption-overlay-top {
@@ -130,11 +142,12 @@
 .capdate {
  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
+ 
  }
 
 .caphdr {
- font-size: clamp(0.6rem, 0.8vw, 1.3rem);
- font-weight: 500;
+ font-size: clamp(0.7rem, 1.0vw, 1.3rem);
+ font-weight: 550;
 }
 
 .capln1 {
@@ -159,7 +172,7 @@
 }
 
 .overlay30000 {
- top: 32vh; left: 26%; width: 40%;
+   width: 47%; 
  }
   
  .overlay1982 {
@@ -197,16 +210,28 @@
   object-fit: cover; 
   margin-left: 3.15%;  
 }
-
 /* Image styling */
 .image-card img {
   display: block;
   width: 97%;
   height: 35vh;
-  filter: brightness(125%);
-  
+  filter: brightness(125%);  
 }
 
+.image-card-flag {
+  position: relative; /* Makes this the anchor for absolute positioning */
+  flex: 0 0 auto;
+  margin-top: 3vh; 
+  object-fit: cover; 
+  margin-left: 3.15%;  
+}
+/* Image styling */
+.image-card-flag img {
+  display: block;
+  width: 97%;
+  height: 30vh;
+  filter: brightness(125%);  
+}
 .caption-overlay-top {
   position: absolute;
   top: 20vh;          /* Pins caption to the top */
@@ -254,7 +279,7 @@
   color: white;
   padding: 1.3vh;
   box-sizing: border-box;  
-}
+ }
 
 .capedu {
  font-size: clamp(0.6rem, 0.7vw, 1.2rem);
@@ -289,6 +314,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 .capdate {
  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
+ 
+ 
 }
 
 .caphdr {
@@ -318,7 +345,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 }
 
 .overlay30000 {
- top: 14vh; left: 23%; width: 58%;
+ width: 62%;
  }
   
  .overlay1982 {
@@ -338,13 +365,13 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
  
  <div class="scroll-container">
  
-    <div class="image-card">  
-       <img src="UNSP-CA-FLAG-2026.JPG" alt="Description">
+    <div class="image-card-flag">  
+       <img src="UNSP-CA-FLAG-2026.JPG" alt="Description" >
 	    
 	     <div class="caption-overlay" >
 	        <div class="capdate">History Of Canada</div>
 			<div class="gap1-5vh"></div>
-			<div class="capdate">Spans From</div>
+			<div class="caphdr">Spans From</div>
 			<div class="gap1-5vh"></div>
             <div class="capln1">Indigineous civilization > European</div>
 	        <div class="capln2">Contacts > a modern world state.</div>
@@ -628,7 +655,9 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 <P></P>	      		  
 
 <div class ="bottom">          
-	         This is a non-commercial site 
+	         This is a non-commercial site<br> 
+			 Imagery sourced via open-access historical<br>
+			 repositories and public domain archives.
 	      </div>
 	  
   <P></P>	     
