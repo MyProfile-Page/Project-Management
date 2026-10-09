@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Scan Snap - Text Dock</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow: hidden; /* Prevents double scrolling on the page */
+    }
+
+    /* Core Layout Container */
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* 1. Visual Snap Container */
+    .snap-container {
+      flex: 1; /* Takes up remaining space above the dock on mobile */
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none; /* Hides scrollbar on Firefox */
+    }
+    .snap-container::-webkit-scrollbar {
+      display: none; /* Hides scrollbar on Chrome/Safari */
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: bold;
+    }
+
+    /* Placeholder slide colors */
+    .slide:nth-child(1) { background: #1e1e24; }
+    .slide:nth-child(2) { background: #2a3439; }
+    .slide:nth-child(3) { background: #3d314a; }
+
+    /* 2. Dedicated Text Dock */
+    .text-dock {
+      height: 25vh; /* Fixed height at the bottom on mobile */
+      background-color: #111;
+      border-top: 1px solid #222;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Wrapper that slides up/down inside the dock */
+    .text-track {
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .text-content {
+      height: 100%;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .text-content h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .text-content p {
+      font-size: 0.95rem;
+      color: #aaa;
+      line-by-line: 1.4;
+    }
+
+    /* 3. DESKTOP OPTIMIZATION (Side-by-Side Split) */
+    @media (min-width: 768px) {
+      .app-container {
+        flex-direction: row; /* Split screen horizontally */
+      }
+
+      .snap-container {
+        flex: 2; /* Visuals take up 2/3 of the width */
+        height: 100vh;
+      }
+
+      .text-dock {
+        flex: 1; /* Text takes up 1/3 of the width */
+        height: 100vh;
+        border-top: none;
+        border-left: 1px solid #222;
+      }
+
+      .text-content {
+        padding: 3rem;
+      }
+
+      .text-content h2 {
+        font-size: 2rem;
+      }
+
+      .text-content p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Visual Snapping Area -->
+    <main class="snap-container" id="snapContainer">
+      <section class="slide" data-index="0">📸 Scroll</section>
+      <section class="slide" data-index="1">🔍 Scan</section>
+      <section class="slide" data-index="2">⚡ Snap</section>
+    </main>
+
+    <!-- Dedicated Static Text Dock -->
+    <aside class="text-dock">
+      <div class="text-track" id="textTrack">
+        
+        <!-- Text for Slide 1 -->
+        <div class="text-content">
+          <h2>01. Scroll Smoothly</h2>
+          <p>Experience seamless vertical motion designed to transition beautifully between high-resolution creative layouts without breaking stride.</p>
+        </div>
+
+        <!-- Text for Slide 2 -->
+        <div class="text-content">
+          <h2>02. Scan Rapidly</h2>
+          <p>Keep your focus on what matters. The structured grid alignment lets your eyes naturally ingest imagery without floating layout clutter.</p>
+        </div>
+
+        <!-- Text for Slide 3 -->
+        <div class="text-content">
+          <h2>03. Snap Precisely</h2>
+          <p>Lock directly onto target focal points automatically. Built-in boundary adherence guarantees your design is always framed perfectly.</p>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const container = document.getElementById('snapContainer');
+    const track = document.getElementById('textTrack');
+    const slides = document.querySelectorAll('.slide');
+
+    // Use IntersectionObserver to track which slide is currently locked in view
+    const observerOptions = {
+      root: container,
+      threshold: 0.6 // Fires when a slide is 60% visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = entry.target.getAttribute('data-index');
+          // Shift the text track by -100% per active slide index
+          track.style.transform = `translateY(-${index * 100}%)`;
+        }
+      });
+    }, observerOptions);
+
+    slides.forEach(slide => observer.observe(slide));
+  </script>
+
+</body>
+</html>
