@@ -12,6 +12,8 @@
  /*  Down styles for all screens meaning both Mobiles & Desktops */
  /*  */
  /*  */
+ /*   desktop  image height clipped from both top and bottom  */
+ /*	  mobiles  image width clipped from both left and right   */ 
  /*  */
   
     * {
@@ -43,27 +45,27 @@
       scroll-snap-type: y mandatory;
     /*  scrollbar-width: none;  */ /* Hides scrollbar on Firefox */
     }
-    .snap-container::-webkit-scrollbar {  
- /*     display: none; */ /* Hides scrollbar on Chrome/Safari */
-    }   
+   
 
     .slide {
       scroll-snap-align: start;
       scroll-snap-stop: always;
-      height: 100%;
+    /*  height: 100%;  */
+	  height: auto;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 5rem;
       font-weight: bold;
-	  overflow: hidden; /* Keeps images from leaking outside their boundary */
+	  overflow: hidden;   /* Keeps images from leaking outside their boundary */
 	  
     }
 	/* Force the images to fill the space seamlessly */
 .slide img {
   width: 100%;
-  height: 100%;
+  /*  height: 100%;  */
+	  height: auto;
   object-fit: cover;     /* Forces the image to fill the card completely without distorting */
   object-position: center; /* Keeps the focal point centered during responsive resizing */
 }
@@ -97,17 +99,7 @@
       justify-content: center;
     }
 
-    .text-content h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-
-    .text-content p {
-      font-size: 0.95rem;
-      color: #aaa;
-      line-by-line: 1.4;
-    }
+    
 	.capedu {
  font-size: clamp(0.6rem, 0.7vw, 1.2rem);
  font-weight: 500;
@@ -181,6 +173,12 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
   color: yellow; /* Changes the link color to yellow */
 }
 
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes default inline spacing at the bottom */
+}
+
  /*  */
  /*  */
  /*  */
@@ -244,7 +242,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 <section class="slide" data-index="11"><img src="Battle_of_Queenston_Heights,_Artist_Unknown.jpg" alt="Description"></section>
 <section class="slide" data-index="12"><img src="Canada_change_1867-07-01.png" alt="Description"></section>
 <section class="slide" data-index="13"><img src="Canada_provinces_1871-1873.png" alt="Description"></section>
-<section class="slide" data-index="14"><img src="Eastbound_over_SCB.jpg" alt="Description"></section>
+<section class="slide" data-index="14"><img src="Eastbound_over_SCB.jpg" alt="Description" class="responsive-img"></section>
 <section class="slide" data-index="15"><img src="Canada_change_1905-09-01.png" alt="Description"></section>
 <section class="slide" data-index="16"><img src="Willy_Stöwer_-_Sinking_of_the_Linda_Blanche_out_of_Liverpool-ww1.jpg" alt="Description"></section>
 <section class="slide" data-index="17"><img src="Queen's_Park_-_Toronto_-_2010_(cropped-rotated).jpg" alt="Description"></section>
