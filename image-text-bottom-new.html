@@ -139,29 +139,28 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 }
 
 .capdate {
- font-size: clamp(0.8rem, 1.1vw, 1.4rem);
- font-weight: 550;
- 
+ font-size: clamp(1.1rem, 1.4vw, 1.6rem);
+ font-weight: 600;
  
 }
 
 .caphdr {
- font-size: clamp(0.7rem, 1.0vw, 1.3rem);
- font-weight: 500;
+ font-size: clamp(1.0rem, 1.3vw, 1.5rem);
+ font-weight: 600;
 }
 
 .capln1 {
- font-size: clamp(0.7rem, 0.9vw, 1.2rem);
- font-weight: 500;
+ font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+ font-weight: 600;
 }
 
 .capln2 {
-  font-size: clamp(0.7rem, 0.9vw, 1.2rem);
- font-weight: 500;
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+ font-weight: 600;
 }
 .capln3 {
-  font-size: clamp(0.7rem, 0.9vw, 1.2rem);
- font-weight: 500;
+   font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+ font-weight: 600;
 }
 
 .gap1vh {
@@ -171,22 +170,20 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
   height: 0.50vh;  /* or any size you want; mobile = desktop */
 }
 
-
- .bottom {
- background: #ccf2ff; color: black; width: 90%; padding: 0.0vh; font-size: clamp(0.7rem, 0.8vw, 0.9rem); font-weight: 500; text-align: center; margin: 0 auto;
- } 
  .imglic {
- font-size: clamp(1.1rem, 1.3vw, 1.4rem); text-align: left; 
+ font-size: clamp(1.1rem, 1.3vw, 1.4rem); text-align: left;
+ font-weight: 550; 
  }
  
  a {
-  color: #ff0000; /* Changes the link color to red */
+ /* color: #ff0000; */   /* Changes the link color to red */
+  color: yellow; /* Changes the link color to yellow */
 }
 
  /*  */
  /*  */
  /*  */
- /* Down apply only to screens more than 768px meaning Desktops */
+ /* Down apply only to screens more than 768px meaning Desktops only splits image/Text horizontally */
  /*  */
  /*  */
  /*  */
@@ -219,13 +216,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
         font-size: 1.1rem;
       }  
   
- .bottom {
- background: #ccf2ff; color: black; width: 50%; padding: 0vh; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
- } 
+ 
 
- .imglic {
- font-size: clamp(1.1rem, 1.3vw, 1.4rem); text-align: left; 
- }
  
 
     }
@@ -266,8 +258,10 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
         
         <!-- Text for Slide 1 -->
         <div class="text-content">
-          <h2>01. Canada TimeLine</h2>
-          <h3>From Indigineous civilization. To European contacts To a modern world state.</h3>
+          <div class="capdate" style="font-size: clamp(1.6rem, 1.9vw, 2.0rem); font-weight: 700; text-decoration: underline;">Canada TimeLine</div>      
+		  <div class="caphdr" style="font-size: clamp(1.5rem, 1.6vw, 1.9rem); font-weight: 600;">From Indigineous civilization.</div>
+		  <div class="caphdr" style="font-size: clamp(1.5rem, 1.6vw, 1.9rem); font-weight: 600;">To European contacts.</div>
+		  <div class="caphdr" style="font-size: clamp(1.5rem, 1.6vw, 1.9rem); font-weight: 600;">To a modern world state.</div>
           <div>&nbsp</div>
 		  <div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Niagara_Falls_Skyline.jpg">Jason Pratt</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons
 	      </div> 
