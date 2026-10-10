@@ -104,13 +104,14 @@
 /* Caption on top of the image */
 .caption-overlay {
   position: absolute;
-  top: 3vh;          /* Pins caption to the top */
-  left: 2%;
+  top: 0vh;            /* Pins caption to the top */
+  left: 0%;
   width: 46%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.1); /* Semi-transparent background for readability */
   color: white;
   padding: 2vh;
-  box-sizing: border-box;  
+  box-sizing: border-box; 
+     
 }
 
 /* Caption on top of the image */
@@ -155,7 +156,7 @@
 .capdate {
  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
- 
+ text-decoration: underline; 
  }
 
 .caphdr {
@@ -289,10 +290,11 @@
   top: 2vh;          /* Pins caption to the top */
   left: 2%;   
   width: 75%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.1); /* Semi-transparent background for readability */
   color: white;
   padding: 1.3vh;
-  box-sizing: border-box;  
+  box-sizing: border-box; 
+   
  }
 
 .capedu {
@@ -328,7 +330,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 .capdate {
  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
  font-weight: 550;
- 
+ text-decoration: underline; 
  
 }
 
@@ -390,7 +392,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
     <div class="image-card-flag">  
        <img src="Niagara_Falls_Skyline.jpg" alt="Description" >
 	    
-	     <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.6);" >
+	     <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.2);" >
 	        <div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">From Indigineous civilization</div>
 			
 			<div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">To European contacts</div>
@@ -409,7 +411,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	<div class="image-card">  
         <img src="Bering_Strait.jpeg" alt="Description">
           <div class="caption-overlay" >
-	         <div class="capdate">30,000–15,000 BC</div>
+	         <div class="capdate">30000–15000 BC</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The First Migration Through Beringa</div>
 			 <div class="gap1-5vh"></div>
@@ -426,7 +428,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
     <div class="image-card">
         <img src="Sisimiut_Qiviarfik.jpg" alt="Description">
           <div class="caption-overlay">
-	         <div class="capdate">5,000 BC - 4,000 BC</div>
+	         <div class="capdate">5000 BC - 4000 BC</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Paleo-Inuit</div>
 			 <div class="gap1-5vh"></div>
@@ -457,7 +459,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
     <div class="image-card">
         <img src="Bonavista_Cabot_2.jpg" alt="Description">
           <div class="caption-overlay">
-	         <div class="capdate">1,497 CE</div>
+	         <div class="capdate">1497 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">John Cabot</div>
 			 <div class="gap1-5vh"></div>
@@ -471,7 +473,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	<div class="image-card">
         <img src="cartier.PNG" alt="Description">
           <div class="caption-overlay">
-	         <div class="capdate">1,534 CE</div>
+	         <div class="capdate">1534 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Jacques Cartier</div>
 			 <div class="gap1-5vh"></div>
@@ -485,7 +487,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	<div class="image-card">
         <img src="samuel.jpg" alt="Description">
           <div class="caption-overlay">
-	         <div class="capdate">1,608 CE</div>
+	         <div class="capdate">1608 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Samuel de Champlain</div>
 			 <div class="gap1-5vh"></div>
@@ -499,7 +501,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	<div class="image-card">
         <img src="3001_LC_Kangiqsualujjuaq_hike.jpg" alt="Description">
           <div class="caption-overlay" >
-	         <div class="capdate">1,670 CE</div>
+	         <div class="capdate">1670 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Hudsons Bay Company</div>
 			 <div class="gap1-5vh"></div>
@@ -512,8 +514,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="An_Authentic_Plan_of_the_River_St._Laurence_from_Sillery_to_the_Fall_of_Montmorenci.jpg" alt="Description">
-          <div class="caption-overlay">
-	         <div class="capdate">1,759 CE</div>
+          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+	         <div class="capdate">1759 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Plains of Abraham</div>
 			 <div class="gap1-5vh"></div>
@@ -526,8 +528,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Province_of_Quebec_1774.gif" alt="Description">
-          <div class="caption-overlay">
-	         <div class="capdate">1,763 CE</div>
+          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+	         <div class="capdate">1763 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The Treaty of Paris</div>
 			 <div class="gap1-5vh"></div>
@@ -540,8 +542,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Quebec_langues.png" alt="Description">
-          <div class="caption-overlay " >
-	         <div class="capdate">1,791 CE</div>
+          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+	         <div class="capdate">1791 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The Constitutional Act</div>
 			 <div class="gap1-5vh"></div>
@@ -567,7 +569,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Canada_change_1867-07-01.png" alt="Description">
-          <div class="caption-overlay " >
+          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
 	         <div class="capdate">1867 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Canada Formed</div>
@@ -581,7 +583,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Canada_provinces_1871-1873.png" alt="Description">
-          <div class="caption-overlay">
+          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
 	         <div class="capdate">1870-1873 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Provinces Join the federation</div>
@@ -609,7 +611,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Canada_change_1905-09-01.png" alt="Description">
-          <div class="caption-overlay">
+          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
 	         <div class="capdate">1905 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">More Join the federation</div>
