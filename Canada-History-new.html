@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"> 
+<meta http-equiv="Pragma" content="no-cache">
+ <meta http-equiv="Expires" content="0"> 
+
+
+  <title>digital chronology of Canada </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, noindex, nofollow, user-scalable=no">
+  
+
+ <style>
+
+/*     Working CSS down from HERE    */ 
+
+.bodycls {
+ line-height: 1.0; 
+ background: black;
+ background: #ccf2ff;
+  margin: 0;
+    padding: 0;
+    width: 100%;
+    -webkit-text-size-adjust: 100%; /* Prevents iOS/Android Outlook from changing font scaling */
+ 
+
+
+.captop {
+ font-size: clamp(0.7rem, 0.8vw, 1.3rem);
+ font-weight: 500;
+ font-style: italic;
+ color: lightyellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 2vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 3vh;
+}
+.capedu {
+ font-size: clamp(0.6rem, 0.7vw, 1.2rem);
+ font-weight: 500;
+ font-style: italic;
+ color: yellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 1.0vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 1.5vh;
+}
+
+.capdate {
+ font-size: clamp(0.8rem, 1.1vw, 1.4rem);
+ font-weight: 550;
+ 
+ }
+
+.caphdr {
+ font-size: clamp(0.7rem, 1.0vw, 1.3rem);
+ font-weight: 550;
+}
+
+.capln1 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+ font-weight: 500;
+}
+
+.capln2 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+ font-weight: 500;
+}
+.capln3 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+ font-weight: 500;
+}
+
+.gap1vh {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+}
+.gap1-5vh {
+  height: 1.5vh;  /* or any size you want; mobile = desktop */
+}
+  
+ 
+ .bottom {
+ background: #ccf2ff; color: black; width: 50%; padding: 0vh; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
+ } 
+
+ .imglic {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; height: 0.5vh;
+ margin-top: 1vh;
+ }
+ 
+ .app-container {
+        flex-direction: row; /* Split screen horizontally */
+      }
+
+      .snap-container {
+        flex: 2; /* Visuals take up 2/3 of the width */
+        height: 100vh;
+      }
+
+      .text-dock {
+        flex: 1; /* Text takes up 1/3 of the width */
+        height: 100vh;
+        border-top: none;
+        border-left: 1px solid #222;
+      }
+
+      .text-content {
+        padding: 3rem;
+      }
+
+      .text-content h2 {
+        font-size: 2rem;
+      }
+
+      .text-content p {
+        font-size: 1.1rem;
+      }
+	  
+
+
+
+
+@media (max-width: 768px) {
+
+
+
+.capedu {
+ font-size: clamp(0.6rem, 0.7vw, 1.2rem);
+ font-weight: 500;
+ font-style: italic;
+ color: yellow; 
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 0.8vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.7vw;
+ padding-top: 1.0vh;
+}
+
+.captop {
+
+font-size: clamp(0.7rem, 1.0vw, 1.1rem);
+ font-weight: 500;
+ font-style: italic;
+ color: lightyellow;
+ /* background: rgba(0, 0, 0, 0.5);  */ /* Semi-transparent background for readability */
+ height: 0.75vh;
+ text-align: center;
+ align-items: center;
+ display: flex;
+ padding-left: 0.5vw;
+ padding-top: 1.0vh;
+ 
+}
+
+.capdate {
+ font-size: clamp(0.8rem, 1.1vw, 1.4rem);
+ font-weight: 550;
+ 
+ 
+}
+
+.caphdr {
+ font-size: clamp(0.7rem, 1.0vw, 1.3rem);
+ font-weight: 500;
+}
+
+.capln1 {
+ font-size: clamp(0.7rem, 0.9vw, 1.2rem);
+ font-weight: 500;
+}
+
+.capln2 {
+  font-size: clamp(0.7rem, 0.9vw, 1.2rem);
+ font-weight: 500;
+}
+.capln3 {
+  font-size: clamp(0.7rem, 0.9vw, 1.2rem);
+ font-weight: 500;
+}
+
+.gap1vh {
+  height: 0.50vh;  /* or any size you want; mobile = desktop */
+}
+.gap1-5vh {
+  height: 0.50vh;  /* or any size you want; mobile = desktop */
+}
+
+
+  
+
+ .bottom {
+ background: #ccf2ff; color: black; width: 90%; padding: 0.0vh; font-size: clamp(0.7rem, 0.8vw, 0.9rem); font-weight: 500; text-align: center; margin: 0 auto;
+ } 
+ .imglic {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; height: 0.3vh;
+ }
+ 
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+  
+
+    /* Core Layout Container */
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+	  
+    }
+
+    /* 1. Visual Snap Container */
+    .snap-container {
+      flex: 1; /* Takes up remaining space above the dock on mobile */
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    /*  scrollbar-width: none;  */ /* Hides scrollbar on Firefox */
+    }
+    .snap-container::-webkit-scrollbar {  
+ /*     display: none; */ /* Hides scrollbar on Chrome/Safari */
+    }   
+
+    .slide {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: bold;
+	  overflow: hidden; /* Keeps images from leaking outside their boundary */
+	  
+    }
+	/* Force the images to fill the space seamlessly */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Forces the image to fill the card completely without distorting */
+  object-position: center; /* Keeps the focal point centered during responsive resizing */
+}
+
+
+    /* Placeholder slide colors */
+    .slide:nth-child(1) { background: #1e1e24; }
+    .slide:nth-child(2) { background: #2a3439; }
+    .slide:nth-child(3) { background: #3d314a; }
+
+    /* 2. Dedicated Text Dock */
+    .text-dock {
+      height: 25vh; /* Fixed height at the bottom on mobile */
+      background-color: #111;
+      border-top: 1px solid #222;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Wrapper that slides up/down inside the dock */
+    .text-track {
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .text-content {
+      height: 100%;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .text-content h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .text-content p {
+      font-size: 0.95rem;
+      color: #aaa;
+      line-by-line: 1.4;
+    }
+
+ 
+ 
+ 
+}
+
+</style>
+</head>
+
+<body class="bodycls" oncontextmenu="return false;">
+
+ <div class="app-container">
+    
+    <!-- Visual Snapping Area -->
+    <main class="snap-container" id="snapContainer">
+      <section class="slide" data-index="0"><img src="Niagara_Falls_Skyline.jpg" alt="Description" ></section>
+      <section class="slide" data-index="1"><img src="Bering_Strait.jpeg" alt="Description"></section>
+      <section class="slide" data-index="2"><img src="Sisimiut_Qiviarfik.jpg" alt="Description"></section>
+	  <section class="slide" data-index="3"><img src="Leif_Erikson_Discovers_America_Hans_Dahl.jpg" alt="Description"></section>
+<section class="slide" data-index="4"><img src="Bonavista_Cabot_2.jpg" alt="Description"></section>
+<section class="slide" data-index="5"><img src="cartier.PNG" alt="Description"></section>
+<section class="slide" data-index="6"><img src="samuel.jpg" alt="Description"></section>
+<section class="slide" data-index="7"><img src="3001_LC_Kangiqsualujjuaq_hike.jpg" alt="Description"></section>
+<section class="slide" data-index="8"><img src="An_Authentic_Plan_of_the_River_St._Laurence_from_Sillery_to_the_Fall_of_Montmorenci.jpg" alt="Description"></section>
+<section class="slide" data-index="9"><img src="Province_of_Quebec_1774.gif" alt="Description"></section>
+<section class="slide" data-index="10"><img src="Quebec_langues.png" alt="Description"></section>
+<section class="slide" data-index="11"><img src="Battle_of_Queenston_Heights,_Artist_Unknown.jpg" alt="Description"></section>
+<section class="slide" data-index="12"><img src="Canada_change_1867-07-01.png" alt="Description"></section>
+<section class="slide" data-index="13"><img src="Canada_provinces_1871-1873.png" alt="Description"></section>
+<section class="slide" data-index="14"><img src="Eastbound_over_SCB.jpg" alt="Description"></section>
+<section class="slide" data-index="15"><img src="Canada_change_1905-09-01.png" alt="Description"></section>
+<section class="slide" data-index="16"><img src="Willy_Stöwer_-_Sinking_of_the_Linda_Blanche_out_of_Liverpool-ww1.jpg" alt="Description"></section>
+<section class="slide" data-index="17"><img src="Queen's_Park_-_Toronto_-_2010_(cropped-rotated).jpg" alt="Description"></section>
+<section class="slide" data-index="18"><img src="Royal_Air_Force_Operations_in_the_Middle_East_and_North_Africa,_1939-1943._CNA475.jpg" alt="Description"></section>
+<section class="slide" data-index="19"><img src="Ottawa_fireworks_49_(27768773120).jpg" alt="Description"></section>
+<section class="slide" data-index="20"><img src="Nuluujaak_Mountain.jpg" alt="Description"></section>
+
+    </main>
+
+    <!-- Dedicated Static Text Dock -->
+    <aside class="text-dock">
+      <div class="text-track" id="textTrack">
+        
+        <!-- Text for Slide 1 -->
+        <div class="text-content">
+          <h2>01. Canada TimeLine</h2>
+          <h3>From Indigineous civilization. To European contacts To a modern world state.</h3>
+        
+		  <div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Niagara_Falls_Skyline.jpg">Jason Pratt</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons
+	      </div>
+        </div>		
+
+        <!-- Text for Slide 2 -->
+        <div class="text-content">
+             <div class="capdate">30,000–15,000 BC</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">The First Migration Through Beringa</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">First peoples cross into North America</div>
+	         <div class="capln2">from Asia, establishing rich</div>
+			 <div class="capln2">and diverse Indigenous societies.</div>
+           	 <div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Bering_Strait.jpeg">NASA/GSFC/JPL/MISR-Team</a>, Public domain, via Wikimedia Commons
+	        </div>
+        </div>
+        <!-- Text for Slide 3 -->
+        <div class="text-content">
+             <div class="capdate">5,000 BC - 4,000 BC</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Paleo-Inuit</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">A later migration brought the ancestors</div>
+	         <div class="capln2">of the Paleo-Inuit from Siberia settling</div>
+	         <div class="capln3">northern coasts of Canada & Greenland.</div>
+			 <div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Sisimiut_Qiviarfik.jpg">Evgenii Salganik</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
+	        </div>
+        </div>
+		
+		
+		
+
+     
+
+
+
+
+
+
+
+ 
+	  
+ 	     
+ 
+ 
+ 
+	
+          <div class="text-content">
+	         <div class="capdate">1000 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">First Migration From Europe </div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Norse Explorers, reached Canada and</div>
+			 <div class="capln1">colonized parts of Newfoundland making</div>
+	         <div class="capln2">the first known European contact.</div>     
+   
+    <div class="imglic">Photograph By Hans Dahl <a href="https://commons.wikimedia.org/wiki/File:Leif_Erikson_Discovers_America_Hans_Dahl.jpg">Hans Dahl</a>, Public domain, via Wikimedia Commons
+	</div> 
+    </div>
+          <div class="text-content">
+	         <div class="capdate">1,497 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">John Cabot</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">was an Italian explorer, sailed under the</div>
+	         <div class="capln2">commission of King Henry VII of England</div>
+	         <div class="capln3">making landfall in Newfoundland.</div>
+	      
+    
+	<div class="imglic"> Photograph By <a href="https://commons.wikimedia.org/wiki/File:Bonavista_Cabot_2.jpg">Evan T Jones</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1,534 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Jacques Cartier</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Explores the Gulf of St. Lawrence</div>
+	         <div class="capln2">and claims the land for France</div>
+	         <div class="capln3">using the local word kanata.</div>
+	      
+    
+	<div class="imglic"> Photograph By <a href="https://commons.wikimedia.org/wiki/File:Cartier_Second_Voyage_Map_1.png">Jon Platek</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1,608 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Samuel de Champlain</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">founds Québec City as a permanent</div>
+	         <div class="capln2">French settlement and the capital</div>	
+             <div class="capln3">of New France.</div>				 
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Fondation_de_la_ville_de_Quebec_par_Samuel_de_Champlain_en_1608.jpg">Ambroise Louis Garneray</a>, Public domain, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content" >
+	         <div class="capdate">1,670 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Hudsons Bay Company</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">The British Crown grants a charter </div>
+	         <div class="capln2">to the Hudson's Bay Company,</div>
+             <div class="capln2">expanding the fur trade.</div>	         
+	      
+   
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:3001_LC_Kangiqsualujjuaq_hike.jpg">Lkovac</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1,759 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Plains of Abraham</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">British forces defeat the French  </div>
+	         <div class="capln2">at the Battle of the Plains of Abraham ,</div>
+             <div class="capln2">in Qubec.</div>	         
+	     
+   
+	<div class="imglic">Photograph By<a href="https://commons.wikimedia.org/wiki/File:An_Authentic_Plan_of_the_River_St._Laurence_from_Sillery_to_the_Fall_of_Montmorenci.jpg">Thomas Jefferys</a>, Public domain, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1,763 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">The Treaty of Paris</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">formally cedes New France to British</div>
+	         <div class="capln2">control, turning into a British colony</div>
+             <div class="capln2">and ends French authority on Qubec.</div>	         
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Province_of_Quebec_1774.gif">Les Frères Maristes</a>, Public domain, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content" >
+	         <div class="capdate">1,791 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">The Constitutional Act</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">divides Quebec into two divisions</div>
+	         <div class="capln2">Upper Canada English-speaking,</div>
+             <div class="capln2">Lower Canada French-speaking.</div>	         
+	     
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Quebec_langues.png">Piotron</a>, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1812-1814 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">U.S Invasions</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Canadian and British forces</div>
+	         <div class="capln2">successfully repel</div>
+             <div class="capln3">the U.S. invasion.</div>	         
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Battle_of_Queenston_Heights,_Artist_Unknown.jpg">RiverBrink Art Museum</a>, Public domain, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content" >
+	         <div class="capdate">1867 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Canada Formed</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Unites Ontario, Quebec,</div>
+	         <div class="capln2">Nova Scotia and New Brunswick</div>
+             <div class="capln2">into the federal Dominion of Canada.</div>	         
+	      
+    
+	<div class="imglic">Photograph By Golbez <a href="https://commons.wikimedia.org/wiki/File:Canada_change_1867-07-01.png">Golbez</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1870-1873 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Provinces Join the federation</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Manitoba, British Columbia,</div>
+	         <div class="capln2">and Prince Edward Island</div>
+             <div class="capln2">join the new confederation.</div>	         
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Canada_provinces_1871-1873.png">Golbez assumed</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content" >
+	         <div class="capdate">1885 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">The Pacific Railway</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">The transcontinental Railway</div>
+	         <div class="capln2">is completed linking</div>
+             <div class="capln2">the country from coast to coast.</div>	         
+	     
+    
+	<div class="imglic"> <a href="https://commons.wikimedia.org/wiki/File:Eastbound_over_SCB.jpg">Photograph by David R. Spencer.</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1905 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">More Join the federation</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Alberta and Saskatchewan </div>
+	         <div class="capln2">join the federal Dominion</div>
+             <div class="capln2">of Canada as Provinces.</div>	         
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Canada_change_1905-09-01.png">Golbez</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+	
+	
+          <div class="text-content">
+	         <div class="capdate">1914-1918 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">World War I</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Canada fights alongside the </div>
+	         <div class="capln2">Allies establishing a strong</div>
+             <div class="capln2">international identity.</div>	         
+	      
+   
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Willy_St%C3%B6wer_-_Sinking_of_the_Linda_Blanche_out_of_Liverpool.jpg">Willy Stöwer</a>, Public domain, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="text-content">
+	         <div class="capdate">1931 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Legislative independence</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Statute of Westminster grants </div>
+	         <div class="capln2">Canada legislative independence</div>
+             <div class="capln2">from the British Parliament.</div>	         
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Queen%27s_Park_-_Toronto_-_2010_(cropped-rotated).jpg">Benson Kua</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+          <div class="caption-overlay0">
+	         <div class="capdate">1939-1945 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">World War II</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Canada plays a major role  </div>
+	         <div class="capln2">in World War II and experiencese</div>
+             <div class="capln2">a massive postwar economic boom.</div>	    
+	   	
+	<div class="imglic">By <a href="https://commons.wikimedia.org/wiki/File:Royal_Air_Force_Operations_in_the_Middle_East_and_North_Africa,_1939-1943._CNA475.jpg">Brock F J (Fg Off), Royal Air Force official photographer</a>, Public domain, via Wikimedia Commons
+	</div>
+	</div>
+	
+	
+	
+          <div class="text-content " >
+	         <div class="capdate">1982 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Constitution Act</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Queen Elizabeth II signs the Act</div>
+	         <div class="capln2">Patriating Canada constitution and</div>
+	         <div class="capln3">establish the Charter of Freedom.</div>
+	     
+    	
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Ottawa_fireworks_49_(27768773120).jpg">Harvey K from Toronto, Canada</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons
+	</div>
+	</div>
+	
+          <div class="text-content">
+	         <div class="capdate">1999 CE</div>
+			 <div class="gap1-5vh"></div>
+             <div class="caphdr">Third territory</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">Nunavut is established</div>
+	         <div class="capln2">as third territory, separating</div>
+			 <div class="capln3">from the Northwest Territories.</div>
+	      
+    
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Nuluujaak_Mountain.jpg">The Cosmonaut</a>, <a href="https://creativecommons.org/licenses/by-sa/2.5/ca/deed.en">CC BY-SA 2.5 CA</a>, via Wikimedia Commons
+	</div>
+    </div>
+	
+  		  
+
+
+
+
+
+
+ </div>
+    </aside>
+
+  </div>	         
+	     		  
+		 
+</body>
+</html>
