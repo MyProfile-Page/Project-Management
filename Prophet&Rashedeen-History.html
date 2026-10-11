@@ -63,7 +63,7 @@
   top: 1.5vh;          /* Pins caption to the top */
   left: 1.0%;
   width:35%;
-  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.3);   /* Semi-transparent background for readability */
   color: white;
   padding: 1vh;
   box-sizing: border-box; 
@@ -86,10 +86,10 @@
 /* Caption on top of the image */
 .caption-overlay {
   position: absolute;
-  top: 3vh;          /* Pins caption to the top */
-  left: 2%;
+  top: 0vh;          /* Pins caption to the top */
+  left: 0%;
   width: 45%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
   color: white;
   padding: 2vh;
   box-sizing: border-box;  
@@ -236,7 +236,7 @@
   top: 1.0vh;          /* Pins caption to the top */
   left: 1.0%;
   width: 45%;
-  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.3);   /* Semi-transparent background for readability */
   color: white;
   padding: 1vh;
   box-sizing: border-box;  
@@ -271,10 +271,10 @@
 /* Caption on top of the image */
 .caption-overlay {
   position: absolute;
-  top: 2vh;          /* Pins caption to the top */
-  left: 2%;   
+  top: 0vh;          /* Pins caption to the top */
+  left: 0%;   
   width: 70%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
   color: white;
   padding: 1.3vh;
   box-sizing: border-box;  
@@ -389,14 +389,16 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
     <div class="image-card">  
        <img id="ih1" src="IslamicConquestsIroon.png" alt="Map">
 	    
-	      <div class="caption-overlay-top" style="background: rgba(0, 0, 0, 0.6);" >
+	      <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3);" >
+		    <div class="gap1-5vh"></div>
+            <div class="caphdr" style="font-weight: 600; font-size: clamp(1.1rem, 1.2vw, 1.3rem);">Islam TimeLine</div>	
+			<div class="gap1-5vh"></div>
 	        <div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">From Prophet Ibrahim</div>
 			
 			<div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">To Khulfa-e-Rashedeen</div>
-            
+            <div class="gap1-5vh"></div>
 			
-			<div class="gap1-5vh"></div>
-            <div class="caphdr" style="font-weight: 600; font-size: clamp(1.1rem, 1.2vw, 1.3rem);">Islam TimeLine</div>			
+					
 		
 	     </div>	
 		 
