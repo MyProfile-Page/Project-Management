@@ -47,7 +47,7 @@
 .image-card {
   position: relative; /* Makes this the anchor for absolute positioning */
   flex: 0 0 auto;
-  margin-top: 4vh; 
+  margin-top: 0vh; 
   object-fit: cover; 
   margin-left: 3.15%;    
 }
@@ -189,12 +189,21 @@
   
  
  .bottom {
- background: #ccf2ff; color: black; width: 50%; padding: 0vh; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
+ background: #ccf2ff; color: red; width: 50%; padding: 0vh; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
  } 
 
  .imglic {
  font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; height: 0.5vh;
  margin-top: 1vh;
+ }
+ 
+ .text-content {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; 
+ color:white; background: rgba(0, 0, 0, 0.9); width: 94%; margin-left: 3%
+ }
+ .imglic1 {
+ font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; 
+ color:white; background: rgba(0, 0, 0, 0.9); width: 94%; margin-left: 3%; height: 4vh;
  }
 
 
@@ -378,52 +387,63 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
  <div class="gap1-5vh"></div> 		  
  <div class="gap1-5vh"></div>
 <div class ="bottom">          
-	         This is a non-commercial website.<br>
-			 All Illustrative Imagery are sourced via<br> 
+	         This is a non-commercial website,
+			 illustrative Imagery are sourced via 
 			 Wikimedia Commons.
 			 
 	      </div>
-	  
+	  <div class="gap1-5vh"></div>
  	     
  
  
  <div class="scroll-container">
  
-    <div class="image-card-flag">  
-       <img src="Niagara_Falls_Skyline.jpg" alt="Description" >
-	    
-	     <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.2);" >
-	        <div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">From Indigineous civilization</div>
-			
-			<div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">To European contacts</div>
-            
-			<div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">To a modern world state.</div>
+        
+	     <div class="text-content" style="text-align: center; " >
+		    <div class="gap1-5vh"></div>
+		    <div class="caphdr" style="font-weight: 600; font-size: clamp(1.1rem, 1.2vw, 1.3rem);">Canada TimeLine</div>
 			<div class="gap1-5vh"></div>
-            <div class="caphdr" style="font-weight: 600; font-size: clamp(1.1rem, 1.2vw, 1.3rem);">Canada TimeLine</div>			
-		
-	     </div>	
+			<div class="gap1-5vh"></div>
+	        <div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">From Indigineous civilization to European contacts to a modern world state.</div>
+			
+			
+			<div class="gap1-5vh"></div>
+            <div class="gap1-5vh"></div>
+            <div class="gap1-5vh"></div>			
+		 </div>	
+		 <div class="image-card">  
+           <img src="Flag_of_Canada_(600x800).jpg" alt="Description" >
+	    </div>
 		 
-    </div>
-    <div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Niagara_Falls_Skyline.jpg">Jason Pratt</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons
+    
+    <div class="imglic1">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Flag_of_Canada_(600x800).jpg">K. Annoyomous24</a>, Public domain, via Wikimedia Commons
 	</div> 
+	<div class="gap1-5vh"></div>
 	
 	
-	<div class="image-card">  
-        <img src="Bering_Strait.jpeg" alt="Description">
-          <div class="caption-overlay" >
+          <div class="text-content">
+		     <div class="gap1-5vh"></div>
 	         <div class="capdate">30000–15000 BC</div>
+			 <div class="gap1-5vh"></div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The First Migration Through Beringa</div>
 			 <div class="gap1-5vh"></div>
-             <div class="capln1">First peoples cross into North America</div>
-	         <div class="capln2">from Asia, establishing rich</div>
-			 <div class="capln2">and diverse Indigenous societies.</div>
+			 <div class="gap1-5vh"></div>
+             <div class="capln1">First people cross into North America
+			                     from Asia, establish rich & diverse Indigenous societies.
+			 </div>
+	         <div class="gap1-5vh"></div>
+			 <div class="gap1-5vh"></div>
 	      </div>
-    </div>
+		  <div class="image-card">  
+             <img src="Bering_Strait.jpeg" alt="Description">
+	      </div>	
+		  <div class="imglic1">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Bering_Strait.jpeg">NASA/GSFC/JPL/MISR-Team</a>, Public domain, via Wikimedia Commons
+	         </div>
+          <div class="gap1-5vh"></div>
 	
 		
-	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Bering_Strait.jpeg">NASA/GSFC/JPL/MISR-Team</a>, Public domain, via Wikimedia Commons
-	</div>
+	
   
     <div class="image-card">
         <img src="Sisimiut_Qiviarfik.jpg" alt="Description">
