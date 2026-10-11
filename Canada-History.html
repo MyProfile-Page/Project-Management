@@ -47,7 +47,7 @@
 .image-card {
   position: relative; /* Makes this the anchor for absolute positioning */
   flex: 0 0 auto;
-  margin-top: 0vh; 
+  margin-top: 4vh; 
   object-fit: cover; 
   margin-left: 3.15%;    
 }
@@ -94,7 +94,7 @@
   top: 1vh;          /* Pins caption to the top */
   left: 25%;
   width: 44%;
-  background: rgba(0, 0, 0, 0.5);   /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.0);   /* Semi-transparent background for readability */
   color: yellow;
   padding: 1vh;
   box-sizing: border-box; 
@@ -107,12 +107,15 @@
   top: 0vh;            /* Pins caption to the top */
   left: 0%;
   width: 46%;
-  background: rgba(0, 0, 0, 0.1); /* Semi-transparent background for readability */
-  color: white;
+  background: rgba(0, 0, 0, 0.0); /* Semi-transparent background for readability */
+  color: black;
   padding: 2vh;
   box-sizing: border-box; 
-     
+  font-family: calibri; 
+      
 }
+
+
 
 /* Caption on top of the image */
 .caption-overlay-flag {
@@ -189,21 +192,12 @@
   
  
  .bottom {
- background: #ccf2ff; color: red; width: 50%; padding: 0vh; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
+ background: #ccf2ff; color: black; width: 50%; padding: 0vh; font-size: clamp(0.6rem, 0.7vw, 0.8rem); font-weight: 500; text-align: center; margin: 0 auto;
  } 
 
  .imglic {
  font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; height: 0.5vh;
  margin-top: 1vh;
- }
- 
- .text-content {
- font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; 
- color:white; background: rgba(0, 0, 0, 0.9); width: 94%; margin-left: 3%
- }
- .imglic1 {
- font-size: clamp(0.6rem, 0.8vw, 0.9rem); text-align: center; 
- color:white; background: rgba(0, 0, 0, 0.9); width: 94%; margin-left: 3%; height: 4vh;
  }
 
 
@@ -387,63 +381,54 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
  <div class="gap1-5vh"></div> 		  
  <div class="gap1-5vh"></div>
 <div class ="bottom">          
-	         This is a non-commercial website,
-			 illustrative Imagery are sourced via 
+	         This is a non-commercial website.<br>
+			 All Illustrative Imagery are sourced via<br> 
 			 Wikimedia Commons.
 			 
 	      </div>
-	  <div class="gap1-5vh"></div>
+	  
  	     
  
  
  <div class="scroll-container">
  
-        
-	     <div class="text-content" style="text-align: center; " >
+    <div class="image-card-flag">  
+       <img src="National_Flag_of_Canada,_Brussels_2026.jpg" alt="Description" >
+	    
+	     <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.0); color: black;" >
 		    <div class="gap1-5vh"></div>
-		    <div class="caphdr" style="font-weight: 600; font-size: clamp(1.1rem, 1.2vw, 1.3rem);">Canada TimeLine</div>
+            <div class="capdate" style="font-weight: 600; font-size: clamp(1.1rem, 1.2vw, 1.3rem);">Canada TimeLine</div>
 			<div class="gap1-5vh"></div>
-			<div class="gap1-5vh"></div>
-	        <div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">From Indigineous civilization to European contacts to a modern world state.</div>
+	        <div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">From Indigineous civilization</div>
 			
-			
-			<div class="gap1-5vh"></div>
-            <div class="gap1-5vh"></div>
-            <div class="gap1-5vh"></div>			
-		 </div>	
-		 <div class="image-card">  
-           <img src="Flag_of_Canada_(600x800).jpg" alt="Description" >
-	    </div>
+			<div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">To European contacts</div>
+            
+			<div class="caphdr" style="font-weight: 550; font-size: clamp(0.7rem, 0.8vw, 0.9rem);">To a modern world state.</div>
+						
+		
+	     </div>	
 		 
-    
-    <div class="imglic1">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Flag_of_Canada_(600x800).jpg">K. Annoyomous24</a>, Public domain, via Wikimedia Commons
+    </div>
+    <div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
 	</div> 
-	<div class="gap1-5vh"></div>
 	
 	
-          <div class="text-content">
-		     <div class="gap1-5vh"></div>
+	<div class="image-card">  
+        <img src="Bering_Strait_Expedition.jpg" alt="Description">
+          <div class="caption-overlay" style="color: black;" >
 	         <div class="capdate">30000–15000 BC</div>
-			 <div class="gap1-5vh"></div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The First Migration Through Beringa</div>
 			 <div class="gap1-5vh"></div>
-			 <div class="gap1-5vh"></div>
-             <div class="capln1">First people cross into North America
-			                     from Asia, establish rich & diverse Indigenous societies.
-			 </div>
-	         <div class="gap1-5vh"></div>
-			 <div class="gap1-5vh"></div>
+             <div class="capln1">First peoples cross into North America</div>
+	         <div class="capln2">from Asia, establishing rich</div>
+			 <div class="capln2">and diverse Indigenous societies.</div>
 	      </div>
-		  <div class="image-card">  
-             <img src="Bering_Strait.jpeg" alt="Description">
-	      </div>	
-		  <div class="imglic1">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Bering_Strait.jpeg">NASA/GSFC/JPL/MISR-Team</a>, Public domain, via Wikimedia Commons
-	         </div>
-          <div class="gap1-5vh"></div>
+    </div>
 	
 		
-	
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Bering_Strait_Expedition.jpg">Suevic</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+	</div>
   
     <div class="image-card">
         <img src="Sisimiut_Qiviarfik.jpg" alt="Description">
@@ -492,7 +477,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="cartier.PNG" alt="Description">
-          <div class="caption-overlay">
+          <div class="caption-overlay" style="color: white;">
 	         <div class="capdate">1534 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Jacques Cartier</div>
@@ -533,8 +518,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:3001_LC_Kangiqsualujjuaq_hike.jpg">Lkovac</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons
 	</div>
 	<div class="image-card">
-        <img src="An_Authentic_Plan_of_the_River_St._Laurence_from_Sillery_to_the_Fall_of_Montmorenci.jpg" alt="Description">
-          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+        <img src="Plaines-Abraham-Québec.jpg" alt="Description">
+          <div class="caption-overlay" style="color: black; left: 12vw;">
 	         <div class="capdate">1759 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Plains of Abraham</div>
@@ -544,11 +529,11 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
              <div class="capln2">in Qubec.</div>	         
 	      </div>
     </div>
-	<div class="imglic">Photograph By<a href="https://commons.wikimedia.org/wiki/File:An_Authentic_Plan_of_the_River_St._Laurence_from_Sillery_to_the_Fall_of_Montmorenci.jpg">Thomas Jefferys</a>, Public domain, via Wikimedia Commons
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Plaines-Abraham-Qu%C3%A9bec.jpg">Gilbert Bochenek</a>, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons
 	</div>
 	<div class="image-card">
-        <img src="Province_of_Quebec_1774.gif" alt="Description">
-          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+        <img src="NorthAmerica1762-83.png" alt="Description">
+          <div class="caption-overlay" style="color: black; top:7vh;">
 	         <div class="capdate">1763 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The Treaty of Paris</div>
@@ -558,11 +543,11 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
              <div class="capln2">and ends French authority on Qubec.</div>	         
 	      </div>
     </div>
-	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Province_of_Quebec_1774.gif">Les Frères Maristes</a>, Public domain, via Wikimedia Commons
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:NorthAmerica1762-83.png">Jon Platek</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons
 	</div>
 	<div class="image-card">
         <img src="Quebec_langues.png" alt="Description">
-          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+          <div class="caption-overlay" style="color: blue; left: 4vw;">
 	         <div class="capdate">1791 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">The Constitutional Act</div>
@@ -588,8 +573,8 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Battle_of_Queenston_Heights,_Artist_Unknown.jpg">RiverBrink Art Museum</a>, Public domain, via Wikimedia Commons
 	</div>
 	<div class="image-card">
-        <img src="Canada_change_1867-07-01.png" alt="Description">
-          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+        <img src="Ashbridge's_Marsh_as_shown_in_this_1873_painting_by_Lucius_O'Brien.jpg" alt="Description">
+          <div class="caption-overlay"  >
 	         <div class="capdate">1867 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Canada Formed</div>
@@ -599,11 +584,11 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
              <div class="capln2">into the federal Dominion of Canada.</div>	         
 	      </div>
     </div>
-	<div class="imglic">Photograph By Golbez <a href="https://commons.wikimedia.org/wiki/File:Canada_change_1867-07-01.png">Golbez</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Ashbridge%27s_Marsh_as_shown_in_this_1873_painting_by_Lucius_O%27Brien.jpg">Lucius O&#039;Brien</a>, Public domain, via Wikimedia Commons
 	</div>
 	<div class="image-card">
-        <img src="Canada_provinces_1871-1873.png" alt="Description">
-          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+        <img src="Charlottetown_Harbour,_Prince_Edward_Island.jpg" alt="Description">
+          <div class="caption-overlay" style="color: black;">
 	         <div class="capdate">1870-1873 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Provinces Join the federation</div>
@@ -613,7 +598,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
              <div class="capln2">join the new confederation.</div>	         
 	      </div>
     </div>
-	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Canada_provinces_1871-1873.png">Golbez assumed</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons
+	<div class="imglic">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Charlottetown_Harbour,_Prince_Edward_Island.jpg">Charles Hoffman</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons
 	</div>
 	<div class="image-card">
         <img src="Eastbound_over_SCB.jpg" alt="Description">
@@ -631,7 +616,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Canada_change_1905-09-01.png" alt="Description">
-          <div class="caption-overlay" style="background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */">
+          <div class="caption-overlay" >
 	         <div class="capdate">1905 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">More Join the federation</div>
@@ -659,7 +644,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	</div>
 	<div class="image-card">
         <img src="Queen's_Park_-_Toronto_-_2010_(cropped-rotated).jpg" alt="Description">
-          <div class="caption-overlay">
+          <div class="caption-overlay" style="color: black; left: 16vw;">
 	         <div class="capdate">1931 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Legislative independence</div>
@@ -694,7 +679,7 @@ font-size: clamp(0.7rem, 1.0vw, 1.1rem);
 	
 	<div class="image-card">
         <img src="Ottawa_fireworks_49_(27768773120).jpg" alt="Description">
-          <div class="caption-overlay " >
+          <div class="caption-overlay " style="color: white;">
 	         <div class="capdate">1982 CE</div>
 			 <div class="gap1-5vh"></div>
              <div class="caphdr">Constitution Act</div>
