@@ -16,7 +16,7 @@
 
         .app-container {
             display: flex;
-            height: 100vh;
+            height: 400vh;
         }
 
         /* Main Sidebar Container */
@@ -46,6 +46,8 @@
             gap: 20px;              /* Space between each image group */
             padding: 15px;
             overflow-y: auto;       /* Adds a scrollbar safely if you have many images */
+			
+			
         }
 
         /* Individual Image Wrapper */
@@ -58,6 +60,7 @@
     border-radius: 8px;
     padding: 10px;
     box-sizing: border-box;
+	
 }
 
         /* Individual Image Texts */
@@ -78,7 +81,7 @@
 .image-group img {
     /* REMOVE flex: 1; from here */
     width: 100%;            /* Keeps it filling the sidebar horizontally */
-    height: 180px;          /* 💡 SET YOUR COMFORTABLE IMAGE HEIGHT HERE (e.g., 180px, 200px) */
+    height: 500px;          /* 💡 SET YOUR COMFORTABLE IMAGE HEIGHT HERE (e.g., 180px, 200px) */
     object-fit: cover;      /* Crops the image beautifully without distortion */
     border-radius: 4px;
 }
