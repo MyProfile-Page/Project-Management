@@ -13,6 +13,7 @@
             font-family: sans-serif;
             background-color: #f0f2f5;
         }
+@media (min-width: 768px) {		
 
         .app-container {
             display: flex;
@@ -96,6 +97,96 @@
         .main-content { width: 0%; /* 💡 Explicitly set to fill the rest of the 100% */
     padding: 40px;
     box-sizing: border-box;  }
+	
+}	
+
+@media (max-width: 768px) {		
+
+        .app-container {
+            display: flex;
+            height: 400vh;
+        }
+
+        /* Main Sidebar Container */
+        .sidebar-container {
+		     width: 100%; /* 💡 Changed from 280px to a percentage */
+               
+         /*   width: 280px; */
+            height: 100%;
+            background-color: #1e1e24;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 1. Main Top Dock */
+        .text-dock-top {
+            padding: 20px;
+            background-color: #2a2a35;
+            border-bottom: 1px solid #3a3a4a;
+        }
+
+        /* 2. Middle Container holding all the image items */
+        .image-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column; /* Stacks image groups vertically */
+            gap: 20px;              /* Space between each image group */
+            padding: 5px;
+            overflow-y: auto;       /* Adds a scrollbar safely if you have many images */
+			
+			
+        }
+
+        /* Individual Image Wrapper */
+       .image-group {
+    /* REMOVE flex: 1; from here */
+    flex-shrink: 0;         /* Stops the container from being squeezed down */
+    display: flex;
+    flex-direction: column; 
+    background-color: #25252f;
+    border-radius: 8px;
+    padding: 3px;
+    box-sizing: border-box;
+	
+}
+
+        /* Individual Image Texts */
+        .image-title-top {
+            font-size: 14px;
+            font-weight: bold;
+            color: #4a90e2;
+            margin: 0 0 8px 0;
+        }
+
+        .image-caption-bottom {
+            font-size: 12px;
+            color: #b0b0b8;
+            margin: 8px 0 0 0;
+        }
+
+       /* 2. Set the explicit width and height directly on the image */
+.image-group img {
+    /* REMOVE flex: 1; from here */
+    width: 100%;            /* Keeps it filling the sidebar horizontally */
+    height: 250px;          /* 💡 SET YOUR COMFORTABLE IMAGE HEIGHT HERE (e.g., 180px, 200px) */
+    object-fit: center;      /* Crops the image beautifully without distortion */
+    border-radius: 4px;
+}
+
+        /* 3. Main Bottom Dock */
+        .text-dock-bottom {
+            padding: 20px;
+            background-color: #141419;
+            border-top: 1px solid #2a2a35;
+        }
+
+        .main-content { width: 0%; /* 💡 Explicitly set to fill the rest of the 100% */
+    padding: 40px;
+    box-sizing: border-box;  }
+	
+}	
+
     </style>
 </head>
 <body>
