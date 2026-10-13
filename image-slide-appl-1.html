@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Dock Layout</title>
+    <style>
+        /* Base page reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Container */
+        .sidebar-container {
+            width: 300px;
+            height: 100vh;
+            background-color: #1e1e24;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: space-between; /* Pushes top and bottom docks away from middle */
+            border-right: 1px solid #333;
+        }
+
+        /* Top & Bottom Text Docks */
+        .text-dock-top, 
+        .text-dock-bottom {
+            padding: 20px;
+            background-color: #111115;
+            text-align: center;
+        }
+
+        /* Middle Image Area */
+        .image-container {
+            flex-grow: 1; /* Makes the image area take up all available middle space */
+            display: flex;
+            align-items: center; /* Centers image vertically */
+            justify-content: center; /* Centers image horizontally */
+            padding: 20px;
+            overflow: hidden; /* Prevents large images from breaking the layout */
+        }
+
+        /* Responsive, scaling image */
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Maintains aspect ratio without stretching */
+            border-radius: 8px;
+        }
+
+        /* Main Content placeholder (Optional) */
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Sidebar Structure -->
+    <aside class="sidebar-container"> 
+        <!-- Top Text1 Dock --> 
+        <div class="text-dock-top"> 
+            <h3>Top1 Navigation</h3>
+            <p>Links or Header info</p>
+        </div> 
+
+        <!-- Middle Image Area --> 
+        <div class="image-container"> 
+            <img src="Troy_2727-new.jpg" alt="Description">
+        </div> 
+
+        <!-- Bottom Text1 Dock --> 
+        <div class="text-dock-bottom"> 
+            <h3>Bottom Dock</h3>
+            <p>© 2026 Footer Content</p>
+        </div> 
+	</aside>
+	
+   	 <aside class="sidebar-container"> 
+		 <!-- Top Text2 Dock --> 
+        <div class="text-dock-top"> 
+            <h3>Top2 Navigation</h3>
+            <p>Links or Header info</p>
+        </div> 
+
+        <!-- Middle Image Area --> 
+        <div class="image-container"> 
+            <img src="Göbekli_Tepe_site_(1)-new.jpg" alt="Description">
+        </div> 
+
+        <!-- Bottom Text2 Dock --> 
+        <div class="text-dock-bottom"> 
+            <h3>Bottom Dock</h3>
+            <p>© 2026 Footer Content</p>
+        </div> 
+    </aside>
+	
+	 <aside class="sidebar-container"> 
+		 <!-- Top Text3 Dock --> 
+        <div class="text-dock-top"> 
+            <h3>Top3 Navigation</h3>
+            <p>Links or Header info</p>
+        </div> 
+
+        <!-- Middle Image Area --> 
+        <div class="image-container"> 
+            <img src="Paolo_Monti_-_Serie_fotografica_(Selçuk,_1962)_-_BEIC_6336866-new.jpg" alt="Description">
+        </div> 
+
+        <!-- Bottom Text2 Dock --> 
+        <div class="text-dock-bottom"> 
+            <h3>Bottom Dock</h3>
+            <p>© 2026 Footer Content</p>
+        </div> 
+    </aside>
+
+
+    <!-- Main Content Area (Just to show side-by-side layout) -->
+    <main class="main-content">
+        <h1>Your Main Dashboard/Content Area</h1>
+    </main>
+
+</body>
+</html>
