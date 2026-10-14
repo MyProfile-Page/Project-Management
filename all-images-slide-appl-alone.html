@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vertical Snap Gallery</title>
   <style>
+  
+  /*  600 * 400     513 * 768
    /* 1. Update the group wrapper to accept fixed content height */
 .image-group {
     /* REMOVE flex: 1; from here */
@@ -212,27 +214,7 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
     transform: scale(1.02);
   }
   
-  /* Individual Image Texts */
-        .image-title-top {
-            font-size: clamp(0.9rem, 1.1vw, 1.2rem);
-            font-weight: 600;
-            color: #4a90e2;
-			color: white;
-            margin: 0 0 8px 0;
-			background-color: black;
-			text-align: center;
-        }
-
-        .image-title-bottom {
-            font-size: clamp(0.7rem, 0.8vw, 0.9rem);
-            font-weight: 700;
-            color: #b0b0b8;
-            margin: 8px 0 0 0;
-			color: white;
-			background-color: black;
-			text-align: center;
-        }
-
+ 
 }
 
 /* ==========================================
@@ -241,25 +223,13 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
 @media (max-width: 769px) {
 
 /* Individual Image Texts */
-        .image-title-top {
-            font-size: clamp(0.9rem, 1.1vw, 1.2rem);
-            font-weight: 600;
-            color: #4a90e2;
-			color: white;
-            margin: 0 0 8px 0;
-			background-color: black;
-			text-align: center;
+        .top-mobonly {
+            
 			top: -40vh;
         }
 
-        .image-title-bottom {
-            font-size: clamp(0.7rem, 0.8vw, 0.9rem);
-            font-weight: 700;
-            color: #b0b0b8;
-            margin: 8px 0 0 0;
-			color: white;
-			background-color: black;
-			text-align: center;
+        .bottom-mobonly {
+           
 			top: 9vh;
         }
 }
@@ -284,11 +254,11 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
 	<!-- Image Wrapper 1 -->
     <div class="image-wrapper">
 	 
-	   <div class="image-title-top">Canada TimeLine</div>					
+	   <div class="image-title-top top-mobonly">Canada RimeLine</div>					
 					<div class="image-title-top">From Indigineous civilization to
 					European contacts to a modern world state.</div>
       <img src="Troy_2727-new.jpg" alt="Description">  
-	                     <p class="image-title-bottom">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+	                     <p class="image-title-bottom bottom-mobonly">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
     </div>
 
     <!-- Image Wrapper 2 -->
@@ -299,7 +269,7 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
 
     <!-- Image Wrapper 3 -->
     <div class="image-wrapper">
-      <img src="Eastbound_over_SCB.jpg" alt="Description">
+      <img src="Eastbound_over_SCB-new.jpg" alt="Description">
       <div class="caption">Image 3: Mist in the Woods</div>
     </div>
 	
