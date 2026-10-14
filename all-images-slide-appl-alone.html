@@ -6,7 +6,7 @@
   <title>Vertical Snap Gallery</title>
   <style>
   
-  /*  600 * 400     513 * 768
+  /*  600 * 400     513 * 768 WHEN CHANGE IMAGE SIZE BY PAINT KEEP WIDTH MORE THAN HEIGHT */
    /* 1. Update the group wrapper to accept fixed content height */
 .image-group {
     /* REMOVE flex: 1; from here */
@@ -181,6 +181,16 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
 			background-color: black;
 			text-align: center;
         }
+		
+		 .top-mobonly {
+            
+			top: 0vh;
+        }
+
+        .bottom-mobonly {
+           
+			top: 0vh;
+        }
 
 
 /* ==========================================
@@ -244,7 +254,7 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
     <!-- Image Wrapper 0 -->
     <div class="image-wrapper">
 	 <div class="image-title-top"> 
-                <h3>🚀 Media Nallery</h3>
+                <h3>🚀 Media Sallery</h3>
             </div> 
 	   
       <img src="Troy_2727-new.jpg" alt="Description">  
