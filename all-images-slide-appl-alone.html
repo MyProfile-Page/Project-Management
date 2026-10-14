@@ -76,6 +76,7 @@ html, body {
   align-items: center;
   padding: 20px;
   position: relative;
+ border: 1vw solid red;
 }
 
 /* 3. The Image Component */
@@ -191,11 +192,20 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
     background-color: #1a1a1a; /* Slight contrast difference for the desktop background framing */
   }
-
+  
+  
   .image-wrapper img {
-    max-height: 75vh; /* Slightly smaller maximum height to account for different desktop viewing angles */
-    transition: transform 0.3s ease;
-  }
+  max-width: 100%;
+  max-height: 60vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+
+/* .image-wrapper img {  */
+/*  max-height: 75vh; */ /* Slightly smaller maximum height to account for different desktop viewing angles */
+ /*   transition: transform 0.3s ease; */
+ /* }  */
   
   /* Adds a smooth hover animation on desktop screens */
   .image-wrapper img:hover {
