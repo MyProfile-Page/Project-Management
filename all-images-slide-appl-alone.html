@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vertical Snap Gallery</title>
+  <title>Archeological Excevations Gallery</title>
   <style>
   
   /*  600 * 400     513 * 768 WHEN CHANGE IMAGE SIZE BY PAINT KEEP WIDTH MORE THAN HEIGHT */
    /* 1. Update the group wrapper to accept fixed content height */
+    /* Please advise if it is possible to provide object-fit: cover for iamge css and restrict its chopping */
+	 /* Please advise how to keep only a single dimension of all images in a imge gallery application and allow bigger images to shrink without chopping and shorter images to expand to fit. css html */
 .image-group {
     /* REMOVE flex: 1; from here */
     flex-shrink: 0;         /* Stops the container from being squeezed down */
@@ -78,7 +80,7 @@ html, body {
   align-items: center;
   padding: 20px;
   position: relative;
- border: 1vw solid red;
+ border: 0vw solid red;
 }
 
 /* 3. The Image Component */
@@ -223,8 +225,9 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
             font-size: clamp(0.9rem, 1.8vw, 1.2rem);  
 			top: 3vh;
         }
-     .top-line2w0 {            
-			top: 9vh;
+     .top-line2w0 {  
+            font-size: clamp(0.9rem, 1.3vw, 1.2rem);	 
+			top: 10vh;
         }
 	  .top-line1w1 {  
             font-size: clamp(0.9rem, 1.8vw, 1.2rem);	  
@@ -232,7 +235,7 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
         }
      .top-line2w1 {  
             font-size: clamp(0.9rem, 1.3vw, 1.2rem);	 
-			top: 9vh;
+			top: 10vh;
         }
 	  .top-line1w2 {            
 			top: 3vh;
@@ -241,7 +244,7 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
 			top: 9vh;
         }	
 	 .bottom-line {           
-			top: 80vh;
+			top: 89vh;
         }			
  
   	 
@@ -280,7 +283,8 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
 			top: 18vh;
 			font-size: clamp(0.9rem, 4.5vw, 1.2rem);
         }
-     .top-line2w0 {            
+     .top-line2w0 {  
+            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 9vh;
         }
 	  .top-line1w1 {  
@@ -311,45 +315,172 @@ font-size: clamp(0.9rem, 1.4vw, 1.5rem);
       <!-- MAIN TOP DOCK -->
            
     <!-- Image Wrapper 0 -->
-    <div class="image-wrapper">
-	 <div class="image-title-top top-line1w0"> 
-                <h3>🚀 Media Dallery</h3>
-            </div> 
-	   
-      <img src="Troy_2727-new.jpg" alt="Description">  
-	                    
+    <div class="image-wrapper">	  
+         <div class="image-title-top top-line1w0">🚀 Archaeological Excavations Chronology</div> 
+         <div class="image-title-top top-line2w0">Down The Memory Lane.</div>
+	  
+         <img src="2014_Nikon_D7000_z_obiektywem_MC_3M-5CA.JPG" alt="Description">	 
+	  <!-- 
+      <img src="excavation-image.PNG" alt="Description"> 
+      -->	  
+         <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:2014_Nikon_D7000_z_obiektywem_MC_3M-5CA.JPG">Jacek Halicki</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>		                    
     </div>
 	
 	<!-- Image Wrapper 1 -->
-    <div class="image-wrapper">
-	 
+    <div class="image-wrapper">	 
 	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
-					<div class="image-title-top top-line2w1 ">From Indigineous civilization to
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
 					European contacts to a modern world state.</div>
-      <img src="Troy_2727-new.jpg" alt="Description">  
-	                     <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+       <img src="Troy_2727.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Troy_2727.jpg">Dosseman</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 2 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="Excavations_in_Tavşan_Adası_(Aydın).jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Excavations_in_Tav%C5%9Fan_Adas%C4%B1_(Ayd%C4%B1n).tif">François Bertemes</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 3 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="Göbekli_Tepe_site.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:G%C3%B6bekli_Tepe_site_(1).JPG">Zhengan</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 4 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 5 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="Troy_2727-new.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 6 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 7 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg"> Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 8 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-to
+	   p top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+		<!-- Image Wrapper 9 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="Troy_2727-new.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 10 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 11 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg"> Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 12 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 13 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="Troy_2727-new.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 14 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 15 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg"> Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+    </div>
+	
+	<!-- Image Wrapper 16 -->
+    <div class="image-wrapper">	 
+	   <div class="image-title-top top-line1w1">Canada RimeLine</div>					
+	   <div class="image-title-top top-line2w1 ">From Indigineous civilization to
+					European contacts to a modern world state.</div>
+       <img src="wider-900-800.jpg" alt="Description">  
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
     </div>
 
-    <!-- Image Wrapper 2 -->
-    <div class="image-wrapper">
-      <img src="wider-900-800.jpg" alt="Description">
-      <div class="caption">Image 2: Ocean View</div>
-    </div>
 
-    <!-- Image Wrapper 3 -->
-    <div class="image-wrapper">
-      <img src="wider-900-800.jpg" alt="Description">
-      <div class="caption">Image 3: Mist in the Woods</div>
-    </div>
+
+   
 	
 	 <!-- Image Wrapper last -->
     <div class="image-wrapper">
-	 <div class="image-title-top"> 
-                <p>© Thanks For Viewing Our Excavation Gallery</p
-            </div> 
-	   
-      <img src="Troy_2727-new.jpg" alt="Description">  
-	                    
+	   <div class="image-title-top"> 
+            <p>© Thanks For Viewing Our Excavation Gallery</p
+       </div> 	   
+       <img src="Troy_2727-new.jpg" alt="Description">                   
     </div>
 
   </div>
