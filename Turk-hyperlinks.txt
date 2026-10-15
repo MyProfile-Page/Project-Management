@@ -1,0 +1,67 @@
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  width: 100%;
+}
+
+.scroll-item {
+  /* Fix the dimensions to standardise the scroll track */
+  width: 300px;  
+  height: 200px; 
+  flex-shrink: 0; /* Prevents the browser from squishing the width */
+  
+  /* Force the image to fill the box without stretching */
+  object-fit: cover; 
+}
+
+tory
+Line1:  Acropolis in Athens, Greece
+line2:  Excavations in public buildings Acropolis
+<a href="https://commons.wikimedia.org/wiki/File:Troy_2727.jpg">Dosseman</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+excav
+1. Tavşan 
+2. Excavations in Tavşan Adası (Aydın)
+<a href="https://commons.wikimedia.org/wiki/File:Excavations_in_Tav%C5%9Fan_Adas%C4%B1_(Ayd%C4%B1n).tif">François Bertemes</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons
+Gobekli
+1.Göbekli
+2.Excavations in Göbekli 
+<a href="https://commons.wikimedia.org/wiki/File:G%C3%B6bekli_Tepe_site_(1).JPG">Zhengan</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+polomonti
+<a href="https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Serie_fotografica_(Sel%C3%A7uk,_1962)_-_BEIC_6336866.jpg">Paolo Monti</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
+heiorapolis
+1. Hierapolis 
+2. Archaeology dig at Hierapolis
+<a href="https://commons.wikimedia.org/wiki/File:Archaeology_Dig_at_Hierapolis_01.jpg">Chris_Parfitt from Morden, Surrey, England</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons
+
+Iznik
+1. Iznik 
+2. Excavations of Iznik Pottery
+<a href="https://commons.wikimedia.org/wiki/File:0967_Iznik_5126_1240.jpg">Dosseman</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
+
+Hisar
+1. Hisar Jami 
+2. Karaman Castle Mosqaue and surroundings
+<a href="https://commons.wikimedia.org/wiki/File:Karaman_4856.jpg">Dosseman</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
+<aside class="text-dock">
+  <div class="text-block-top">
+    First text block goes here.
+  </div>
+  
+  <img src="your-image.jpg" alt="Description of image">
+  
+  <div class="text-block-bottom">
+    Second text block goes here.
+  </div>
+</aside>
+
+.text-dock {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* or flex-start, depending on your alignment needs */
+  gap: 1rem;           /* adds spacing between the text and image */
+}
+
