@@ -292,6 +292,9 @@ text-decoration: underline;
 	 .only-for-mobiles-slide {
       display: none;      
      }	 
+	 .mobile-swipe-message {
+        display: none;  
+     }	
      
  
   	 
@@ -368,7 +371,47 @@ text-decoration: underline;
 	  top: 68vh;
 	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
 	  color: white;      
-     }	 
+     }	
+
+
+      .mobile-swipe-message {
+       display: block;
+      position: absolute;
+	  top: 78vh;
+	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
+	  color: white;      
+     }	
+	 
+     #swipeHint {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+    border-radius: 24px;
+    background: #263238;
+    color: white;
+
+    font-size: clamp(12px, 3vw, 15px);
+    white-space: nowrap;
+    z-index: 1000;
+
+    animation: hintPulse 1.5s ease-in-out infinite;
+}
+
+.swipeIcon {
+    font-size: 22px;
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.65; }
+}	 
     
  
 }
@@ -404,6 +447,10 @@ text-decoration: underline;
 	   <div class="image-title-top top-line2w1 ">From Prophet Ibrahim To Khulfa-e-Rashedeen</div>
        <img id="ih1" src="IslamicConquestsIroon-new.png" alt="Map">  
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:IslamicConquestsIroon.png">Javierfv1212 and edited by HistoryofIran.</a>, Public domain, via Wikimedia Commons</p>
+	   <div id="swipeHint" class="mobile-swipe-message">
+         <span class="swipeIcon">↕</span>
+         <span>Swipe up or down to view more</span>
+       </div>
     </div>
 	
 	<!-- Image Wrapper 2 -->
@@ -806,6 +853,11 @@ text-decoration: underline;
   
   
   <script>
+  
+  setTimeout(() => {
+    document.getElementById("swipeHint")?.remove();
+}, 6000);
+
   // Select the container and all image wrappers
   const container = document.querySelector('.scroll-container');
   const wrappers = document.querySelectorAll('.image-wrapper');
