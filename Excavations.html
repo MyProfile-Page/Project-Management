@@ -218,12 +218,14 @@ text-decoration: underline;
   /* Individual Image Texts */
         .image-title-top {
             font-weight: 600;
-            color: #4a90e2;
+         /*   color: #4a90e2;  */
 			color: white;
             margin: 0 0 8px 0;
-			background-color: black;
+		/*	background-color: black;  */
 			text-align: center;
 			position: absolute;
+			
+			
         }
 
         .image-title-bottom {
@@ -235,6 +237,7 @@ text-decoration: underline;
 			background-color: black;
 			text-align: center;
 			position: absolute;
+			
         }
 		
   .top-line1w0 {  
@@ -244,16 +247,19 @@ text-decoration: underline;
         }
      .top-line2w0 {  
             font-size: clamp(0.8rem, 1.1vw, 1.2rem);	 
-			top: 10vh;
+			top: 11vh;
         }
 	  .top-line1w1 {  
             font-size: clamp(0.9rem, 1.5vw, 1.2rem);	  
-			top: 6vh;
+			top: 9vh;
 			text-decoration: underline;
         }
      .top-line2w1 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 84vh;
+			top: 85vh;
+			width: 65%;
+			margin: 0, auto;
+			
         }
 	  .top-line1w2 {            
 			top: 3vh;
@@ -263,10 +269,10 @@ text-decoration: underline;
         }	
 	 .bottom-line {
             font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
-			top: 89vh;
+			top: 93vh;
 			
         }
-      .only-for-mobiles {
+      .only-for-mobiles-flower {
       display: none;     
      }	
        .only-for-desktops-arrows {
@@ -275,11 +281,18 @@ text-decoration: underline;
 	  top: 84vh;
 	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
 	  color: white;
+	   padding: 2px 12px;
+    border-radius: 8px;
+    background: #263238;
+	  height: 7vh;
      }	
 	 
 	 .only-for-mobiles-slide {
       display: none;      
      }	 
+	 .mobile-swipe-message {
+        display: none;  
+     }	
      
  
   	 
@@ -322,16 +335,16 @@ text-decoration: underline;
         }
      .top-line2w0 {  
             font-size: clamp(0.9rem, 4.0vw, 1.2rem);	 
-			top: 18vh;
+			top: 55vh;
         }
 	  .top-line1w1 {  
             font-size: clamp(0.9rem, 4.5vw, 1.2rem);	  
-			top: 27vh;
+			top: 11vh;
 			text-decoration: underline;
         }
      .top-line2w1 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 71vh;
+			top: 58vh;
         }
 	  .top-line1w2 {            
 			top: 3vh;
@@ -340,9 +353,9 @@ text-decoration: underline;
 			top: 9vh;
         }	
 	 .bottom-line {           
-			top: 76vh;
+			top: 79vh;
         }	
-     .only-for-mobiles {
+     .only-for-mobiles-flower {
       display: block;
       position: absolute;
 	  top: 8.5vh;
@@ -351,12 +364,52 @@ text-decoration: underline;
       display: none;      
      }	 
 	 .only-for-mobiles-slide {
+       display: none;
+      
+     }	
+
+
+      .mobile-swipe-message {
        display: block;
       position: absolute;
-	  top: 68vh;
+	  top: 87vh;
 	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
-	  color: white;      
-     }	 
+	  color: white;  
+      height: 5vh;
+      width: 55%; 
+      margin: 0 auto;	  
+     }	
+	 
+     #swipeHint {
+    position: fixed;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    padding: 9px 16px;
+    border-radius: 12px;
+    background: #263238;
+    color: white;
+
+    font-size: clamp(12px, 3vw, 15px);
+    white-space: nowrap;
+    z-index: 1000;
+
+    animation: hintPulse 1.5s ease-in-out infinite;
+}
+
+.swipeIcon {
+    font-size: 22px;
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.65; }
+}	 
     
  
 }
@@ -370,7 +423,7 @@ text-decoration: underline;
            
     <!-- Image Wrapper 0 -->
     <div class="image-wrapper">	  
-         <div class="image-title-top top-line1w0">🚀 Excavations Gallery</div> 
+         <div class="image-title-top top-line1w0">🚀 Excavations Tallery</div> 
          <div class="image-title-top top-line2w0">Down The Memory Lane.</div>
 	  
          <img src="Strolling_down_Memory_Lane_(5478150373).jpg" alt="Description">	 
@@ -517,6 +570,11 @@ text-decoration: underline;
   
   
   <script>
+  
+  setTimeout(() => {
+    document.getElementById("swipeHint")?.remove();
+ }, 12000);
+
   // Select the container and all image wrappers
   const container = document.querySelector('.scroll-container');
   const wrappers = document.querySelectorAll('.image-wrapper');
