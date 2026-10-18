@@ -90,6 +90,8 @@ html, body {
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  top: 20%;
+  position: absolute;
 }
 
 /* Caption overlay text */
@@ -247,16 +249,16 @@ text-decoration: underline;
         }
      .top-line2w0 {  
             font-size: clamp(0.8rem, 1.1vw, 1.2rem);	 
-			top: 10vh;
+			top: 11vh;
         }
 	  .top-line1w1 {  
             font-size: clamp(0.9rem, 1.5vw, 1.2rem);	  
-			top: 6vh;
+			top: 9vh;
 			text-decoration: underline;
         }
      .top-line2w1 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 84vh;
+			top: 85vh;
 			width: 65%;
 			margin: 0, auto;
 			
@@ -269,10 +271,10 @@ text-decoration: underline;
         }	
 	 .bottom-line {
             font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
-			top: 91vh;
+			top: 93vh;
 			
         }
-      .only-for-mobiles {
+      .only-for-mobiles-flower {
       display: none;     
      }	
        .only-for-desktops-arrows {
@@ -281,11 +283,18 @@ text-decoration: underline;
 	  top: 84vh;
 	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
 	  color: white;
+	   padding: 2px 12px;
+    border-radius: 8px;
+    background: #263238;
+	  height: 7vh;
      }	
 	 
 	 .only-for-mobiles-slide {
       display: none;      
      }	 
+	 .mobile-swipe-message {
+        display: none;  
+     }	
      
  
   	 
@@ -328,16 +337,16 @@ text-decoration: underline;
         }
      .top-line2w0 {  
             font-size: clamp(0.9rem, 4.0vw, 1.2rem);	 
-			top: 18vh;
+			top: 55vh;
         }
 	  .top-line1w1 {  
             font-size: clamp(0.9rem, 4.5vw, 1.2rem);	  
-			top: 27vh;
+			top: 11vh;
 			text-decoration: underline;
         }
      .top-line2w1 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 71vh;
+			top: 58vh;
         }
 	  .top-line1w2 {            
 			top: 3vh;
@@ -346,23 +355,62 @@ text-decoration: underline;
 			top: 9vh;
         }	
 	 .bottom-line {           
-			top: 76vh;
+			top: 79vh;
         }	
-     .only-for-mobiles {
-      display: block;
-      position: absolute;
-	  top: 8.5vh;
+     .only-for-mobiles-flower {
+      display: none;
+      
      }	
      .only-for-desktops-arrows {
       display: none;      
      }	 
 	 .only-for-mobiles-slide {
+       display: none;
+      
+     }	
+
+
+      .mobile-swipe-message {
        display: block;
       position: absolute;
-	  top: 68vh;
+	  top: 87vh;
 	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
-	  color: white;      
-     }	 
+	  color: white;  
+      height: 5vh;
+      width: 55%; 
+      margin: 0 auto;	  
+     }	
+	 
+     #swipeHint {
+    position: fixed;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    padding: 9px 16px;
+    border-radius: 12px;
+    background: #263238;
+    color: white;
+
+    font-size: clamp(12px, 3vw, 15px);
+    white-space: nowrap;
+    z-index: 1000;
+
+    animation: hintPulse 1.5s ease-in-out infinite;
+}
+
+.swipeIcon {
+    font-size: 22px;
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.65; }
+}	 
     
  
 }
@@ -376,7 +424,7 @@ text-decoration: underline;
            
     <!-- Image Wrapper 0 -->
     <div class="image-wrapper">	  
-         <div class="image-title-top top-line1w0">🚀 Canadian History Chronology</div> 
+         <div class="image-title-top top-line1w0">🚀 Canadian History Mhronology</div> 
          <div class="image-title-top top-line2w0">Down The Memory Lane.</div>
 	  
          <img src="Strolling_down_Memory_Lane_(5478150373).jpg" alt="Description">	 
@@ -398,6 +446,10 @@ text-decoration: underline;
 	   <div class="image-title-top top-line2w1 ">From Indigineous civilization, to European contacts, to a modern world state</div>
        <img src="National_Flag_of_Canada,_Brussels_2026-new.jpg" alt="Description">  
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+	   <div id="swipeHint" class="mobile-swipe-message">
+         <span class="swipeIcon">↕</span>
+         <span>Swipe up or down to view more</span>
+       </div>
     </div>
 	
 	<!-- Image Wrapper 2 -->
@@ -653,6 +705,9 @@ text-decoration: underline;
   
   
   <script>
+  setTimeout(() => {
+    document.getElementById("swipeHint")?.remove();
+ }, 12000);
   // Select the container and all image wrappers
   const container = document.querySelector('.scroll-container');
   const wrappers = document.querySelectorAll('.image-wrapper');
