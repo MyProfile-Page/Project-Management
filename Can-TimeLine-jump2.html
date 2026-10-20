@@ -443,7 +443,45 @@ text-decoration: underline;
 @keyframes hintPulse {
     0%, 100% { opacity: 1; }
     50%      { opacity: 0.65; }
-}	 
+}	
+
+/* 2. Top Header Navigation (Dropdown Selector) */
+    .top-nav {
+      position: fixed;
+   /*   top: 20px;  */
+   /*   left: 20px;  */
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+	  
+	   
+	  top: 87vh;
+	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
+	  color: white;  
+      height: 5vh;
+      width: 75%; 
+      margin: 0 auto;	 
+	  
+	  
+    }
+    .top-nav label {
+      font-size: 0.9rem;
+      color: #333;
+      font-weight: bold;
+    }
+    .top-nav select {
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+ 
     
  
 }
@@ -460,7 +498,7 @@ text-decoration: underline;
 
 <!-- Top Dropdown Navigation Menu -->
   <header class="top-nav">
-    <label for="screen-jump">Jump to:</label>
+    <label for="screen-jump">Slide or Jump to:</label>
     <select id="screen-jump" onchange="jumpToScreen(this.value)">
       <option value="wrapper0">1. Dashboard Home</option>
       <option value="wrapper1">2. About Analytics</option>
@@ -493,10 +531,12 @@ text-decoration: underline;
 	   <div class="image-title-top top-line2w1 ">From Indigineous civilization, to European contacts, to a modern world state</div>
        <img src="National_Flag_of_Canada,_Brussels_2026-new.jpg" alt="Description">  
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:National_Flag_of_Canada,_Brussels_2026.jpg">Boaventuravinicius</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons</p>
+	   <!--
 	   <div id="swipeHint" class="mobile-swipe-message">
          <span class="swipeIcon">↕</span>
-         <span>Swipe up or down to view more</span>
+         <span>Swipe up or down to view more or Jump to desired screen</span>
        </div>
+	   -->
     </div>
 	
 	<!-- Image Wrapper 2 -->
