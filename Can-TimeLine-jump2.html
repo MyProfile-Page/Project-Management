@@ -309,28 +309,28 @@ text-decoration: underline;
    /*   left: 20px;  */
       z-index: 100;
       background: rgba(255, 255, 255, 0.9);
-      padding: 10px 15px;
+      padding: 5px 10px;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
       gap: 10px;	   
-	  top: 84vh;
-	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
+	  top: 3vh;
+	  font-size: clamp(0.6rem, 0.7vw, 0.8rem);
 	  color: white;  
-      height: 4vh;
-      width: 95%; 
+      height: 3.0vh;
+      width: 30%; 
       margin: 0 auto;		  
     }
     .top-nav label {
-      font-size: 0.9rem;
+      font-size: clamp(0.6rem, 0.7vw, 0.8rem);
       color: #333;
       font-weight: bold;
     }
     .top-nav select {
-      padding: 5px 10px;
-      font-size: 0.9rem;
-      border-radius: 4px;
+      padding: 0.2px 2px;
+      font-size: clamp(0.5rem, 0.6vw, 0.7rem);
+      border-radius: 3px;
       border: 1px solid #ccc;
       cursor: pointer;
     }
@@ -498,19 +498,21 @@ text-decoration: underline;
 	  <!-- 1. The Fixed Navigation -->
  
 
-<!-- Top Dropdown Navigation Menu -->
-  <header class="top-nav">
-    <label for="screen-jump">Slide or Jump to:</label>
+
+           
+    <!-- Image Wrapper 0 -->
+	
+    <div class="image-wrapper" id="wrapper0">	
+         <!-- Top Dropdown Navigation Menu -->
+  <div class="top-nav">
+    <label for="screen-jump">Slide ↕ or Jump to:</label>
     <select id="screen-jump" onchange="jumpToScreen(this.value)">
       <option value="wrapper0">1. Dashboard Home</option>
       <option value="wrapper1">2. About Analytics</option>
       <option value="wrapper2">3. Core Features</option>
       <option value="wrapper1">4. Support Desk</option>
     </select>
-  </header>
-           
-    <!-- Image Wrapper 0 -->
-    <div class="image-wrapper" id="wrapper0">	  
+  </div>	
          <div class="image-title-top top-line1w0">🚀 Canadian History TimeLine</div> 
          <div class="image-title-top top-line2w0">Down The Memory Lane.</div>
 	  
