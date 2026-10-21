@@ -244,12 +244,12 @@ text-decoration: underline;
 		
   .top-line1w0 {  
             font-size: clamp(0.9rem, 1.3vw, 1.2rem);  
-			top: 3vh;
+			top: 9vh;
 			text-decoration: underline;
         }
      .top-line2w0 {  
             font-size: clamp(0.8rem, 1.1vw, 1.2rem);	 
-			top: 11vh;
+			top: 83vh;
         }
 	  .top-line1w1 {  
             font-size: clamp(0.9rem, 1.5vw, 1.2rem);	  
@@ -295,6 +295,40 @@ text-decoration: underline;
 	 .mobile-swipe-message {
         display: none;  
      }	
+	 
+	 	 /* 2. Top Header Navigation (Dropdown Selector) */
+    .top-nav {
+      position: fixed;
+   /*   top: 20px;  */
+   /*   left: 20px;  */
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;	   
+	  top: 3vh;
+	  font-size: clamp(0.6rem, 0.7vw, 0.8rem);
+	  color: white;  
+      height: 3.0vh;
+      width: 30%; 
+      margin: 0 auto;		  
+    }
+    .top-nav label {
+      font-size: clamp(0.6rem, 0.7vw, 0.8rem);
+      color: #333;
+      font-weight: bold;
+    }
+    .top-nav select {
+      padding: 0.2px 2px;
+      font-size: clamp(0.5rem, 0.6vw, 0.7rem);
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+     
      
  
   	 
@@ -410,7 +444,42 @@ text-decoration: underline;
 @keyframes hintPulse {
     0%, 100% { opacity: 1; }
     50%      { opacity: 0.65; }
-}	 
+}	
+
+
+/* 2. Top Header Navigation (Dropdown Selector) */
+    .top-nav {
+      position: fixed;
+   /*   top: 20px;  */
+   /*   left: 20px;  */
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;	   
+	  top: 87vh;
+	  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
+	  color: white;  
+      height: 4vh;
+      width: 95%; 
+      margin: 0 auto;		  
+    }
+    .top-nav label {
+      font-size: 0.9rem;
+      color: #333;
+      font-weight: bold;
+    }
+    .top-nav select {
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  
     
  
 }
@@ -423,22 +492,32 @@ text-decoration: underline;
       <!-- MAIN TOP DOCK -->
            
     <!-- Image Wrapper 0 -->
-    <div class="image-wrapper">	  
+     <div class="image-wrapper" id="wrappertop">		
+           <!-- Top Dropdown Navigation Menu -->
+  <div class="top-nav">
+    <label for="screen-jump">Slide ↕ or Jump to:</label>
+    <select id="screen-jump" onchange="jumpToScreen(this.value)">
+      <option value="wrappertop">Başlangıç</option>
+      <option value="wrapper1867">Kanada Kuruldu</option>
+      <option value="wrapper1931">Yasama Bağımsızlığı</option>
+      <option value="wrapperend">Son</option>
+    </select>
+  </div>		
          <div class="image-title-top top-line1w0">🚀 Kanada Tarihi Zaman Çizelgesi</div> 
          <div class="image-title-top top-line2w0">Anılara Yolculuk.</div>
 	  
          <img src="Strolling_down_Memory_Lane_(5478150373).jpg" alt="Description">	 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
-      -->	
+      	
          <p class="only-for-desktops-arrows">Kaydırma yapmak için yukarı ve aşağı ok tuşlarına basın</p>
 		 <p class="only-for-mobiles-slide">Kayan slayt görseli için</p>
-	   	  
+	   -->	  
          <p class="image-title-bottom bottom-line">Fotoğraf <a href="https://commons.wikimedia.org/wiki/File:Strolling_down_Memory_Lane_(5478150373).jpg">Bert Kaufmann from Roermond, Netherlands</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>		                    
     </div>
 	
 	<!-- Image Wrapper 1 -->
-    <div class="image-wrapper">	
+     <div class="image-wrapper" id="wrappermain">
        <div class="only-for-mobiles">
 	   <img src="whiterose-nb-AI.png" alt="Description"> 
 	   </div>		
@@ -584,7 +663,7 @@ text-decoration: underline;
     </div>
 	
 	<!-- Image Wrapper 13 -->
-    <div class="image-wrapper">	
+    <div class="image-wrapper" id="wrapper1867">	
        <div class="only-for-mobiles">
 	   <img src="whiterose-nb-AI.png" alt="Description"> 
 	   </div>		
@@ -644,7 +723,7 @@ text-decoration: underline;
     </div>
 	
 	<!-- Image Wrapper 18 -->
-    <div class="image-wrapper">	
+    <div class="image-wrapper" id="wrapper1931">
        <div class="only-for-mobiles">
 	   <img src="whiterose-nb-AI.png" alt="Description"> 
 	   </div>		
@@ -655,7 +734,7 @@ text-decoration: underline;
 	   <p class="image-title-bottom bottom-line">Fotoğraf <a href="https://commons.wikimedia.org/wiki/File:Queen%27s_Park_-_Toronto_-_2010_(cropped-rotated).jpg">Benson Kua</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
     </div>
 	
-	<!-- Image Wrapper 18A -->
+	<!-- Image Wrapper 19 -->
     <div class="image-wrapper">	
        <div class="only-for-mobiles">
 	   <img src="whiterose-nb-AI.png" alt="Description"> 
@@ -667,7 +746,7 @@ text-decoration: underline;
 	   <p class="image-title-bottom bottom-line">Fotoğraf <a href="https://commons.wikimedia.org/wiki/File:Neretva_most.jpg">Nenad Martinovič</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons</p>
     </div>
 	
-	<!-- Image Wrapper 19 -->
+	<!-- Image Wrapper 20 -->
     <div class="image-wrapper">	 
 	   <div class="only-for-mobiles">
 	   <img src="whiterose-nb-AI.png" alt="Description"> 
@@ -679,7 +758,7 @@ text-decoration: underline;
 	   <p class="image-title-bottom bottom-line">Fotoğraf <a href="https://commons.wikimedia.org/wiki/File:Ottawa_fireworks_49_(27768773120).jpg">Harvey K from Toronto, Canada</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
     </div>
 	
-	<!-- Image Wrapper 18 -->
+	<!-- Image Wrapper 21 -->
     <div class="image-wrapper">	
        <div class="only-for-mobiles">
 	   <img src="whiterose-nb-AI.png" alt="Description"> 
@@ -698,17 +777,18 @@ text-decoration: underline;
 
    
 	
-	 <!-- Image Wrapper 0 -->
-    <div class="image-wrapper">	  
+	 <!-- Image Wrapper 22 -->
+    <div class="image-wrapper" id="wrapperend">	>	>	  
          <div class="image-title-top top-line1w0">🚀 Kanada Tarihi Zaman Çizelgesi</div> 
          <div class="image-title-top top-line2w0">İzlediğiniz için teşekkürler</div>
 	  
          <img src="Strolling_down_Memory_Lane_(5478150373).jpg" alt="Description">	 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
-      -->	
+     
          <p class="only-for-desktops-arrows">Kaydırma yapmak için yukarı ve aşağı ok tuşlarına basın</p>
-		 <p class="only-for-mobiles-slide">Kayan slayt görseli için</p>		 
+		 <p class="only-for-mobiles-slide">Kayan slayt görseli için</p>	
+        -->			 
          <p class="image-title-bottom bottom-line">Fotoğraf <a href="https://commons.wikimedia.org/wiki/File:Strolling_down_Memory_Lane_(5478150373).jpg">Bert Kaufmann from Roermond, Netherlands</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>		                    
     </div>
 
@@ -716,6 +796,23 @@ text-decoration: underline;
   
   
   <script>
+  
+  // Programmatic jumping without sliding
+   const scroller = document.getElementById('main-scroller');
+    const dotButtons = document.querySelectorAll('.dot-button');
+    const dropDown = document.getElementById('screen-jump');
+    const screens = document.querySelectorAll('.screen');
+
+    // Action: Programmatic jumping function to instantly bypass manual sliding
+    function jumpToScreen(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        // scrollIntoView instantly triggers the container's built-in smooth behavior
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }  
+ // Programmatic jumping without sliding 
+  
   setTimeout(() => {
     document.getElementById("swipeHint")?.remove();
  }, 12000);
