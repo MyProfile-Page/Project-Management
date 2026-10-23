@@ -216,7 +216,7 @@ text-decoration: underline;
   .image-wrapper img {
   max-width: 100%;
   max-height: 99vh;              /* Leaves room for padding and captions */
-  object-fit: cover;           /* Keeps the photo aspect ratio intact without cropping */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
@@ -324,7 +324,7 @@ text-decoration: underline;
       display: flex;
       align-items: center;
       gap: 10px;	   
-	  top: 95.5vh;
+	  top: 95.0vh;
 	  font-size: clamp(0.6rem, 0.7vw, 0.8rem);
 	  color: white;  
       height: 3.0vh;
@@ -358,7 +358,7 @@ text-decoration: underline;
   max-width: 100%;
   max-height: 99vh;              /* Leaves room for padding and captions */
   
-  object-fit: cover;           /* Keeps the photo aspect ratio intact without cropping */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   
@@ -526,7 +526,7 @@ text-decoration: underline;
  <div class="image-wrapper" id="Page-1">	
          <!-- Top Dropdown Navigation Menu -->
   <div class="top-nav">
-    <label for="screen-jump">&nbsp&nbsp&nbsp&nbspSlide ↕ or Jump to:</label>
+    <label for="screen-jump">&nbsp&nbsp&nbsp&nbspSlide ↕ or Pump to:</label>
     <select id="screen-jump" onchange="jumpToScreen(this.value)">
       <option value="Page-1">Page-1&nbsp&nbsp</option>
       <option value="Page-2">Page-2&nbsp&nbsp</option>
