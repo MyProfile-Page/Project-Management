@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-Sliding Navigation Scrolling App</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden; /* Prevents the body itself from double scrolling */
+    }
+
+    /* 1. Main Scroll Container */
+    .app-container {
+      height: 100vh;
+      overflow-y: scroll;
+      
+      /* CSS Scroll Snapping: Locks each section perfectly into place when swiping */
+      scroll-snap-type: y mandatory; 
+      
+      /* Crucial: Ensures navigation jumps glide smoothly instead of teleporting instantly */
+      scroll-behavior: smooth; 
+    }
+
+    /* Individual "Screens" */
+    .screen {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      scroll-snap-align: start; /* Tells the container where to snap this element */
+    }
+
+    /* Screen Coloring for Visual Clarity */
+    #screen-home { background-color: #2c3e50; }
+    #screen-about { background-color: #16a085; }
+    #screen-services { background-color: #2980b9; }
+    #screen-contact { background-color: #8e44ad; }
+
+    .screen h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <!-- Top Dropdown Navigation Menu -->
+  
+  <!-- Scrollable Application Area -->
+  <main class="app-container" id="main-scroller">
+    
+    <section id="screen-home" class="screen">
+      <h1>Dashboard Home</h1>
+      <p>Scroll down normally or use the menus to skip directly to other screens.</p>
+    </section>
+
+    <section id="screen-about" class="screen">
+      <h1>About Analytics</h1>
+      <p>This screen displays system reports and statistical summaries.</p>
+    </section>
+
+    <section id="screen-services" class="screen">
+      <h1>Core Features</h1>
+      <p>Explore tools, automated configurations, and service utilities.</p>
+    </section>
+
+    <section id="screen-contact" class="screen">
+      <h1>Support Desk</h1>
+      <p>Submit tickets, read documentation, or chat with technical support.</p>
+    </section>
+
+  </main>
+
+  <script>
+  
+  </script>
+</body>
+</html>
