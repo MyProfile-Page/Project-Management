@@ -83,16 +83,7 @@ html, body {
  border: 0vw solid red;
 }
 
-/* 3. The Image Component */
-.image-wrapper img {
-  max-width: 100%;
-  max-height: 80vh;              /* Leaves room for padding and captions */
-  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  top: 20%;
-  position: absolute;
-}
+
 
 /* Caption overlay text */
 .caption {
@@ -248,15 +239,7 @@ text-decoration: underline;
 			
         }
 		
-  .top-line1w0 {  
-            font-size: clamp(0.9rem, 1.3vw, 1.2rem);  
-			top: 9vh;
-			text-decoration: underline;
-        }
-     .top-line2w0 {  
-            font-size: clamp(0.8rem, 1.1vw, 1.2rem);	 
-			top: 83vh;
-        }
+ 
 	  .top-line1w1 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
@@ -266,15 +249,33 @@ text-decoration: underline;
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
 			top: 85vh;
 			width: 65%;
-			margin: 0, auto;
-			
+			margin: 0, auto;			
         }
-	  .top-line1w2 {            
-			top: 3vh;
-        }
-     .top-line2w2 {            
+		
+		.top-line1w2 {  
+            font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
-        }	
+			text-decoration: underline;
+        }
+     .top-line2w2 {  
+            font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
+			top: 85vh;
+			width: 65%;
+			margin: 0, auto;			
+        }
+		
+		.top-line1w3 {  
+            font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
+			top: 9vh;
+			text-decoration: underline;
+        }
+     .top-line2w3 {  
+            font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
+			top: 85vh;
+			width: 65%;
+			margin: 0, auto;			
+        }
+	 
 	 .bottom-line {
             font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
 			top: 93vh;
@@ -344,6 +345,17 @@ text-decoration: underline;
    ========================================== */
 @media (max-width: 769px) {
 
+/* 3. The Image Component */
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 80vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  top: 20%;
+  position: absolute;
+}
+
 /* Individual Image Texts */
         .image-title-top {
             font-weight: 600;
@@ -372,7 +384,7 @@ text-decoration: underline;
       
 	  .top-line1w1 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
-			top: 11vh;
+			top: 6vh;
 			text-decoration: underline;
         }
      .top-line2w1 { 
