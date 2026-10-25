@@ -239,22 +239,42 @@ text-decoration: underline;
         }
      .top-line2w1 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 85vh;
-			width: 65%;
-			margin: 0, auto;			
+			top: 80vh;
+			width: 82%;
+			text-align: left;			
         }
 		
-		.top-line1w2 {  
+		.progress-cls {             	 
+			display: none;
+        }
+		
+		
+		
+			.top-line1w2 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .top-line2w2 {  
-            font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 85vh;
-			width: 65%;
-			margin: 0, auto;			
+     .top-line2w2 { 
+            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
+			top: 54vh;
         }
+		
+		.top-line1w3 {  
+             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
+			top: 9vh;
+			text-decoration: underline;
+        }
+     .top-line2w3 { 
+            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
+			top: 47vh;
+        }
+		
+		
+		
+		
+		
+		
 		
 		.top-line1w3 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
@@ -273,6 +293,13 @@ text-decoration: underline;
 			top: 93vh;
 			
         }
+		
+		.ul-cls {
+      display: none;
+      }	
+     .ul-cls-adr {
+      display: none;
+      }	  	  
       .only-for-mobiles-flower {
       display: none;     
      }	
@@ -420,6 +447,13 @@ text-decoration: underline;
 	 .bottom-line {           
 			top: 79vh;
         }	
+		
+     .ul-cls {
+      text-align: left;
+      }	 
+     .ul-cls-adr {
+      list-style-type: none; text-align: left;
+      }	  
      .only-for-mobiles-flower {
       display: none;
       
@@ -510,4 +544,4 @@ text-decoration: underline;
  
     
  
-}</style><div class="scroll-container"><div class="image-wrapper" id="about"><div class="top-nav"><label for="screen-jump">Slide ↕ or Jump to:</label> <select id="screen-jump" onchange="jumpToScreen(this.value)"><option value="about">About Me<option value="service">My Services<option value="contact">My Contact</select></div><div class="image-title-top top-line1w1">Electrician</div><div class="image-title-top top-line2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.</div><img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description"> <progress value="75" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</div><div class="image-wrapper" id="service"><div class="only-for-mobiles"><img src="whiterose-nb-AI.png" alt="Description"></div><div class="image-title-top top-line1w2">My Services</div><div class="image-title-top top-line2w2"><ul style="text-align: left;"><li>Outlet and Switch Installation & Repair<li>Lighting Upgrades and Maintenance<li>Circuit Breaker Panel Upgrades<li>Electrical Troubleshooting and Diagnostics<li>Whole-Home Surge Protection<li>Safety Inspections<li>Specialized Installations<li>Kitchen Appliances fault repairs</ul></div><img src="Neat_wiring_(505650307)-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d'Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="contact"><div class="only-for-mobiles"><img src="whiterose-nb-AI.png" alt="Description"></div><div class="image-title-top top-line1w3">My Contact</div><div class="image-title-top top-line2w3"><ul style="list-style-type: none; text-align: left;"><li>House Number 786<li> <li>Main Street<li> <li>New Colony<li> <li>Lahore<li> <li>Mobile: 99999999999<li> <li>Emergency: 8888888888<li> <li>Email: growlite@online.com</ul></div><img src="911sign-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div></div><script>document.addEventListener("contextmenu",function(e){e.preventDefault(),alert("Right-click is disabled!")});const scroller=document.getElementById("main-scroller"),dotButtons=document.querySelectorAll(".dot-button"),dropDown=document.getElementById("screen-jump"),screens=document.querySelectorAll(".screen");function jumpToScreen(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})}setTimeout(()=>{document.getElementById("swipeHint")?.remove()},12e3);const container=document.querySelector(".scroll-container"),wrappers=document.querySelectorAll(".image-wrapper");let isScrolling=!1;window.addEventListener("keydown",e=>{if("ArrowDown"!==e.key&&"ArrowUp"!==e.key)return;if(e.preventDefault(),isScrolling)return;const t=container.scrollTop,o=window.innerHeight;let n=Math.round(t/o),r=n;"ArrowDown"===e.key?n<wrappers.length-1&&(r=n+1):"ArrowUp"===e.key&&n>0&&(r=n-1),r!==n&&(isScrolling=!0,container.scrollTo({top:r*o,behavior:"smooth"}),setTimeout(()=>{isScrolling=!1},500))})</script>
+}</style><div class="scroll-container"><div class="image-wrapper" id="about"><div class="top-nav"><label for="screen-jump">Slide ↕ or Jump to:</label> <select id="screen-jump" onchange="jumpToScreen(this.value)"><option value="about">About Me<option value="service">My Services<option value="contact">My Contact</select></div><div class="image-title-top top-line1w1">Electrician</div><div class="image-title-top top-line2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.</div><img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description"> <progress value="75" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</div><div class="image-wrapper" id="service"><div class="image-title-top top-line1w2">My Services</div><div class="image-title-top top-line2w2"><ul class="ul-cls"><li>Outlet and Switch Installation & Repair<li>Lighting Upgrades and Maintenance<li>Circuit Breaker Panel Upgrades<li>Electrical Troubleshooting and Diagnostics<li>Whole-Home Surge Protection<li>Safety Inspections<li>Specialized Installations<li>Kitchen Appliances fault repairs</ul></div><img src="Neat_wiring_(505650307)-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d'Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="contact"><div class="image-title-top top-line1w3">My Contact</div><div class="image-title-top top-line2w3"><ul class="ul-cls-adr"><li>House Number 786<li> <li>Main Street<li> <li>New Colony<li> <li>Lahore<li> <li>Mobile: 99999999999<li> <li>Emergency: 8888888888<li> <li>Email: growlite@online.com</ul></div><img src="911sign-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div></div><script>document.addEventListener("contextmenu",function(e){e.preventDefault(),alert("Right-click is disabled!")});const scroller=document.getElementById("main-scroller"),dotButtons=document.querySelectorAll(".dot-button"),dropDown=document.getElementById("screen-jump"),screens=document.querySelectorAll(".screen");function jumpToScreen(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})}setTimeout(()=>{document.getElementById("swipeHint")?.remove()},12e3);const container=document.querySelector(".scroll-container"),wrappers=document.querySelectorAll(".image-wrapper");let isScrolling=!1;window.addEventListener("keydown",e=>{if("ArrowDown"!==e.key&&"ArrowUp"!==e.key)return;if(e.preventDefault(),isScrolling)return;const t=container.scrollTop,o=window.innerHeight;let n=Math.round(t/o),r=n;"ArrowDown"===e.key?n<wrappers.length-1&&(r=n+1):"ArrowUp"===e.key&&n>0&&(r=n-1),r!==n&&(isScrolling=!0,container.scrollTo({top:r*o,behavior:"smooth"}),setTimeout(()=>{isScrolling=!1},500))})</script>
