@@ -6,6 +6,8 @@
   <title>Electrician</title>
   <style>
   
+  /*  https://chatgpt.com/plans/free/   */
+  
   /*  600 * 400     513 * 768 WHEN CHANGE IMAGE SIZE BY PAINT KEEP WIDTH MORE THAN HEIGHT */
    /* 1. Update the group wrapper to accept fixed content height */
     /* Please advise if it is possible to provide object-fit: cover for iamge css and restrict its chopping */
@@ -306,7 +308,7 @@ text-decoration: underline;
       display: none;
       }	
      .ul-cls-adr {
-      display: none;
+      display: block;
       }	  	  
       .only-for-mobiles-flower {
       display: none;     
@@ -362,6 +364,13 @@ text-decoration: underline;
       border: 1px solid #ccc;
       cursor: pointer;
     }
+	
+	 .div1-adr-cls {
+      width: 50%; text-align: left; left: o%;
+      }	 
+     .div2-adr2-cls {
+      width: 50%; text-align: left; left: 50%;
+      }	  	  
      
  
   	 
@@ -459,9 +468,13 @@ text-decoration: underline;
      .ul-cls {
       text-align: left;
       }	 
-     .ul-cls-adr {
-      list-style-type: none; text-align: left;
-      }	  
+     
+	 .div1-adr-cls {
+      width: 50%; text-align: left; left: o%;
+      }	 
+     .div2-adr2-cls {
+      width: 50%; text-align: left; left: 50%;
+      }	  	  
      .only-for-mobiles-flower {
       display: none;
       
@@ -549,6 +562,8 @@ text-decoration: underline;
       border: 1px solid #ccc;
       cursor: pointer;
     }
+	
+	
  
     
  
@@ -643,23 +658,24 @@ text-decoration: underline;
 	<!-- Image Wrapper 4 -->
     <div class="image-wrapper" id="contact">      
 	   
-	   <div class="image-title-top top-line1w3">My Contact</div>					
+	   <div class="image-title-top top-line1w3">My Contact ext</div>	
+       <img src="911sign-new.jpg" alt="Description"> 	   
 	   <div class="image-title-top top-line2w3 ">
+	 <div class="div1-adr-cls" id="div1-adr>   
 	    <ul class="ul-cls-adr">
   <li>House Number 786</li>
-  <li>&nbsp</li>
+ 
   <li>Main Street</li>
-  <li>&nbsp</li>
+  
   <li>New Colony</li>
-  <li>&nbsp</li>
-  <li>Lahore</li>
-  <li>&nbsp</li>
-  <li>Mobile: 99999999999</li>
-  <li>&nbsp</li>
-  <li>Emergency: 8888888888</li>
-  <li>&nbsp</li>
-  <li>Email: growlite@online.com</li>        
-</ul> 	   
+  
+          
+</ul> 
+    </div>	
+    <div class="div2-adr-cls" id="div2-adr>   
+	    <img src="whiterose-nb-AI.png" alt="Description"> 
+    </div>	
+	
 	   </div>
          
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
