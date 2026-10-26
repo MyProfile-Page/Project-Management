@@ -10,6 +10,36 @@
    /* 1. Update the group wrapper to accept fixed content height */
     /* Please advise if it is possible to provide object-fit: cover for iamge css and restrict its chopping */
 	 /* Please advise how to keep only a single dimension of all images in a imge gallery application and allow bigger images to shrink without chopping and shorter images to expand to fit. css html */
+.image-group {
+    /* REMOVE flex: 1; from here */
+    flex-shrink: 0;         /* Stops the container from being squeezed down */
+    display: flex;
+    flex-direction: column; 
+    background-color: #25252f;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 2. Set the explicit width and height directly on the image */
+.image-group img {
+    /* REMOVE flex: 1; from here */
+    width: 100%;            /* Keeps it filling the sidebar horizontally */
+    height: 180px;          /* 💡 SET YOUR COMFORTABLE IMAGE HEIGHT HERE (e.g., 180px, 200px) */
+    object-fit: cover;      /* Crops the image beautifully without distortion */
+    border-radius: 4px;
+}
+
+
+
+
+/* Reset margins and disable elastic bouncing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+	 
 
 html, body {
   width: 100%;
@@ -553,8 +583,8 @@ text-decoration: underline;
       
     </select>
   </div>	
-         <div class="element-cls-gen element-cls-adl1w1">Clectrician</div> 
-         <div class="element-cls-gen element-cls-adl2w1">Ci Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
+         <div class="element-cls-gen element-cls-adl1w1">Dlectrician</div> 
+         <div class="element-cls-gen element-cls-adl2w1">Di Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
 		 </div>
 	  
          <img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">	
