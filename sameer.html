@@ -1,27 +1,13 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Electrician</title><style>/*  600 * 400     513 * 768 WHEN CHANGE IMAGE SIZE BY PAINT KEEP WIDTH MORE THAN HEIGHT */
+<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Electrician</title><style>/*  */
+  /*  W3C CSS Validator	Invalid CSS syntax and properties   */
+  /*  W3C HTML Validator	Incorrect HTML markup    */
+  /*  Browser Developer Tools (F12)	JavaScript errors, console messages, and actual computed CSS  */
+  /*  CodePen	Live testing of isolated HTML/CSS/JS examples  */
+  /*  */
+  /*  600 * 400     513 * 768 WHEN CHANGE IMAGE SIZE BY PAINT KEEP WIDTH MORE THAN HEIGHT */
    /* 1. Update the group wrapper to accept fixed content height */
     /* Please advise if it is possible to provide object-fit: cover for iamge css and restrict its chopping */
 	 /* Please advise how to keep only a single dimension of all images in a imge gallery application and allow bigger images to shrink without chopping and shorter images to expand to fit. css html */
-.image-group {
-    /* REMOVE flex: 1; from here */
-    flex-shrink: 0;         /* Stops the container from being squeezed down */
-    display: flex;
-    flex-direction: column; 
-    background-color: #25252f;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-/* 2. Set the explicit width and height directly on the image */
-.image-group img {
-    /* REMOVE flex: 1; from here */
-    width: 100%;            /* Keeps it filling the sidebar horizontally */
-    height: 180px;          /* 💡 SET YOUR COMFORTABLE IMAGE HEIGHT HERE (e.g., 180px, 200px) */
-    object-fit: cover;      /* Crops the image beautifully without distortion */
-    border-radius: 4px;
-}
-
 
 
 
@@ -31,6 +17,7 @@
   margin: 0;
   padding: 0;
 }
+	 
 
 html, body {
   width: 100%;
@@ -68,8 +55,8 @@ html, body {
   /* Flexbox configurations to center content inside the wrapper */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  
+  align-items: center;  
   padding: 20px;
   position: relative;
  border: 0vw solid red;
@@ -207,7 +194,7 @@ text-decoration: underline;
   }
   
   /* Individual Image Texts */
-        .image-title-top {
+        .element-cls-gen {
             font-weight: 600;
          /*   color: #4a90e2;  */
 			color: white;
@@ -232,12 +219,12 @@ text-decoration: underline;
         }
 		
  
-	  .top-line1w1 {  
+	  .element-cls-adl1w1 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .top-line2w1 {  
+     .element-cls-adl2w1 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
 			top: 80vh;
 			width: 82%;
@@ -250,24 +237,30 @@ text-decoration: underline;
 		
 		
 		
-			.top-line1w2 {  
+			.element-cls-adl1w2 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .top-line2w2 { 
+     .element-cls-adl2w2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 54vh;
         }
 		
-		.top-line1w3 {  
+		.element-cls-adl1w3 {  
              font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .top-line2w3 { 
+     .element-cls-adl2w3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 47vh;
+			display: flex;
+			flex-direction: row;
+			align-self: stretch;
+            align-items: center;
+			width: 100%;
+			border: 0.2px solid green;
         }
 		
 		
@@ -276,12 +269,12 @@ text-decoration: underline;
 		
 		
 		
-		.top-line1w3 {  
+		.element-cls-adl1w3 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .top-line2w3 {  
+     .element-cls-adl2w3 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
 			top: 85vh;
 			width: 65%;
@@ -381,7 +374,7 @@ text-decoration: underline;
 /* }  */
 
 /* Individual Image Texts */
-        .image-title-top {
+        .element-cls-gen {
             font-weight: 600;
             color: #4a90e2;
 			color: white;
@@ -406,12 +399,12 @@ text-decoration: underline;
 
 /* Individual Image Texts */
       
-	  .top-line1w1 {  
+	  .element-cls-adl1w1 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .top-line2w1 { 
+     .element-cls-adl2w1 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 43vh;
 			text-align: left;
@@ -424,24 +417,30 @@ text-decoration: underline;
 			
         }
 		
-		.top-line1w2 {  
+		.element-cls-adl1w2 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .top-line2w2 { 
+     .element-cls-adl2w2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 54vh;
         }
 		
-		.top-line1w3 {  
+		.element-cls-adl1w3 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .top-line2w3 { 
+     .element-cls-adl2w3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 47vh;
+			top: 45vh;
+			display: flex;
+			flex-direction: row;
+			align-self: stretch;
+            align-items: center;
+			width: 95%;
+			border: 0.0px solid green;
         }
 	 
 	 .bottom-line {           
@@ -453,6 +452,7 @@ text-decoration: underline;
       }	 
      .ul-cls-adr {
       list-style-type: none; text-align: left;
+	  
       }	  
      .only-for-mobiles-flower {
       display: none;
@@ -544,4 +544,4 @@ text-decoration: underline;
  
     
  
-}</style><div class="scroll-container"><div class="image-wrapper" id="about"><div class="top-nav"><label for="screen-jump">Slide ↕ or Jump to:</label> <select id="screen-jump" onchange="jumpToScreen(this.value)"><option value="about">About Me<option value="service">My Services<option value="contact">My Contact<option value="review">Reviews</select></div><div class="image-title-top top-line1w1">Electrician</div><div class="image-title-top top-line2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.</div><img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description"> <progress value="75" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</div><div class="image-wrapper" id="service"><div class="image-title-top top-line1w2">My Services</div><div class="image-title-top top-line2w2"><ul class="ul-cls"><li>Outlet and Switch Installation & Repair<li>Lighting Upgrades and Maintenance<li>Circuit Breaker Panel Upgrades<li>Electrical Troubleshooting and Diagnostics<li>Whole-Home Surge Protection<li>Safety Inspections<li>Specialized Installations<li>Kitchen Appliances fault repairs</ul></div><img src="Neat_wiring_(505650307)-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d'Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="contact"><div class="image-title-top top-line1w3">My Contact</div><div class="image-title-top top-line2w3"><ul class="ul-cls-adr"><li>House Number 786<li>Main Street<li>New Colony<li>Lahore<li>Mobile: 99999999999<li>Emergency: 8888888888<li>Email: growlite@online.com</ul></div><img src="911sign-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="review"><div class="image-title-top top-line1w3">Reviews</div><div class="image-title-top top-line2w3"><ul class="ul-cls-adr"><li>Ahmed is best...John<li> <li>Very efficient...Peter<li> <li>Fully Professional...Desouza</ul></div><img src="A_Positive_Customer_Experience_in_Ecommerce-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</div></div><script>document.addEventListener("contextmenu",function(e){e.preventDefault(),alert("Right-click is disabled!")});const scroller=document.getElementById("main-scroller"),dotButtons=document.querySelectorAll(".dot-button"),dropDown=document.getElementById("screen-jump"),screens=document.querySelectorAll(".screen");function jumpToScreen(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})}setTimeout(()=>{document.getElementById("swipeHint")?.remove()},12e3);const container=document.querySelector(".scroll-container"),wrappers=document.querySelectorAll(".image-wrapper");let isScrolling=!1;window.addEventListener("keydown",e=>{if("ArrowDown"!==e.key&&"ArrowUp"!==e.key)return;if(e.preventDefault(),isScrolling)return;const t=container.scrollTop,o=window.innerHeight;let n=Math.round(t/o),r=n;"ArrowDown"===e.key?n<wrappers.length-1&&(r=n+1):"ArrowUp"===e.key&&n>0&&(r=n-1),r!==n&&(isScrolling=!0,container.scrollTo({top:r*o,behavior:"smooth"}),setTimeout(()=>{isScrolling=!1},500))})</script>
+}</style><div class="scroll-container"><div class="image-wrapper" id="about"><div class="top-nav"><label for="screen-jump">Slide ↕ or Jump to:</label> <select id="screen-jump" onchange="jumpToScreen(this.value)"><option value="about">About Me<option value="service">My Services<option value="contact">My Contact<option value="review">Reviews</select></div><div class="element-cls-gen element-cls-adl1w1">Electrician</div><div class="element-cls-gen element-cls-adl2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.</div><img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description"> <progress value="75" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</div><div class="image-wrapper" id="service"><div class="element-cls-gen element-cls-adl1w2">My Services</div><div class="element-cls-gen element-cls-adl2w2"><ul class="ul-cls"><li>Outlet and Switch Installation & Repair<li>Lighting Upgrades and Maintenance<li>Circuit Breaker Panel Upgrades<li>Electrical Troubleshooting and Diagnostics<li>Whole-Home Surge Protection<li>Safety Inspections<li>Specialized Installations<li>Kitchen Appliances fault repairs</ul></div><img src="Neat_wiring_(505650307)-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d'Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="contact"><div class="element-cls-gen element-cls-adl1w3">My Contact</div><div class="element-cls-gen element-cls-adl2w3"><div style="border: 0.0px solid red; width: 52%; height: 20vh;"><p>  <ul class="ul-cls-adr"><li>House Number 786<li>Main Street<li>New Colony<li>New City<li>Mobile: 9999999999<li>Emergency: 8888888888<li>Email: growlitem@online.com</ul></div><div style="border: 0.0px solid yellow; width: 48%; height: 20vh; display: flex; flex-direction: column; align-items: center; justify-content: center;"><img src="House_of_Hubert_Lacroix,_St._Jean_Baptiste_Street,_Montreal-new.jpg" alt="Description" style="object-fit: contain; width: 50%; height: 14vh; border: 0.0px solid blue;"></div></div><img src="911sign-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="review"><div class="element-cls-gen element-cls-adl1w3">Reviews</div><div class="element-cls-gen element-cls-adl2w3"><ul class="ul-cls-adr"><li>Ahmed is best. I am glad to have my dish washer fixed by him. .....John<li> <li> <li>Very efficient. You can trust him for any electrial work in your home ....Peter<li> <li> <li>Fully Professional. He is highly skilled and finds the fault quickly. ....Desouza</ul></div><img src="A_Positive_Customer_Experience_in_Ecommerce-new.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</div></div><script>document.addEventListener("contextmenu",function(e){e.preventDefault(),alert("Right-click is disabled!")});const scroller=document.getElementById("main-scroller"),dotButtons=document.querySelectorAll(".dot-button"),dropDown=document.getElementById("screen-jump"),screens=document.querySelectorAll(".screen");function jumpToScreen(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})}setTimeout(()=>{document.getElementById("swipeHint")?.remove()},12e3);const container=document.querySelector(".scroll-container"),wrappers=document.querySelectorAll(".image-wrapper");let isScrolling=!1;window.addEventListener("keydown",e=>{if("ArrowDown"!==e.key&&"ArrowUp"!==e.key)return;if(e.preventDefault(),isScrolling)return;const t=container.scrollTop,o=window.innerHeight;let n=Math.round(t/o),r=n;"ArrowDown"===e.key?n<wrappers.length-1&&(r=n+1):"ArrowUp"===e.key&&n>0&&(r=n-1),r!==n&&(isScrolling=!0,container.scrollTo({top:r*o,behavior:"smooth"}),setTimeout(()=>{isScrolling=!1},500))})</script>
