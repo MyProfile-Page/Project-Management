@@ -576,6 +576,31 @@ text-decoration: underline;
       border: 1px solid #ccc;
       cursor: pointer;
     }
+	
+	.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+    width: 100%;
+	position: absolute;
+}
+
+.image-item img {
+    max-width: 95%;
+    max-height: 75vh;
+    object-fit: contain;
+	 
+	
+}
+
+.image-item p {
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: underline;
+}
  
     
  
@@ -595,7 +620,7 @@ text-decoration: underline;
            
     <!-- Image Wrapper 1 -->
 	
-    <div class="image-wrapper" id="about">	
+    <div class="image-wrapper " id="about">	
          <!-- Top Dropdown Navigation Menu -->
   <div class="top-nav">
     <label for="screen-jump">Slide ↕ or Jump to:</label>
@@ -607,13 +632,14 @@ text-decoration: underline;
       
     </select>
   </div>	
-         <div class="element-cls-gen element-cls-adl1w1">Ilectrician</div> 
-         <div class="element-cls-gen element-cls-adl2w1">Ii Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
+         <div class="element-cls-gen element-cls-adl1w1">Jlectrician</div> 
+         <div class="element-cls-gen element-cls-adl2w1">Ji Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
 		 </div>
 		 <progress value="75" max="100" class="progress-cls"></progress>
-         <div style="color: red; font-size: clamp(0.9rem, 3.4vw, 1.2rem); display: flex; flex-direction: column;  align-items: center; ">		 
+         <div class="image-wrapper image-item">		
+ 
          <img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">		 
-         <p style="color: red; position: relative; ">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</p>
+         <p style="color: red; ">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</p>
          </div>		 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
