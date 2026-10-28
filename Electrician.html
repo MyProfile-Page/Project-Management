@@ -375,7 +375,7 @@ text-decoration: underline;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   top: 12%;
-   
+  position: absolute;
 }
 
 /* .image-wrapper top-percent-changed {  */
@@ -416,17 +416,8 @@ text-decoration: underline;
         }
      .element-cls-adl2w1 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 45vh;
+			top: 43vh;
 			text-align: left;
-        }
-		
-	.element-cls-img1w1 { 
-            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 40vh;
-			text-align: center;
-			width: 95%;
-			color: red;
-			position: absolute;
         }
 		
 		.progress-cls { 
@@ -576,29 +567,7 @@ text-decoration: underline;
       border: 1px solid #ccc;
       cursor: pointer;
     }
-	.image-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-	
-}
-
-.image-item img {
-    max-width: 95%;
-    max-height: 50vh;
-    object-fit: contain;
-	position: absolute;
-}
-
-.image-item p {
-    display: block;
  
-    text-align: center;
-    font-size: 1rem;
-    text-decoration: underline;
-}
-	
     
  
 }
@@ -617,7 +586,7 @@ text-decoration: underline;
            
     <!-- Image Wrapper 1 -->
 	
-    <div class="image-wrapper " id="about">	
+    <div class="image-wrapper" id="about">	
          <!-- Top Dropdown Navigation Menu -->
   <div class="top-nav">
     <label for="screen-jump">Slide ↕ or Jump to:</label>
@@ -629,22 +598,19 @@ text-decoration: underline;
       
     </select>
   </div>	
-         <div class="element-cls-gen element-cls-adl1w1">Slectrician</div> 
-         <div class="element-cls-gen element-cls-adl2w1">Ji Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
+         <div class="element-cls-gen element-cls-adl1w1">Electrician</div> 
+         <div class="element-cls-gen element-cls-adl2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
 		 </div>
-		 <progress value="75" max="100" class="progress-cls"></progress>
-         <div class="image-wrapper image-item">		
- 
-         <img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description" style="border: 3px solid green;">		 
-         <p  style="color: red; position: relative; ">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</p>
-         </div>		 
+	     <progress value="75" max="100" class="progress-cls"></progress>
+         <img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">	
+         		 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
       
          <p class="only-for-desktops-arrows">For Scrolling Press up & down Arrow Keys</p>
 		 <p class="only-for-mobiles-slide">For Scrolling slide image</p>
 	  -->	 	  
-         		                    
+         <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</p>		                    
     </div>
 	
 	<!-- Image Wrapper 2 -->
@@ -665,12 +631,9 @@ text-decoration: underline;
 </ul>    
 	   
 	   </div>
-	   <progress value="85" max="100" class="progress-cls" style="top: 70vh;"></progress>
-	    <div class="image-wrapper image-item">
        <img src="Neat_wiring_(505650307)-new.jpg" alt="Description"> 
-        	   
-	   <p >Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d&#039;Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
-	   </div>
+       <progress value="85" max="100" class="progress-cls" style="top: 70vh;"></progress> 	   
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d&#039;Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
 	   <!--
 	   <div id="swipeHint" class="mobile-swipe-message">
          <span class="swipeIcon">↕</span>
@@ -715,7 +678,7 @@ text-decoration: underline;
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
     </div>
 	
-	<!-- Image Wrapper 4 -->
+	<!-- Image Wrapper 3 -->
     <div class="image-wrapper" id="review">
        
 	   
@@ -738,10 +701,8 @@ text-decoration: underline;
 </ul> 
 	   
 	   </div>
-	   <div class="image-wrapper image-item">
        <img src="A_Positive_Customer_Experience_in_Ecommerce-new.jpg" alt="Description">   
-	   <p >Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
-	   </div>
+	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
     </div>
 
 	
