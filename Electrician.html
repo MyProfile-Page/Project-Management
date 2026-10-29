@@ -26,8 +26,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-	 
+}	 
 
 html, body {
   width: 100%;
@@ -73,78 +72,6 @@ html, body {
 }
 
 
-
-/* Caption overlay text */
-.caption {
-  color: #ffffff;
-  margin-top: 15px;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  opacity: 0.8;
-}
-
-  .text-dock {
-        flex: 1; /* Text takes up 1/3 of the width */
-        height: 100vh;
-        border-top: none;
-        border-left: 1px solid #222;
-      }
-
-      .text-content {
-        padding: 3rem;
-      }
-
-      .text-content h2 {
-        font-size: 2rem;
-      }
-
-      .text-content p {
-        font-size: 1.1rem;
-      }
-	  
-	   /* 2. Dedicated Text Dock */
-    .text-dock {
-      height: 35vh; /* Fixed height at the bottom on mobile */
-      background-color: #111;
-      border-top: 1px solid #222;
-      position: relative;
-      overflow: hidden;
-    }
-	  
-	   /* Wrapper that slides up/down inside the dock */
-    .text-track {
-      height: 100%;
-      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-	  
-	  .headertext {
-
-font-size: clamp(0.9rem, 1.4vw, 1.5rem);
- font-weight: 700;
- font-style: italic;
- color: white;
- top: 20vh;
- }
-	  
-	  /* Base styles shared by both text docks */
-.text-dock-top, 
-.text-dock-bottom {
-  height: 35vh; 
-  background-color: #111;
-  position: relative;
-  overflow: hidden;
-}
-	  /* Borders based on placement */
-.text-dock-top {
-  color: white;
- /* border-bottom: 1px solid #222;  */
-}
-
-.text-dock-bottom {
-  border-top: 1px solid #222;
-}
-
  a:link {
 color: green;
 text-decoration: none;
@@ -165,12 +92,6 @@ text-decoration: underline;
 .gap1vh {
   height: 1.0vh;  /* or any size you want; mobile = desktop */
 }
-
-
-
-  
-	
-
       
 
 /* ==========================================
@@ -183,8 +104,7 @@ text-decoration: underline;
     margin: 0 auto;   /* Perfectly centers the app container on your monitor */
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
     background-color: #1a1a1a; /* Slight contrast difference for the desktop background framing */
-  }
-  
+  }  
   
   .image-wrapper img {
   max-width: 100%;
@@ -206,37 +126,22 @@ text-decoration: underline;
   }
   
   /* Individual Image Texts */
-        .element-cls-gen {
-            font-weight: 600;
-         /*   color: #4a90e2;  */
+        .txt-gen {
+            font-weight: 600;         
 			color: white;
-            margin: 0 0 8px 0;
-		/*	background-color: black;  */
+            margin: 0 0 8px 0;		
 			text-align: center;
-			position: absolute;
-			
+			position: absolute;	
 			
         }
-
-        .image-title-bottom {
-            font-size: clamp(0.7rem, 1.1vw, 0.9rem);
-            font-weight: 700;
-            color: #b0b0b8;
-            margin: 8px 0 0 0;
-			color: white;
-			background-color: black;
-			text-align: center;
-			position: absolute;
-			
-        }
-		
+   	
  
-	  .element-cls-adl1w1 {  
+	  .txt1w1 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w1 {  
+     .txt2w1 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
 			top: 80vh;
 			width: 82%;
@@ -246,25 +151,24 @@ text-decoration: underline;
 		.progress-cls {             	 
 			display: none;
         }
+			
 		
-		
-		
-			.element-cls-adl1w2 {  
+			.txt1w2 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w2 { 
+     .txt2w2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 54vh;
         }
 		
-		.element-cls-adl1w3 {  
+		.txt1w3 {  
              font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w3 { 
+     .txt2w3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 47vh;
 			display: flex;
@@ -273,27 +177,34 @@ text-decoration: underline;
             align-items: center;
 			width: 100%;
 			border: 0.2px solid green;
-        }
+        }		
+			
 		
 		
-		
-		
-		
-		
-		
-		.element-cls-adl1w3 {  
+		.txt1w3 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w3 {  
+     .txt2w3 {  
             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
 			top: 85vh;
 			width: 65%;
 			margin: 0, auto;			
         }
+		
+		 .txt-bottom {
+            font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            font-weight: 700;
+            color: #b0b0b8;
+            margin: 8px 0 0 0;
+			color: white;
+			background-color: black;
+			text-align: center;
+			position: absolute;			
+        }
 	 
-	 .bottom-line {
+	 .txt3 {
             font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
 			top: 93vh;
 			
@@ -388,7 +299,7 @@ text-decoration: underline;
 /* }  */
 
 /* Individual Image Texts */
-        .element-cls-gen {
+        .txt-gen {
             font-weight: 600;
             color: #4a90e2;
 			color: white;
@@ -396,29 +307,17 @@ text-decoration: underline;
 			background-color: black;
 			text-align: center;
 			position: absolute;
-        }
-
-        .image-title-bottom {
-            font-size: clamp(0.7rem, 2.4vw, 0.9rem);
-            font-weight: 700;
-            color: #b0b0b8;
-            margin: 8px 0 0 0;
-			color: white;
-			background-color: black;
-			text-align: center;
-			position: absolute;
-			width: 65%;
-        }
+        }      
 		
 
 /* Individual Image Texts */
       
-	  .element-cls-adl1w1 {  
+	  .txt1w1 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w1 { 
+     .txt2w1 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 43vh;
 			text-align: left;
@@ -431,22 +330,22 @@ text-decoration: underline;
 			
         }
 		
-		.element-cls-adl1w2 {  
+		.txt1w2 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w2 { 
+     .txt2w2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 46vh;
         }
 		
-	 .element-cls-adl1w3 {  
+	 .txt1w3 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w3 { 
+     .txt2w3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 43vh;
 			width: 60%;
@@ -455,12 +354,12 @@ text-decoration: underline;
 			margin: 0 auto; 
         }
 		
-		.element-cls-adl1w4 {  
+		.txt1w4 {  
             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w4 { 
+     .txt2w4 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 45vh;
 			display: flex;
@@ -470,8 +369,20 @@ text-decoration: underline;
 			width: 95%;
 			border: 0.0px solid green;
         }
+		
+		  .txt-bottom {
+            font-size: clamp(0.7rem, 2.4vw, 0.9rem);
+            font-weight: 700;
+            color: #b0b0b8;
+            margin: 8px 0 0 0;
+			color: white;
+			background-color: black;
+			text-align: center;
+			position: absolute;
+			width: 65%;
+        }
 	 
-	 .bottom-line {           
+	 .txt3 {           
 			top: 79vh;
         }	
 		
@@ -493,8 +404,6 @@ text-decoration: underline;
        display: none;
       
      }	
-
-
       .mobile-swipe-message {
        display: block;
       position: absolute;
@@ -606,8 +515,8 @@ text-decoration: underline;
       
     </select>
   </div>	
-         <div class="element-cls-gen element-cls-adl1w1">Freelance Electrician</div> 
-         <div class="element-cls-gen element-cls-adl2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
+         <div class="txt-gen txt1w1">Freelance Electrician</div> 
+         <div class="txt-gen txt2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
 		 </div>
 	  
          <img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">	
@@ -618,15 +527,15 @@ text-decoration: underline;
          <p class="only-for-desktops-arrows">For Scrolling Press up & down Arrow Keys</p>
 		 <p class="only-for-mobiles-slide">For Scrolling slide image</p>
 	  -->	 	  
-         <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</p>		                    
+         <p class="txt-bottom txt3">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</p>		                    
     </div>
 	
 	<!-- Image Wrapper 2 -->
     <div class="image-wrapper" id="service" style="background: #101010;">
        
 	   	
-	   <div class="element-cls-gen element-cls-adl1w2">My Services</div>					
-	   <div class="element-cls-gen element-cls-adl2w2 ">
+	   <div class="txt-gen txt1w2">My Services</div>					
+	   <div class="txt-gen txt2w2 ">
 	   <ul class="ul-cls">
   <li>Outlet and Switch Installation & Repair</li>
   <li>Lighting Upgrades and Maintenance</li>
@@ -641,7 +550,7 @@ text-decoration: underline;
 	   </div>
        <img src="Neat_wiring_(505650307)-new.jpg" alt="Description"> 
        <progress value="85" max="100" class="progress-cls" style="top: 70vh;"></progress> 	   
-	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d&#039;Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
+	   <p class="txt-bottom txt3">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d&#039;Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
 	   <!--
 	   <div id="swipeHint" class="mobile-swipe-message">
          <span class="swipeIcon">↕</span>
@@ -654,8 +563,8 @@ text-decoration: underline;
     <div class="image-wrapper" id="contact">
        
 	   
-	   <div class="element-cls-gen element-cls-adl1w3">My Contact</div>					
-	   <div class="element-cls-gen element-cls-adl2w3">
+	   <div class="txt-gen txt1w3">My Contact</div>					
+	   <div class="txt-gen txt2w3">
 	   
 	   
 	    <ul class="ul-cls-adr">
@@ -679,15 +588,15 @@ text-decoration: underline;
 	   </div>
        <img src="911sign-new-1.jpg" alt="Description"> 
        <progress value="50" max="100" class="progress-cls" style="top: 68vh;"></progress>	   
-	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
+	   <p class="txt-bottom txt3">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
     </div>
 	
 	<!-- Image Wrapper 4 -->
     <div class="image-wrapper" id="review" style="background: #101010;">>
        
 	   
-	   <div class="element-cls-gen element-cls-adl1w4">Reviews</div>					
-	   <div class="element-cls-gen element-cls-adl2w4 ">
+	   <div class="txt-gen txt1w4">Reviews</div>					
+	   <div class="txt-gen txt2w4 ">
 	    <ul class="ul-cls-adr">
   <li>Ahmed is best. I am glad to have my dish washer fixed by him which was not working since last two months  .....</li>
   <li>&nbsp</li>
@@ -706,7 +615,7 @@ text-decoration: underline;
 	   
 	   </div>
        <img src="A_Positive_Customer_Experience_in_Ecommerce-new-1.jpg" alt="Description">   
-	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
+	   <p class="txt-bottom txt3">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
     </div>
 
 	
