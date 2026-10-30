@@ -186,7 +186,7 @@ text-decoration: underline;
   }
   
   
-  .image-wrapper img {
+  .img-css {
   max-width: 100%;
   max-height: 30vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
@@ -197,9 +197,7 @@ text-decoration: underline;
   border: 1px solid red;
   position: absolute;   
   }
-  .image-wrapper w1img  {
-  top: 25%;
-  }
+  
 /* .image-wrapper img {  */
 /*  max-height: 75vh; */ /* Slightly smaller maximum height to account for different desktop viewing angles */
  /*   transition: transform 0.3s ease; */
@@ -209,6 +207,24 @@ text-decoration: underline;
   .image-wrapper img:hover {
     transform: scale(1.02);
   }
+  
+  .img-ext-css-w1 {
+  top: 22%;
+  }
+   .img-ext-css-w2 {
+  max-height: 20vh;
+  top: 19%;
+  }
+   .img-ext-css-w3 {
+   max-height: 20vh;
+   top: 19%;
+  }
+   .img-ext-css-w4{
+   max-height: 20vh;
+   top: 19%;
+  }
+  
+
   
   /* Individual Image Texts */
         .element-cls-gen {
@@ -262,7 +278,7 @@ text-decoration: underline;
         }
      .element-cls-adl2w2 { 
              font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 50vh;
+			top: 47vh;
 			position: absolute;
         }
 		
@@ -273,7 +289,7 @@ text-decoration: underline;
         }
      .element-cls-adl2w3 { 
              font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 47vh;
+			top: 45vh;
 			width: 100%;
 			border: 0.0px solid green;
 			text-align: center;
@@ -287,7 +303,7 @@ text-decoration: underline;
         }
      .element-cls-adl2w4 { 
              font-size: clamp(0.9rem, 2.4vw, 1.2rem);	 
-			top: 49vh;
+			top: 44vh;
 			width: 69%;
 			border: 0.0px solid green;
 			text-align: left;
@@ -381,7 +397,7 @@ text-decoration: underline;
 @media (max-width: 769px) {
 
 /* 3. The Image Component */
-.image-wrapper img {
+.img-css {
   max-width: 100%;
   max-height: 80vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
@@ -620,7 +636,7 @@ text-decoration: underline;
          <div class="element-cls-gen element-cls-adl2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any  electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.
 		 </div>
 	  
-         <img style="top: 20%;" src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">	
+         <img class="img-css img-ext-css-w1" src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">	
          <progress value="75" max="100" class="progress-cls"></progress>		 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
@@ -649,7 +665,7 @@ text-decoration: underline;
 </ul>    
 	   
 	   </div>
-       <img src="Neat_wiring_(505650307)-new.jpg" alt="Description"> 
+       <img class="img-css img-ext-css-w2" src="Neat_wiring_(505650307)-new.jpg" alt="Description"> 
        <progress value="85" max="100" class="progress-cls" ></progress> 	   
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d&#039;Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
 	   <!--
@@ -681,7 +697,7 @@ text-decoration: underline;
 	  
 	     
 	   </div>
-       <img src="911sign-new-1.jpg" alt="Description"> 
+       <img class="img-css img-ext-css-w3" src="911sign-new-1.jpg" alt="Description"> 
        <progress value="50" max="100" class="progress-cls" ></progress>	   
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
     </div>
@@ -693,22 +709,19 @@ text-decoration: underline;
 	   <div class="element-cls-gen element-cls-adl1w4">Reviews</div>					
 	   <div class="element-cls-gen element-cls-adl2w4 ">
 	   <ul class="ul-cls-rvw">
-  <li>Ahmed is best. I am glad to have my dish washer fixed by him which was not working since last two months  .....</li>
-  
+  <li>Ahmed is best. I am glad to have my dish washer fixed by him which was not working since last two months  .....</li>  
   <li style="color: #ffffcc;">John Philip</li>
-  
-  <li>Very efficient. You can trust him for any electrial work in your home. I strongly recomend him.  ....</li>
-  
+  <li>&nbsp</li>
+  <li>Very efficient. You can trust him for any electrial work in your home. I strongly recomend him.  ....</li>  
   <li style="color: #ffffcc;">Peter Lastman</li>
-  
+  <li>&nbsp</li>
   <li>Fully Professional. He is highly skilled and finds the fault quickly.   ....</li>  
-  
-  <li style="color: #ffffcc;">Desouza Ram</li> 
+    <li style="color: #ffffcc;">Desouza Ram</li> 
         
 </ul> 
 	   
 	   </div>
-       <img src="A_Positive_Customer_Experience_in_Ecommerce-new-1.jpg" alt="Description">   
+       <img class="img-css img-ext-css-w4" src="A_Positive_Customer_Experience_in_Ecommerce-new-1.jpg" alt="Description">   
 	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
     </div>
 
