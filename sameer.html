@@ -176,15 +176,18 @@ text-decoration: underline;
   }
   
   
-  .image-wrapper img {
+  .img-css {
   max-width: 100%;
-  max-height: 60vh;              /* Leaves room for padding and captions */
+  max-height: 30vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
-  
+  top: 15%;
+  border: 1px solid red;
+  position: absolute;   
   }
+  
 /* .image-wrapper img {  */
 /*  max-height: 75vh; */ /* Slightly smaller maximum height to account for different desktop viewing angles */
  /*   transition: transform 0.3s ease; */
@@ -194,6 +197,24 @@ text-decoration: underline;
   .image-wrapper img:hover {
     transform: scale(1.02);
   }
+  
+  .img-ext-css-w1 {
+  top: 22%;
+  }
+   .img-ext-css-w2 {
+  max-height: 20vh;
+  top: 19%;
+  }
+   .img-ext-css-w3 {
+   max-height: 20vh;
+   top: 19%;
+  }
+   .img-ext-css-w4{
+   max-height: 20vh;
+   top: 19%;
+  }
+  
+
   
   /* Individual Image Texts */
         .element-cls-gen {
@@ -223,78 +244,82 @@ text-decoration: underline;
  
 	  .element-cls-adl1w1 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
-			top: 9vh;
+			top: 7vh;
 			text-decoration: underline;
         }
      .element-cls-adl2w1 {  
-            font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 80vh;
+             font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
+			top: 57vh;
 			width: 82%;
 			text-align: left;			
         }
 		
 		.progress-cls {             	 
-			display: none;
+			top: 89vh;
+			position: absolute;
         }
 		
 		
 		
 			.element-cls-adl1w2 {  
-            font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
-			top: 9vh;
+           font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
+			top: 7vh;
 			text-decoration: underline;
         }
      .element-cls-adl2w2 { 
-            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 54vh;
+             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
+			top: 47vh;
+			position: absolute;
         }
 		
 		.element-cls-adl1w3 {  
              font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
-			top: 9vh;
+			top: 7vh;
 			text-decoration: underline;
         }
      .element-cls-adl2w3 { 
-            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 47vh;
-			display: flex;
-			flex-direction: row;
-			align-self: stretch;
-            align-items: center;
+             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
+			top: 45vh;
 			width: 100%;
-			border: 0.2px solid green;
+			border: 0.0px solid green;
+			text-align: center;
+			margin: 0 auto; 
         }
 		
-		
-		
-		
-		
-		
-		
-		.element-cls-adl1w3 {  
-            font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
-			top: 9vh;
+		.element-cls-adl1w4 {  
+             font-size: clamp(0.9rem, 2.4vw, 1.2rem);	  
+			top: 7vh;
 			text-decoration: underline;
         }
-     .element-cls-adl2w3 {  
-            font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 85vh;
-			width: 65%;
-			margin: 0, auto;			
+     .element-cls-adl2w4 { 
+             font-size: clamp(0.9rem, 2.4vw, 1.2rem);	 
+			top: 44vh;
+			width: 69%;
+			border: 0.0px solid green;
+			text-align: left;
         }
+		
+		
 	 
 	 .bottom-line {
-            font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
+             font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
 			top: 93vh;
 			
         }
 		
+			
 		.ul-cls {
-      display: none;
+      text-align: left;
+	  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
       }	
      .ul-cls-adr {
-      display: none;
-      }	  	  
+       list-style-type: none; text-align: center;
+	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+      }	
+      .ul-cls-rvw {
+       list-style-type: none; text-align: left;
+	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+      }	  	    	  
       .only-for-mobiles-flower {
       display: none;     
      }	
@@ -362,7 +387,7 @@ text-decoration: underline;
 @media (max-width: 769px) {
 
 /* 3. The Image Component */
-.image-wrapper img {
+.img-css {
   max-width: 100%;
   max-height: 80vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
@@ -416,7 +441,7 @@ text-decoration: underline;
 		
 		.progress-cls { 
             	 
-			top: 65vh;
+			top: 70vh;
 			position: absolute;
 			
         }
@@ -446,19 +471,16 @@ text-decoration: underline;
         }
 		
 		.element-cls-adl1w4 {  
-            font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
+             font-size: clamp(2.2rem, 3.5vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
      .element-cls-adl2w4 { 
-            font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
+             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 45vh;
-			display: flex;
-			flex-direction: row;
-			align-self: stretch;
-            align-items: center;
 			width: 95%;
 			border: 0.0px solid green;
+			text-align: center;
         }
 	 
 	 .bottom-line {           
@@ -470,8 +492,12 @@ text-decoration: underline;
       }	 
      .ul-cls-adr {
       list-style-type: none; text-align: center;
-	  
-      }	  
+      font-size: clamp(0.8rem, 1.0vw, 1.1rem);	  
+      }	 
+      .ul-cls-rvw {
+       list-style-type: none; text-align: left;
+	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+      }	  	    		  
      .only-for-mobiles-flower {
       display: none;
       
@@ -568,4 +594,4 @@ text-decoration: underline;
   display: inline; // Show BR tag for narrow screens
 }
  
-}</style><div class="scroll-container"><div class="image-wrapper" id="about"><div class="top-nav"><label for="screen-jump">Slide ↕ or Jump to:</label> <select id="screen-jump" onchange="jumpToScreen(this.value)"><option value="about">About Me<option value="service">My Services<option value="contact">My Contact<option value="review">Reviews</select></div><div class="element-cls-gen element-cls-adl1w1">Freelance Electrician</div><div class="element-cls-gen element-cls-adl2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.</div><img src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description"> <progress value="75" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</div><div class="image-wrapper" id="service" style="background: #101010;"><div class="element-cls-gen element-cls-adl1w2">My Services</div><div class="element-cls-gen element-cls-adl2w2"><ul class="ul-cls"><li>Outlet and Switch Installation & Repair<li>Lighting Upgrades and Maintenance<li>Circuit Breaker Panel Upgrades<li>Electrical Troubleshooting and Diagnostics<li>Whole-Home Surge Protection<li>Safety Inspections<li>Specialized Installations<li>Kitchen Appliances fault repairs</ul></div><img src="Neat_wiring_(505650307)-new.jpg" alt="Description"> <progress value="85" max="100" class="progress-cls" style="top: 70vh;"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d'Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="contact"><div class="element-cls-gen element-cls-adl1w3">My Contact</div><div class="element-cls-gen element-cls-adl2w3"><ul class="ul-cls-adr"><li>House Number 786<li>Main Street<li>New Colony<li>New City<li>Mobile: 9999999999<li>Emergency: 8888888888<li>Email: growlitem@online.com</ul></div><img src="911sign-new-1.jpg" alt="Description"> <progress value="50" max="100" class="progress-cls" style="top: 68vh;"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="review" style="background: #101010;">><div class="element-cls-gen element-cls-adl1w4">Reviews</div><div class="element-cls-gen element-cls-adl2w4"><ul class="ul-cls-adr"><li>Ahmed is best. I am glad to have my dish washer fixed by him which was not working since last two months .....<li> <li style="color: #ffffcc;">John Philip<li> <li>Very efficient. You can trust him for any electrial work in your home. I strongly recomend him. ....<li> <li style="color: #ffffcc;">Peter Lastman<li> <li>Fully Professional. He is highly skilled and finds the fault quickly. ....<li> <li style="color: #ffffcc;">Desouza Ram</ul></div><img src="A_Positive_Customer_Experience_in_Ecommerce-new-1.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</div></div><script>document.addEventListener("contextmenu",function(e){e.preventDefault(),alert("Right-click is disabled!")});const scroller=document.getElementById("main-scroller"),dotButtons=document.querySelectorAll(".dot-button"),dropDown=document.getElementById("screen-jump"),screens=document.querySelectorAll(".screen");function jumpToScreen(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})}setTimeout(()=>{document.getElementById("swipeHint")?.remove()},12e3);const container=document.querySelector(".scroll-container"),wrappers=document.querySelectorAll(".image-wrapper");let isScrolling=!1;window.addEventListener("keydown",e=>{if("ArrowDown"!==e.key&&"ArrowUp"!==e.key)return;if(e.preventDefault(),isScrolling)return;const t=container.scrollTop,o=window.innerHeight;let n=Math.round(t/o),r=n;"ArrowDown"===e.key?n<wrappers.length-1&&(r=n+1):"ArrowUp"===e.key&&n>0&&(r=n-1),r!==n&&(isScrolling=!0,container.scrollTo({top:r*o,behavior:"smooth"}),setTimeout(()=>{isScrolling=!1},500))})</script>
+}</style><div class="scroll-container"><div class="image-wrapper" id="about"><div class="top-nav"><label for="screen-jump">Slide ↕ or Jump to:</label> <select id="screen-jump" onchange="jumpToScreen(this.value)"><option value="about">About Me<option value="service">My Services<option value="contact">My Contact<option value="review">Reviews</select></div><div class="element-cls-gen element-cls-adl1w1">Electrician</div><div class="element-cls-gen element-cls-adl2w1">Hi Friends I’m Ahmed, a friendly Electrician ready to help with any electric issue at your home or business location. I specialize in bringing modern convenience to your space, whether that’s upgrading your electrical panel, setting up smart home automation, installing EV home chargers, or safely rewiring faulty lines.</div><img class="img-css img-ext-css-w1" src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description"> <progress value="75" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Orange_short_haired_anime_girl_portrait.jpg">Artbreeder</a>, CC0, via Wikimedia Commons</div><div class="image-wrapper" id="service" style="background: #101010;"><div class="element-cls-gen element-cls-adl1w2">My Services</div><div class="element-cls-gen element-cls-adl2w2"><ul class="ul-cls"><li>Outlet and Switch Installation & Repair<li>Lighting Upgrades and Maintenance<li>Circuit Breaker Panel Upgrades<li>Electrical Troubleshooting and Diagnostics<li>Whole-Home Surge Protection<li>Safety Inspections<li>Specialized Installations<li>Kitchen Appliances fault repairs</ul></div><img class="img-css img-ext-css-w2" src="Neat_wiring_(505650307)-new.jpg" alt="Description"> <progress value="85" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:Neat_wiring_(505650307).jpg">Marco d'Itri from Milano, Italy</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="contact"><div class="element-cls-gen element-cls-adl1w3">My Contact</div><div class="element-cls-gen element-cls-adl2w3"><ul class="ul-cls-adr"><li>House Number 786<li>Main Street<li>New Colony<li>New City<li>Mobile: 9999999999<li>Emergency: 8888888888<li>Email: growlitem@online.com</ul></div><img class="img-css img-ext-css-w3" src="911sign-new-1.jpg" alt="Description"> <progress value="50" max="100" class="progress-cls"></progress><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</div><div class="image-wrapper" id="review" style="background: #101010;">><div class="element-cls-gen element-cls-adl1w4">Reviews</div><div class="element-cls-gen element-cls-adl2w4"><ul class="ul-cls-rvw"><li>Ahmed is best. I am glad to have my dish washer fixed by him which was not working since last two months .....<li style="color: #ffffcc;">John Philip<li> <li>Very efficient. You can trust him for any electrial work in your home. I strongly recomend him. ....<li style="color: #ffffcc;">Peter Lastman<li> <li>Fully Professional. He is highly skilled and finds the fault quickly. ....<li style="color: #ffffcc;">Desouza Ram</ul></div><img class="img-css img-ext-css-w4" src="A_Positive_Customer_Experience_in_Ecommerce-new-1.jpg" alt="Description"><p class="image-title-bottom bottom-line">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</div></div><script>document.addEventListener("contextmenu",function(e){e.preventDefault(),alert("Right-click is disabled!")});const scroller=document.getElementById("main-scroller"),dotButtons=document.querySelectorAll(".dot-button"),dropDown=document.getElementById("screen-jump"),screens=document.querySelectorAll(".screen");function jumpToScreen(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth"})}setTimeout(()=>{document.getElementById("swipeHint")?.remove()},12e3);const container=document.querySelector(".scroll-container"),wrappers=document.querySelectorAll(".image-wrapper");let isScrolling=!1;window.addEventListener("keydown",e=>{if("ArrowDown"!==e.key&&"ArrowUp"!==e.key)return;if(e.preventDefault(),isScrolling)return;const t=container.scrollTop,o=window.innerHeight;let n=Math.round(t/o),r=n;"ArrowDown"===e.key?n<wrappers.length-1&&(r=n+1):"ArrowUp"===e.key&&n>0&&(r=n-1),r!==n&&(isScrolling=!0,container.scrollTo({top:r*o,behavior:"smooth"}),setTimeout(()=>{isScrolling=!1},500))})</script>
