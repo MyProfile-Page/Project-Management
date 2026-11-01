@@ -285,6 +285,7 @@ text-decoration: underline;
              font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 47vh;
 			position: absolute;
+			width: 100%;
         }
 		
 		.elm1w3 {  
@@ -326,10 +327,12 @@ text-decoration: underline;
 		.ul-cls {
       text-align: left;
 	  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	  width: 75%;
       }	
      .ul-cls-adr {
-       list-style-type: none; text-align: center;
+       list-style-type: none; text-align: left;
 	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	   width: 75%;
       }	
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
@@ -393,6 +396,25 @@ text-decoration: underline;
      .gap2vh {
   height: 2vh;  /* or any size you want; mobile = desktop */
 }
+
+ .container {
+            border: 0px solid white;
+            display: flex;
+            align-items: flex-start;
+			width: 55%;
+			margin: 0 auto;			
+        }
+        .image {
+            margin-right: 0vw;			
+			height: 25vh;
+        }
+		.wrap-elm-class  {
+		 padding-left: 0vw;
+		 padding-right: 0vw;
+		}
+		.adj-height { 
+		 height: 4vh;
+		 }
   	 
 }
 
@@ -418,6 +440,21 @@ text-decoration: underline;
   height: 25vh;
   border-radius: 12px;
   }
+  
+ 
+ .elm-img1-ext-w3 {
+  width: 60%; 
+  height: 30vh;
+  }
+  .elm-img1-ext-w2 { 
+   width: 60%; 
+  height: 30vh;  
+  }  
+ .elm-img1-ext-w4 { 
+   width: 60%; 
+  height: 30vh;   
+  }
+
 
 /* .image-wrapper top-percent-changed {  */
 /* top: 5%;    */
@@ -483,6 +520,7 @@ text-decoration: underline;
      .elm2w2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 46vh;
+			width: 100%;
         }
 		
 	 .elm1w3 {  
@@ -493,7 +531,7 @@ text-decoration: underline;
      .elm2w3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
 			top: 43vh;
-			width: 60%;
+			width: 100%;
 			border: 0.0px solid green;
 			text-align: center;
 			margin: 0 auto; 
@@ -520,10 +558,12 @@ text-decoration: underline;
 		
      .ul-cls {
       text-align: left;
+	   width: 80%;
       }	 
      .ul-cls-adr {
-      list-style-type: none; text-align: center;
-      font-size: clamp(0.8rem, 1.0vw, 1.1rem);	  
+      list-style-type: none; text-align: left;
+      font-size: clamp(0.8rem, 1.0vw, 1.1rem);	
+       width: 75%;	  
       }	 
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
@@ -624,6 +664,26 @@ text-decoration: underline;
    br.responsive {
   display: inline; // Show BR tag for narrow screens
 }
+
+ .container {
+            border: 0px solid white;
+            display: flex;
+            align-items: flex-start;
+			width: 80%;
+			margin: 0 auto;			
+        }
+        .image {
+            margin-right: 0vw;
+			height: 12vh;
+			width: 30vw;	
+        }
+		.wrap-elm-class  {
+		 padding-left: 0vw;
+		 padding-right: 3vw;
+		}
+		.adj-height { 
+		 height: 0.5vh;
+		 }
  
 }
   </style>
@@ -675,6 +735,7 @@ text-decoration: underline;
 	   	
 	   <div class="elm-gen elm1w2">My Services</div>					
 	   <div class="elm-gen elm2w2 ">
+	   <div class="container">
 	   <ul class="ul-cls">
   <li>Outlet and Switch Installation & Repair</li>
   <li>Lighting Upgrades and Maintenance</li>
@@ -684,7 +745,13 @@ text-decoration: underline;
   <li>Safety Inspections</li>
   <li>Specialized Installations</li>
   <li>Kitchen Appliances fault repairs</li>      
-</ul>    
+</ul> 
+<div>  
+		  <div class="adj-height"></div >
+          <img src="20261101_010746.jpg" alt="Sample Image" class="image" >
+	  	</div>
+        
+    </div>      
 	   
 	   </div>
        <img class="elm-img1 elm-img1-ext-w2" src="Neat_wiring_(505650307)-new.jpg" alt="Description"> 
@@ -704,7 +771,7 @@ text-decoration: underline;
 	   
 	   <div class="elm-gen elm1w3">My Contact</div>					
 	   <div class="elm-gen elm2w3">
-	   
+	    <div class="container">
 	   <ul class="ul-cls-adr">
          <li>House Number 786</li>
          <li>Main Street</li>
@@ -714,7 +781,12 @@ text-decoration: underline;
          <li>Emergency: 8888888888</li>
          <li>Email: growlitem@online.com</li>        
         </ul>         
-	   
+	    <div>  
+		  <div class="adj-height"></div >
+          <img src="door.jpg" alt="Sample Image" class="image" >
+	  	</div>
+        
+    </div>
        
 	  
 	     
