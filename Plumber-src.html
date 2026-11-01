@@ -328,8 +328,9 @@ text-decoration: underline;
 	  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
       }	
      .ul-cls-adr {
-       list-style-type: none; text-align: center;
+       list-style-type: none; text-align: left;
 	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	   width: 65%;
       }	
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
@@ -393,6 +394,27 @@ text-decoration: underline;
      .gap2vh {
   height: 2vh;  /* or any size you want; mobile = desktop */
 }
+
+.container {
+            border: 0px solid white;
+            display: flex;
+            align-items: flex-start;
+			width: 50%;
+			margin: 0 auto;
+			
+        }
+        .image {
+            margin-right: 0vw;
+			
+			height: 20vh;
+        }
+		.wrap-elm-class  {
+		 padding-left: 0vw;
+		 padding-right: 2vw;
+		}
+		.adj-height { 
+		 height: 6vh;
+		 }
   	 
 }
 
@@ -494,8 +516,8 @@ text-decoration: underline;
         }
      .elm2w3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 43vh;
-			width: 60%;
+			top: 47vh;
+			width: 100%;
 			border: 0.0px solid green;
 			text-align: center;
 			margin: 0 auto; 
@@ -524,8 +546,9 @@ text-decoration: underline;
       text-align: left;
       }	 
      .ul-cls-adr {
-      list-style-type: none; text-align: center;
-      font-size: clamp(0.8rem, 1.0vw, 1.1rem);	  
+      list-style-type: none; text-align: left;
+      font-size: clamp(0.8rem, 1.0vw, 1.1rem);	
+      width: 75%;	  
       }	 
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
@@ -626,6 +649,27 @@ text-decoration: underline;
    br.responsive {
   display: inline; // Show BR tag for narrow screens
 }
+
+.container {
+            border: 0px solid white;
+            display: flex;
+            align-items: flex-start;
+			width: 80%;
+			margin: 0 auto;
+			
+        }
+        .image {
+            margin-right: 0vw;
+			height: 12vh;
+			width: 30vw;	
+        }
+		.wrap-elm-class  {
+		 padding-left: 0vw;
+		 padding-right: 3vw;
+		}
+		.adj-height { 
+		 height: 0.5vh;
+		 }
  
 }
   </style>
@@ -705,13 +749,13 @@ If you need assistance or would like a free consultation, feel free to reach out
     </div>
 	
 	<!-- Image Wrapper 3 -->
-    <div class="image-wrapper" id="contact">
-       
-	   
+    <div class="image-wrapper" id="contact">   
 	   <div class="elm-gen elm1w3">My Contact</div>					
 	   <div class="elm-gen elm2w3">
 	   
-	   <ul class="ul-cls-adr">
+	  <div class="container">
+       	  
+		<ul class="ul-cls-adr wrap-elm-class" >
          <li>House Number 786</li>
          <li>Main Street</li>
          <li>New Colony</li>
@@ -719,7 +763,13 @@ If you need assistance or would like a free consultation, feel free to reach out
          <li>Mobile: 9999999999</li>
          <li>Emergency: 8888888888</li>
          <li>Email: growlitem@online.com</li>        
-        </ul>         
+        </ul>  
+        <div>  
+		  <div class="adj-height"></div >
+          <img src="door.jpg" alt="Sample Image" class="image" >
+	  	</div>
+        
+    </div>
 	   
        
 	  
