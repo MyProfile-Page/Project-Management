@@ -6,7 +6,15 @@
   <title>Electrician</title>
   <style>
   
+  /*  Prefer max-width: 100% and height: auto for responsive layouts.  */
   
+  /* Following are individual professionals which need digital cards more */
+  /* Agent (Real estate, insurance agent, mortgage agents), Photo Graphers */
+  /* Digital marketing consultant, Nutrition consultant, Interior designer  */
+  /* Graphic designer */
+  
+  /* Following are company professionals which need digital cards more */
+  /* Museums Curators */
   
   /*  */
   /* for wrappers  W1....                            */
@@ -166,9 +174,19 @@ color: yellow;
 text-decoration: underline;
 }
 
+ container-flex-col {
+            border: 1px solid white;
+            display: flex;
+            justify-content: center; 
+            flex-direction: column; 			
+            align-items: center; 	
+        }   
+
 .gap1vh {
   height: 1.0vh;  /* or any size you want; mobile = desktop */
-}      
+}   
+
+
 
 /* ==========================================
    DESKTOP OPTIMIZATIONS (Screens wider than 768px)
@@ -183,8 +201,8 @@ text-decoration: underline;
   }  
   
   .w1-img1 {
-   max-width: 75%;
-   max-height: 35vh;  
+   max-width: 100%;
+   max-height: 32vh;  
               /* Leaves room for padding and captions */
   object-fit: contain;
             /* Keeps the photo aspect ratio intact without cropping */
@@ -192,7 +210,8 @@ text-decoration: underline;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
  /* top: 15%;  */
-  border: 0px solid red;    
+  border: 0px solid red;   
+    
   }
   .w1-img2 {
    max-width: 15%;
@@ -227,6 +246,7 @@ text-decoration: underline;
   transition: transform 0.3s ease;
  /* top: 15%;  */
   border: 0px solid red;
+  
      
   }
    .w4-img1 {
@@ -251,23 +271,7 @@ text-decoration: underline;
     transform: scale(1.02);
   }
   
-  .w1-img1-ext {
-  top: 26%;
-  position: absolute;
-  }
-   .w2-img1-ext {
-  max-height: 20vh;
-  top: 19%;
-  }
-   .w3-img1-ext {
-   max-height: 15vh;
-   top: 19%;
-  }
-   .w4-img1-ext{
-   max-height: 20vh;
-   top: 19%;
-  } 
-
+ 
   
   /* Individual Image Texts */
         .common-css-txt {
@@ -445,7 +449,7 @@ text-decoration: underline;
 
    .w1-container-1-post {
        top: 26%;
-       border: 0px solid red;        
+       border: 1px solid red;        
            width: 65%;
 		   margin: 0 auto;
 	position: absolute;		
@@ -479,34 +483,7 @@ text-decoration: underline;
 	position: absolute;		
         }  		
 
-  .w1-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center;	
-	        }
- .w2-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center; 	
-        }
- .w3-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center; 	
-        }
-	.w4-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center; 	
-        }
+ 
 .w2-container-2 {
             border: 0px solid white;
             display: flex;
@@ -590,28 +567,7 @@ text-decoration: underline;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
 }
 
- .w1-img1-ext {
-  top: 18%;
-  width: 50%;
-  height: 25vh;
-  border-radius: 12px;
-  }
-  
  
- .w3-img1-ext {
-  width: 60%; 
-  height: 30vh;
-  }
-  .w2-img1-ext { 
-   width: 60%; 
-  height: 30vh;  
-  }  
- .w4-img1-ext { 
-   width: 60%; 
-  height: 30vh;   
-  }
-
-
 /* .image-wrapper top-percent-changed {  */
 /* top: 5%;    */
  
@@ -860,35 +816,7 @@ text-decoration: underline;
 	position: absolute;		
         }  		
 
-  .w1-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center;	
-	        }
- .w2-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center; 	
-        }
- .w3-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center; 	
-        }
-	.w4-container-1 {
-            border: 0px solid white;
-            display: flex;
-            justify-content: center; 
-            flex-direction: column; 			
-            align-items: center; 	
-        }
-
+ 
   .w2-container-2 {
             border: 0px solid white;
             display: flex;
@@ -956,7 +884,7 @@ text-decoration: underline;
 		 <div class="common-css-txt w1-txt-2">Electrician</div> 
          
 		 <div class= "w1-container-1-post">
-	     <div class="w1-container-1">
+	     <div class="container-flex-col">
          <img class="w1-img1" src="olenchic-ai-generated-9395138_640.jpg" alt="Description">
 		  <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/olenchic-16658974/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9395138">Olena</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9395138">Pixabay</a></p>
          </div>	
@@ -970,7 +898,7 @@ text-decoration: underline;
 		 <p>&nbsp&nbsp</p>
 		 <progress value="75" max="100" ></progress>
          <p>&nbsp&nbsp</p>
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
+         <img class="w1-img2" src="whiterose-nb-AI-new2.jpg" alt="Description">		 
          </div>	
         </div> 		 
          	 
@@ -987,7 +915,7 @@ text-decoration: underline;
     <div class="image-wrapper" id="service" style="background: #101010;">
 	<div class="common-css-txt w2-txt-1">My Services</div> 
 	 <div class= "w2-container-1-post">
-	     <div class="w2-container-1">
+	     <div class="container-flex-col">
           <img class="w2-img1" src="toolmash-expo-PkHf7BUWbtk-unsplash.jpg" alt="Description"> 
        	   
 	   <p class="common-attr-lnk">Photo by <a href="https://unsplash.com/@toolmash?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Toolmash Expo</a> on <a href="https://unsplash.com/photos/electrician-testing-electrical-panel-with-multimeter-PkHf7BUWbtk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -1041,7 +969,7 @@ Photo by <a href="https://unsplash.com/@kivraj?utm_source=unsplash&utm_medium=re
 	   <div class="common-css-txt w3-txt-1">My Contact</div>	
 
        <div class= "w3-container-1-post">
-	     <div class="w3-container-1">
+	     <div class="container-flex-col">
           <img class="w3-img1" src="911sign-new-1.jpg" alt="Description"> 
        <p class="common-attr-lnk">Photograph By <a href="https://commons.wikimedia.org/wiki/File:911sign.jpg">nadbasher</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</p>
          </div>	
@@ -1090,7 +1018,7 @@ Photo by <a href="https://unsplash.com/@kivraj?utm_source=unsplash&utm_medium=re
 	   <div class="common-css-txt w4-txt-1">Reviews</div>
 
        <div class= "w4-container-1-post">
-	     <div class="w4-container-1">
+	     <div class="container-flex-col">
           <img class="w4-img1" src="A_Positive_Customer_Experience_in_Ecommerce-new-1.jpg" alt="Description">   
 	   <p class="common-attr-lnk">Photograph By <a href="https://commons.wikimedia.org/wiki/File:A_Positive_Customer_Experience_in_Ecommerce.jpg">Zuko.io Images</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
          </div>	
