@@ -3,12 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plumber</title>
+  <title>Electrician</title>
   <style>
   
+  /*  Prefer max-width: 100% and height: auto for responsive layouts.  */
   
+  /* Following are individual professionals which need digital cards more */
+  /* Agent (Real estate, insurance agent, mortgage agents), Photo Graphers */
+  /* Digital marketing consultant, Nutrition consultant, Interior designer  */
+  /* Graphic designer */
+  
+  /* Following are company professionals which need digital cards more */
+  /* Museums Curators */
   
   /*  */
+  /* for wrappers  W1....                            */
+   /* for images img1...                             */
+    /* for text txt1...                            */
+	 /* for hyperlinks hp1....                            */
   /*  W3C CSS Validator	Invalid CSS syntax and properties   */
   /*  W3C HTML Validator	Incorrect HTML markup    */
   /*  Browser Developer Tools (F12)	JavaScript errors, console messages, and actual computed CSS  */
@@ -35,6 +47,7 @@ html, body {
   overflow: hidden; /* Prevents double scrolling bars */
   background-color: #121212; /* Dark background to make images pop */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
 /* 1. Main Scroll Container */
@@ -164,15 +177,23 @@ text-decoration: underline;
 
 .gap1vh {
   height: 1.0vh;  /* or any size you want; mobile = desktop */
-}
-
-
-
-  
-	
-
-      
-
+}   
+.container-flex-col {
+            border: 0px solid white;
+            display: flex;
+            justify-content: center; 
+            flex-direction: column; 			
+            align-items: center;	
+	        }
+.common-css-txt {
+            font-weight: 600;
+            color: #4a90e2;
+			color: white;
+            margin: 0 0 8px 0;
+		/*	background-color: black;  */
+			text-align: center;
+			position: absolute;
+        }			
 /* ==========================================
    DESKTOP OPTIMIZATIONS (Screens wider than 768px)
    ========================================== */
@@ -183,19 +204,67 @@ text-decoration: underline;
     margin: 0 auto;   /* Perfectly centers the app container on your monitor */
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
     background-color: #1a1a1a; /* Slight contrast difference for the desktop background framing */
+  }  
+  
+  .w1-img1 {
+   max-width: 100%;
+   max-height: 32vh;  
+              /* Leaves room for padding and captions */
+  object-fit: contain;
+            /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+ /* top: 15%;  */
+  border: 0px solid red;   
+    
+  }
+  .w1-img2 {
+   max-width: 15%;
+   max-height: 3vh;  
+              /* Leaves room for padding and captions */
+  object-fit: contain;
+            /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+ /* top: 15%;  */
+  border: 0px solid red;    
   }
   
-  
-  .elm-img1 {
+   .w2-img1 {
   max-width: 100%;
   max-height: 30vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
-  top: 15%;
-  border: 1px solid red;
-  position: absolute;   
+ /* top: 15%;  */
+  border: 0px solid red;
+     
+  }
+   .w3-img1 {
+  max-width: 100%;
+  max-height: 30vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+ /* top: 15%;  */
+  border: 0px solid red;
+  
+     
+  }
+   .w4-img1 {
+  max-width: 100%;
+  max-height: 30vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+ /* top: 15%;  */
+  border: 0px solid red;
+     
   }
   
 /* .image-wrapper img {  */
@@ -208,137 +277,115 @@ text-decoration: underline;
     transform: scale(1.02);
   }
   
-  .elm-img1-ext-w1 {
-  top: 26%;
-  }
-   .elm-img1-ext-w2 {   
-  max-height: 25vh;     
-   
-	
-  top: 19%;  
-  }
-   .elm-img1-ext-w3 {
-   max-height: 24vh;
-   top: 19%;
-  }
-   .elm-img1-ext-w4{
-   max-height: 24vh;
-   top: 19%;
-  }
   
 
   
   /* Individual Image Texts */
-        .elm-gen {
-            font-weight: 600;
-         /*   color: #4a90e2;  */
-			color: white;
-            margin: 0 0 8px 0;
-		/*	background-color: black;  */
-			text-align: center;
-			position: absolute;
-			
-			
-        }
+        
 
-        .image-title-bottom {
-            font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+        .common-attr-lnk {
+		    font-size: clamp(0.4rem, 0.9vw, 1.0rem);           
             font-weight: 700;
             color: #b0b0b8;
             margin: 8px 0 0 0;
 			color: white;
 			background-color: black;
 			text-align: center;
-			position: absolute;
-			
+		/*	position: absolute;  */
+			padding: 0.2vw;			
         }
 		
  
-	  .elm0w1 {  
+	  .w1-txt-1 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 9vh;
 			text-decoration: underline;
         }
-		.elm1w1 {  
+		.w1-txt-2 {  
             font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 16vh;
 			text-decoration: underline;
         }
-     .elm2w1 {  
+     .w1-txt-3 {  
              font-size: clamp(0.6rem, 1.2vw, 1.5rem);	 
-			top: 61vh;
+			top: 67vh;
 			width: 82%;
 			text-align: left;			
         }
 		
-		.progress-cls {             	 
-			top: 89vh;
+		.w1-gen-elm-css {             	 
+			top: 94vh;
 			position: absolute;
-        }
+		}
+		.w2-gen-elm-css {             	 
+			top: 94vh;
+			position: absolute;
+		}
+		.w3-gen-elm-css {             	 
+			top: 94vh;
+			position: absolute;
+		}
+		.w4-gen-elm-css {             	 
+			top: 94vh;
+			position: absolute;
+		}	
 		
 		
-		
-			.elm1w2 {  
+			.w2-txt-1 {  
            font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 8vh;
 			text-decoration: underline;
         }
-     .elm2w2 { 
+     .w2-txt-2 { 
              font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 47vh;
+			top: 58vh;
+			
 			width: 100%;
-			position: absolute;
         }
 		
-		.elm1w3 {  
+		.w3-txt-1 {  
              font-size: clamp(1.3rem, 2.ovw, 2.1rem);	  
 			top: 8vh;
 			text-decoration: underline;
         }
-     .elm2w3 { 
+     .w3-txt-2 { 
              font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 45vh;
+			top: 57vh;
 			width: 100%;
 			border: 0.0px solid green;
 			text-align: center;
 			margin: 0 auto; 
         }
 		
-		.elm1w4 {  
+		.w4-txt-1 {  
              font-size: clamp(0.9rem, 2.4vw, 1.2rem);	  
 			top: 8vh;
 			text-decoration: underline;
         }
-     .elm2w4 { 
+     .w4-txt-2 { 
              font-size: clamp(0.9rem, 2.4vw, 1.2rem);	 
-			top: 44vh;
-			width: 69%;
+			top: 54vh;
+			width: 75%;
 			border: 0.0px solid green;
 			text-align: left;
         }
 		
-		
-	 
-	 .bottom-line {
-             font-size: clamp(0.4rem, 0.9vw, 1.0rem);	 
-			top: 93vh;
-			
-        }
-		
+
 			
 		.ul-cls {
       text-align: left;
 	  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
-	  width: 65%;
+	  width: 75%;
       }	
      .ul-cls-adr {
        list-style-type: none; text-align: left;
 	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
-	   width: 65%;
+	   width: 75%;
       }	
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
 	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	   width: 100%;
       }	  	    	  
       .only-for-mobiles-flower {
       display: none;     
@@ -399,25 +446,74 @@ text-decoration: underline;
   height: 2vh;  /* or any size you want; mobile = desktop */
 }
 
-.container {
+   .w1-container-1-post {
+       top: 26%;
+       border: 0px solid red;        
+           width: 65%;
+		   margin: 0 auto;
+	position: absolute;		
+        }	
+     .w1-container-1-post-1 {
+       top: 95%;
+       border: 0px solid red;        
+           width: 65%;
+		   margin: 0 auto;
+	position: absolute;		
+        }				
+	 .w2-container-1-post {
+       top: 18.5%;
+       border: 0px solid red;            
+           width: 62.5%;
+		   margin: 0 auto;
+	position: absolute;		
+        }
+     .w3-container-1-post {
+       top: 18%;
+       border: 0px solid red;            
+           width: 65%;
+		   margin: 0 auto;
+	position: absolute;		
+        }
+     .w4-container-1-post {
+       top: 17%;
+       border: 0px solid red;            
+           width: 65%;
+		   margin: 0 auto;
+	position: absolute;		
+        }  		
+
+  
+ 
+.w2-container-2 {
             border: 0px solid white;
             display: flex;
             align-items: flex-start;
-			width: 53%;
-			margin: 0 auto;
-			
+			width: 60%;
+			margin: 0 auto;			
         }
-        .image {
-            margin-right: 0vw;
-			
+ .w3-container-2 {
+            border: 0px solid white;
+            display: flex;
+            align-items: flex-start;
+			width: 55%;
+			margin: 0 auto;			
+        }		
+        .w2-img2 {
+            margin-right: 0vw;			
 			height: 25vh;
+			border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
-		.wrap-elm-class  {
-		 padding-left: 0vw;
-		 padding-right: 0vw;
-		}
+		.w3-img2 {
+            margin-right: 0vw;			
+			height: 25vh;
+			border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+		
 		.adj-height { 
-		 height: 4vh;
+		 height: 1vh;
+		 font-size: clamp(0.5rem, 0.7vw, 0.8rem);
 		 }
   	 
 }
@@ -428,31 +524,51 @@ text-decoration: underline;
 @media (max-width: 769px) {
 
 /* 3. The Image Component */
-.elm-img1 {
-  max-width: 100%;
-  max-height: 80vh;              /* Leaves room for padding and captions */
+.w1-img1 {
+  max-width: 85%;
+  max-height: 20vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+  
+.w1-img2 {
+   max-width: 2%;
+   max-height: 0.25vh;  
+              /* Leaves room for padding and captions */
+  object-fit: contain;
+            /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  top: 12%;
-  position: absolute;
+  transition: transform 0.3s ease;
+ /* top: 15%;  */
+  border: 0px solid red;    
+  }  
+  
+}
+.w2-img1 {
+  max-width: 100%;
+  max-height: 20vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+}
+.w3-img1 {
+  max-width: 100%;
+  max-height: 20vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+}
+.w4-img1 {
+  max-width: 100%;
+  max-height: 20vh;              /* Leaves room for padding and captions */
+  object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
 }
 
- .elm-img1-ext-w1 {
-  top: 20%;
-  }  
- .elm-img1-ext-w3 {
-  width: 60%; 
-  height: 30vh;
-  }
-  .elm-img1-ext-w2 { 
-   width: 60%; 
-  height: 30vh;  
-  }  
- .elm-img1-ext-w4 { 
-   width: 60%; 
-  height: 30vh;   
-  }
+
+
 
 /* .image-wrapper top-percent-changed {  */
 /* top: 5%;    */
@@ -460,17 +576,9 @@ text-decoration: underline;
 /* }  */
 
 /* Individual Image Texts */
-        .elm-gen {
-            font-weight: 600;
-            color: #4a90e2;
-			color: white;
-            margin: 0 0 8px 0;
-			background-color: black;
-			text-align: center;
-			position: absolute;
-        }
+        
 
-        .image-title-bottom {
+        .common-attr-lnk {
             font-size: clamp(0.7rem, 2.4vw, 0.9rem);
             font-weight: 700;
             color: #b0b0b8;
@@ -478,90 +586,92 @@ text-decoration: underline;
 			color: white;
 			background-color: black;
 			text-align: center;
-			position: absolute;
-			width: 65%;
+			width: 95%;
         }
 		
 
 /* Individual Image Texts */
       
-	  .elm0w1 {  
+	  .w1-txt-1 {  
             font-size: clamp(2.2rem, 3vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-		.elm1w1 {  
+		.w1-txt-2 {  
             font-size: clamp(2.2rem, 3vw, 2.8rem);	  
 			top: 10vh;
 			text-decoration: underline;
         }
-     .elm2w1 { 
+     .w1-txt-3 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 40vh;
+			top: 52vh;
 			text-align: left;
 			padding-left: 2vw;
 			padding-right: 2vw;
         }
 		
-		.progress-cls { 
-            	 
-			top: 70vh;
-			position: absolute;
-			
+		.w1-gen-elm-css {             	 
+			top: 82vh;
+			position: absolute;			
+        }
+		.w2-gen-elm-css {             	 
+			top: 82vh;
+			position: absolute;			
+        }
+		.w3-gen-elm-css {             	 
+			top: 82vh;
+			position: absolute;			
         }
 		
-		.elm1w2 {  
+		.w2-txt-1 {  
             font-size: clamp(2.2rem, 3vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .elm2w2 { 
+     .w2-txt-2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 46vh;
+			top: 49vh;
 			width: 100%;
         }
 		
-	 .elm1w3 {  
+	 .w3-txt-1 {  
             font-size: clamp(2.2rem, 3vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .elm2w3 { 
+     .w3-txt-2 { 
             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 47vh;
+			top: 52vh;
 			width: 100%;
 			border: 0.0px solid green;
 			text-align: center;
 			margin: 0 auto; 
         }
 		
-		.elm1w4 {  
+		.w4-txt-1 {  
              font-size: clamp(2.2rem, 3vw, 2.8rem);	  
 			top: 3vh;
 			text-decoration: underline;
         }
-     .elm2w4 { 
+     .w4-txt-2 { 
              font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
-			top: 45vh;
+			top: 51vh;
 			width: 95%;
 			border: 0.0px solid green;
 			text-align: center;
 			padding-left: 1vw;
 			padding-right: 1vw;
-        }
+        } 
 	 
-	 .bottom-line {           
-			top: 79vh;
-        }	
 		
      .ul-cls {
       text-align: left;
-	  width: 75%;
+	   width: 90%;
       }	 
      .ul-cls-adr {
       list-style-type: none; text-align: left;
       font-size: clamp(0.8rem, 1.0vw, 1.1rem);	
-      width: 75%;	  
+       width: 75%;	  
       }	 
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
@@ -575,10 +685,8 @@ text-decoration: underline;
       display: none;      
      }	 
 	 .only-for-mobiles-slide {
-       display: none;
-      
+       display: none;      
      }	
-
 
       .mobile-swipe-message {
        display: block;
@@ -663,25 +771,80 @@ text-decoration: underline;
   display: inline; // Show BR tag for narrow screens
 }
 
-.container {
+  .w1-container-1-post {
+       top: 23%;
+              
+           width: 80%;
+		   margin: 0 auto;
+	position: absolute;	
+    border: 0px solid white;	
+        }
+	.w1-container-1-post-1 {
+       top: 80%;
+              
+           width: 80%;
+		   margin: 0 auto;
+	position: absolute;	
+    border: 0px solid white;	
+        }	
+		
+	 .w2-container-1-post {
+       top: 16.5%;
+       border: 0px solid red;            
+           width: 62.5%;
+		   margin: 0 auto;
+	position: absolute;		
+        }
+     .w3-container-1-post {
+       top: 16%;
+       border: 0px solid red;            
+           width: 65%;
+		   margin: 0 auto;
+	position: absolute;		
+        }
+     .w4-container-1-post {
+       top: 15%;
+       border: 0px solid red;            
+           width: 65%;
+		   margin: 0 auto;
+	position: absolute;		
+        }  		
+
+  
+ 
+  .w2-container-2 {
+            border: 0px solid white;
+            display: flex;
+            align-items: flex-start;
+			width: 85%;
+			margin: 0 auto;			
+        }
+
+ .w3-container-2 {
             border: 0px solid white;
             display: flex;
             align-items: flex-start;
 			width: 80%;
-			margin: 0 auto;
-			
+			margin: 0 auto;			
         }
-        .image {
+        .w2-img2 {
             margin-right: 0vw;
 			height: 12vh;
-			width: 30vw;	
+			width: 30vw;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);			
         }
-		.wrap-elm-class  {
-		 padding-left: 0vw;
-		 padding-right: 3vw;
-		}
+		 .w3-img2 {
+            margin-right: 0vw;
+			height: 12vh;
+			width: 30vw;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 			
+        }
+		
 		.adj-height { 
-		 height: 0.5vh;
+		 height: 1.0vh;
+		 font-size: clamp(0.5rem, 0.7vw, 0.8rem);
 		 }
  
 }
@@ -712,33 +875,55 @@ text-decoration: underline;
       
     </select>
   </div>	
-         <div class="elm-gen elm0w1">Freelance</div> 
-		 <div class="elm-gen elm1w1">Plumber</div> 
-         <div class="elm-gen elm2w1">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
+         <div class="common-css-txt w1-txt-1">Freelance</div> 
+		 <div class="common-css-txt w1-txt-2">Plumber</div> 
+         
+		 <div class= "w1-container-1-post">
+	     <div class="container-flex-col">
+         <img class="w1-img1" src="hellio42-ai-generated-9328689_640.png" alt="Description">
+		  <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/hellio42-41181595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Stephane</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Pixabay</a></p>
+         </div>	
+        </div> 
+		
+        <div class="common-css-txt w1-txt-3">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
 
 Whether you need fixing of leaks, unclogging of drains or installing fixtures or need preventative maintenance, I handle all of them with a quality workmanship so that you can focus on what matters most.
 
 If you need assistance or would like a free consultation, feel free to reach out to me anytime through my contact details. I will be glad to work around your schedule and provide solutions tailored to your needs.
-		 </div>
-	  
-         <img class="elm-img1 elm-img1-ext-w1" src="hellio42-ai-generated-9328689_640.png" alt="Description">	
-         		 
+		 </div>	
+        <div class= "w1-container-1-post-1">
+	     <div class="container-flex-col" style="flex-direction: row;">
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
+		 <p>&nbsp&nbsp</p>
+		 <progress value="75" max="100" ></progress>
+         <p>&nbsp&nbsp</p>
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
+         </div>	
+        </div> 		 
+         	 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
       
          <p class="only-for-desktops-arrows">For Scrolling Press up & down Arrow Keys</p>
 		 <p class="only-for-mobiles-slide">For Scrolling slide image</p>
 	  -->	 	  
-         <p class="image-title-bottom bottom-line">Photograph By <a href="https://pixabay.com/users/hellio42-41181595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Stephane</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Pixabay</a></p>		                    
+         		                    
     </div>
 	
 	<!-- Image Wrapper 2 -->
     <div class="image-wrapper" id="service" style="background: #101010;">
-       
-	   	
-	   <div class="elm-gen elm1w2">My Services</div>					
-	   <div class="elm-gen elm2w2 ">
-	   <div class="container">
+	<div class="common-css-txt w2-txt-1">My Services</div> 
+	 <div class= "w2-container-1-post">
+	     <div class="container-flex-col">
+          <img class="w2-img1" src="thedigitalartist-ai-generated-7947637_640.jpg" alt="Description"> 
+       	   
+	   <p class="common-attr-lnk">Photo by <a href="https://pixabay.com/users/thedigitalartist-202249/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7947637">Pete Linforth</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7947637">Pixabay</a></p>
+         </div>	
+        </div>       
+	           
+	   
+	   <div class="common-css-txt w2-txt-2 ">
+	   <div class="w2-container-2">
 	   <ul class="ul-cls">
   <li>Leak Repairs</li>
   <li>Drain Cleaning</li>
@@ -747,19 +932,30 @@ If you need assistance or would like a free consultation, feel free to reach out
   <li>Clogged & Overflowing Toilets</li>
   <li>Safety Inspections</li>
   <li>Specialized Installations</li>
-  <li>Sewer Odors from Drains</li>      
+  <li>Sewer Odors from Drains</li> 
+  
 </ul> 
- <div>  
+<div>  
 		  <div class="adj-height"></div >
-          <img src="20261101_010746.jpg" alt="Sample Image" class="image" >
+          <img src="20261101_010746.jpg" alt="Sample Image" class="w2-img2" >
+		  <div class="adj-height">
+Photo by <a href="https://unsplash.com/@kivraj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jarvik Joshi</a> on <a href="https://unsplash.com/photos/three-led-lights-yjgE1xjyv60?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+		  
+		  </div >
 	  	</div>
         
-    </div>   
+    </div>      
 	   
 	   </div>
-       <img class="elm-img1 elm-img1-ext-w2" src="thedigitalartist-ai-generated-7947637_640.jpg" alt="Description"> 
-       <progress value="85" max="100" class="progress-cls" ></progress> 	   
-	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://pixabay.com/users/thedigitalartist-202249/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7947637">Pete Linforth</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7947637">Pixabay</a></p>
+        <div class= "w1-container-1-post-1">
+	     <div class="container-flex-col" style="flex-direction: row;">
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
+		 <p>&nbsp&nbsp</p>
+		 <progress value="75" max="100" ></progress>
+         <p>&nbsp&nbsp</p>
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
+         </div>	
+        </div> 		 
 	   <!--
 	   <div id="swipeHint" class="mobile-swipe-message">
          <span class="swipeIcon">↕</span>
@@ -769,13 +965,20 @@ If you need assistance or would like a free consultation, feel free to reach out
     </div>
 	
 	<!-- Image Wrapper 3 -->
-    <div class="image-wrapper" id="contact">   
-	   <div class="elm-gen elm1w3">My Contact</div>					
-	   <div class="elm-gen elm2w3">
+    <div class="image-wrapper" id="contact">      
 	   
-	  <div class="container">
-       	  
-		<ul class="ul-cls-adr wrap-elm-class" >
+	   <div class="common-css-txt w3-txt-1">My Contact</div>	
+
+       <div class= "w3-container-1-post">
+	     <div class="container-flex-col">
+          <img class="w3-img1" src="geralt-smartphone-6386599_640.jpg" alt="Description"> 
+       <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6386599">Gerd Altmann</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6386599">Pixabay</a></p>
+         </div>	
+        </div>       
+	   
+	   <div class="common-css-txt w3-txt-2">
+	    <div class="w3-container-2">
+	   <ul class="ul-cls-adr">
          <li>House Number 786</li>
          <li>Main Street</li>
          <li>New Colony</li>
@@ -783,29 +986,47 @@ If you need assistance or would like a free consultation, feel free to reach out
          <li>Mobile: 9999999999</li>
          <li>Emergency: 8888888888</li>
          <li>Email: growlitem@online.com</li>        
-        </ul>  
-        <div>  
-		  <div class="adj-height"></div >
-          <img src="door.jpg" alt="Sample Image" class="image" >
+        </ul>         
+	    <div>  
+		  <img src="roger-starnes-sr-JxGZFKPx5n0-unsplash.jpg" alt="Sample Image" class="w3-img2" >
+		  <div class="adj-height">
+		  Photo by <a href="https://unsplash.com/@rstar50?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roger Starnes Sr</a> on <a href="https://unsplash.com/photos/a-blue-house-with-a-white-porch-and-red-chimney-JxGZFKPx5n0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+		  </div >
 	  	</div>
         
     </div>
-	   
        
 	  
 	     
 	   </div>
-       <img class="elm-img1 elm-img1-ext-w3" src="geralt-smartphone-6386599_640.jpg" alt="Description"> 
-       <progress value="50" max="100" class="progress-cls" ></progress>	   
-	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6386599">Gerd Altmann</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6386599">Pixabay</a></p>
+       
+	   
+	   <div class= "w1-container-1-post-1">
+	     <div class="container-flex-col" style="flex-direction: row;">
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
+		 <p>&nbsp&nbsp</p>
+		 <progress value="75" max="100" ></progress>
+         <p>&nbsp&nbsp</p>
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
+         </div>	
+        </div> 		 
     </div>
 	
 	<!-- Image Wrapper 4 -->
     <div class="image-wrapper" id="review" style="background: #101010;">>
        
 	   
-	   <div class="elm-gen elm1w4">Reviews</div>					
-	   <div class="elm-gen elm2w4">
+	   <div class="common-css-txt w4-txt-1">Reviews</div>
+
+       <div class= "w4-container-1-post">
+	     <div class="container-flex-col">
+          <img class="w4-img1" src="mcmurryjulie-bad-review-2813741_640.png" alt="Description">   
+	   <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/mcmurryjulie-2375405/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">mcmurryjulie</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">Pixabay</a></p>
+         </div>	
+        </div>       
+
+	   
+	   <div class="common-css-txt w4-txt-2 ">
 	   <ul class="ul-cls-rvw">
   <li>Ahmed is best. I am glad to have my Kitchen piping fixed by him, it was leaking from many places and i was mad seeing it since last two months  .....</li>  
   <li style="color: #ffffcc;">John Philip</li>
@@ -814,13 +1035,12 @@ If you need assistance or would like a free consultation, feel free to reach out
   <li style="color: #ffffcc;">Peter Lastman</li>
   <li>&nbsp</li>
   <li>Fully Professional. He is highly skilled and finds the fault quickly.   ....</li>  
-    <li style="color: #ffffcc;">Desouza Ram</li> 
+    <li style="color: #ffffcc;">Desouza Ram</li>  
         
 </ul> 
 	   
 	   </div>
-       <img class="elm-img1 elm-img1-ext-w4" src="mcmurryjulie-bad-review-2813741_640.png" alt="Description">   
-	   <p class="image-title-bottom bottom-line">Photograph By <a href="https://pixabay.com/users/mcmurryjulie-2375405/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">mcmurryjulie</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">Pixabay</a></p>
+       
     </div>
 
 	
