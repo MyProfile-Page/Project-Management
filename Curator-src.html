@@ -142,7 +142,8 @@ Book-a-call button
 .call-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+ /* right: 20px;  */
+/*  margin: 0 auto; 
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -425,9 +426,8 @@ text-decoration: underline;
         }	
 
 .call-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+ 
+  justify-content: center;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -740,13 +740,13 @@ input[type=submit]:hover {
       display: flex;
       align-items: center;
       gap: 10px;	   
-	  top: 3vh;
+	  top: 70vh;
 	  font-size: clamp(0.6rem, 0.7vw, 0.8rem);
 	  color: white;  
       height: 3.0vh;
       width: 30%; 
       margin: 0 auto;
-      display: none;	  
+      display: block;	  
     }
     .top-nav label {
       font-size: clamp(0.6rem, 0.7vw, 0.8rem);
@@ -1075,7 +1075,7 @@ input[type=submit]:hover {
       height: 4vh;
       width: 95%; 
       margin: 0 auto;
-      display: none;	  
+      display: block;	  
     }
     .top-nav label {
       font-size: 0.9rem;
@@ -1185,35 +1185,29 @@ input[type=submit]:hover {
   </style>
 </head>
 <body>
-
- <a href="tel:+16479379234" class="call-btn">
-                <span class="call-icon">☎</span>
-                <span class="call-text">(647) 766-5597</span>
-          </a>
-
+ 
   <!-- The main scrolling timeline -->
   <div class="scroll-container">
       <!-- MAIN TOP DOCK -->
 	  
 	  <!-- 1. The Fixed Navigation -->
  
-
+   
 
            
     <!-- Image Wrapper 1 -->
 	
     <div class="image-wrapper" id="about">	
+	
+	
+ <div class="top-nav">
+ <a href="tel:+16479379234" class="call-btn">
+                <span class="call-icon">☎</span>
+                <span class="call-text">(647) 766-5597</span>
+          </a>
+</div>
          <!-- Top Dropdown Navigation Menu -->
-  <div class="top-nav">
-    <label for="screen-jump">Slide ↕ or Jump to:</label>
-    <select id="screen-jump" onchange="jumpToScreen(this.value)">
-      <option value="about">About Me</option>
-      <option value="service">My Services</option>
-      <option value="contact">My Contact</option>
-	  <option value="review">Reviews</option>
-      
-    </select>
-  </div>	
+ 
          <div class="common-css-txt w1-txt-1">Breelance</div> 
 		 <div class="common-css-txt w1-txt-2">Plumber</div> 
          
