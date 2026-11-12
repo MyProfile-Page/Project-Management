@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My QR Code Generator</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px; min-height: 100vh;
+    display: grid; place-items: center;
+    font-family: Arial, sans-serif; background: #f3f5f8; color: #202633;
+  }
+  main {
+    width: min(100%, 620px); padding: 28px;
+    background: white; border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.09);
+  }
+  h1 { margin-top: 0; font-size: clamp(1.4rem, 4vw, 2rem); }
+  label { display: block; font-weight: 700; margin: 18px 0 8px; }
+  input {
+    width: 100%; padding: 13px; font-size: 1rem;
+    border: 1px solid #b9c2ce; border-radius: 8px;
+  }
+  button {
+    padding: 12px 16px; margin: 12px 8px 0 0;
+    border: 0; border-radius: 8px; cursor: pointer;
+    background: #174ea6; color: white; font-size: 1rem;
+  }
+  button.secondary { background: #455365; }
+  #preview {
+    display: grid; place-items: center; margin: 22px auto 10px;
+    min-height: 250px;
+  }
+  #preview svg { width: min(100%, 320px); height: auto; }
+  #message { color: #a12a2a; min-height: 1.3em; }
+  .hint { color: #566273; line-height: 1.5; font-size: .95rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>QR Code Generator</h1>
+  <p class="hint">Enter your website address, generate its QR code, and download the QR image as an SVG file.</p>
+
+  <label for="websiteUrl">Website URL</label>
+  <input id="websiteUrl" type="url"
+    value="https://myprofile-page.github.io/Project-Management/Curator-src.html"
+    placeholder="https://example.com">
+
+  <button id="generateBtn" type="button">Generate QR Code</button>
+  <button id="downloadBtn" class="secondary" type="button">Download QR as SVG</button>
+
+  <div id="preview" aria-live="polite"></div>
+  <p id="message" role="status"></p>
+  <p class="hint">Tip: When your application URL changes, replace the address above and select <b>Generate QR Code</b> again. The downloaded SVG is a separate image file and does not update automatically.</p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.4/qrcode.min.js"></script>
+<script>
+  const urlInput = document.getElementById("websiteUrl");
+  const preview = document.getElementById("preview");
+  const message = document.getElementById("message");
+  const downloadBtn = document.getElementById("downloadBtn");
+  let currentSvg = "";
+
+  async function generateQr() {
+    const url = urlInput.value.trim();
+    message.textContent = "";
+    if (!url) {
+      message.textContent = "Please enter a website address.";
+      return;
+    }
+    try {
+      const parsed = new URL(url);
+      if (!["http:", "https:"].includes(parsed.protocol)) {
+        throw new Error("Please use a web address beginning with http:// or https://");
+      }
+      if (typeof QRCode === "undefined") {
+        throw new Error("The QR library could not load. Please check your internet connection and refresh this page.");
+      }
+      currentSvg = await QRCode.toString(url, {
+        type: "svg", errorCorrectionLevel: "H", margin: 4,
+        color: { dark: "#000000", light: "#ffffff" },
+        width: 640
+      });
+      preview.innerHTML = currentSvg;
+    } catch (error) {
+      currentSvg = "";
+      preview.innerHTML = "";
+      message.textContent = error.message || "Could not generate the QR code.";
+    }
+  }
+
+  document.getElementById("generateBtn").addEventListener("click", generateQr);
+
+  downloadBtn.addEventListener("click", () => {
+    if (!currentSvg) {
+      message.textContent = "Please generate the QR code first.";
+      return;
+    }
+    const blob = new Blob([currentSvg], { type: "image/svg+xml;charset=utf-8" });
+    const objectUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = "website-qr-code.svg";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(objectUrl);
+  });
+
+  generateQr();
+</script>
+</body>
+</html>
