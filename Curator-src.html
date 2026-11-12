@@ -327,7 +327,7 @@ html, body {
   flex-direction: column;
  /* justify-content: center;  */  
   align-items: center;     
-  padding: 20px;  
+  padding: 5px;  
   position: relative;
  border: 0vw solid red;
 }
@@ -663,17 +663,19 @@ input[type=submit]:hover {
         }
 	  .w1-txt-1 {  
             font-size: 1.2rem;	  
-			top: 4vh;
+		
 			text-decoration: underline;
+			color: white;
         }
 		.w1-txt-2 {  
             font-size: 1.2rem;	  
-			top: 11vh;
+		
 			text-decoration: underline;
+			color: white;
         }
      .w1-txt-3 {  
              font-size: .7rem;	 
-			top: 62vh;
+		
 			width: 82%;
 			text-align: left;			
         }
@@ -698,28 +700,30 @@ input[type=submit]:hover {
 		
 			.w2-txt-1 {  
            font-size: 1.2rem;	  
-			top: 3vh;
+			
 			text-decoration: underline;
         }
      .w2-txt-2 { 
              font-size: .7rem;	 
-			top: 53vh;
+			
 			
 			width: 100%;
         }
 		
 		.w3-txt-1 {  
              font-size: 1.2rem;	  
-			top: 3vh;
+		/*	top: 3vh;  */
 			text-decoration: underline;
+			color: white;
         }
      .w3-txt-2 { 
              font-size: .9rem;	 
-			top: 42vh;
+		/*	top: 42vh;  */
 		/*	width: 100%;  */
 			border: 0.0px solid green;
 			text-align: center;
 			margin: 0 auto; 
+			
         }
 		
 		.w4-txt-1 {  
@@ -739,8 +743,9 @@ input[type=submit]:hover {
 			
 		.ul-cls {
       text-align: left;
-	  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	/*  font-size: clamp(0.8rem, 1.0vw, 1.1rem);  */
 	  width: 75%;
+	  color: white;
       }	
      .ul-cls-adr {
        list-style-type: none; text-align: left;
@@ -986,17 +991,17 @@ input[type=submit]:hover {
         }
 		 .w1-txt-1 {  
             font-size: 1.75rem;  
-			top: 3vh;
+			color: white;
 			text-decoration: underline;
         }
 		.w1-txt-2 {  
             font-size: 1.75rem;  
-			top: 10vh;
+			color: white;
 			text-decoration: underline;
         }
      .w1-txt-3 { 
             font-size: 1rem;  	 
-			top: 52vh;
+			
 			text-align: left;
 			padding-left: 2vw;
 			padding-right: 2vw;
@@ -1017,12 +1022,12 @@ input[type=submit]:hover {
 		
 		.w2-txt-1 {  
             font-size: 1.75rem;  	  
-			top: 3vh;
+			
 			text-decoration: underline;
         }
      .w2-txt-2 { 
             font-size: 1rem;   
-			top: 49vh;
+			
 			width: 100%;
         }
 		
@@ -1284,24 +1289,27 @@ input[type=submit]:hover {
  
          <!-- Top Dropdown Navigation Menu -->
  
-         <div class="common-css-txt w1-txt-1">Auseum</div> 
-		 <div class="common-css-txt w1-txt-2">Curator</div> 
-         
-		 <div class= "w1-container-1-post">
+         <div class="container-flex w1-txt-1">Auseum</div> 
+		 <div class="container-flex w1-txt-2">Curator</div> 
+         <div class="container-flex">
+		  <div class="gap4vh"></div>
+	    </div>		
+		 
 	     <div class="container-flex">
          <img class="w1-img1" src="hellio42-ai-generated-9328689_640.png" alt="Description">
 		  <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/hellio42-41181595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Stephane</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Pixabay</a></p>
          </div>	
-        </div> 
-		
-        <div class="common-css-txt w1-txt-3">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
+          <div class="container-flex">
+		  <div class="gap4vh"></div>
+	    </div>		
+        <div class="container-flex w1-txt-3" style="color: white;">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
 
 Whether you need fixing of leaks, unclogging of drains or installing fixtures or need preventative maintenance, I handle all of them with a quality workmanship so that you can focus on what matters most.
 
 If you need assistance or would like a free consultation, feel free to reach out to me anytime through my contact details. I will be glad to work around your schedule and provide solutions tailored to your needs.
 		 </div>	
-        <div class= "w1-container-3-post">
-	     <div class="container-flex" style="flex-direction: row;">
+        
+	     <div class="container-flex w1-txt-3" style="flex-direction: row;">
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
 		 <p>&nbsp&nbsp</p>
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
@@ -1311,7 +1319,7 @@ If you need assistance or would like a free consultation, feel free to reach out
          <p>&nbsp&nbsp</p>
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
          </div>	
-        </div> 		 
+        	 
          	 
 	  <!-- 
       <img src="excavation-image.PNG" alt="Description"> 
@@ -1324,18 +1332,18 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
 	<!-- Image Wrapper 2 -->
     <div class="image-wrapper" id="service" style="background: #101010;">
-	<div class="common-css-txt w2-txt-1">My Services</div> 
-	 <div class= "w2-container-1-post">
+	<div class="container-flex w2-txt-1">My Services</div> 
+	 
 	     <div class="container-flex">
           <img class="w2-img1" src="330px-Geberit_Vorwand-Installationselement_für_ein_WC,_Neubau_Wohnblock_Frida-Mager-Allee,_53121_Bonn_02.jpg" alt="Description"> 
        	   
 	   <p class="common-attr-lnk">Photo by <a href="https://commons.wikimedia.org/wiki/File:Geberit_Vorwand-Installationselement_f%C3%BCr_ein_WC,_Neubau_Wohnblock_Frida-Mager-Allee,_53121_Bonn_02.jpg">Kai Kemmann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
          </div>	
-        </div>       
+             
 	           
 	   
-	   <div class="common-css-txt w2-txt-2 ">
-	   <div class="w2-container-2">
+	   <div class="container-flex w2-txt-2 style="flex-direction: column;">
+	  
 	   <ul class="ul-cls">
   <li>Leak Repairs</li>
   <li>Drain Cleaning</li>
@@ -1344,22 +1352,12 @@ If you need assistance or would like a free consultation, feel free to reach out
   <li>Clogged & Overflowing Toilets</li>
   <li>Safety Inspections</li>
   <li>Specialized Installations</li>
-  <li>Sewer Odors from Drains</li> 
-  
+  <li>Sewer Odors from Drains</  li>   
 </ul> 
-<div>  
-		  <div class="adj-height"></div >
-          <img src="330px-Aco_Fettabscheider_und_Abwasserhebeanlage_aus_Kunststoff_im_Gewölbekeller,_Rittergasse_12,_Weimar,_Thüringen,_Deutschland.jpg" alt="Sample Image" class="w2-img2" >
-		  <div class="adj-height">
-Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und_Abwasserhebeanlage_aus_Kunststoff_im_Gew%C3%B6lbekeller,_Rittergasse_12,_Weimar,_Th%C3%BCringen,_Deutschland.jpg">Kai Kemmann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
-		  
-		  </div >
-	  	</div>
-        
-    </div>      
-	   
-	   </div>
-       <div class= "w2-container-3-post">
+
+    <div>
+      
+       
 	     <div class="container-flex" style="flex-direction: row;">
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
 		 <p>&nbsp&nbsp</p>
@@ -1370,7 +1368,7 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
          <p>&nbsp&nbsp</p>
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
          </div>	
-        </div> 		 
+       		 
 	   <!--
 	   <div id="swipeHint" class="mobile-swipe-message">
          <span class="swipeIcon">↕</span>
@@ -1450,7 +1448,7 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
 	 </div>			
 	
 
-    <div class="container-flex w3-txt-2" style="flex-direction: column;  color:white; border: 2px solid red;" > 
+    <div class="container-flex w3-txt-2" style="color:white; border: 2px solid red;" > 
 	    
 		  <img src="website-qr-code.svg" alt="Sample Image" class="w3-img2" >
 		  <div class="adj-height"></div>
