@@ -9,6 +9,11 @@
  /* 
      irem = 16px 
      ideal clamp font-size: clamp(1rem   0.85rem + 1vw 1.75rem)
+	 At 375px screen width, 1rem = 4.27vw.
+     At 430px screen width, 1rem = 3.72vw.
+     At 1366px screen width, 1rem = 1.17vw.
+     At 1920px screen width, 1rem = 0.83vw.
+
      A curator's digital card might include:
 
 Name and title
@@ -420,7 +425,7 @@ text-decoration: underline;
             align-items: center;	
 	        }
 .common-css-txt {
-            font-weight: 600;
+       /*     font-weight: 600;  */
             color: #4a90e2;
 			color: white;
             margin: 0 0 8px 0;
@@ -700,7 +705,8 @@ input[type=submit]:hover {
 			text-decoration: underline;
         }
      .w4-txt-2 { 
-             font-size: clamp(0.9rem, 2.4vw, 1.2rem);	 
+             font-size: 0.75rem;	
+            font-weight: 600;			 
 			top: 49vh;
 			width: 75%;
 			border: 0.0px solid green;
@@ -721,7 +727,7 @@ input[type=submit]:hover {
       }	
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
-	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	 /*  font-size: clamp(0.8rem, 1.0vw, 1.1rem);  */
 	   width: 100%;
       }	  	    	  
       .only-for-mobiles-flower {
@@ -1036,7 +1042,7 @@ input[type=submit]:hover {
 			text-decoration: underline;
         }
      .w4-txt-2 { 
-             font-size: clamp(0.9rem, 3.4vw, 1.2rem);	 
+             font-size: 0.75rem;	 
 			top: 51vh;
 			width: 95%;
 			border: 0.0px solid green;
@@ -1057,7 +1063,7 @@ input[type=submit]:hover {
       }	 
       .ul-cls-rvw {
        list-style-type: none; text-align: left;
-	   font-size: clamp(0.8rem, 1.0vw, 1.1rem);
+	/*   font-size: clamp(0.8rem, 1.0vw, 1.1rem);  */
       }	  	    		  
      .only-for-mobiles-flower {
       display: none;
