@@ -7,6 +7,8 @@
   <style>
   
  /* 
+     irem = 16px 
+     ideal clamp font-size: clamp(1rem   0.85rem + 1vw 1.75rem)
      A curator's digital card might include:
 
 Name and title
@@ -409,24 +411,7 @@ color: yellow;
 text-decoration: underline;
 }
 
-.gap1vh {
-  height: 1.0vh;  /* or any size you want; mobile = desktop */
-} 
-.gap2vh {
-  height: 2.0vh;  /* or any size you want; mobile = desktop */
-}   
-.gap3vh {
-  height: 3.0vh;  /* or any size you want; mobile = desktop */
-}     
-.gap4vh {
-  height: 4.0vh;  /* or any size you want; mobile = desktop */
-}     
-.gap5vh {
-  height: 5.0vh;  /* or any size you want; mobile = desktop */
-} 
-.gap6vh {
-  height: 6.0vh;  /* or any size you want; mobile = desktop */
-}           
+
 .container-flex {
             border: 0px solid white;
             display: flex;
@@ -888,6 +873,24 @@ input[type=submit]:hover {
 		 height: 1vh;
 		 font-size: clamp(0.5rem, 0.7vw, 0.8rem);
 		 }
+		 .space-1-line {
+  height: 1.0vh;  /* or any size you want; mobile = desktop */
+} 
+.space-2-line {
+  height: 2.0vh;  /* or any size you want; mobile = desktop */
+}   
+.space-3-line {
+  height: 3.0vh;  /* or any size you want; mobile = desktop */
+}     
+.space-4-line {
+  height: 4.0vh;  /* or any size you want; mobile = desktop */
+}     
+.space-5-line {
+  height: 5.0vh;  /* or any size you want; mobile = desktop */
+} 
+.space-6-line {
+  height: 6.0vh;  /* or any size you want; mobile = desktop */
+}           
   	 
 }
 
@@ -1248,6 +1251,25 @@ input[type=submit]:hover {
 		 height: 1.0vh;
 		 font-size: clamp(0.5rem, 0.7vw, 0.8rem);
 		 }
+		 
+	.space-1-line {
+  height: 0.75vh;  /* or any size you want; mobile = desktop */
+} 
+.space-2-line {
+  height: 1.5vh;  /* or any size you want; mobile = desktop */
+}   
+.space-3-line {
+  height: 2.25vh;  /* or any size you want; mobile = desktop */
+}     
+.space-4-line {
+  height: 3.0vh;  /* or any size you want; mobile = desktop */
+}     
+.space-5-line {
+  height: 3.75vh;  /* or any size you want; mobile = desktop */
+} 
+.space-6-line {
+  height: 4.5vh;  /* or any size you want; mobile = desktop */
+}           	 
  
 }
   </style>
@@ -1370,14 +1392,14 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
    <!-- Image Wrapper 3 -->
      <div class="image-wrapper" id="contact">      
 	   
-	   <div class = "container-flex" style="color: white;">My Contact</div>       
+	   <div class = "container-flex" style="color: white; font-size: clamp(1rem   0.85rem + 1vw 1.75rem);">My Contact</div>       
    		
         <div class="container-flex">
-		  <div class="gap4vh"></div>
-		  <div class=" gap4vh"></div>
+		  <div class="space-4-line"></div>
+		  <div class=" space-4-line"></div>
        	</div>		
 		
-	<div class="container-flex" style="flex-direction: row; color:#0078D4;font-family:Arial; border: 2px solid red; font-size: clamp(0.8rem, 1.1vw, 1.2rem);">
+	<div class="container-flex" style="flex-direction: row; color:#0078D4;font-family:Arial; border: 2px solid red; font-size: clamp(1rem   0.85rem + 1vw 1.75rem);">
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
 		 <p >&nbsp&nbspCall&nbsp&nbsp</p>
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
@@ -1388,12 +1410,12 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
          </div>	   
 	 <div class="container-flex">
-		  <div class="gap4vh"></div>
+		  <div class="space-4-line"></div>
 	 </div>		
 	 
 	  
 	   
-	     <div class="container-flex" style=" border: 2px solid red; font-size: clamp(0.8rem, 1.1vw, 1.2rem); font-family:Arial;">
+	     <div class="container-flex" style=" border: 2px solid red; font-size: clamp(1rem   0.85rem + 1vw 1.75rem); font-family:Arial;">
 		 <a href="mailto:asadsayeed@hotmail.com" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#0078D4;font-family:Arial,sans-serif; justify-content: center; ">
     <svg width="38" height="36" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
@@ -1402,11 +1424,11 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
 </a>
 	</div> 
     <div class="container-flex">
-		  <div class="gap4vh"></div>
+		  <div class="space-4-line"></div>
 	 </div>			
 
 
-        <div class="container-flex" style=" flex-direction: row; border: 2px solid red; font-size: clamp(0.8rem, 1.1vw, 1.2rem); font-family:Arial;">
+        <div class="container-flex" style=" flex-direction: row; border: 2px solid red; font-size: clamp(1rem   0.85rem + 1vw 1.75rem); font-family:Arial;">
 		  <a href="https://www.facebook.com/"
        target="_blank"
        class="social-btn facebook">
@@ -1418,10 +1440,10 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
 	</a>
 	</div> 
     <div class="container-flex">
-		  <div class="gap4vh"></div>
+		  <div class="space-4-line"></div>
 	 </div>		
 
-     <div class="container-flex" style=" flex-direction: row; border: 2px solid red; font-size: clamp(0.8rem, 1.1vw, 1.2rem); font-family:Arial;">
+     <div class="container-flex" style=" flex-direction: row; border: 2px solid red; font-size: clamp(1rem   0.85rem + 1vw 1.75rem); font-family:Arial;">
 		  <a href="https://www.linkedin.com/"
        target="_blank"
        class="social-btn linkedin">
@@ -1432,10 +1454,12 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
     </a>
 
 	</div> 
-    <div class="gap4vh" ></div>	
+     <div class="container-flex">
+		  <div class="space-4-line"></div>
+	 </div>	
 	
 
-    <div class="container-flex" style="flex-direction: column; font-size: clamp(0.6rem, 0.7vw, 0.8rem); color:white; border: 2px solid red;" > 
+    <div class="container-flex" style="flex-direction: column; font-size: clamp(1rem   0.85rem + 1vw 1.75rem); color:white; border: 2px solid red;" > 
 	    
 		  <img src="qrcode-new.jpg" alt="Sample Image" class="w3-img2" >
 		  <div class="adj-height"></div>
@@ -1443,7 +1467,7 @@ Photo by <a href="https://commons.wikimedia.org/wiki/File:Aco_Fettabscheider_und
 		  <div class="adj-height"></div>
 		  QR code of my Professional portfolio on World Wide Web 		  
 	  	</div> 	  
-	   <div class="gap4vh" ></div>		
+	   <div class="space-4-line" ></div>		
         		 
 	 
     </div>
