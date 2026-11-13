@@ -318,7 +318,7 @@ html, body {
 /* 2. Individual Image Wrapper */
 .image-wrapper {
   width: 100%;
-  height: 100vh;                 /* Ensures each wrapper takes exactly one full screen */
+  height: calc(100vh - 24px);                 /* Ensures each wrapper takes exactly one full screen */
   scroll-snap-align: center;      /* Snaps the center of this element to the center of the screen */
   scroll-snap-stop: always;       /* Forces users to stop at each image instead of skipping past */
   
