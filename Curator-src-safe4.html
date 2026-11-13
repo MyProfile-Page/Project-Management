@@ -308,7 +308,7 @@ html, body {
   /* Hide standard scrollbars for an app-like look */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;      /* Firefox */
-  border: 0.5vw solid red;
+  border: 0.0vw solid red;
 }
 
 /* Hide webkit scrollbar for Chrome, Safari, and Opera */
@@ -319,7 +319,8 @@ html, body {
 /* 2. Individual Image Wrapper */
 .image-wrapper {
   width: 100%;
-  height: calc(100vh - 1.5rem);                 /* Ensures each wrapper takes exactly one full screen */
+/*  height: calc(100vh - 1.5rem);  */      /* Ensures each wrapper takes exactly one full screen */
+  height: 98vh;
   scroll-snap-align: center;      /* Snaps the center of this element to the center of the screen */
   scroll-snap-stop: always;       /* Forces users to stop at each image instead of skipping past */
   
@@ -334,7 +335,17 @@ html, body {
  
 }
 
+.top-div {
+  border: 0.5vw solid yellow;
+  top: 1vh;
+  width: 25%;
+}
 
+.bottom-div {
+  border: 0.5vw solid yellow;
+  top: 97vh;
+  width: 25%;
+}
 
 /* Caption overlay text */
 .caption {
@@ -1290,12 +1301,13 @@ input[type=submit]:hover {
     <!-- Image Wrapper 1 -->
 	
     <div class="image-wrapper" id="about">	
-	
+	   <div class="top-div">asad</div>
+	<div class="bottom-div">saeed</div>
 	
  
          <!-- Top Dropdown Navigation Menu -->
  
-         <div class = "container-flex w3-txt-1" style="color: white;">Nuseum</div> 
+         <div class = "container-flex w3-txt-1" style="color: white;">Puseum</div> 
 		 <div class="container-flex w1-txt-2">Curator</div> 
          <div class="container-flex">
 		  <div class="gap4vh"></div>
@@ -1343,6 +1355,8 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
 	<!-- Image Wrapper 2 -->
     <div class="image-wrapper" id="service" style="background: #101010;">
+	<div class="top-div">asad</div>
+	<div class="bottom-div">saeed</div>
 	<div class = "container-flex w3-txt-1" style="color: white;">My Services</div> 
 	 <div class="container-flex">
 		  <div class="gap4vh"></div>
@@ -1406,7 +1420,8 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
    <!-- Image Wrapper 3 -->
      <div class="image-wrapper" id="contact" >      
-	   
+	   <div class="top-div">asad</div>
+	<div class="bottom-div">saeed</div>
 	   <div class = "container-flex w3-txt-1" style="color: white;">My Contact</div>       
    		
         <div class="container-flex">
@@ -1494,7 +1509,8 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
 	<!-- Image Wrapper 4 -->
     <div class="image-wrapper" id="review" style="background: #101010;">>
-       
+       <div class="top-div">asad</div>
+	<div class="bottom-div">saeed</div>
 	   
 	   <div class="common-css-txt w4-txt-1">Reviews</div>
       <div class="container-flex">
