@@ -84,8 +84,7 @@ html, body {
   position: relative;
  border: 0.1rem solid white;
 }
-
-
+ 
 
 /* Caption overlay text */
 .caption {
@@ -205,6 +204,9 @@ text-decoration: underline;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
     background-color: #1a1a1a; /* Slight contrast difference for the desktop background framing */
   }  
+  
+  .bottom-div {position: absolute; top: 94vh; color: white;
+ }
   
   .w1-img1 {
    max-width: 100%;
@@ -521,6 +523,9 @@ text-decoration: underline;
    MOBILE OPTIMIZATIONS (Screens smaller than 768px)
    ========================================== */
 @media (max-width: 769px) {
+
+.bottom-div {position: absolute; top: 84vh; color: white;
+ }
 
 /* 3. The Image Component */
 .w1-img1 {
@@ -864,8 +869,8 @@ text-decoration: underline;
 	
     <div class="image-wrapper" id="about">	
          <!-- Top Dropdown Navigation Menu -->
-	<div style="color: white; position: absolute; top: 1vh;">--------------------------------------------------------------------------</div>
-    <div style="color: white; position: absolute; top: 94vh;">--------------------------------------------------------------------------</div>	
+	<div style="color: white; position: absolute; top: 0vh;">------------------------------------------------------------------------------------</div>
+    <div class="bottom-div">------------------------------------------------------------------------------------</div>	
   <div class="top-nav">
     <label for="screen-jump">Slide ↕ or Jump to:</label>
     <select id="screen-jump" onchange="jumpToScreen(this.value)">
