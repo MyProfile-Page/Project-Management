@@ -306,14 +306,14 @@ html, body {
   scroll-behavior: smooth;
   
   /* Hide standard scrollbars for an app-like look */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;      /* Firefox */
+/*  -ms-overflow-style: none; */ /* IE and Edge */
+/*   scrollbar-width: none;  */    /* Firefox */
 }
 
 /* Hide webkit scrollbar for Chrome, Safari, and Opera */
-.scroll-container::-webkit-scrollbar {
+  .scroll-container::-webkit-scrollbar {   
   display: none;   
-}
+ }  
 
 /* 2. Individual Image Wrapper */
 .image-wrapper {
@@ -327,12 +327,13 @@ html, body {
   flex-direction: column;
  /* justify-content: center;  */  
   align-items: center;     
-  padding: 5px;  
+  padding: 15px;  
   position: relative;
- border: 0vw solid red;
+ border: 0.0vw solid white;
 }
 
-
+.top-div {position: absolute; top: 0; color: white;
+ }
 
 /* Caption overlay text */
 .caption {
@@ -728,12 +729,12 @@ input[type=submit]:hover {
 		
 		.w4-txt-1 {  
              font-size: 1.2rem;	  
-			top: 3vh;
+			
 			text-decoration: underline;
         }
      .w4-txt-2 { 
              font-size: .7rem;	 
-			top: 49vh;
+			
 			width: 75%;
 			border: 0.0px solid green;
 			text-align: left;
@@ -743,8 +744,9 @@ input[type=submit]:hover {
 			
 		.ul-cls {
       text-align: left;
-	  font-size: clamp(0.8rem, 1.0vw, 1.1rem);
-	  width: 75%;
+	  left: 30%;
+	  width: 70%;
+	  color: white;
       }	
      .ul-cls-adr {
        list-style-type: none; text-align: left;
@@ -913,6 +915,9 @@ input[type=submit]:hover {
    ========================================== */
 @media (max-width: 769px) {
 
+.bottom-div {position: absolute; top: 96dvh; color: white;
+ }
+
 /* 3. The Image Component */
 .w1-img1 {
   max-width: 85%;
@@ -922,8 +927,8 @@ input[type=submit]:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
   
 .w1-img2 {
-   max-width: 2%;
-   max-height: 0.25vh;  
+   max-width: 1%;
+   max-height: 0.10vh;   
               /* Leaves room for padding and captions */
   object-fit: contain;
             /* Keeps the photo aspect ratio intact without cropping */
@@ -1021,23 +1026,23 @@ input[type=submit]:hover {
 		
 		.w2-txt-1 {  
             font-size: 1.75rem;  	  
-			top: 3vh;
+			
 			text-decoration: underline;
         }
      .w2-txt-2 { 
             font-size: 1rem;   
-			top: 49vh;
+			
 			width: 100%;
         }
 		
 	 .w3-txt-1 {  
             font-size: 1.75rem;  	  
-			top: 3vh;
+			
 			text-decoration: underline;
         }
      .w3-txt-2 { 
             font-size: 1.3rem;  	 
-			top: 35vh;
+			
 		/*	width: 100%;  */
 			border: 0.0px solid green;
 			text-align: center;
@@ -1046,23 +1051,32 @@ input[type=submit]:hover {
 		
 		.w4-txt-1 {  
              font-size: 1.75rem;    
-			top: 3vh;
+			
 			text-decoration: underline;
         }
      .w4-txt-2 { 
              font-size: 1rem;   
-			top: 51vh;
+			
 			width: 95%;
 			border: 0.0px solid green;
 			text-align: center;
 			padding-left: 1vw;
 			padding-right: 1vw;
         } 
+		.w1-txt-3 { 
+            font-size: 1rem;  	 
+			
+			text-align: left;
+			padding-left: 2vw;
+			padding-right: 2vw;
+        }
 	 
 		
      .ul-cls {
       text-align: left;
-	   width: 90%;
+	  left: 30%;
+	  width: 70%;
+	   color: white;
       }	 
      .ul-cls-adr {
       list-style-type: none; text-align: left;
@@ -1284,11 +1298,15 @@ input[type=submit]:hover {
 	
     <div class="image-wrapper" id="about">	
 	
-	
+	    <div class="top-div">_______________________________________________________________________________________</div>
+    <div class="bottom-div">_______________________________________________________________________________________</div>
+	 <div class="container-flex">
+		  <div class="gap4vh"></div>		  
+         </div>		  
  
          <!-- Top Dropdown Navigation Menu -->
  
-         <div class="container-flex w1-txt-1">Buseum</div> 
+         <div class = "container-flex w3-txt-1" style="color: white;">Cuseum</div> 
 		 <div class="container-flex w1-txt-2">Curator</div> 
          <div class="container-flex">
 		  <div class="gap4vh"></div>
@@ -1298,20 +1316,23 @@ input[type=submit]:hover {
          <img class="w1-img1" src="hellio42-ai-generated-9328689_640.png" alt="Description">
 		  <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/hellio42-41181595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Stephane</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Pixabay</a></p>
          </div>	
-          <div class="container-flex">
+           <div class="container-flex">
 		  <div class="gap4vh"></div>
-	    </div>		
+		  <div class=" gap4vh"></div>
+     </div>		   
         <div class="container-flex w1-txt-3" style="color: white;">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
 
 Whether you need fixing of leaks, unclogging of drains or installing fixtures or need preventative maintenance, I handle all of them with a quality workmanship so that you can focus on what matters most.
 
 If you need assistance or would like a free consultation, feel free to reach out to me anytime through my contact details. I will be glad to work around your schedule and provide solutions tailored to your needs.
 		 </div>	
-		 <div class="container-flex">
+		 
+		   <div class="container-flex">
 		  <div class="gap4vh"></div>
-	    </div>		
+		  <div class=" gap4vh"></div>
+     </div>		   
         
-	     <div class="container-flex w1-txt-3" style="flex-direction: row;">
+	     <div class="container-flex" style="flex-direction: row;">
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
 		 <p>&nbsp&nbsp</p>
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
@@ -1334,23 +1355,30 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
 	<!-- Image Wrapper 2 -->
     <div class="image-wrapper" id="service" style="background: #101010;">
-	<div class="container-flex w2-txt-1">My Services</div> 
-	<div class="container-flex">
+	<div class="top-div">_______________________________________________________________________________________</div>
+    <div class="bottom-div">_______________________________________________________________________________________</div>
+	 <div class="container-flex">
+		  <div class="gap4vh"></div>		  
+         </div>		  
+	<div class = "container-flex w3-txt-1" style="color: white;">My Services</div> 
+	 <div class="container-flex">
 		  <div class="gap4vh"></div>
-	    </div>		
+		  <div class=" gap4vh"></div>
+     </div>		
+		
+	<div class="container-flex w3-txt-2">  
 	 
-	     <div class="container-flex">
           <img class="w2-img1" src="330px-Geberit_Vorwand-Installationselement_für_ein_WC,_Neubau_Wohnblock_Frida-Mager-Allee,_53121_Bonn_02.jpg" alt="Description"> 
        	   
 	   <p class="common-attr-lnk">Photo by <a href="https://commons.wikimedia.org/wiki/File:Geberit_Vorwand-Installationselement_f%C3%BCr_ein_WC,_Neubau_Wohnblock_Frida-Mager-Allee,_53121_Bonn_02.jpg">Kai Kemmann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
-         </div>	
-       <div class="container-flex">
+	
+        </div>       
+	  <div class="container-flex">
 		  <div class="gap4vh"></div>
-	    </div>		       
-	           
+		  
+     </div>		         
 	   
-	   
-	   <div class="container-flex">
+	<div class="container-flex w3-txt-2">    
 	   <ul class="ul-cls">
   <li>Leak Repairs</li>
   <li>Drain Cleaning</li>
@@ -1365,7 +1393,10 @@ If you need assistance or would like a free consultation, feel free to reach out
 <div>  
 		<div class="container-flex">
 		  <div class="gap4vh"></div>
-	    </div>		 
+		   <div class="gap4vh"></div>
+		  
+     </div>		  
+      
 	     <div class="container-flex" style="flex-direction: row;">
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
 		 <p>&nbsp&nbsp</p>
@@ -1376,7 +1407,11 @@ If you need assistance or would like a free consultation, feel free to reach out
          <p>&nbsp&nbsp</p>
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
          </div>	
-        </div> 		 
+		 
+		 <div class="container-flex">
+		  <div class="gap4vh"></div>		  
+         </div>		  
+        		 
 	   <!--
 	   <div id="swipeHint" class="mobile-swipe-message">
          <span class="swipeIcon">↕</span>
@@ -1388,7 +1423,11 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
    <!-- Image Wrapper 3 -->
      <div class="image-wrapper" id="contact">      
-	   
+	   <div class="top-div">_______________________________________________________________________________________</div>
+    <div class="bottom-div">_______________________________________________________________________________________</div>
+	 <div class="container-flex">
+		  <div class="gap4vh"></div>		  
+         </div>		  
 	   <div class = "container-flex w3-txt-1" style="color: white;">My Contact</div>       
    		
         <div class="container-flex">
@@ -1396,14 +1435,14 @@ If you need assistance or would like a free consultation, feel free to reach out
 		  <div class=" gap4vh"></div>
        	</div>		
 		
-	<div class="container-flex w3-txt-2" style="flex-direction: row; color:#0078D4;font-family:Arial; border: 2px solid red; >
+	<div class="container-flex w3-txt-2" style="flex-direction: row; color:#0078D4; font-family:Arial; border: 0.0vw  solid white;">
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
-		 <p class="w3-txt-2" >&nbsp&nbspCall&nbsp&nbsp</p>
+		 <p class="w3-txt-2" style="color: green;" >&nbsp&nbspCall&nbsp&nbsp</p>
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
             <span class="call-icon">☎</span>
             <span class="call-text">(647) 766-5597</span>
          </a>
-         <p class="w3-txt-2">&nbsp&nbspMe</p>
+         <p class="w3-txt-2" style="color: green;">&nbsp&nbspMe&nbsp&nbsp</p>
          <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
          </div>	   
 	 <div class="container-flex">
@@ -1412,7 +1451,7 @@ If you need assistance or would like a free consultation, feel free to reach out
 	 
 	  
 	   
-	     <div class="container-flex w3-txt-2" style=" border: 2px solid red; font-family:Arial;">
+	     <div class="container-flex w3-txt-2" style=" border: 0.0vw   solid white; font-family:Arial;">
 		 <a href="mailto:asadsayeed@hotmail.com" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#0078D4;font-family:Arial,sans-serif; justify-content: center; ">
     <svg width="38" height="36" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
@@ -1425,7 +1464,7 @@ If you need assistance or would like a free consultation, feel free to reach out
 	 </div>			
 
 
-        <div class="container-flex w3-txt-2" style=" flex-direction: row; border: 2px solid red; font-family:Arial;">
+        <div class="container-flex w3-txt-2" style=" flex-direction: row; border: 0.0vw   solid white; font-family:Arial;">
 		  <a href="https://www.facebook.com/yourpage"
        target="_blank"
        class="social-btn facebook">
@@ -1440,14 +1479,14 @@ If you need assistance or would like a free consultation, feel free to reach out
 		  <div class="gap4vh"></div>
 	 </div>		
 
-     <div class="container-flex w3-txt-2" style=" flex-direction: row; border: 2px solid red;  font-family:Arial;">
+     <div class="container-flex w3-txt-2" style=" flex-direction: row; border: 0.0vw   solid white;  font-family:Arial;">
 		  <a href="https://www.linkedin.com/company/yourcompany"
        target="_blank"
        class="social-btn linkedin">
-        <svg width="38" height="26" viewBox="0 0 24 24" background-color="white">
+        <svg width="38" height="26" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.447 20.452H16.89v-5.569c0-1.328-.024-3.037-1.851-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.346V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.268 2.371 4.268 5.455v6.286zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
         </svg>
-        <span  class="w3-txt-2">Follow me at LinkedIn</span>
+        <span  class="w3-txt-2" style="color: green;">Follow me at LinkedIn</span>
     </a>
 
 	</div> 
@@ -1456,7 +1495,7 @@ If you need assistance or would like a free consultation, feel free to reach out
 	 </div>			
 	
 
-    <div class="container-flex w3-txt-2" style="color:white; border: 2px solid red;" > 
+    <div class="container-flex w3-txt-2" style="color:#ffffcc; border: 0.0vw   solid white; font-size: .7rem;" > 
 	    
 		  <img src="website-qr-code.svg" alt="Sample Image" class="w3-img2" >
 		  <div class="adj-height"></div>
@@ -1475,33 +1514,59 @@ If you need assistance or would like a free consultation, feel free to reach out
 	
 	
 	<!-- Image Wrapper 4 -->
-    <div class="image-wrapper" id="review" style="background: #101010;">>
+    <div class="image-wrapper" id="review" style="background: #101010;">
+	 <div class="top-div">_______________________________________________________________________________________</div>
+    <div class="bottom-div">_______________________________________________________________________________________</div>
+	 <div class="container-flex">
+		  <div class="gap4vh"></div>		  
+         </div>		  
+	
+       	   
+	   <div class="container-flex w4-txt-1" style="color: white;">Reviews</div>
+         <div class="container-flex">
+		  <div class="gap4vh"></div>
+	    </div>		
        
-	   
-	   <div class="common-css-txt w4-txt-1">Reviews</div>
-
-       <div class= "w4-container-1-post">
 	     <div class="container-flex">
           <img class="w4-img1" src="mcmurryjulie-bad-review-2813741_640.png" alt="Description">   
 	   <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/mcmurryjulie-2375405/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">mcmurryjulie</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">Pixabay</a></p>
          </div>	
-        </div>       
+       <div class="container-flex">
+		  <div class="gap4vh"></div>
+          <div class="gap4vh"></div>		  
+         </div>		         
 
 	   
-	   <div class="common-css-txt w4-txt-2 ">
+	   <div class="container-flex w4-txt-2 ">
 	   <ul class="ul-cls-rvw">
-  <li>Ahmed is best. I am glad to have my Kitchen piping fixed by him, it was leaking from many places and i was mad seeing it since last two months  .....</li>  
+  <li style="color: white;">Ahmed is best. I am glad to have my Kitchen piping fixed by him, it was leaking from many places and i was mad seeing it since last two months  .....</li>  
   <li style="color: #ffffcc;">John Philip</li>
   <li>&nbsp</li>
-  <li>Very efficient. You can trust him for any plumbing work in your home. I strongly recomend him.  ....</li>  
+  <li style="color: white;">Very efficient. You can trust him for any plumbing work in your home. I strongly recomend him.  ....</li>  
   <li style="color: #ffffcc;">Peter Lastman</li>
   <li>&nbsp</li>
-  <li>Fully Professional. He is highly skilled and finds the fault quickly.   ....</li>  
+  <li style="color: white;">Fully Professional. He is highly skilled and finds the fault quickly.   ....</li>  
     <li style="color: #ffffcc;">Desouza Ram</li>  
         
 </ul> 
 	   
 	   </div>
+	   
+	     <div class="container-flex">
+		  <div class="gap4vh"></div>
+		  <div class="gap2vh"></div>
+     </div>		   
+        
+	     <div class="container-flex" style="flex-direction: row;">
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
+		 <p>&nbsp&nbsp</p>
+		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
+            <span class="call-icon">☎</span>
+            <span class="call-text">(647) 766-5597</span>
+         </a>
+         <p>&nbsp&nbsp</p>
+         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
+         </div>	
        
     </div>
   
