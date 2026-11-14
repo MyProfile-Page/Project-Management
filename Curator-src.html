@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -440,14 +441,26 @@ text-decoration: underline;
 } 
 .gap6vh {
   height: 6.0vh;  /* or any size you want; mobile = desktop */
-}           
+}  
+.gap8vh {
+  height: 8.0vh;  /* or any size you want; mobile = desktop */
+}              
 .container-flex {
             border: 0px solid white;
             display: flex;
             justify-content: center; 
             flex-direction: column; 			
-            align-items: center;	
+            align-items: center;
+            position: absolute;
+			top: 4vh;			
 	        }
+.container-flex-row {
+            border: 0px solid white;
+            display: flex;
+            justify-content: center; 
+            flex-direction: row; 			
+            align-items: center;           
+	        }			
 .common-css-txt {
      /*       font-weight: 600;   */
             color: #4a90e2;
@@ -667,21 +680,16 @@ input[type=submit]:hover {
         }
 	  .w1-txt-1 {  
             font-size: 1.2rem;	  
-		
-			text-decoration: underline;
-			color: white;
+		    text-decoration: underline;
+			color: white;			
         }
-		.w1-txt-2 {  
-            font-size: 1.2rem;	  
-		
-			text-decoration: underline;
-			color: white;
-        }
-     .w1-txt-3 {  
+	        
+     .w1-txt-2 {  
              font-size: .7rem;	 
-		
 			width: 82%;
-			text-align: left;			
+			text-align: left;
+            color: white;
+            margin: 0 auto;			
         }
 		
 		.w1-gen-elm-css {             	 
@@ -706,11 +714,12 @@ input[type=submit]:hover {
            font-size: 1.2rem;	  
 			top: 3vh;
 			text-decoration: underline;
+			color: white;
         }
      .w2-txt-2 { 
              font-size: .7rem;	 
 			top: 53vh;
-			
+			color: white;
 			width: 100%;
         }
 		
@@ -727,17 +736,17 @@ input[type=submit]:hover {
 			border: 0.0px solid green;
 			text-align: center;
 			margin: 0 auto; 
-			
+			color: white;
         }
 		
 		.w4-txt-1 {  
              font-size: 1.2rem;	  
-			
+			color: white;
 			text-decoration: underline;
         }
      .w4-txt-2 { 
              font-size: .7rem;	 
-			
+			color: white;
 			width: 75%;
 			border: 0.0px solid green;
 			text-align: left;
@@ -998,21 +1007,19 @@ input[type=submit]:hover {
 			text-decoration: underline;
         }
 		 .w1-txt-1 {  
-            font-size: 1.75rem;  
+            font-size: 1.75rem;            
 			color: white;
 			text-decoration: underline;
         }
-		.w1-txt-2 {  
-            font-size: 1.75rem;  
-			color: white;
-			text-decoration: underline;
-        }
-     .w1-txt-3 { 
+		
+     .w1-txt-2 { 
             font-size: 1rem;  	 
-			
+			width: 85%;
 			text-align: left;
 			padding-left: 2vw;
 			padding-right: 2vw;
+			color: white;
+			margin: 0 auto;
         }
 		
 		.w1-gen-elm-css {             	 
@@ -1030,7 +1037,7 @@ input[type=submit]:hover {
 		
 		.w2-txt-1 {  
             font-size: 1.75rem;  	  
-			
+			color: white;
 			text-decoration: underline;
         }
      .w2-txt-2 { 
@@ -1041,7 +1048,7 @@ input[type=submit]:hover {
 		
 	 .w3-txt-1 {  
             font-size: 1.75rem;  	  
-			
+			color: white;
 			text-decoration: underline;
         }
      .w3-txt-2 { 
@@ -1055,7 +1062,7 @@ input[type=submit]:hover {
 		
 		.w4-txt-1 {  
              font-size: 1.75rem;    
-			
+			 color: white;
 			text-decoration: underline;
         }
      .w4-txt-2 { 
@@ -1297,87 +1304,75 @@ input[type=submit]:hover {
 	
     <div class="image-wrapper" id="about">	
 	
-	    <div class="top-div">_______________________________________________________________________________________</div>
-    <div class="bottom-div">_______________________________________________________________________________________</div>
-	 <div class="container-flex">
+	<div class="top-div">_______________________________________________________________________________________</div>
+	
+	    <div class="container-flex">
+   	 
 		  <div class="gap4vh"></div>		  
-         </div>		  
+         		  
+          <!-- Top Dropdown Navigation Menu -->
  
-         <!-- Top Dropdown Navigation Menu -->
- 
-         <div class = "container-flex w1-txt-1" style="color: white;">Museum</div> 
-		 <div class="container-flex w1-txt-2">Curator</div> 
-         <div class="container-flex">
+         <div class="w1-txt-1">Ruseum</div> 
+		 <div class="w1-txt-1">Curator</div> 
+         
 		  <div class="gap4vh"></div>
-	    </div>		
+	    		
 		 
-	     <div class="container-flex">
+	     
          <img class="w1-img1" src="hellio42-ai-generated-9328689_640.png" alt="Description">
 		  <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/hellio42-41181595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Stephane</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Pixabay</a></p>
-         </div>	
-           <div class="container-flex">
-		  <div class="gap4vh"></div>
-		  <div class=" gap4vh"></div>
-     </div>		   
-        <div class="container-flex w1-txt-3" style="color: white;">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
-
-Whether you need fixing of leaks, unclogging of drains or installing fixtures or need preventative maintenance, I handle all of them with a quality workmanship so that you can focus on what matters most.
-
-If you need assistance or would like a free consultation, feel free to reach out to me anytime through my contact details. I will be glad to work around your schedule and provide solutions tailored to your needs.
-		 </div>	
-		 
-		   <div class="container-flex">
-		  <div class="gap4vh"></div>
-		  <div class=" gap4vh"></div>
-     </div>		   
+         	
+           
+		  <div class="gap6vh"></div>
+		  
+     	   
+        <div class="w1-txt-2">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing. Whether you need fixing of leaks, unclogging of drains or installing fixtures or need preventative maintenance, I handle all of them with a quality workmanship so that you can focus on what matters most. If you need assistance or would like a free consultation, feel free to reach out to me anytime through my contact details. I will be glad to work around your schedule and provide solutions tailored to your needs.
+		 </div>			 
+		   
+		  <div class="gap4vh"></div>     	       
         
-	     <div class="container-flex" style="flex-direction: row;">
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
-		 <p>&nbsp&nbsp</p>
+	     
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
             <span class="call-icon">☎</span>
             <span class="call-text">(647) 766-5597</span>
          </a>
-         <p>&nbsp&nbsp</p>
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
-         </div>	
-        	 
+        
+	   
          	 
-	  <!-- 
-      <img src="excavation-image.PNG" alt="Description"> 
-      
-         <p class="only-for-desktops-arrows">For Scrolling Press up & down Arrow Keys</p>
-		 <p class="only-for-mobiles-slide">For Scrolling slide image</p>
-	  -->	 	  
+	  
          		                    
-    </div>
+     </div>   
+	 
+	 <div class="bottom-div">_______________________________________________________________________________________</div>
+
+   </div>
 	
 	<!-- Image Wrapper 2 -->
     <div class="image-wrapper" id="service" style="background: #101010;">
 	<div class="top-div">_______________________________________________________________________________________</div>
-    <div class="bottom-div">_______________________________________________________________________________________</div>
+    
 	 <div class="container-flex">
 		  <div class="gap4vh"></div>		  
-         </div>		  
-	<div class = "container-flex w2-txt-1" style="color: white;">My Services</div> 
-	 <div class="container-flex">
-		  <div class="gap4vh"></div>
-		  <div class=" gap4vh"></div>
-     </div>		
+        		  
+	<div class = "w2-txt-1">My Services</div> 
+	 
+		  <div class="gap6vh"></div>
+		  
+    		
 		
-	<div class="container-flex">  
+	  
 	 
           <img class="w2-img1" src="330px-Geberit_Vorwand-Installationselement_für_ein_WC,_Neubau_Wohnblock_Frida-Mager-Allee,_53121_Bonn_02.jpg" alt="Description"> 
        	   
 	   <p class="common-attr-lnk">Photo by <a href="https://commons.wikimedia.org/wiki/File:Geberit_Vorwand-Installationselement_f%C3%BCr_ein_WC,_Neubau_Wohnblock_Frida-Mager-Allee,_53121_Bonn_02.jpg">Kai Kemmann</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
 	
-        </div>       
-	  <div class="container-flex">
-		  <div class="gap4vh"></div>
-		   <div class="gap4vh"></div>
-     </div>		         
+               
+	  
+		  <div class="gap6vh"></div>
+		   
+     	         
 	   
-	<div class="container-flex">    
+	   
 	   <ul class="ul-cls">
   <li>Leak Repairs</li>
   <li>Drain Cleaning</li>
@@ -1389,83 +1384,78 @@ If you need assistance or would like a free consultation, feel free to reach out
   <li>Sewer Odors from Drains</li> 
   
 </ul> 
-<div>  
-		<div class="container-flex">
-		  <div class="gap4vh"></div>
-		   <div class="gap4vh"></div>
-		   <div class="gap4vh"></div>
-		   <div class="gap4vh"></div>
+  
+		
+		  <div class="gap6vh"></div>
+		   <div class="gap6vh"></div>
 		  
-     </div>		  
+		  
+    	  
       
-	     <div class="container-flex" style="flex-direction: row;">
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
-		 <p>&nbsp&nbsp</p>
+	     
+         
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
             <span class="call-icon">☎</span>
             <span class="call-text">(647) 766-5597</span>
          </a>
-         <p>&nbsp&nbsp</p>
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
-         </div>	
+         
 		 
-		 <div class="container-flex">
+		
 		  <div class="gap4vh"></div>		  
-         </div>		  
+        
+	</div>	
         		 
-	   <!--
-	   <div id="swipeHint" class="mobile-swipe-message">
-         <span class="swipeIcon">↕</span>
-         <span>Swipe up or down to view more or Jump to desired screen</span>
-       </div>
-	   -->
+	   <div class="bottom-div">_______________________________________________________________________________________</div>
     </div>
 	
 	
    <!-- Image Wrapper 3 -->
      <div class="image-wrapper" id="contact">      
 	   <div class="top-div">_______________________________________________________________________________________</div>
-    <div class="bottom-div">_______________________________________________________________________________________</div>
+    
 	 <div class="container-flex">
 		  <div class="gap4vh"></div>		  
-         </div>		  
-	   <div class = "container-flex w3-txt-1" style="color: white;">My Contact</div>       
+        	  
+	   <div class = "w3-txt-1" >My Contact</div>       
    		
-        <div class="container-flex">
+        
 		  <div class="gap4vh"></div>
 		  <div class=" gap4vh"></div>
-       	</div>		
+       		
 		
-	<div class="container-flex" style="flex-direction: row; color:#0078D4; font-family:Arial; border: 0.0vw  solid white;">
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
+	
+        <div class="container-flex-row" >
+		
 		 <p class="w3-txt-2" style="color: green;" >&nbsp&nbspCall&nbsp&nbsp</p>
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
             <span class="call-icon">☎</span>
             <span class="call-text">(647) 766-5597</span>
          </a>
          <p class="w3-txt-2" style="color: green;">&nbsp&nbspMe&nbsp&nbsp</p>
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
-         </div>	   
-	 <div class="container-flex">
+		 
+         </div>
+		 
+		 
+	 
 		  <div class="gap4vh"></div>
-	 </div>		
+		
 	 
 	  
 	   
-	     <div class="container-flex " style=" border: 0.0vw   solid white; font-family:Arial;">
+	     
 		 <a href="mailto:asadsayeed@hotmail.com" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#0078D4;font-family:Arial,sans-serif; justify-content: center; ">
     <svg width="38" height="36" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
     </svg>
     <span class="w3-txt-2" >Send me an email message</span>
 </a>
-	</div> 
-    <div class="container-flex">
+	 
+    
 		  <div class="gap4vh"></div>
-	 </div>			
+			
 
 
-        <div class="container-flex " style=" flex-direction: row; border: 0.0vw   solid white; font-family:Arial;">
+        
 		  <a href="https://www.facebook.com/yourpage"
        target="_blank"
        class="social-btn facebook">
@@ -1475,12 +1465,11 @@ If you need assistance or would like a free consultation, feel free to reach out
     
 	<span class="w3-txt-2" >Follow Me at Facebook</span>
 	</a>
-	</div> 
-    <div class="container-flex">
+	
 		  <div class="gap4vh"></div>
-	 </div>		
+	 	
 
-     <div class="container-flex " style=" flex-direction: row; border: 0.0vw   solid white;  font-family:Arial;">
+    
 		  <a href="https://www.linkedin.com/company/yourcompany"
        target="_blank"
        class="social-btn linkedin">
@@ -1490,23 +1479,26 @@ If you need assistance or would like a free consultation, feel free to reach out
         <span  class="w3-txt-2" style="color: green;">Follow me at LinkedIn</span>
     </a>
 
-	</div> 
-     <div class="container-flex">
+	
 		  <div class="gap4vh"></div>
-	 </div>			
+			
 	
 
-    <div class="container-flex w3-txt-2" style="color:#ffffcc; border: 0.0vw   solid white; font-size: .7rem;" > 
+   
 	    
 		  <img src="website-qr-code.svg" alt="Sample Image" class="w3-img2" >
 		  <div class="adj-height"></div>
 		  <div class="adj-height"></div>
 		  <div class="adj-height"></div>
+		   <div class="w3-txt-2" style="color:#ffffcc; border: 0.0vw   solid white; font-size: .7rem;" > 
 		  QR code of my Professional portfolio on World Wide Web 		  
 	  	</div> 	  
-	    <div class="container-flex">
+	    
 		  <div class="gap4vh"></div>
-	 </div>				
+		  
+	 </div>
+
+<div class="bottom-div">_______________________________________________________________________________________</div>	 
         		 
 	 
     </div>
@@ -1517,28 +1509,28 @@ If you need assistance or would like a free consultation, feel free to reach out
 	<!-- Image Wrapper 4 -->
     <div class="image-wrapper" id="review" style="background: #101010;">
 	 <div class="top-div">_______________________________________________________________________________________</div>
-    <div class="bottom-div">_______________________________________________________________________________________</div>
+    
 	 <div class="container-flex">
 		  <div class="gap4vh"></div>		  
-         </div>		  
+         	  
 	
        	   
-	   <div class="container-flex w4-txt-1" style="color: white;">Reviews</div>
-         <div class="container-flex">
+	   <div class="w4-txt-1" >Reviews</div>
+         
 		  <div class="gap4vh"></div>
-	    </div>		
+	    		
        
-	     <div class="container-flex">
+	     
           <img class="w4-img1" src="mcmurryjulie-bad-review-2813741_640.png" alt="Description">   
 	   <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/mcmurryjulie-2375405/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">mcmurryjulie</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2813741">Pixabay</a></p>
-         </div>	
-       <div class="container-flex">
-		  <div class="gap4vh"></div>
-          <div class="gap4vh"></div>		  
-         </div>		         
+         
+       
+		  <div class="gap6vh"></div>
+         		  
+         	         
 
 	   
-	   <div class="container-flex w4-txt-2 ">
+	  
 	   <ul class="ul-cls-rvw">
   <li style="color: white;">Ahmed is best. I am glad to have my Kitchen piping fixed by him, it was leaking from many places and i was mad seeing it since last two months  .....</li>  
   <li style="color: #ffffcc;">John Philip</li>
@@ -1551,32 +1543,25 @@ If you need assistance or would like a free consultation, feel free to reach out
         
 </ul> 
 	   
-	   </div>
 	   
-	     <div class="container-flex">
+	   
+	     
 		  <div class="gap4vh"></div>
 		  <div class="gap2vh"></div>
-     </div>		   
+       
         
-	     <div class="container-flex" style="flex-direction: row;">
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">
-		 <p>&nbsp&nbsp</p>
+	     
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
             <span class="call-icon">☎</span>
             <span class="call-text">(647) 766-5597</span>
          </a>
-         <p>&nbsp&nbsp</p>
-         <img class="w1-img2" src="whiterose-nb-AI-new1.jpg" alt="Description">		 
-         </div>	
+        
        
-    </div>
+   
   
-	   <!--
-	   <div id="swipeHint" class="mobile-swipe-message">
-         <span class="swipeIcon">↕</span>
-         <span>Swipe up or down to view more or Jump to desired screen</span>
-       </div>
-	   -->
+	   </div>
+	   
+	   <div class="bottom-div">_______________________________________________________________________________________</div>
     </div>
 	
   
