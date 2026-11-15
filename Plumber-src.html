@@ -239,6 +239,97 @@ text-decoration: underline;
      top: 95vh;
      }
 	 
+	 .call-btn {
+ 
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  /* gap: 2px;   */
+  gap: 2px;
+  background-color: #25D366;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+ /* padding: 14px 22px;  */
+  padding: 2px 4px;
+/*  border-radius: 50px;   */
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.call-btn:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+
+.call-icon {
+  font-size: 20px;
+}
+
+@media (min-width: 1024px) {
+  .call-btn {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+	 
 	
 /* ==========================================
    DESKTOP OPTIMIZATIONS (Screens wider than 768px)
@@ -799,12 +890,12 @@ text-decoration: underline;
 		  <div class="gap4vh"></div> 	 
  
          <div class="w1-txt-1">Freelance</div> 
-		 <div class="w1-txt-2">Plumber</div> 
+		 <div class="w1-txt-1">Plumber</div> 
          <div class="gap4vh"></div>
 	     <img class="w1-img1" src="hellio42-ai-generated-9328689_640.png" alt="Description">
 		  <p class="common-attr-lnk">Photograph By <a href="https://pixabay.com/users/hellio42-41181595/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Stephane</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9328689">Pixabay</a></p>
         <div class="gap4vh"></div> 
-	    <div class="w1-txt-3">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
+	    <div class="w1-txt-2">Hi Friends I’m Ahmed, I’m a certified freelance plumber with over 10 years of experience handling everything from quick repairs to full-scale installations at individual homes and business locations both. I deliver reliable service with clear communication and fair pricing.
 
 Whether you need fixing of leaks, unclogging of drains or installing fixtures or need preventative maintenance, I handle all of them with a quality workmanship so that you can focus on what matters most.
 
