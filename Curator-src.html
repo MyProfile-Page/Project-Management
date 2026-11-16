@@ -555,6 +555,20 @@ input[type=submit]:hover {
   clear: both;
 }
 
+.tile {
+    background: linear-gradient(to bottom, 
+                          rgba(0, 0, 0, 0), 
+                          rgba(0, 0, 0, 0.5));
+            background-repeat: repeat;
+            background-size: 200px;
+            background-position: center;
+            background-color: #b5dc89;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column, input[type=submit] {
@@ -606,7 +620,7 @@ input[type=submit]:hover {
   
    .w2-img1 {
   max-width: 100%;
-  max-height: 30vh;              /* Leaves room for padding and captions */
+  max-height: 13vh;              /* Leaves room for padding and captions */
   object-fit: contain;           /* Keeps the photo aspect ratio intact without cropping */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -1162,7 +1176,7 @@ input[type=submit]:hover {
 	
 	    <div class="container-flex">   	 
 		  <div class="gap4vh"></div> 
-          <div class="w1-txt-1">Tuseum</div> 
+          <div class="w1-txt-1">Zuseum</div> 
 		  <div class="w1-txt-1">Curator</div>         
 		  <div class="gap4vh"></div>
 	      <img class="w1-img1" src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">
