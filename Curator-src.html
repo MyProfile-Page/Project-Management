@@ -328,8 +328,8 @@ html {
 /* 2. Individual Image Wrapper */
 .image-wrapper {
   width: 100%;
- height: auto;
-   
+ height: 100vh;
+    height: 100dvh;
     min-height: 100vh;
     box-sizing: border-box;
     padding: 1vh 3vw 2vh 3vw;
@@ -462,18 +462,18 @@ text-decoration: underline;
 .container-flex {
             border: 1px solid white;
             display: flex;
-            
+            justify-content: center; 
             flex-direction: column; 			
             align-items: center;
-           
-			
+            position: absolute;
+			top: 4vh;	
             width: 97%;
             margin: 0 auto;			
 	        }
 .container-flex-row {
             border: 0px solid white;
             display: flex;
-            
+            justify-content: center; 
             flex-direction: row; 			
             align-items: center;           
 	        }			
@@ -1205,7 +1205,7 @@ input[type=submit]:hover {
 	
 	    <div class="container-flex">   	 
 		  <div class="gap1vh"></div> 
-          <div class="w1-txt-1">Buseum Curator</div> 
+          <div class="w1-txt-1">Museum Curator</div> 
 		          
 		  <div class="gap4vh"></div>
 	      <img class="w1-img1" src="Orange_short_haired_anime_girl_portrait-new1.jpg" alt="Description">
