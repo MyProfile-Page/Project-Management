@@ -309,6 +309,14 @@ input[type=submit]:hover {
 .tile:hover {
     transform: scale(1.05);
 }
+.blink-smooth {
+  animation: smooth-blink 2s infinite;
+}
+
+@keyframes smooth-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.1; }
+}
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -929,8 +937,7 @@ input[type=submit]:hover {
 	<div class="top-div">_______________________________________________________________________________________</div>
 	
 	    <div class="container-flex">   	 
-		  <div class="gap1vh" style="color:#ffffcc; font-size: .8rem;">Museum Curator Professional Portfolio Card (Sample Only)
-		  </div> 
+		  <div class="gap1vh"></div> 
           <div class="w1-txt-1">Imrana Asad</div> 
 		          
 		  <div class="gap4vh"></div>
@@ -944,7 +951,7 @@ input[type=submit]:hover {
             <span class="call-icon">☎</span>
             <span class="call-text">(647) 212-0718</span>
          </a>
-        <div class="gap1vh" style="color:#ffffcc; font-size: .8rem;">Museum Curator Professional Portfolio Card (Sample Only)</div>            
+        <div class="gap1vh blink-smooth" style="color:#ffffcc; font-size: .8rem;">Museum Curator Professional Portfolio Card (Sample Only)</div>            
      </div> 
 	 <div class="bottom-div">_______________________________________________________________________________________</div>
 
