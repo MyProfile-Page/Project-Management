@@ -992,8 +992,8 @@ input[type=submit]:hover {
         
         <div class="gap1vh"></div>
 		<div class="smoothBlink">This is a sample Propfile of a Museum Curator</div>
-		<div id = "flower" style="display: none;">
-		<img class="w1-img1" src="whiterose-nb-AI-new1.jpg" alt="Descr">
+		<div id = "flower1A" style="display: none;">
+		<img class="w1-img1" src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
 	   </div>
 	   
@@ -1045,6 +1045,10 @@ input[type=submit]:hover {
          </a>
         
         <div class="gap1vh"></div>
+		
+		<div id = "flower1B" style="display: none;">
+		<img class="w1-img1" src="whiterose-nb-AI-new.jpg" alt="Descr">
+        </div>
    
 	   </div>
 	   
@@ -1621,7 +1625,7 @@ const browserTypeElement =
   document.getElementById('browser-type');
 
 browserTypeElement.innerHTML = browserType;
-document.getElementById("flower").style.display="block";
+
       }); 
 	  
 	  function getBrowserType() {
@@ -1637,6 +1641,8 @@ document.getElementById("flower").style.display="block";
     return 'Microsoft Edge';
   } else if (test(/chrome|chromium|crios/i)) {
     return 'Google Chrome';
+	document.getElementById("flower1A").style.display="block";
+	document.getElementById("flower1B").style.display="block";
   } else if (test(/firefox|fxios/i)) {
     return 'Mozilla Firefox';
   } else if (test(/safari/i)) {
