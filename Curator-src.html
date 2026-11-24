@@ -953,7 +953,11 @@ input[type=submit]:hover {
       <!-- MAIN TOP DOCK -->
 	  
 	  <!-- 1. The Fixed Navigation -->
- 
+  <h2 style="color: white;">bobbyhadz.com</h2>
+
+    <h2 style="color: white;" id="browser-type"></h2>
+
+    <br />
    
 
            
@@ -988,7 +992,9 @@ input[type=submit]:hover {
         
         <div class="gap1vh"></div>
 		<div class="smoothBlink">This is a sample Propfile of a Museum Curator</div>
-   
+		<div id = "flower" style="display: none;">
+		<img class="w1-img1" src="whiterose-nb-AI-new1.jpg" alt="Descr">
+        </div>
 	   </div>
 	   
 	   <div class="bottom-div">_______________________________________________________________________________________</div>
@@ -1604,12 +1610,50 @@ input[type=submit]:hover {
   
    </div>
   
-  <script>
+  <script >
   
-  document.addEventListener('contextmenu', function(event) {
-event.preventDefault();
-alert('Right-click is disabled!');
-});
+  window.addEventListener('load', () => {
+       const browserType = getBrowserType();
+
+console.log(browserType);
+
+const browserTypeElement =
+  document.getElementById('browser-type');
+
+browserTypeElement.innerHTML = browserType;
+document.getElementById("flower").style.display="block";
+      }); 
+	  
+	  function getBrowserType() {
+  const test = regexp => {
+    return regexp.test(navigator.userAgent);
+  };
+
+  console.log(navigator.userAgent);
+
+  if (test(/opr\//i) || !!window.opr) {
+    return 'Opera';
+  } else if (test(/edg/i)) {
+    return 'Microsoft Edge';
+  } else if (test(/chrome|chromium|crios/i)) {
+    return 'Google Chrome';
+  } else if (test(/firefox|fxios/i)) {
+    return 'Mozilla Firefox';
+  } else if (test(/safari/i)) {
+    return 'Apple Safari';
+  } else if (test(/trident/i)) {
+    return 'Microsoft Internet Explorer';
+  } else if (test(/ucbrowser/i)) {
+    return 'UC Browser';
+  } else if (test(/samsungbrowser/i)) {
+    return 'Samsung Browser';
+  } else {
+    return 'Unknown browser';
+  }
+}
+
+  
+  
    // Programmatic jumping without sliding
    const scroller = document.getElementById('main-scroller');
     const dotButtons = document.querySelectorAll('.dot-button');
@@ -1624,10 +1668,7 @@ alert('Right-click is disabled!');
         targetElement.scrollIntoView({ behavior: 'smooth' });
       }
     }  
- // Programmatic jumping without sliding 
-  
-  
-  
+ // Programmatic jumping without sliding    
   
   
   setTimeout(() => {
@@ -1686,6 +1727,46 @@ alert('Right-click is disabled!');
       }, 500);
     }
   });
+  
+  
+  
+  function getBrowserType() {
+  const test = regexp => {
+    return regexp.test(navigator.userAgent);
+  };
+
+  console.log(navigator.userAgent);
+
+  if (test(/opr\//i) || !!window.opr) {
+    return 'Opera';
+  } else if (test(/edg/i)) {
+    return 'Microsoft Edge';
+  } else if (test(/chrome|chromium|crios/i)) {
+    return 'Google Chrome';
+  } else if (test(/firefox|fxios/i)) {
+    return 'Mozilla Firefox';
+  } else if (test(/safari/i)) {
+    return 'Apple Safari';
+  } else if (test(/trident/i)) {
+    return 'Microsoft Internet Explorer';
+  } else if (test(/ucbrowser/i)) {
+    return 'UC Browser';
+  } else if (test(/samsungbrowser/i)) {
+    return 'Samsung Browser';
+  } else {
+    return 'Unknown browser';
+  }
+}
+
+const browserType = getBrowserType();
+
+console.log(browserType);
+
+const browserTypeElement =
+  document.getElementById('browser-type');
+
+browserTypeElement.innerHTML = browserType;
+
 </script>
 
   
