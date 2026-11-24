@@ -1020,7 +1020,7 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
 	   
     
 	 
-	 <div class="gap8vh"></div>
+	 <div class="gap4vh"></div>
 	
    
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
@@ -1028,7 +1028,10 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
             <span class="call-text">(647) 212-0718</span>
          </a>
         
-        <div class="gap1vh"></div>
+          <div class="gap5vh"></div>
+		<div id = "flower-edu" style="display: none;">
+		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
+        </div>
    
 	   </div>
 	   
@@ -1062,7 +1065,7 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
 	   
     
 	 
-	 <div class="gap8vh"></div>
+	 <div class="gap4vh"></div>
 	 
    
 		 <a href="tel:+16479379234" class="call-btn" style="border: 0px solid red;" >
@@ -1070,7 +1073,10 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
             <span class="call-text">(647) 212-0718</span>
          </a>
         
-        <div class="gap1vh"></div>
+          <div class="gap5vh"></div>
+		<div id = "flower-exp" style="display: none;">
+		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
+        </div>
    
 	   </div>
 	   
@@ -1085,7 +1091,7 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
 	 <div class="container-flex">
 		  <div class="gap2vh"></div>
 	   
-	   <div class="w1-txt-1">Skills</div>
+	   <div class="w1-txt-1">My Services</div>
        <div class="gap8vh"></div>	   
 	   
        <img class="w1d-img1" src="500px-Cubo_de_Ibo.png" alt="Description" >
@@ -1114,7 +1120,10 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
             <span class="call-text">(647) 212-0718</span>
          </a>
         
-        <div class="gap1vh"></div>
+          <div class="gap5vh"></div>
+		<div id = "flower-skl" style="display: none;">
+		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
+        </div>
    
 	   </div>
 	   
@@ -1178,7 +1187,10 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
         <span  class="w3-txt-2" >Follow me at LinkedIn</span>
     </a>
 
-
+        <div class="gap5vh"></div>
+		<div id = "flower-con" style="display: none;">
+		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
+        </div>
 		 
 		 
 		  
@@ -1241,7 +1253,55 @@ Whether you need fixing of leaks, unclogging of drains or installing fixtures or
    </div>
   
   <script>
-  
+  window.addEventListener('load', () => {
+       const browserType = getBrowserType();
+
+ console.log(browserType);
+
+// const browserTypeElement =
+//  document.getElementById('browser-type');
+
+// browserTypeElement.innerHTML = browserType;
+
+if (browserType === "Google Chrome") {
+  document.getElementById("flower-edu").style.display="block";
+  document.getElementById("flower-exp").style.display="block";
+  document.getElementById("flower-skl").style.display="block";
+  document.getElementById("flower-con").style.display="block";
+}
+
+      }); 
+	  
+	  function getBrowserType() {
+  const test = regexp => {
+    return regexp.test(navigator.userAgent);
+  };
+
+  console.log(navigator.userAgent);
+
+  if (test(/opr\//i) || !!window.opr) {
+    return 'Opera';
+  } else if (test(/edg/i)) {
+    return 'Microsoft Edge';
+  } else if (test(/chrome|chromium|crios/i)) { 
+	return 'Google Chrome';
+  } else if (test(/firefox|fxios/i)) {
+    return 'Mozilla Firefox';
+  } else if (test(/safari/i)) {
+    return 'Apple Safari';
+  } else if (test(/trident/i)) {
+    return 'Microsoft Internet Explorer';
+  } else if (test(/ucbrowser/i)) {
+    return 'UC Browser';
+  } else if (test(/samsungbrowser/i)) {
+    return 'Samsung Browser';
+  } else {
+    return 'Unknown browser';
+  }
+}
+
+
+   
   document.addEventListener('contextmenu', function(event) {
 event.preventDefault();
 alert('Right-click is disabled!');
