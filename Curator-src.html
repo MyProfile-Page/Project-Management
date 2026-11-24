@@ -1625,8 +1625,12 @@ const browserTypeElement =
   document.getElementById('browser-type');
 
 browserTypeElement.innerHTML = browserType;
-document.getElementById("flower1A").style.display="block";
+
+if (browserType === "Google Chrome") {
+  document.getElementById("flower1A").style.display="block";
 document.getElementById("flower1B").style.display="block";
+}
+
       }); 
 	  
 	  function getBrowserType() {
