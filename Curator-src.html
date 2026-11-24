@@ -953,11 +953,7 @@ input[type=submit]:hover {
       <!-- MAIN TOP DOCK -->
 	  
 	  <!-- 1. The Fixed Navigation -->
-  <h2 style="color: white;">bobbyhadz.com</h2>
-
-    <h2 style="color: white;" id="browser-type"></h2>
-
-    <br />
+ 
    
 
            
@@ -1626,10 +1622,10 @@ input[type=submit]:hover {
   window.addEventListener('load', () => {
        const browserType = getBrowserType();
 
-console.log(browserType);
+// console.log(browserType);
 
-const browserTypeElement =
-  document.getElementById('browser-type');
+// const browserTypeElement =
+//  document.getElementById('browser-type');
 
 browserTypeElement.innerHTML = browserType;
 
@@ -1673,6 +1669,10 @@ if (browserType === "Google Chrome") {
   }
 }
 
+document.addEventListener('contextmenu', function(event) {
+event.preventDefault();
+alert('Right-click is disabled!');
+});
   
   
    // Programmatic jumping without sliding
