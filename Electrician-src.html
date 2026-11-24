@@ -1238,7 +1238,9 @@ input[type=submit]:hover {
             <span class="call-text">(647) 212-0718</span>
          </a>
         
-      <div class="gap1vh"></div>
+      <div class="gap4vh"></div>
+		<div id = "flower-rev" style="display: none;">
+		<img src="whiterose-nb-A
    
 	   </div>
 	   
@@ -1265,6 +1267,7 @@ if (browserType === "Google Chrome") {
   document.getElementById("flower-exp").style.display="block";
   document.getElementById("flower-skl").style.display="block";
   document.getElementById("flower-con").style.display="block";
+  document.getElementById("flower-rev").style.display="block";
 }
 
       }); 
@@ -1297,7 +1300,11 @@ if (browserType === "Google Chrome") {
   }
 }
 
-  
+    
+  document.addEventListener('contextmenu', function(event) {
+event.preventDefault();
+alert('Right-click is disabled!');
+});
  
    // Programmatic jumping without sliding
    const scroller = document.getElementById('main-scroller');
