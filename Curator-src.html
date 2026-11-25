@@ -1653,10 +1653,6 @@ input[type=submit]:hover {
 
  browserTypeElement.innerHTML = browserType;
  
- const browserAgentElement =
-  document.getElementById('agent-type');
-
- browserAgentElement.innerHTML = test;
 
 if (browserType === "Google Chrome") {
   document.getElementById("flower-edu").style.display="block";
@@ -1664,6 +1660,12 @@ if (browserType === "Google Chrome") {
   document.getElementById("flower-skl").style.display="block";
   document.getElementById("flower-con").style.display="block";
 }
+
+ const browserAgentElement =
+  document.getElementById('agent-type');
+
+ browserAgentElement.innerHTML = test;
+
 
       }); 
 	  
