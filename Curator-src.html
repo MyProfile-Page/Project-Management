@@ -1063,7 +1063,7 @@ input[type=submit]:hover {
         
         <div class="gap1vh"></div>
 		
-		<div id = "flower-edu" style="display: none;">
+		<div id = "flower-edu" style="display: block;">
 		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
    
@@ -1119,7 +1119,7 @@ input[type=submit]:hover {
          </a>
         
         <div class="gap2vh"></div>
-		<div id = "flower-exp" style="display: none;">
+		<div id = "flower-exp" style="display: block;">
 		<img  src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
    
@@ -1165,7 +1165,7 @@ input[type=submit]:hover {
          </a>
         
         <div class="gap2vh"></div>
-		<div id = "flower-skl" style="display: none;">
+		<div id = "flower-skl" style="display: block;">
 		<img  src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
    
@@ -1298,7 +1298,7 @@ input[type=submit]:hover {
         <span  class="w3-txt-2" >Follow me at LinkedIn</span>		
     </a>
      <div class="gap2vh"></div>
-	 <div id = "flower-con" style="display: none;">
+	 <div id = "flower-con" style="display: block;">
 		<img  src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
 
@@ -1719,34 +1719,29 @@ input[type=submit]:hover {
   });
   
   window.addEventListener('load', () => {  
-
-const { brands, mobile, platform } = navigator.userAgentData;
-
-
-console.log(brands);
-console.log(mobile);
-console.log(platform);
-
-if (brands.some(item => item.brand.includes("Chrome"))) {
-  document.getElementById("flower-edu").style.display="block";
-  document.getElementById("flower-exp").style.display="block";
-  document.getElementById("flower-skl").style.display="block";
-  document.getElementById("flower-con").style.display="block";
+const ua = navigator.userAgent;
+let browserInfo = "Other browser";
+if (ua.includes("Edg/") || ua.includes("EdgiOS")) {
+    browserInfo = "Edge";
 }
-
-// if (brands.includes(‘Firefox‘)) {
-  // Run Firefox-specific code
-// }
-
-// if (mobile) {
-  // Enable mobile UI 
-// }
-
-
-
-
- 
- }); 
+else if (ua.includes("Firefox/") || ua.includes("FxiOS")) {
+    browserInfo = "Firefox";
+	document.getElementById("flower-edu").style.display="none";
+    document.getElementById("flower-exp").style.display="none";
+    document.getElementById("flower-skl").style.display="none";
+    document.getElementById("flower-con").style.display="none";
+}
+else if (ua.includes("Chrome/") || ua.includes("CriOS")) {
+    browserInfo = "Chrome";
+}
+else if (ua.includes("Safari/")) {
+    browserInfo = "Safari";
+	document.getElementById("flower-edu").style.display="none";
+    document.getElementById("flower-exp").style.display="none";
+    document.getElementById("flower-skl").style.display="none";
+    document.getElementById("flower-con").style.display="none";
+}
+console.log(browserInfo); 
   
   
   
