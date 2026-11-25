@@ -954,16 +954,36 @@ input[type=submit]:hover {
 	  
 	  <!-- 1. The Fixed Navigation -->
  
-    <h2 style="color:white">bobbyhadz.com</h2>
-
-    <h2 id="browser-type" style="color:white"></h2>
+  
 
     
 
            
     
    
-   <!-- Image Wrapper 1A -->
+   <!-- Image Wrapper 1 -->
+    <div class="image-wrapper">	 
+	 <div class="top-div">_______________________________________________________________________________________</div>
+    
+	 <div class="container-flex">
+		  <div class="gap1vh"></div>
+	   
+	   <div class="w1-txt-1">Browser Name</div>
+       <div class="gap2vh"></div>	   
+	   
+         <h2 style="color:white">bobbyhadz.com</h2>
+	<h2 style="color:white">bobbyhadz.com</h2>
+	<h2 style="color:white">bobbyhadz.com</h2>
+    <h2 id="agent-type" style="color:white"></h2>
+    <h2 id="browser-type" style="color:white"></h2>
+	   
+	  </div>
+	   
+	   <div class="bottom-div">_______________________________________________________________________________________</div>
+ 
+      </div>	
+	  
+	   <!-- Image Wrapper 1A -->
     <div class="image-wrapper">	 
 	 <div class="top-div">_______________________________________________________________________________________</div>
     
@@ -1626,12 +1646,17 @@ input[type=submit]:hover {
   window.addEventListener('load', () => {
    const browserType = getBrowserType();
 
- console.log(browserType);
+// console.log(browserType);
 
  const browserTypeElement =
   document.getElementById('browser-type');
 
  browserTypeElement.innerHTML = browserType;
+ 
+ const browserAgentElement =
+  document.getElementById('agent-type');
+
+ browserAgentElement.innerHTML = test;
 
 if (browserType === "Google Chrome") {
   document.getElementById("flower-edu").style.display="block";
@@ -1671,10 +1696,7 @@ if (browserType === "Google Chrome") {
   }
 }
 
-document.addEventListener('contextmenu', function(event) {
-event.preventDefault();
-alert('Right-click is disabled!');
-});
+
   
   
    // Programmatic jumping without sliding
