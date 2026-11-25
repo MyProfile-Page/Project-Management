@@ -1025,7 +1025,7 @@ input[type=submit]:hover {
          </a>
         
         <div class="gap5vh"></div>
-		<div id = "flower-edu" style="display: none;">
+		<div id = "flower-edu" style="display:block;">
 		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
    
@@ -1072,7 +1072,7 @@ input[type=submit]:hover {
         
 		
 		  <div class="gap5vh"></div>
-		<div id = "flower-exp" style="display: none;">
+		<div id = "flower-exp" style="display:block;">
 		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
    
@@ -1117,7 +1117,7 @@ input[type=submit]:hover {
          </a>
         
          <div class="gap4vh"></div>
-		<div id = "flower-skl" style="display: none;">
+		<div id = "flower-skl" style="display:block;">
 		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
    
@@ -1184,7 +1184,7 @@ input[type=submit]:hover {
     </a>
 	
 	  <div class="gap3vh"></div>
-		<div id = "flower-con" style="display: none;">
+		<div id = "flower-con" style="display:block;">
 		<img src="whiterose-nb-AI-new.jpg" alt="Descr">
         </div>
 
@@ -1239,7 +1239,7 @@ input[type=submit]:hover {
          </a>
         
       <div class="gap3vh"></div>
-		<div id = "flower-rev" style="display: none;">
+		<div id = "flower-rev" style="display:block;">
 		<img src="whiterose-nb-A
    
 	   </div>
@@ -1382,6 +1382,35 @@ alert('Right-click is disabled!');
       }, 500);
     }
   });
+  
+   window.addEventListener('load', () => {  
+const ua = navigator.userAgent;
+let browserInfo = "Other browser";
+if (ua.includes("Edg/") || ua.includes("EdgiOS")) {
+    browserInfo = "Edge";
+}
+else if (ua.includes("Firefox/") || ua.includes("FxiOS")) {
+    browserInfo = "Firefox";
+	document.getElementById("flower-edu").style.display="none";
+    document.getElementById("flower-exp").style.display="none";
+    document.getElementById("flower-skl").style.display="none";
+    document.getElementById("flower-con").style.display="none";
+}
+else if (ua.includes("Chrome/") || ua.includes("CriOS")) {
+    browserInfo = "Chrome";
+}
+else if (ua.includes("Safari/")) {
+    browserInfo = "Safari";
+	document.getElementById("flower-edu").style.display="none";
+    document.getElementById("flower-exp").style.display="none";
+    document.getElementById("flower-skl").style.display="none";
+    document.getElementById("flower-con").style.display="none";
+}
+console.log(browserInfo); 
+});  
+  
+  
+  
 </script>
 
   
